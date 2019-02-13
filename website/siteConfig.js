@@ -9,47 +9,26 @@
 // site configuration options.
 
 const siteConfig = {
-  title: 'CodeScope docs',
+  title: 'CodeScope documentation',
   tagline: 'CodeScope documentation',
   url: 'https://docs.undefinedlabs.com',
   baseUrl: '/',
   projectName: 'docs',
   organizationName: 'undefinedlabs',
-  headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
-  ],
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerLinks: [],
   favicon: 'img/favicon.png',
   colors: {
-    primaryColor: '#2E8555',
-    secondaryColor: '#205C3B',
+    primaryColor: '#282F4E',
+    secondaryColor: '#4433D0',
   },
-  /*
-  fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-  },
-  */
   copyright: `Copyright © ${new Date().getFullYear()} Undefined Labs, Inc.`,
   highlight: {
     theme: 'default',
   },
-  scripts: ['https://buttons.github.io/buttons.js'],
   onPageNav: 'separate',
   cleanUrl: true,
   ogImage: 'img/docusaurus.png',
   twitterImage: 'img/docusaurus.png',
-  // enableUpdateBy: true,
   enableUpdateTime: true,
 };
 
