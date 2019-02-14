@@ -1,29 +1,29 @@
 ---
 id: installation
-title: Installing CodeScope
+title: Installing Scope
 sidebar_label: Installation
 ---
 
 ## Prerequisites
 
-CodeScope requires a **Kubernetes 1.11+ cluster** for deployment.
+Scope requires a **Kubernetes 1.11+ cluster** for deployment.
 
 You need to have **cluster admin** privileges to the cluster being used.
 
 
 ## Quick installation
 
-To install the latest stable version of CodeScope with the default configuration, run the following command:
+To install the latest stable version of Scope with the default configuration, run the following command:
 
 ```bash
 kubectl apply -f https://home.codescope.com/installer.yml
 ```
 
-This will install CodeScope in a namespace called `codescope`, with built-in PostgreSQL and Redis instances.
+This will install Scope in a namespace called `codescope`, with built-in PostgreSQL and Redis instances.
 
 > If you want to customize this, read the below section on "Customizing your installation"
 
-To get the CodeScope UI URL and set it up, run:
+To get the Scope UI URL and set it up, run:
 
 ```bash
 kubectl -n codescope get service/codescope-default-core --template="https://{{or (index .status.loadBalancer.ingress 0).hostname (index .status.loadBalancer.ingress 0).ip}}"

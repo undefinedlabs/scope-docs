@@ -9,9 +9,9 @@
 // site configuration options.
 
 const siteConfig = {
-  title: 'CodeScope documentation',
-  tagline: 'CodeScope documentation',
-  url: 'https://docs.undefinedlabs.com',
+  title: 'Scope',
+  tagline: 'Scope documentation',
+  url: 'https://scope.undefinedlabs.com',
   baseUrl: '/',
   projectName: 'docs',
   organizationName: 'undefinedlabs',
