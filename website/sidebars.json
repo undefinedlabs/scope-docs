@@ -1,5 +1,6 @@
 {
   "docs": {
-    "Getting started": ["installation"]
+    "Getting started": ["installation"],
+    "Agents": ["ios-agent"]
   }
 }
