@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting started": ["installation"],
+    "Getting started": ["installation", "release-notes"],
     "Agents": ["ios-agent"]
   }
 }
