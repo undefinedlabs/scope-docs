@@ -14,13 +14,13 @@ The Scope iOS agent is compatible with the following libraries:
 
 ## Installation
 
-Installation of the agent is done via [CocoaPods](https://cocoapods.org).
+Installation of the Scope Agent is done via [CocoaPods](https://cocoapods.org).
 
-Add the `CodeScope` pod to the test target in your `Podfile`. For example:
+Add the `ScopeAgent` pod to the test target in your `Podfile`. For example:
 
 ```
 target 'MyAppTests' do
-  pod 'CodeScope'
+  pod 'ScopeAgent'
 end
 ```
 
@@ -33,18 +33,18 @@ Add the following environment variables to your test target ([instructions](http
 
 | Key                      | Value                       |
 |--------------------------|-----------------------------|
-| `CODESCOPE_APIKEY`       | `$(CODESCOPE_APIKEY)`       |
-| `CODESCOPE_API_ENDPOINT` | `$(CODESCOPE_API_ENDPOINT)` |
-| `CODESCOPE_COMMIT_SHA`   | `$(GIT_COMMIT)`             |
-| `CODESCOPE_REPOSITORY`   | `$(GIT_URL)`                |
-| `CODESCOPE_SOURCE_ROOT`  | `$(WORKSPACE)`              |
+| `SCOPE_APIKEY`           | `$(SCOPE_APIKEY)`           |
+| `SCOPE_API_ENDPOINT`     | `$(SCOPE_API_ENDPOINT)`     |
+| `SCOPE_COMMIT_SHA`       | `$(GIT_COMMIT)`             |
+| `SCOPE_REPOSITORY`       | `$(GIT_URL)`                |
+| `SCOPE_SOURCE_ROOT`      | `$(WORKSPACE)`              |
 
 After this, configure your Jenkins build to add the following environment variables:
 
-| Key                      | Value                                           |
-|--------------------------|-------------------------------------------------|
-| `CODESCOPE_APIKEY`       | The API key generated from the CodeScope UI     |
-| `CODESCOPE_API_ENDPOINT` | The API endpoint of your CodeScope installation |
+| Key                      | Value                                       |
+|--------------------------|---------------------------------------------|
+| `SCOPE_APIKEY`           | The API key generated from the Scope UI     |
+| `SCOPE_API_ENDPOINT`     | The API endpoint of your Scope installation |
 
 
 
@@ -54,15 +54,15 @@ Add the following environment variables to your test target ([instructions](http
 
 | Key                      | Value                         |
 |--------------------------|-------------------------------|
-| `CODESCOPE_APIKEY`       | `$(CODESCOPE_APIKEY)`         |
-| `CODESCOPE_API_ENDPOINT` | `$(CODESCOPE_API_ENDPOINT)`   |
-| `CODESCOPE_COMMIT_SHA`   | `$(CIRCLE_SHA1)`              |
-| `CODESCOPE_REPOSITORY`   | `$(CIRCLE_REPOSITORY_URL)`    |
-| `CODESCOPE_SOURCE_ROOT`  | `$(CIRCLE_WORKING_DIRECTORY)` |
+| `SCOPE_APIKEY`           | `$(SCOPE_APIKEY)`             |
+| `SCOPE_API_ENDPOINT`     | `$(SCOPE_API_ENDPOINT)`       |
+| `SCOPE_COMMIT_SHA`       | `$(CIRCLE_SHA1)`              |
+| `SCOPE_REPOSITORY`       | `$(CIRCLE_REPOSITORY_URL)`    |
+| `SCOPE_SOURCE_ROOT`      | `$(CIRCLE_WORKING_DIRECTORY)` |
 
 After this, configure your CircleCI project to add the following environment variables ([instructions](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project)):
 
-| Key                      | Value                                           |
-|--------------------------|-------------------------------------------------|
-| `CODESCOPE_APIKEY`       | The API key generated from the CodeScope UI     |
-| `CODESCOPE_API_ENDPOINT` | The API endpoint of your CodeScope installation |
+| Key                      | Value                                       |
+|--------------------------|---------------------------------------------|
+| `SCOPE_APIKEY`           | The API key generated from the Scope UI     |
+| `SCOPE_API_ENDPOINT`     | The API endpoint of your Scope installation |
