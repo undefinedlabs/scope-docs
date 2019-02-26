@@ -19,15 +19,16 @@ To install the latest stable version of Scope with the default configuration, ru
 kubectl apply -f https://home.codescope.com/installer.yml
 ```
 
-> If you are installing Scope locally on Docker for Mac, Docker for Windows or minikube, run the following command instead:
->
-> ```bash
-> kubectl apply -f "https://home.codescope.com/installer.yml?http_port=8080&https_port=8443"
-> ```
+If you are installing Scope locally on Docker for Mac, Docker for Windows or minikube, run the following command instead:
+
+```bash
+kubectl apply -f "https://home.codescope.com/installer.yml?http_port=8080&https_port=8443"
+```
+
+> Please note that in this case, GitHub won't be able to contact your local Scope installation unless you set up a local tunnel such as [ngrok](https://ngrok.com)
 
 This will install Scope in a namespace called `scope`, with built-in PostgreSQL and Redis instances.
-
-> If you want to use an existing PostgreSQL or Redis instance, or customize any other parameter, read the section below on ["Customizing your installation"](#customizing-your-installation)
+If you want to use an existing PostgreSQL or Redis instance, or customize any other parameter, read the section below on ["Customizing your installation"](#customizing-your-installation)
 
 To get the Scope UI URL and set it up, wait a few minutes until the load balancer resource has been assigned a hostname or IP, and run:
 
