@@ -19,14 +19,20 @@ To install the latest stable version of Scope with the default configuration, ru
 kubectl apply -f https://home.codescope.com/installer.yml
 ```
 
-This will install Scope in a namespace called `codescope`, with built-in PostgreSQL and Redis instances.
+> If you are installing Scope locally on Docker for Mac, Docker for Windows or minikube, run the following command instead:
+>
+> ```bash
+> kubectl apply -f "https://home.codescope.com/installer.yml?http_port=8080&https_port=8443"
+> ```
+
+This will install Scope in a namespace called `scope`, with built-in PostgreSQL and Redis instances.
 
 > If you want to use an existing PostgreSQL or Redis instance, or customize any other parameter, read the section below on ["Customizing your installation"](#customizing-your-installation)
 
 To get the Scope UI URL and set it up, wait a few minutes until the load balancer resource has been assigned a hostname or IP, and run:
 
 ```bash
-kubectl -n codescope get service/codescope-default-core --template="https://{{or (index .status.loadBalancer.ingress 0).hostname (index .status.loadBalancer.ingress 0).ip}}"
+kubectl -n scope get service/scope-default-router --template="https://{{or (index .status.loadBalancer.ingress 0).hostname (index .status.loadBalancer.ingress 0).ip}}:{{(index .spec.ports 0).port}}"
 ```
 
 Open the printed URL in a browser, ignore the certificate warning (as it ships with a self-signed certificate that you
@@ -41,15 +47,18 @@ In order to customize the installation, download the installer YAML file at `htt
 curl https://home.codescope.com/installer.yml -o installer.yml
 ```
  
-Open it and modify the settings present in the `codescope-default-installer-config` config map:
+Open it and modify the settings present in the `scope-default-installer-config` config map:
 
 | Setting | Default | Description |
 | ------- | ------- | ----------- |
-| `CODESCOPE_NAME` | `default` | The name of the Scope instance, to be used when naming resources. Use this setting if you have more than one Scope instance in the same namespace |
-| `CODESCOPE_DB_DSN` | (empty) | A DSN to use an existing PostgreSQL instance and avoid deploying a built-in one (e.g. `postgresql://user:pass@host:port/db`) |
-| `CODESCOPE_REDIS_DSN` | (empty) | A DSN to use an existing Redis instance and avoid deploying a built-in one (e.g. `redis://host:port`) |
-| `CODESCOPE_CORE_REPLICAS` | `2` | Number of initial replicas for Scope's API/UI component deployment |
-| `CODESCOPE_WORKER_REPLICAS` | `2` | Number of initial replicas for Scope's worker component deployment |
+| `SCOPE_NAME` | `default` | The name of the Scope instance, to be used when naming resources. Use this setting if you have more than one Scope instance in the same namespace |
+| `SCOPE_DB_DSN` | (empty) | A DSN to use an existing PostgreSQL instance and avoid deploying a built-in one (e.g. `postgresql://user:pass@host:port/db`) |
+| `SCOPE_REDIS_DSN` | (empty) | A DSN to use an existing Redis instance and avoid deploying a built-in one (e.g. `redis://host:port`) |
+| `SCOPE_CORE_REPLICAS` | `2` | Number of initial replicas for Scope's API/UI component deployment |
+| `SCOPE_WORKER_REPLICAS` | `2` | Number of initial replicas for Scope's worker component deployment |
+| `SCOPE_HTTP_PORT` | `80` | HTTP port to be exposed in the publicly reachable service |
+| `SCOPE_HTTPS_PORT` | `443` | HTTPS port to be exposed in the publicly reachable service |
+| `SCOPE_SERVICE_TYPE` | `LoadBalancer` | The service type to use for the publicly reachable service |
 
 
 You can also customize the name of the namespace to be used by modifying the name of the `Namespace` resource
