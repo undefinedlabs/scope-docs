@@ -1,4 +1,3 @@
-
 ---
 id: release-notes
 title: Release notes

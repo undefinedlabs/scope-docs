@@ -27,8 +27,7 @@ query {
 }
 '''
 
-PAGE_TEMPLATE = '''
----
+PAGE_TEMPLATE = '''---
 id: release-notes
 title: Release notes
 sidebar_label: Release notes
