@@ -3,9 +3,10 @@ import datetime
 import os
 
 import requests
+import semantic_version
 
 GITHUB_AUTH = os.getenv("GITHUB_AUTH")
-FROM_DATE = datetime.datetime(year=2019, month=3, day=4)
+FROM_VERSION = '0.2.10'
 
 GITHUB_ENDPOINT = "https://api.github.com/graphql"
 QUERY = '''
@@ -60,7 +61,7 @@ if __name__ == "__main__":
     for node in result['data']['repository']['releases']['edges']:
         release = node['node']
         release_date = datetime.datetime.strptime(release['createdAt'], "%Y-%m-%dT%H:%M:%SZ")
-        if release['isDraft'] or release['isPrerelease'] or FROM_DATE > release_date:
+        if release['isDraft'] or release['isPrerelease'] or semantic_version.Version(release['name']) < semantic_version.Version(FROM_VERSION):
             continue
         releases.append(
             RELEASE_TEMPLATE.format(
