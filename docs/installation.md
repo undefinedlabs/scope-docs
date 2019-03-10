@@ -55,8 +55,6 @@ Open it and modify the settings present in the `scope-default-installer-config` 
 | `SCOPE_NAME` | `default` | The name of the Scope instance, to be used when naming resources. Use this setting if you have more than one Scope instance in the same namespace |
 | `SCOPE_DB_DSN` | (empty) | A DSN to use an existing PostgreSQL instance and avoid deploying a built-in one (e.g. `postgresql://user:pass@host:port/db`) |
 | `SCOPE_REDIS_DSN` | (empty) | A DSN to use an existing Redis instance and avoid deploying a built-in one (e.g. `redis://host:port`) |
-| `SCOPE_CORE_REPLICAS` | `2` | Number of initial replicas for Scope's API/UI component deployment |
-| `SCOPE_WORKER_REPLICAS` | `2` | Number of initial replicas for Scope's worker component deployment |
 | `SCOPE_HTTP_PORT` | `80` | HTTP port to be exposed in the publicly reachable service |
 | `SCOPE_HTTPS_PORT` | `443` | HTTPS port to be exposed in the publicly reachable service |
 | `SCOPE_SERVICE_TYPE` | `LoadBalancer` | The service type to use for the publicly reachable service |
