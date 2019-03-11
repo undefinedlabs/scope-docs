@@ -28,8 +28,7 @@ URLs will be shown after the installation finishes.
 > Please note that the installation process will generate a self-signed certificate for the HTTPS port 
 that can be replaced during the setup wizard, or at any time in the admin panel
 
-If you chose a `ClusterIP` service type, Scope will only be accessible internally in your cluster. We recommend you
-configure your edge routing layer to forward traffic to port 80 of service `scope-default-router`.
+If you chose a `ClusterIP` service type, Scope will only be accessible internally in your cluster. For this service type, we recommend you configure your edge routing layer to forward traffic to port 80 of service `scope-default-router`.
 
 
 ## Configuring your installation
