@@ -10,6 +10,7 @@ sidebar_label: iOS Agent
 The Scope iOS agent is compatible with the following libraries:
 
 * [XCTestCase](https://developer.apple.com/documentation/xctest/xctestcase)
+* [Alamofire](https://github.com/Alamofire/Alamofire)
 
 
 ## Installation
