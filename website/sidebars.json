@@ -1,6 +1,7 @@
 {
   "docs": {
-    "Getting started": ["installation", "release-notes"],
-    "Agents": ["ios-agent"]
+    "Scope": ["installation", "release-notes"],
+    "iOS Agent": ["ios-installation", "ios-release-notes"],
+    "Python Agent": ["python-installation", "python-release-notes"]
   }
 }

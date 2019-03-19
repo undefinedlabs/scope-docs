@@ -1,7 +1,7 @@
 ---
-id: ios-agent
+id: ios-installation
 title: iOS Agent instructions
-sidebar_label: iOS Agent
+sidebar_label: Installation
 ---
 
 
