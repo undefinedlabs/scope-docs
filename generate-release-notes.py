@@ -13,12 +13,12 @@ COMPONENTS = {
         'name': 'Scope'
     },
     'ios-agent': {
-        'first_version': '0.1.0',
+        'first_version': '0.1.13',
         'id': 'ios-release-notes',
         'name': 'Scope iOS Agent'
     },
     'python-agent': {
-        'first_version': '0.1.0',
+        'first_version': '0.2.0',
         'id': 'python-release-notes',
         'name': 'Scope Python Agent'
     },
@@ -78,7 +78,7 @@ if __name__ == "__main__":
         for node in result['data']['repository']['releases']['edges']:
             release = node['node']
             release_date = datetime.datetime.strptime(release['createdAt'], "%Y-%m-%dT%H:%M:%SZ")
-            if release['isDraft'] or release['isPrerelease'] or semantic_version.Version(release['name']) < semantic_version.Version(component['first_version']):
+            if not release['name'] or release['isDraft'] or release['isPrerelease'] or semantic_version.Version(release['name']) < semantic_version.Version(component['first_version']):
                 continue
             releases.append(
                 RELEASE_TEMPLATE.format(
