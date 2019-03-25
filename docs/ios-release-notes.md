@@ -5,6 +5,25 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.1.17
+
+*March 25, 2019*
+
+**Added**
+
+* `ScopeAgent` now adds `opentracing` as a dependency when installed with CocoaPods. It allows the use of `opentracing` APIs natively from the application/framework when linking with ScopeAgent.
+
+**Changed**
+
+* **Breaking change**: `SALogger.log()` can now be used without the level parameter. This changes the order of the parameters.
+
+**Fixed**
+
+* No previous traces are lost when a test crashes.
+* Fixed a potential thread race condition when adding logs from several threads.
+
+
+
 ## Scope iOS Agent v0.1.16
 
 *March 15, 2019*
