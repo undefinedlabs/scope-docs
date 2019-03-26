@@ -1,7 +1,7 @@
 {
   "docs": {
     "Scope": ["installation", "release-notes"],
-    "iOS Agent": ["ios-installation", "ios-release-notes"],
+    "iOS Agent": ["ios-installation", "ios-manual-logging", "ios-release-notes"],
     "Python Agent": ["python-installation", "python-release-notes"]
   }
 }
