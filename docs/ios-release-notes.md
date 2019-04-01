@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.1.18
+
+*April 01, 2019*
+
+**Fixed**
+
+* Fixed potential crash when handling end of asynchronous child Spans
+
+
 ## Scope iOS Agent v0.1.17
 
 *March 25, 2019*
