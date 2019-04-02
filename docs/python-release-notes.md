@@ -5,6 +5,22 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.1
+
+*April 02, 2019*
+
+**Added**
+
+* PostgreSQL (`psycopg2`) automatic instrumentation
+
+**Fixed**
+
+* Properly report platform version on the `platform.version` metadata tag.
+* Force tag values to be of an opentracing-compatible type.
+* Allow any type that is JSON-serializable for event field values.
+* Fixed WSGI instrumentation when using a `ClosingIterator`.
+
+
 ## Scope Python Agent v0.3.0
 
 *March 20, 2019*
