@@ -5,6 +5,21 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.1.19
+
+*April 03, 2019*
+
+**Added**
+
+* Published a new `ScopeAgent.CSURLSessionObserver` class to help adding headers to URLRequests from the client code.
+* Added ScopeAgent version to headers
+
+**Fixed**
+
+* Baggage was not correctly being added to Spans and could not be sent in the HTTP headers
+
+
+
 ## Scope iOS Agent v0.1.18
 
 *April 01, 2019*
