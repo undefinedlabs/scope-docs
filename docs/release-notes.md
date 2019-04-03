@@ -5,6 +5,35 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v0.2.15
+
+*April 03, 2019*
+
+**Added**
+
+* If an update fails, we now show an error message explaining the reason.
+* Service cards now expand to fit the entire width of the browser viewport.
+* Repositories added without test results are now shown on the UI.
+* Links to source code files are now automatically detected and are linked to GitHub.
+* Take repository name into account for calculating the color of spans and logs.
+* Add number of services to trace view.
+
+**Changed**
+
+* Services are now ordered by most recent activity.
+* The event detail view has been redesigned.
+* We now show a button instead of a card to add a new repo to the service list.
+* Service column in the event list now shows the repository name if there are events from multiple repos.
+* Service cards do not show the namespace name substring in their title anymore.
+
+**Fixed**
+
+* Events are now ordered properly even if they have less than a millisecond difference in timestamp.
+* Fixed a race condition when loading the cache in the UI that caused a blank screen on some cases.
+* Fixed a problem where certain repositories could not be added to Scope.
+* Other minor bug fixes and enhancements.
+
+
 ## Scope v0.2.14
 
 *March 25, 2019*
