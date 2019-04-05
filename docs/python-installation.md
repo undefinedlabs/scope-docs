@@ -63,4 +63,7 @@ The following optional parameters can also be configured:
 | `$SCOPE_REPOSITORY` | Autodetected | Repository URL to use when sending data to Scope |
 | `$SCOPE_SOURCE_ROOT` | Autodetected | Repository root path |
 
+Autodetection of git information works if either tests run on Jenkins, CircleCI or Travis, or if the `.git` folder
+is present locally, and there is a `origin` remote configured pointing to the right repository.
+
 These configuration settings can also be provided via CLI flags. Run `scope-run --help` for more information.
