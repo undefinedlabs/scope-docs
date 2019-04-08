@@ -22,6 +22,11 @@ COMPONENTS = {
         'id': 'python-release-notes',
         'name': 'Scope Python Agent'
     },
+    'csharp-agent': {
+        'first_version': '0.1.0',
+        'id': 'csharp-release-notes',
+        'name': 'Scope C# Agent'
+    },
 }
 
 GITHUB_ENDPOINT = "https://api.github.com/graphql"
