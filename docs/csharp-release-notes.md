@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope C# Agent v0.1.2
+
+*April 12, 2019*
+
+**Added:**
+- New structured exception format, used to display interactive stacktraces in Scope's UI.
+
+
+
 ## Scope C# Agent v0.1.1
 
 *April 09, 2019*
