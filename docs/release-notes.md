@@ -5,6 +5,37 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v0.3.0
+
+*April 17, 2019*
+
+**Added**
+
+- iOS stacktrace symbolication support. **Please note that this requires iOS Agent version 0.2.0 or greater.**
+  - Now `.dSYM` files can be uploaded to Scope and will be used to symbolicate stacktraces where possible.
+  - The event detail UI now shows a `Stacktrace` tab if the event carries stack trace information.
+  - This tab will show each of the frames in the stacktrace, along with a raw version of the stacktrace as reported by the application.
+  - Symbolicated frames (with file and line information) will show their source code context inline.
+- Add possibility to "Go to span" and "Go to event" in "Logs" and "Trace" tabs respectively
+in test execution detail page.
+
+**Changed**
+
+- Span detail view has been redesigned from the ground up.
+- The test execution header now includes commit information.
+- Span and agent tags and event field values are now JSON strings on the GraphQL API. Span tags now support any numeric, boolean and string values, and event fields support numeric, boolean, string and nested object values.
+- API access logging for the health check endpoint (`/_health`) has been disabled, and the format has been improved to show user and timing information.
+
+**Fixed**
+
+- The `Back` button in test execution detail page and the `Explore` link in the top bar breadcrumbs now preserve previously applied filters.
+- Code tab should now syntax highlight supported languages properly.
+- Fixed some issues when displaying very short spans in the trace view.
+- Added `UNKNOWN` test status to the GraphQL API.
+- Malformed agent payloads are not handled properly and result in a HTTP status code of 400.
+- Other small bug fixes and enhancements.
+
+
 ## Scope v0.2.15
 
 *April 03, 2019*
