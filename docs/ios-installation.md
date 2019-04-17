@@ -72,7 +72,7 @@ After this, configure your CircleCI project to add the following environment var
 | `SCOPE_APIKEY`           | The API key generated from the Scope UI     |
 | `SCOPE_API_ENDPOINT`     | The API endpoint of your Scope installation |
 
-## Upload symbol files
+## Uploading symbol files
 
 By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line information, you must run the following script as part of your build phase for the test targets:
 
