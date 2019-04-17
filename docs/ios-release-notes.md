@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.2.0
+
+*April 17, 2019*
+
+**Added**
+* Support for Xcode 10.2 and Swift 5
+* Support for fully symbolicated stack traces
+* Added documentation and script for uploading project symbols
+* Documentation about adding HTTP headers for integration with server tracing
+* Print errors when sending spans to server fail
+* Retry sending spans to server in some failures
+* Added CI metadata to spans
+
+**Changed**
+* In `SALogger.log()` function, first parameter is now of type `String?`  instead of `Any?`
+* Updated KSCrash library to newest version
+
+**Fixed**
+* Potential thread-race condition in KSCrash library 
+* Full compatibility with opentracing  0.5.0
+
+
 ## Scope iOS Agent v0.1.19
 
 *April 03, 2019*
