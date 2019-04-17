@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.2
+
+*April 17, 2019*
+
+**Added**
+
+* Agent will now ensure that messages are sent continuously to the backend for it to detect running state.
+
+**Fixed**
+
+* Fixed `test.code` attribute for skipped tests
+* Fixed passing `--api-endpoint` on the `scope-run` CLI
+
+
 ## Scope Python Agent v0.3.1
 
 *April 02, 2019*
