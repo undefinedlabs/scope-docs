@@ -1,8 +1,22 @@
 {
   "docs": {
-    "Scope": ["installation", "release-notes"],
-    "iOS Agent": ["ios-installation", "ios-manual-logging", "ios-release-notes"],
-    "Python Agent": ["python-installation", "python-release-notes"],
-    "C# Agent": ["csharp-installation", "csharp-release-notes"]
+    "Scope": [
+        "installation",
+        "release-notes"
+    ],
+    "iOS Agent": [
+        "ios-installation",
+        "ios-manual-logging",
+        "ios-http-instrumentation",
+        "ios-release-notes"
+    ],
+    "Python Agent": [
+        "python-installation",
+        "python-release-notes"
+    ],
+    "C# Agent": [
+        "csharp-installation",
+        "csharp-release-notes"
+    ]
   }
 }

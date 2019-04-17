@@ -28,10 +28,10 @@ In order to add your application logs to Scope, some small changes must be done 
 
    ```swift
    class SALogger {
-       public class func log(_ message: Any? = "",
-                             _ logLevel: SALogger.LogLevel = .notset,
-                             filename: String = #file,
-                             line: Int = #line,
+       public class func log(_ message: String? = "",
+                             _ logLevel: SALogger.LogLevel? = .notset,
+                             filename: String? = nil,
+                             line: Int? = nil,
                              fields extraFields: [String: Any]? = nil,
                              timestamp: Date? = nil )
    }
