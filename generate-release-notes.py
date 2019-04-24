@@ -27,6 +27,11 @@ COMPONENTS = {
         'id': 'csharp-release-notes',
         'name': 'Scope C# Agent'
     },
+    'java-agent': {
+        'first_version': '0.1.0',
+        'id': 'java-release-notes',
+        'name': 'Scope Java Agent'
+    },
 }
 
 GITHUB_ENDPOINT = "https://api.github.com/graphql"
@@ -51,7 +56,7 @@ query($owner: String!, $name: String!) {
 
 PAGE_TEMPLATE = '''---
 id: {id}
-title: Release notes
+title: {name} release notes
 sidebar_label: Release notes
 ---
 
@@ -95,4 +100,4 @@ if __name__ == "__main__":
             )
 
         with open('docs/%s.md' % component['id'], 'w') as f:
-            f.write(PAGE_TEMPLATE.format(id=component['id'], releases=''.join(releases)))
+            f.write(PAGE_TEMPLATE.format(id=component['id'], name=component['name'], releases=''.join(releases)))

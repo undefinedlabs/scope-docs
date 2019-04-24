@@ -1,6 +1,6 @@
 ---
 id: ios-release-notes
-title: Release notes
+title: Scope iOS Agent release notes
 sidebar_label: Release notes
 ---
 

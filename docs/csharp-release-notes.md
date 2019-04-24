@@ -1,6 +1,6 @@
 ---
 id: csharp-release-notes
-title: Release notes
+title: Scope C# Agent release notes
 sidebar_label: Release notes
 ---
 

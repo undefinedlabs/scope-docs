@@ -1,6 +1,6 @@
 ---
 id: python-release-notes
-title: Release notes
+title: Scope Python Agent release notes
 sidebar_label: Release notes
 ---
 
