@@ -91,7 +91,7 @@ The following environment variables need to be configured in your CI provider:
 
 | Environment variable | Description |
 |---|---|
-| `$SCOPE_APIKEY` | API key tog use when sending data to Scope |
+| `$SCOPE_APIKEY` | API key to use when sending data to Scope |
 | `$SCOPE_API_ENDPOINT` | API endpoint of the Scope installation to send data to |
 
 

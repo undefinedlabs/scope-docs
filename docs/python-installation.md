@@ -50,7 +50,7 @@ The following environment variables (or parameters passed to `scope-run`) need t
 
 | Environment variable | Description |
 |---|---|
-| `$SCOPE_APIKEY` | API key tog use when sending data to Scope |
+| `$SCOPE_APIKEY` | API key to use when sending data to Scope |
 | `$SCOPE_API_ENDPOINT` | API endpoint of the Scope installation to send data to |
 
 
