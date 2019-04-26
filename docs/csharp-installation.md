@@ -9,81 +9,56 @@ sidebar_label: Installation
 
 The Scope C# agent is compatible with the following libraries:
 
-Name | Span/event creation | Extract | Inject
+Name | Span/event creation | Extract | Inject |
 -----|:-------------:|:-------:|:------:
-`ASP.NET Core (WebApi/MVC)` | ✓ | ✓ | |
+`ASP.NET Core (WebApi/MVC)` | ✓ | ✓ | | 
 [`Entity Framework Core`](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/) | ✓ |  | |
+`ASP.NET (WebApi/MVC)` | ✓ | ✓ | |
 `.NET Core BCL HttpClient, WebClient and HttpWebRequest` | ✓ |  | ✓|
+`.NET Framework BCL HttpClient, WebClient and HttpWebRequest` | ✓ |  | ✓|
 `.NET BCL System.Diagnostics.Trace listener` | ✓ |  | |
+[`System.Data.SqlClient`](https://www.nuget.org/packages/System.Data.SqlClient/) | ✓ |  | |
+[`MySql.Data`](https://www.nuget.org/packages/MySql.Data/) | ✓ |  | |
+[`MySqlConnector`](https://www.nuget.org/packages/MySqlConnector/) | ✓ |  | |
+[`Npgsql`](https://www.nuget.org/packages/Npgsql/) | ✓ |  | |
 [`Microsoft.Extensions.Logging`](https://www.nuget.org/packages/Microsoft.Extensions.Logging) based instrumentation | ✓ |  | |
 [`NUnit`](https://www.nuget.org/packages/NUnit/) | ✓ |  | |
 [`xUnit`](https://www.nuget.org/packages/xunit/) | ✓ |  | |
 [`MSTest`](https://www.nuget.org/packages/MSTest.TestFramework/) | ✓ |  | |
 
 
+## Prerequisites
+- [`.NET Core 2.2`](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+
 ## Installation
+Installation of the Scope Agent is done via [NuGet](https://www.nuget.org/) as [`.NET Core CLI Global tool`](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools).
 
-Installation of the Scope Agent is done via [NuGet](https://www.nuget.org/)
+The first time you have to install the [`ScopeAgent.Runner`](https://www.nuget.org/packages/ScopeAgent.Runner/) package in your CI using:
+```
+dotnet tool install --global ScopeAgent.Runner
+```
 
-You can install it either using the Visual Studio `Install-Package` in the Nuget Package Manager or from the dotnet CLI using `dotnet add package` by adding the following packages to your test project:
-
-1. Depending of the testing framework you will need to install one of these packages:
-
-| Framework | Package Name 						|
-|-----------|:---------------------------------:|
-| NUnit     | [`ScopeAgent.TestFrameworks.NUnit`](https://www.nuget.org/packages/ScopeAgent.TestFrameworks.NUnit/)   |
-| xUnit     | [`ScopeAgent.TestFrameworks.xUnit`](https://www.nuget.org/packages/ScopeAgent.TestFrameworks.xUnit/)   |
-| MSTest    | [`ScopeAgent.TestFrameworks.MSTest`](https://www.nuget.org/packages/ScopeAgent.TestFrameworks.MSTest/)  |
-
-2. Then you need to install the .NET Core agent extensions included in the [`ScopeAgent.Extensions.NetCore`](https://www.nuget.org/packages/ScopeAgent.Extensions.NetCore/) package. This package is required to instrument `ASP.NET Core (WebApi/MVC)` and [`Microsoft.Extensions.Logging`](https://www.nuget.org/packages/Microsoft.Extensions.Logging)
-
+This will install the `scope-run` command in the machine with all packages needed to `Profile` and `Instrument` your tests.
 
 ## Usage
-Depending of the testing framework you have to do some changes to your test project:
-
-### NUnit
-To instrument NUnit tests, add the following code to the top of any project `.cs` file: 
+To run your test, prefix your startup command with `scope-run`:
 ```
-[assembly: ScopeAgent]
-```
-All tests on that project will be instrumented by the Scope Agent automatically.
-
-### xUnit
-To instrument xUnit tests, add the following code to the top of any project `.cs` file:
-```
-[assembly: TestFramework("ScopeAgentFramework", "ScopeAgent.TestFrameworks.xUnit")]
-```
-All tests on that project will be instrumented by the Scope Agent automatically.
-
-### MSTest
-To instrument MSTest tests, you need to change the `[TestClass]` decoration attribute to `[ScopeTestClass]` so all defined tests in that class would be instrumented.
-
-For example:
-
-```
-namespace ScopeAgent.MSTest.Example
-{
-    [ScopeTestClass]		//We only have to change the [TestClass] to [ScopeTestClass]
-    public class UnitTest1
-    {
-        [TestMethod]
-        public void MyAwesomeTest()
-        {
-            var res = Math.Sqrt(9);
-            Assert.AreEqual(3, res);
-        }
-        
-        [TestMethod]
-        public void CrashingTest()
-        {
-            var x = 0;
-            var y = 1 / x;
-        }
-    }
-}
+scope-run dotnet test
 ```
 
->After this, you can run your test project as you normally do, for example using the `dotnet test` command.
+### Parameters
+
+| Flag | Required? | Default | Description | Environment variable |
+|---|:---:|---|---|:---:|
+| `-k`, `--apikey` | Y |  | API key tog use when sending data to Scope | `$SCOPE_APIKEY` |
+| `-e`, `--api-endpoint` | Y |  | API endpoint of the Scope installation to send data to | `$SCOPE_API_ENDPOINT` |
+| `-n`, `--name` | N | `default` | Service name to use when sending data to Scope | `$SCOPE_SERVICE` |
+| `-c`, `--commit` | N | `$(git rev-parse HEAD)` | Commit hash to use when sending data to Scope | `$SCOPE_COMMIT_SHA` |
+| `-r`, `--repository` | N | `$(git remote get-url origin)` | Repository URL to use when sending data to Scope | `$SCOPE_REPOSITORY` |
+| `--root` | N | `$(git rev-parse --show-toplevel)` | Repository root path | `$SCOPE_SOURCE_ROOT` |
+
+Commit, repository, and source root information will automatically be detected if running on CircleCI or Jenkins via environment variables.
+
 
 ## CI provider configuration
 

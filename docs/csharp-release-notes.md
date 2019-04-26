@@ -5,6 +5,22 @@ sidebar_label: Release notes
 ---
 
 
+## Scope C# Agent v0.1.3
+
+*April 26, 2019*
+
+ **Added:**
+- New native profiler engine for win-x64 and linux-x64 that hooks at low level to the dotnet runtime to instrument the test automatically without source code modification.
+- New `ScopeAgent.Runner` package. A dotnet core global tool called `scope-run`, to configure the profiler automatically before running the desired command.
+- NTP Network time support
+- `SqlCommand` parameters supports on span tags.
+- Autodetect git info for TravisCI and GitlabCI
+
+**Changed:**
+- Clock uses the NTP time (`pool.ntp.org`) on creation with a fallback to the previous `DateTime.UTCNow`
+- Single `Global.Diagnostics` debug interface to write all agent debugging info
+
+
 ## Scope C# Agent v0.1.2
 
 *April 12, 2019*
