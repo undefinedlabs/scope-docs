@@ -10,17 +10,17 @@ sidebar_label: Installation
 The Scope Java agent is compatible with the following JVMs:
 
 | JVM                | Versions   | Windows | Linux | OS X |
-|--------------------|------------|---------|-------|------|
-| [`OpenJDK JVM`](https://openjdk.java.net/)        | `[1.7, 1.8]` |    ✓    |   ✓   |   ✓  |
-| [`Oracle Hotspot JVM`](https://www.oracle.com/technetwork/java/javase/overview/index.html) | `[1.7, 1.8]` |    ✓    |   ✓   |   ✓  |
-
+|--------------------|------------|:-------:|:-----:|:----:|
+| [`OpenJDK JVM`](https://openjdk.java.net/) | 1.7, 1.8 | ✓ | ✓ | ✓ |
+| [`Oracle Hotspot JVM`](https://www.oracle.com/technetwork/java/javase/overview/index.html) | 1.7, 1.8 | ✓ | ✓ | ✓ |
 
 The Scope Java agent is compatible with the following libraries:
 
 | Name    | Span/event creation | Extract | Inject |
 |---------|:-------------------:|---------|--------|
-| [`Junit 4`](https://junit.org/junit4/) |          ✓          |         |        |
+| [`Junit 4`](https://junit.org/junit4/) | ✓ | | |
 
+Do you use a library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 ## Installation
 

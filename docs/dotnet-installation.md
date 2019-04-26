@@ -1,63 +1,58 @@
 ---
-id: csharp-installation
-title: C# Agent instructions
+id: dotnet-installation
+title: .NET Agent instructions
 sidebar_label: Installation
 ---
 
 
 ## Compatibility
 
-The Scope C# agent is compatible with the following libraries:
+The Scope .NET agent is compatible with the following platforms:
+
+Name | Version | Windows | Linux | OS X |
+-----|:------:|:------:|:------:|:------:|
+`.NET Core` | 2.2+ | ✓ | ✓ | |
+
+The Scope .NET agent is compatible with the following classes and libraries:
 
 Name | Span/event creation | Extract | Inject |
 -----|:-------------:|:-------:|:------:
-`ASP.NET Core (WebApi/MVC)` | ✓ | ✓ | | 
+`ASP.NET Core` | ✓ | ✓ | | 
 [`Entity Framework Core`](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/) | ✓ |  | |
-`ASP.NET (WebApi/MVC)` | ✓ | ✓ | |
-`.NET Core BCL HttpClient, WebClient and HttpWebRequest` | ✓ |  | ✓|
-`.NET Framework BCL HttpClient, WebClient and HttpWebRequest` | ✓ |  | ✓|
-`.NET BCL System.Diagnostics.Trace listener` | ✓ |  | |
+` HttpClient`<br/>`WebClient`<br/>`HttpWebRequest` | ✓ |  | ✓|
+`System.Diagnostics.Trace` | ✓ |  | |
 [`System.Data.SqlClient`](https://www.nuget.org/packages/System.Data.SqlClient/) | ✓ |  | |
 [`MySql.Data`](https://www.nuget.org/packages/MySql.Data/) | ✓ |  | |
 [`MySqlConnector`](https://www.nuget.org/packages/MySqlConnector/) | ✓ |  | |
 [`Npgsql`](https://www.nuget.org/packages/Npgsql/) | ✓ |  | |
-[`Microsoft.Extensions.Logging`](https://www.nuget.org/packages/Microsoft.Extensions.Logging) based instrumentation | ✓ |  | |
+[`Microsoft.Extensions.Logging`](https://www.nuget.org/packages/Microsoft.Extensions.Logging) | ✓ |  | |
 [`NUnit`](https://www.nuget.org/packages/NUnit/) | ✓ |  | |
 [`xUnit`](https://www.nuget.org/packages/xunit/) | ✓ |  | |
 [`MSTest`](https://www.nuget.org/packages/MSTest.TestFramework/) | ✓ |  | |
 
-
-## Prerequisites
-- [`.NET Core 2.2`](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+Do you use a library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 ## Installation
+
 Installation of the Scope Agent is done via [NuGet](https://www.nuget.org/) as [`.NET Core CLI Global tool`](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools).
 
 The first time you have to install the [`ScopeAgent.Runner`](https://www.nuget.org/packages/ScopeAgent.Runner/) package in your CI using:
-```
+
+```bash
 dotnet tool install --global ScopeAgent.Runner
 ```
 
-This will install the `scope-run` command in the machine with all packages needed to `Profile` and `Instrument` your tests.
+This will install the `scope-run` command in the machine with all packages needed to instrument your tests.
 
 ## Usage
-To run your test, prefix your startup command with `scope-run`:
-```
+
+To use the agent, prefix your test or startup command with `scope-run`. For example:
+
+```bash
 scope-run dotnet test
 ```
 
-### Parameters
-
-| Flag | Required? | Default | Description | Environment variable |
-|---|:---:|---|---|:---:|
-| `-k`, `--apikey` | Y |  | API key tog use when sending data to Scope | `$SCOPE_APIKEY` |
-| `-e`, `--api-endpoint` | Y |  | API endpoint of the Scope installation to send data to | `$SCOPE_API_ENDPOINT` |
-| `-n`, `--name` | N | `default` | Service name to use when sending data to Scope | `$SCOPE_SERVICE` |
-| `-c`, `--commit` | N | `$(git rev-parse HEAD)` | Commit hash to use when sending data to Scope | `$SCOPE_COMMIT_SHA` |
-| `-r`, `--repository` | N | `$(git remote get-url origin)` | Repository URL to use when sending data to Scope | `$SCOPE_REPOSITORY` |
-| `--root` | N | `$(git rev-parse --show-toplevel)` | Repository root path | `$SCOPE_SOURCE_ROOT` |
-
-Commit, repository, and source root information will automatically be detected if running on CircleCI or Jenkins via environment variables.
+All tests will be instrumented automatically.
 
 
 ## CI provider configuration
@@ -81,3 +76,5 @@ The following optional parameters can also be configured:
 
 Autodetection of git information works if either tests run on Jenkins, CircleCI, Travis or GitLab, or if the `.git` folder
 is present locally, and there is a `origin` remote configured pointing to the right repository.
+
+These configuration settings can also be provided via CLI flags. Run `scope-run --help` for more information.

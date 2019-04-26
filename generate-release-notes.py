@@ -24,8 +24,8 @@ COMPONENTS = {
     },
     'csharp-agent': {
         'first_version': '0.1.0',
-        'id': 'csharp-release-notes',
-        'name': 'Scope C# Agent'
+        'id': 'dotnet-release-notes',
+        'name': 'Scope .NET Agent'
     },
     'java-agent': {
         'first_version': '0.1.0',

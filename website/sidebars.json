@@ -1,12 +1,12 @@
 {
   "docs": {
     "Scope": [
-        "installation",
-        "release-notes"
+      "installation",
+      "release-notes"
     ],
-    "C# Agent": [
-        "csharp-installation",
-        "csharp-release-notes"
+    ".NET Agent": [
+      "dotnet-installation",
+      "dotnet-release-notes"
     ],
     "Java Agent": [
       "java-installation",

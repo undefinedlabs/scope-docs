@@ -7,7 +7,13 @@ sidebar_label: Installation
 
 ## Compatibility
 
-The Scope iOS agent is compatible with the following libraries:
+The Scope Python agent is compatible with the following versions of Python:
+
+| Language | Versions |
+|----------|:--------:|
+| Python | 2.7+, 3.4+ |
+
+The Scope Python agent is compatible with the following libraries:
 
 Name | Span/event creation | Extract | Inject
 -----|:-------------:|:-------:|:------:
@@ -18,6 +24,7 @@ Name | Span/event creation | Extract | Inject
 [`kombu`](https://github.com/celery/kombu) | ✓ | ✓ | ✓
 [`logging`](https://docs.python.org/3/library/logging.html) | ✓ | | |
 
+Do you use a library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 ## Installation
 

@@ -1,11 +1,11 @@
 ---
-id: csharp-release-notes
-title: Scope C# Agent release notes
+id: dotnet-release-notes
+title: Scope .NET Agent release notes
 sidebar_label: Release notes
 ---
 
 
-## Scope C# Agent v0.1.3
+## Scope .NET Agent v0.1.3
 
 *April 26, 2019*
 
@@ -21,7 +21,7 @@ sidebar_label: Release notes
 - Single `Global.Diagnostics` debug interface to write all agent debugging info
 
 
-## Scope C# Agent v0.1.2
+## Scope .NET Agent v0.1.2
 
 *April 12, 2019*
 
@@ -30,7 +30,7 @@ sidebar_label: Release notes
 
 
 
-## Scope C# Agent v0.1.1
+## Scope .NET Agent v0.1.1
 
 *April 09, 2019*
 
@@ -51,7 +51,7 @@ sidebar_label: Release notes
 - Race condition over the Tracer get in the ScopeTestExecutor (used on all testing frameworks)
 
 
-## Scope C# Agent v0.1.0
+## Scope .NET Agent v0.1.0
 
 *April 05, 2019*
 

@@ -4,14 +4,20 @@ title: Installing Scope
 sidebar_label: Installation
 ---
 
-## Prerequisites
+## Compatibility
 
-Scope requires a **Kubernetes 1.11+ cluster** for deployment.
+Scope requires a **Kubernetes 1.11+ cluster** for deployment. You need to have *cluster admin* privileges to the cluster being used.
 
-You need to have **cluster admin** privileges to the cluster being used.
+The following source code management providers are currently supported:
 
+Name | Version |
+-----|:------:
+`GitHub.com` |  |
+`GitHub Enterprise` | 2.16.1+ |
 
-## Installation steps
+Each agent has its own list of compatible platforms and libraries - please check out their documentation.
+
+## Installation
 
 To install Scope, run the following command:
 

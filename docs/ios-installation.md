@@ -7,12 +7,21 @@ sidebar_label: Installation
 
 ## Compatibility
 
+The Scope iOS agent is compatible with the following languages:
+
+| Language | Version |
+|----------|:--------:|
+| Objective-C | 2.0+ |
+| Swift | 4.0+ |
+
 The Scope iOS agent is compatible with the following libraries:
 
 Name | Span/event creation | Extract | Inject
 -----|:-------------:|:-------:|:------:
 [XCTestCase](https://developer.apple.com/documentation/xctest/xctestcase) | ✓ | | |
 [Alamofire](https://github.com/Alamofire/Alamofire) | ✓ | | ✓ |
+
+Do you use a library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 ## Installation
 
