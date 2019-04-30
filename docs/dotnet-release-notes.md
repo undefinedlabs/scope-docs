@@ -5,6 +5,37 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.4
+
+*April 30, 2019*
+
+**Added:**
+- `.NET Core 2.1` support
+- Added support to overwrite event tag in a log item
+- Serilog sink logger support
+- Serilog profiler auto instrumentation
+- Add `agent.type` metadata to: `dotnet`
+- Add `VERBOSE` log level
+
+**Changed:**
+- MSTest, NUnit and xUnit `Assert` exception with `event tag` as `test_failure`
+- Reduce `ScopeAgent.Core` package dependencies
+- Remove the target project dependency on the `ScopeAgent.Runner`
+- Optimized version to get randomId using `stackalloc`
+- Fix typo in the runner help
+- `HttpClientDispatcher` now recognize the healthcheck payload and cached it to reduce cpu and allocation cost
+- `FileDispatcherTransport` ignores the healthcheck payload when writing the payload to disk
+- `Span creation rule:` Server HTTP span is created only if the baggage of the context has `trace.kind = test`
+- `Span creation rule:` Client HTTP span is created only if we have a previous active span
+- `Span creation rule:` DB client span is created only if we have a previous active span
+- Exception extensions refactoring and public interfaces
+
+**Fixed:**
+- Fix `Microsoft.Extensions.Logger` structured exception support
+- Fix typo in the runner help
+- Fix standard span tags and log fields according the semantic conventions
+
+
 ## Scope .NET Agent v0.1.3
 
 *April 26, 2019*
