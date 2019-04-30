@@ -12,8 +12,8 @@ The following source code management providers are currently supported:
 
 Name | Version |
 -----|:------:
-`GitHub.com` |  |
-`GitHub Enterprise` | 2.16.1+ |
+[GitHub.com](https://github.com) |  |
+[GitHub Enterprise](https://github.com/enterprise) | 2.16.1+ |
 
 > Do you use a source code management provider not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
