@@ -34,15 +34,13 @@ The Scope .NET agent is compatible with the following classes and libraries:
 
 ## Installation
 
-Installation of the Scope Agent is done via [NuGet](https://www.nuget.org/) as a [`.NET Core CLI Global tool`](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools).
-
-The first time you have to install the [`ScopeAgent.Runner`](https://www.nuget.org/packages/ScopeAgent.Runner/) package in your CI using:
+Installation of the Scope Agent is done via [NuGet](https://www.nuget.org/) as a [.NET Core CLI Global tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools):
 
 ```bash
 dotnet tool install --global ScopeAgent.Runner
 ```
 
-This will install the `scope-run` command in the machine with all packages needed to instrument your tests.
+This will install the `scope-run` command globally in the machine.
 
 ## Usage
 

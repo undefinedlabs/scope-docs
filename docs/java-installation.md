@@ -24,29 +24,34 @@ The Scope Java agent is compatible with the following libraries:
 
 ## Installation
 
-Download via `<dependency/>` and install adding `-javaagent:` in the Maven Surefire Plugin.
+Installation is done via [Maven](https://maven.apache.org/). Add the Scope agent dependency and version property to your `pom.xml` file,
+replacing `0.1.0` with the latest version of the agent:
 
-In your `pom.xml`:
-
-1. Add Scope Agent dependency:
-
+```xml
+<properties>
+  <scope.agent.version>0.1.0</scope.agent.version>
+</properties>
+```
 ```xml
 <dependency>
   <groupId>com.undefinedlabs.scope</groupId>
   <artifactId>scope-agent</artifactId>
-  <version>0.1.0</version>
+  <version>${scope.agent.version}</version>
   <scope>provided</scope>
 </dependency>
 ```
 
-2. Configure Maven Surefire Plugin to use Scope Agent:
+
+## Usage
+
+To use the agent, configure the [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/) to use Scope agent as a Java agent:
 
 ```xml
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <configuration>
-    <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/0.1.0/scope-agent-0.1.0.jar</argLine>
+    <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
   </configuration>
 </plugin>
 ```

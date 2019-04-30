@@ -30,7 +30,7 @@ Installation of the Scope Agent is done via [CocoaPods](https://cocoapods.org).
 
 Add the `ScopeAgent` pod to the test target in your `Podfile`. For example:
 
-```
+```ruby
 target 'MyAppTests' do
   pod 'ScopeAgent'
 end
