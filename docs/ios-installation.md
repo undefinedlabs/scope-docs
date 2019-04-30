@@ -26,9 +26,12 @@ The Scope iOS agent is compatible with the following libraries:
 
 ## Installation
 
-Installation of the Scope Agent is done via [CocoaPods](https://cocoapods.org).
+Installation of the Scope Agent is done via [CocoaPods](https://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage).
 
-Add the `ScopeAgent` pod to the test target in your `Podfile`. For example:
+
+### CocoaPods
+
+Add the `ScopeAgent` pod to the test target(s) in your `Podfile`. For example:
 
 ```ruby
 target 'MyAppTests' do
@@ -38,7 +41,23 @@ end
 
 Then, run `pod install` to install the agent in your project.
 
-After this, you can run your tests as you normally do, for example using the `xcodebuild test` command.
+
+### Carthage
+
+Add the `ScopeAgent` dependency to your `Cartfile`:
+
+```
+binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgent.json"
+```
+
+Then, run `cart update` to install the agent in your project.
+
+In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the `Link Binaries With Libraries` build phase.
+
+
+## Usage
+
+After installation, you can run your tests as you normally do, for example using the `xcodebuild test` command.
 
 
 ## CI provider configuration

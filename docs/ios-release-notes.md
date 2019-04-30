@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.2.1
+
+*April 30, 2019*
+
+**Added**
+* Added Carthage support and documentation 
+* Added documentation and support for GitLab CI and Travis CI
+
+**Fixed**
+* Some spans were sent duplicated after a crash and were never shown in results
+* Spans that crashed could appear with shorter duration than real, even with duration 0
+
+
 ## Scope iOS Agent v0.2.0
 
 *April 17, 2019*
