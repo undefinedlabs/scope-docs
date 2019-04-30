@@ -9,18 +9,18 @@ sidebar_label: Installation
 
 The Scope Java agent is compatible with the following JVMs:
 
-| JVM                | Versions   | Windows | Linux | OS X |
-|--------------------|------------|:-------:|:-----:|:----:|
-| [`OpenJDK JVM`](https://openjdk.java.net/) | 1.7, 1.8 | ✓ | ✓ | ✓ |
-| [`Oracle Hotspot JVM`](https://www.oracle.com/technetwork/java/javase/overview/index.html) | 1.7, 1.8 | ✓ | ✓ | ✓ |
+| JVM                                                                                        | Versions | Windows | Linux | OS X |
+|--------------------------------------------------------------------------------------------|----------|:-------:|:-----:|:----:|
+| [`OpenJDK JVM`](https://openjdk.java.net/)                                                 | 1.7, 1.8 |    ✓    |   ✓   |   ✓  |
+| [`Oracle Hotspot JVM`](https://www.oracle.com/technetwork/java/javase/overview/index.html) | 1.7, 1.8 |    ✓    |   ✓   |   ✓  |
 
 The Scope Java agent is compatible with the following libraries:
 
-| Name    | Span/event creation | Extract | Inject |
-|---------|:-------------------:|---------|--------|
-| [`Junit 4`](https://junit.org/junit4/) | ✓ | | |
+| Name                                   | Span/event creation | Extract | Inject |
+|----------------------------------------|:-------------------:|---------|--------|
+| [`Junit 4`](https://junit.org/junit4/) |          ✓          |         |        |
 
-Do you use a library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a platform or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 ## Installation
 
@@ -51,26 +51,27 @@ In your `pom.xml`:
 </plugin>
 ```
 
-> After this, you can run your tests as you normally do, for example using the `mvn test` command.
+After this, you can run your tests as you normally do, for example using the `mvn test` command.
 
 
 ## CI provider configuration
 
 The following environment variables need to be configured in your CI provider:
 
-| Environment variable | Description |
-|---|---|
-| `$SCOPE_APIKEY` | API key to use when sending data to Scope |
+| Environment variable  | Description                                            |
+|-----------------------|--------------------------------------------------------|
+| `$SCOPE_APIKEY`       | API key to use when sending data to Scope              |
 | `$SCOPE_API_ENDPOINT` | API endpoint of the Scope installation to send data to |
 
 
 The following optional parameters can also be configured:
 
-| Environment variable  | Default | Description |
-|---|---|---|
-| `$SCOPE_SERVICE` | `default` | Service name to use when sending data to Scope |
-| `$SCOPE_COMMIT_SHA` | Autodetected | Commit hash to use when sending data to Scope |
-| `$SCOPE_REPOSITORY` | Autodetected | Repository URL to use when sending data to Scope |
-| `$SCOPE_SOURCE_ROOT` | Autodetected | Repository root path |
+| Environment variable | Default      | Description                                      |
+|----------------------|--------------|--------------------------------------------------|
+| `$SCOPE_SERVICE`     | `default`    | Service name to use when sending data to Scope   |
+| `$SCOPE_COMMIT_SHA`  | Autodetected | Commit hash to use when sending data to Scope    |
+| `$SCOPE_REPOSITORY`  | Autodetected | Repository URL to use when sending data to Scope |
+| `$SCOPE_SOURCE_ROOT` | Autodetected | Repository root path                             |
 
-Autodetection of git information works if tests run on Jenkins, CircleCI, Travis or GitLab.
+Autodetection of git information works if either tests run on [Jenkins](https://jenkins.io/), 
+[CircleCI](https://circleci.com/), [Travis CI](https://travis-ci.com/) or [GitLab CI](https://about.gitlab.com/).

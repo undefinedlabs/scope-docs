@@ -9,19 +9,19 @@ sidebar_label: Installation
 
 The Scope iOS agent is compatible with the following languages:
 
-| Language | Version |
-|----------|:--------:|
-| Objective-C | 2.0+ |
-| Swift | 4.0+ |
+| Language    | Version |
+|-------------|:-------:|
+| Objective-C |   2.0+  |
+| Swift       |   4.0+  |
 
 The Scope iOS agent is compatible with the following libraries:
 
-Name | Span/event creation | Extract | Inject
------|:-------------:|:-------:|:------:
-[XCTestCase](https://developer.apple.com/documentation/xctest/xctestcase) | ✓ | | |
-[Alamofire](https://github.com/Alamofire/Alamofire) | ✓ | | ✓ |
+| Name                                                                      | Span/event creation | Extract | Inject |
+|---------------------------------------------------------------------------|:-------------------:|:-------:|:------:|
+| [XCTestCase](https://developer.apple.com/documentation/xctest/xctestcase) |          ✓          |         |        |
+| [Alamofire](https://github.com/Alamofire/Alamofire)                       |          ✓          |         |    ✓   |
 
-Do you use a library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a language or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 
 ## Installation
@@ -37,6 +37,8 @@ end
 ```
 
 Then, run `pod install` to install the agent in your project.
+
+After this, you can run your tests as you normally do, for example using the `xcodebuild test` command.
 
 
 ## CI provider configuration
@@ -136,7 +138,8 @@ After this, configure your TravisCI project to add the following environment var
 
 ## Uploading symbol files
 
-By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line information, you must run the following script as part of your build phase for the test targets:
+By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line 
+information, you must run the following script as part of your build phase for the test targets:
 
 1. Open your project in Xcode, then select its project file in the Navigator.
 
