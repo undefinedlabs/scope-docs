@@ -11,7 +11,7 @@ The Scope .NET agent is compatible with the following platforms:
 
 | Name        | Version | Windows | Linux | OS X |
 |-------------|:-------:|:-------:|:-----:|:----:|
-| `.NET Core` |   2.2+  |    ✓    |   ✓   |      |
+| `.NET Core` |   2.1+  |    ✓    |   ✓   |      |
 
 The Scope .NET agent is compatible with the following classes and libraries:
 
@@ -26,6 +26,7 @@ The Scope .NET agent is compatible with the following classes and libraries:
 | [`MySqlConnector`](https://www.nuget.org/packages/MySqlConnector/)                            |          ✓          |         |        |
 | [`Npgsql`](https://www.nuget.org/packages/Npgsql/)                                            |          ✓          |         |        |
 | [`Microsoft.Extensions.Logging`](https://www.nuget.org/packages/Microsoft.Extensions.Logging) |          ✓          |         |        |
+| [`Serilog`](https://serilog.net/)                                                             |          ✓          |         |        |
 | [`NUnit`](https://www.nuget.org/packages/NUnit/)                                              |          ✓          |         |        |
 | [`xUnit`](https://www.nuget.org/packages/xunit/)                                              |          ✓          |         |        |
 | [`MSTest`](https://www.nuget.org/packages/MSTest.TestFramework/)                              |          ✓          |         |        |
