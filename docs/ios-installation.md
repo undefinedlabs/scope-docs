@@ -23,6 +23,7 @@ Name | Span/event creation | Extract | Inject
 
 Do you use a library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
+
 ## Installation
 
 Installation of the Scope Agent is done via [CocoaPods](https://cocoapods.org).
@@ -34,6 +35,9 @@ target 'MyAppTests' do
   pod 'ScopeAgent'
 end
 ```
+
+Then, run `pod install` to install the agent in your project.
+
 
 ## CI provider configuration
 
@@ -60,6 +64,7 @@ After this, configure your Jenkins build to add the following environment variab
 | `SCOPE_APIKEY`           | The API key generated from the Scope UI     |
 | `SCOPE_API_ENDPOINT`     | The API endpoint of your Scope installation |
 
+
 ### CircleCI
 
 Add the following environment variables to your test target ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
@@ -82,6 +87,53 @@ After this, configure your CircleCI project to add the following environment var
 | `SCOPE_APIKEY`           | The API key generated from the Scope UI     |
 | `SCOPE_API_ENDPOINT`     | The API endpoint of your Scope installation |
 
+
+### GitLab CI
+
+Add the following environment variables to your test target ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
+
+| Key                  | Value                   |
+| -------------------- | ----------------------- |
+| `SCOPE_APIKEY`       | `$(SCOPE_APIKEY)`       |
+| `SCOPE_API_ENDPOINT` | `$(SCOPE_API_ENDPOINT)` |
+| `SCOPE_COMMIT_SHA`   | `$(CI_COMMIT_SHA)`      |
+| `SCOPE_REPOSITORY`   | `$(CI_REPOSITORY_URL)`  |
+| `SCOPE_SOURCE_ROOT`  | `$(CI_PROJECT_DIR)`     |
+| `GITLAB_CI`          | `$(GITLAB_CI)`          |
+| `CI_JOB_ID`          | `$(CI_JOB_ID)`          |
+| `CI_JOB_URL`         | `$(CI_JOB_URL)`         |
+
+After this, configure your GitLab CI project to add the following environment variables ([instructions](https://docs.gitlab.com/ee/ci/variables/)):
+
+| Key                  | Value                                       |
+| -------------------- | ------------------------------------------- |
+| `SCOPE_APIKEY`       | The API key generated from the Scope UI     |
+| `SCOPE_API_ENDPOINT` | The API endpoint of your Scope installation |
+
+
+### TravisCI
+
+Add the following environment variables to your test target ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
+
+| Key                   | Value                      |
+| --------------------- | -------------------------- |
+| `SCOPE_APIKEY`        | `$(SCOPE_APIKEY)`          |
+| `SCOPE_API_ENDPOINT`  | `$(SCOPE_API_ENDPOINT)`    |
+| `SCOPE_COMMIT_SHA`    | `$(TRAVIS_COMMIT)`         |
+| `SCOPE_SOURCE_ROOT`   | `$(TRAVIS_BUILD_DIR)`      |
+| `TRAVIS`              | `$(TRAVIS)`                |
+| `TRAVIS_REPO_SLUG`    | `$(TRAVIS_REPO_SLUG)`      |
+| `TRAVIS_BUILD_ID`     | `$(TRAVIS_BUILD_ID)`       |
+| `TRAVIS_BUILD_NUMBER` | `$(TRAVIS_BUILD_NUMBER)`   |
+
+After this, configure your TravisCI project to add the following environment variables ([instructions](https://docs.travis-ci.com/user/environment-variables/)):
+
+| Key                  | Value                                       |
+| -------------------- | ------------------------------------------- |
+| `SCOPE_APIKEY`       | The API key generated from the Scope UI     |
+| `SCOPE_API_ENDPOINT` | The API endpoint of your Scope installation |
+
+
 ## Uploading symbol files
 
 By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line information, you must run the following script as part of your build phase for the test targets:
@@ -96,7 +148,6 @@ By default, crash stack traces will be partially symbolicated. In order to fully
 
 5. Add the following line to the **Type a script** text box
 
-   ```sh
-   ${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/upload_symbols
-   ```
-
+```sh
+${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/upload_symbols
+```
