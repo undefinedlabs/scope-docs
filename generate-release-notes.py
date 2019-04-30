@@ -5,7 +5,7 @@ import os
 import requests
 import semantic_version
 
-GITHUB_AUTH = os.getenv("GITHUB_AUTH")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 COMPONENTS = {
     'core': {
         'first_version': '0.2.10',
@@ -75,13 +75,13 @@ RELEASE_TEMPLATE = '''
 
 
 if __name__ == "__main__":
-    if not GITHUB_AUTH:
-        print("Please specify GITHUB_AUTH (in the format 'user:token')")
+    if not GITHUB_TOKEN:
+        print("Please specify GITHUB_TOKEN")
         exit(1)
 
     for name, component in COMPONENTS.items():
         response = requests.post(GITHUB_ENDPOINT, json={'query': QUERY, 'variables': {'owner': 'undefinedlabs', 'name': name}},
-                                 auth=tuple(GITHUB_AUTH.split(':')))
+                                 headers={'Authorization': 'token %s' % GITHUB_TOKEN})
         response.raise_for_status()
         result = response.json()
         releases = []
