@@ -21,6 +21,7 @@ The Scope Python agent is compatible with the following libraries:
 | [`gunicorn`](https://pypi.org/project/gunicorn/)              |          ✓          |    ✓    |        |
 | [`requests`](https://pypi.org/project/requests/)              |          ✓          |         |    ✓   |
 | [`unittest`](https://docs.python.org/3/library/unittest.html) |          ✓          |         |        |
+| [`pytest`](https://pytest.org)                                |          ✓          |         |        |
 | [`kombu`](https://github.com/celery/kombu)                    |          ✓          |    ✓    |    ✓   |
 | [`logging`](https://docs.python.org/3/library/logging.html)   |          ✓          |         |        |
 
