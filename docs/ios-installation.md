@@ -160,9 +160,12 @@ After this, configure your TravisCI project to add the following environment var
 By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line 
 information, you must run the following script as part of your build phase for the test targets:
 
-1. Open your project in Xcode, then select its project file in the Navigator.
+1. First, make sure your Xcode project is configured to generate the debug symbols file:
 
-2. Select your test target from the **Select a project or target** dropdown.
+   1. Click on your project and select **Build Settings**.
+   2. On **Debug Information Format** confirm **DWARF with dSYM File** is selected.
+
+2. Select your test target from the **Projects and Targets** view.
 
 3. Open the target's **Build Phases** tab.
 
