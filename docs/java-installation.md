@@ -16,9 +16,11 @@ The Scope Java agent is compatible with the following JVMs:
 
 The Scope Java agent is compatible with the following libraries:
 
-| Name                                   | Span/event creation | Extract | Inject |
-|----------------------------------------|:-------------------:|---------|--------|
-| [`Junit 4`](https://junit.org/junit4/) |          ✓          |         |        |
+| Name                                          | Span/event creation | Extract | Inject |
+|-----------------------------------------------|:-------------------:|---------|--------|
+| [`Junit 4`](https://junit.org/junit4/)        |          ✓          |         |        |
+| [`SLF4J`](https://www.slf4j.org/)             |          ✓          |         |        |
+| [`OkHttp3`](https://square.github.io/okhttp/) |          ✓          |         |    ✓   |
 
 > Do you use a platform or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
@@ -29,7 +31,7 @@ replacing `0.1.0` with the latest version of the agent:
 
 ```xml
 <properties>
-  <scope.agent.version>0.1.0</scope.agent.version>
+  <scope.agent.version>0.1.1</scope.agent.version>
 </properties>
 ```
 ```xml
