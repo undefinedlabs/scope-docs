@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.3
+
+*May 07, 2019*
+
+**Added**
+
+- Autodetect git information for TravisCI and GitLab CI.
+- Send structured stacktraces to Scope.
+- Send `extra` logging attributes as event metadata fields.
+
+
+
 ## Scope Python Agent v0.3.2
 
 *April 17, 2019*

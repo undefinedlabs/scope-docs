@@ -54,6 +54,28 @@ agent.install()
 After this, you can run your tests as you normally do, for example using `pytest` or `python -m unittest` commands.
 
 
+### Usage with `tox`
+
+In order to use the `scope-run` CLI with [`tox`](https://tox.readthedocs.io/en/latest/), make sure you prefix your
+testing command inside your `tox.ini` file, instead of the `tox` command itself.
+
+For example:
+
+```ini
+# content of: tox.ini , put in same dir as setup.py
+[tox]
+envlist = py27,py36
+
+[testenv]
+# install pytest in the virtualenv where commands will be executed
+deps = pytest
+commands =
+    scope-run pytest
+```
+
+And then, run `tox` as usual.
+
+
 ## CI provider configuration
 
 The following environment variables (or parameters passed to `scope-run`) need to be configured in your CI provider:
