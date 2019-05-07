@@ -5,6 +5,33 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v0.4.0
+
+*May 07, 2019*
+
+**Added**
+- **NEW: [GitHub checks](https://help.github.com/en/articles/about-status-checks#checks) support**. Now, Scope will create a [GitHub check](https://help.github.com/en/articles/about-status-checks#checks) for each commit with test results, including a summary table, list of failed, errored and flaky tests, and inline annotations for test failures and exceptions that include event metadata and stacktraces.
+  - **Please note** that in order for this new feature to work, [the GitHub app needs read/write access to "Checks"](https://developer.github.com/apps/managing-github-apps/editing-a-github-app-s-permissions/).
+- **NEW:** **Java and .NET agents**. The UI now includes instructions to install and use the new agents.
+- **NEW:** event message search functionality.
+- Now commits can be in a "running" state in the dashboard while tests are being executed.
+- Namespaces now show their avatar on the left sidebar.
+- Spans now include total and self time information.
+- Added new interactive visualization for metadata fields of type `object`.
+- Added search by test FQN in the explore view.
+- Added new icons on the top right corner: a shortcut to the documentation site, and a prompt with information about new releases.
+
+**Changed**
+- Service colors for spans and events have changed for better visualization.
+
+**Fixed**
+- The backend data ingestion API now admits duplicate events from agents.
+- GitHub stored metadata is now updated every time a webhook is received (to support, for example, repository name changes).
+- Allow using `X-Forwarded-Proto` header from an external proxy.
+- Various visual design fixes and enhancements.
+- Minor bug fixes in the explore, test detail and service list views.
+
+
 ## Scope v0.3.0
 
 *April 17, 2019*
