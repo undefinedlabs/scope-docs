@@ -5,6 +5,30 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.5
+
+*May 08, 2019*
+
+**Added:**
+- `NLog` target logger support.
+- `NLog` profiler auto instrumentation.
+- `ScopeEventContext` class with `event_id` and without `baggage`.
+- `log4net` logger appender.
+- `log4net` profiler auto instrumentation.
+- `ApplyNtpOffset` method to the `Clock` class.
+- `StackExchange.Redis` profiler auto instrumentation.
+
+**Changed:**
+- Dispatcher changes to be compatible with the `ScopeEventContext`.
+- ScopeTracer now stores the `Timestamp` when the exception is thrown, so we can log exactly the time of the exception when the `UnhandledException` event is fired.
+
+**Fixed:**
+- Events timestamp with the NTP offset.
+- Scope agent debug interface filepaths.
+- Profiler method wrappers Task return value finalization.
+- Other smaller fixes.
+
+
 ## Scope .NET Agent v0.1.4
 
 *April 30, 2019*
