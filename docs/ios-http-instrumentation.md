@@ -6,7 +6,11 @@ sidebar_label: HTTP Instrumentation
 
 To integrate logs and exceptions from services your integration tests interact with over HTTP, you must append some headers to your outgoing requests that identify the test and context from where those request were made. The following changes must be done on the client application side in order for this to work:
 
-1. Link your application or framework target with `ScopeAgent` using [CocoaPods](https://cocoapods.org), by adding the pod to your `Podfile` and running `pod install`. For example:
+1. Link your application or framework target with `ScopeAgent`, if not already done in previous steps
+
+   **For Cocoapods:** 
+
+   By adding the pod to your `Podfile` and running `pod install`. For example:
 
    ```
    target 'MyApp' do
@@ -21,6 +25,16 @@ To integrate logs and exceptions from services your integration tests interact w
      pod 'ScopeAgent'
    end
    ```
+
+   **For Carthage:**
+
+   Add the `ScopeAgent` dependency to your Cartfile and run `cart update`:
+
+   ```
+   binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgent.json"
+   ```
+
+   In your Application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the *Linked frameworks and Libraries* in General target settings or to the *Link Binaries With Libraries* build phase. 
 
 2. Use the `SAURLSessionObserver.adapt(_:)` method to modify your `URLRequest` objects. The interface of `SAURLSessionObserver.adapt(_:)` is as follows:
 

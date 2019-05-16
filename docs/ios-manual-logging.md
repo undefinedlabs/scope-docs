@@ -8,7 +8,11 @@ In order to improve the information you can get from Scope, you can also add you
 
 In order to add your application logs to Scope, some small changes must be done to your code:
 
-1. Link your application or framework target with `ScopeAgent` using [CocoaPods](https://cocoapods.org), by adding the pod to your `Podfile` and running `pod install`. For example:
+1. Link your application or framework target with `ScopeAgent`
+
+    **For Cocoapods:** 
+
+   By adding the pod to your `Podfile` and running `pod install`. For example:
 
    ```
    target 'MyApp' do
@@ -23,6 +27,18 @@ In order to add your application logs to Scope, some small changes must be done 
      pod 'ScopeAgent'
    end
    ```
+
+   **For Carthage:**
+
+   Add the `ScopeAgent` dependency to your Cartfile, if not already done in previous steps, and run `cart update`
+
+   ```
+   binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgent.json"
+   ```
+
+   In your Application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the *Linked frameworks and Libraries* in General target settings or to the *Link Binaries With Libraries* build phase. 
+
+   
 
 2. Use the `SALogger.log()` method to send your log messages to Scope. The interface of `SALogger.log()` is as follows:
 
@@ -94,4 +110,12 @@ In order to add your application logs to Scope, some small changes must be done 
 
 
 
-> If linking the full `ScopeAgent` library to your main application is not an option, we provide a thin client package called `ScopeAgentClient` that provides the logging API described above and communicates with the full `ScopeAgent` library if it is present. With this approach, you link your main application with `ScopeAgentClient` and the tests target with `ScopeAgent`, and all logs will be collected during your tests, with minimal impact to your distributable application.
+> If linking the full `ScopeAgent` library to your main application is not an option, we provide a thin client package called `ScopeAgentClient` that provides the logging API described above and communicates with the full `ScopeAgent` library if it is present. With this approach, you link your main application with `ScopeAgentClient` and the tests target with `ScopeAgent`, and all logs will be collected during your tests, with minimal impact to your distributable application. Install this dependency by adding:  
+>
+> - Cocoapods:
+>
+> `pod 'ScopeAgentClient'`
+>
+> - Carthage:
+>
+> `binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgentClient.json"`

@@ -54,6 +54,8 @@ Then, run `cart update` to install the agent in your project.
 
 In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the `Link Binaries With Libraries` build phase.
 
+> Currently, the official OpenTracing library for iOS only supports installation using Cocoapods. If you are interested in adding custom traces with OpenTracing to your app using Carthage, please use [https://github.com/undefinedlabs/opentracing-objc](https://github.com/undefinedlabs/opentracing-objc)
+
 
 ## Usage
 
@@ -157,8 +159,7 @@ After this, configure your TravisCI project to add the following environment var
 
 ## Uploading symbol files
 
-By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line 
-information, you must run the following script as part of your build phase for the test targets:
+By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line information, you must run the following script as part of your build phase for the test targets:
 
 1. First, make sure your Xcode project is configured to generate the debug symbols file:
 
@@ -173,6 +174,16 @@ information, you must run the following script as part of your build phase for t
 
 5. Add the following line to the **Type a script** text box
 
-```sh
-${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/upload_symbols
-```
+   **For Cocoapods:**
+
+   ```bash
+   ${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/upload_symbols
+   ```
+
+   **For Carthage:**
+
+   ```sh
+   ${SRCROOT}/Carthage/Build/iOS/ScopeAgent.framework/upload_symbols
+   ```
+
+   or path where Carthage folder is located
