@@ -5,6 +5,42 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.6
+
+*May 17, 2019*
+
+**Added:**
+- .NET Framework 4.7.2 compilation.
+- `AppVeyor CI` support.
+- `Azure Pipelines CI` support.
+- `Bitbucket Pipelines CI` support.
+- `AgentSettings` class with all agent supported settings and instrumentation switches.
+- Opentracing extension to know if the span context is marked as sampled.
+- Incoming HttpServer `SpanContext` modes support (`All Requests`, `TestTraceKind`, `Sampled`).
+- `Web Proxy` support on the `HttpDispatcher`.
+- Detect the .NET language and add it to the test span as `language`.
+- Agent results url when the `scope-run` command has finished.
+
+**Changed:**
+- Global debug interface performance optimizations.
+- Debug concat performance optimizations.
+- Stacktrace frames cache optimization.
+- `Microsoft.Extensions.DependencyModel` is no longer required on the target project.
+- Compilation in `Release` mode.
+- Remove all `Linq` dependencies to reduce allocations and closures.
+- Reduce Dispatcher allocations using the object pool.
+- Reducing allocations by removing `Task.Unwrap()` when is not needed.
+- Adding the required arguments to the `InvokeWithRetry` method avoiding the allocation of a closure class.
+- Adding the BadRequest status code to avoid the retry in that case.
+- Reducing the retry count from 10 to 5.
+
+**Fixed:**
+- Exception handling on `Tracer.Dispose`.
+- Exception when `SourceRoot` is null.
+- Skipped tests were not being sent to the backend.
+- Exception handling on `Dispatcher.Flush`.
+
+
 ## Scope .NET Agent v0.1.5
 
 *May 08, 2019*
