@@ -5,6 +5,24 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.2.2
+
+*May 23, 2019*
+
+**Added**
+* Automatically integrate NSLog, os_log  and print directives to Scope Logs (they will appear with level notSet)
+* Use ntp synchronisation to improve integration with other services
+* Improved start time and crash time to show microseconds granularity
+* Document that option `DWARF with dSYM` file is needed for symbolicating stack traces
+
+**Fixed**
+* Some logs could appear twice under some conditions
+* Some spans could potentially get lost in some rare situations
+* Use thread name or queue name in crash exception
+* Error level messages now shows as log event instead of as error event
+* Improved accuracy of asynchronous activity
+
+
 ## Scope iOS Agent v0.2.1
 
 *April 30, 2019*

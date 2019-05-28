@@ -5,6 +5,25 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.7
+
+*May 27, 2019*
+
+**Added:**
+- `Microsoft.Data.Sqlite` database client instrumentation. 
+- Automatic `Microsoft.Extensions.Logging.LoggerFactory` instrumentation by profiler.
+- `OSX-X64` Profiler version.
+- `ScopeAgent.Runner` ApiEndpoint and ApiKey validation.
+
+**Changed:**
+- Static pending task collection on the `Profiler.AsyncHandling` to an `AsyncLocal` version.
+
+**Fixed:**
+- Await test result `Task` and the status report issue on `NUnit framework`.
+- Duration problem with unit test returning Tasks with parallel execution on `xUnit framework`.
+- Agent results url.
+
+
 ## Scope .NET Agent v0.1.6
 
 *May 17, 2019*
