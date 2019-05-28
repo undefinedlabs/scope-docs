@@ -11,7 +11,7 @@ The Scope .NET agent is compatible with the following platforms:
 
 | Name        | Version | Windows | Linux | OS X |
 |-------------|:-------:|:-------:|:-----:|:----:|
-| `.NET Core` |   2.1+  |    ✓    |   ✓   |      |
+| `.NET Core` |   2.1+  |    ✓    |   ✓   |   ✓  |
 
 The Scope .NET agent is compatible with the following classes and libraries:
 
@@ -36,6 +36,7 @@ Name                                                                            
 [`Entity Framework Core`](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/) | `>=2.0.0`   |           ✓         |         |        |
 [`StackExchange.Redis`](https://www.nuget.org/packages/StackExchange.Redis/)             | `>=2.0.495` |           ✓         |         |        |
 [`System.Data.SqlClient`](https://www.nuget.org/packages/System.Data.SqlClient/)         | `>=4.1.0`   |           ✓         |         |        |
+[`Microsoft.Data.Sqlite`](https://www.nuget.org/packages/Microsoft.Data.SQLite/2.1.0/)   | `>=2.1.0`   |           ✓         |         |        |
 [`MySql.Data`](https://www.nuget.org/packages/MySql.Data/)                               | `>=6.8.8`   |           ✓         |         |        |
 [`MySqlConnector`](https://www.nuget.org/packages/MySqlConnector/)                       | `>=0.35.0`  |           ✓         |         |        |
 [`Npgsql`](https://www.nuget.org/packages/Npgsql/)                                       | `>=4.0.0`   |           ✓         |         |        |
@@ -91,7 +92,7 @@ The following optional parameters can also be configured:
 | `$SCOPE_SOURCE_ROOT` | Autodetected | Repository root path                             |
 
 Autodetection of git information works if either tests run on [Jenkins](https://jenkins.io/), 
-[CircleCI](https://circleci.com/), [Travis CI](https://travis-ci.com/) or [GitLab CI](https://about.gitlab.com/), 
+[CircleCI](https://circleci.com/), [Travis CI](https://travis-ci.com/), [GitLab CI](https://about.gitlab.com/), [AppVeyor CI](https://www.appveyor.com/), [Azure Pipelines CI](https://azure.microsoft.com/en-us/services/devops/pipelines/) or [Bitbucket Pipelines CI](https://bitbucket.org/product/features/pipelines)
 or if the `.git` folder is present locally, and there is an `origin` remote configured pointing to the right repository.
 
 These configuration settings can also be provided via CLI flags. Run `scope-run --help` for more information.
