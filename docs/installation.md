@@ -22,13 +22,7 @@ Each agent has its own list of compatible platforms and libraries - please check
 
 ## Installation
 
-To install Scope, run the following command:
-
-```bash
-bash <(curl -sL https://home.codescope.com/installer.sh)
-```
-
-and follow the instructions.
+To install Scope, follow the instructions provided with your license.
 
 Scope will be accessible via the service named `scope-default-router` in the target namespace. If you chose a `LoadBalancer`
 service type (the default), Scope will be accessible via HTTP and HTTPS through that service. The publicly accessible
