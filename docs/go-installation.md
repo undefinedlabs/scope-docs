@@ -13,7 +13,7 @@ The Scope Go agent is compatible with the following versions of Go:
 | ----------- | :-----: |
 | Go          |  1.11+  |
 
-The Scope iOS agent is compatible with the following libraries:
+The Scope Go agent is compatible with the following libraries:
 
 | Name                                                         | Span/event creation | Extract | Inject |
 | ------------------------------------------------------------ | :-----------------: | :-----: | :----: |
