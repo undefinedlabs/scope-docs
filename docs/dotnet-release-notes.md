@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.8
+
+*June 17, 2019*
+
+**Added:**
+
+- Profiler support for multiple assembly versions interceptors.
+- Code coverage by test support.
+- MongoDB instrumentation
+- `SCOPE_AUTO_INSTRUMENT`, `SCOPE_SET_GLOBAL_TRACER` and `SCOPE_TESTING_MODE` Environment variables.
+- MessagePack format as default serializer in the `HttpClientDispatcherTransport` 
+- Database query execution plan support for `SqlServer`, `Postgress` and `MySql`
+
+**Changed:**
+- Sampling logic moved from instrumentation to the dispatcher.
+- Exception log writer moved to the OpenTracing log extensions.
+
+**Fixed:**
+- Random generator collision, removing the default generator for a cryptographic one.
+- Span error tags issues.
+
+
 ## Scope .NET Agent v0.1.7
 
 *May 27, 2019*
