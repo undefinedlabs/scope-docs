@@ -40,6 +40,7 @@ Name                                                                            
 [`MySql.Data`](https://www.nuget.org/packages/MySql.Data/)                               | `>=6.8.8`   |           ✓         |         |        |
 [`MySqlConnector`](https://www.nuget.org/packages/MySqlConnector/)                       | `>=0.35.0`  |           ✓         |         |        |
 [`Npgsql`](https://www.nuget.org/packages/Npgsql/)                                       | `>=4.0.0`   |           ✓         |         |        |
+[`MongoDB.Driver`](https://www.nuget.org/packages/MongoDB.Driver/2.8.0)                  | `>=2.8.0`   |           ✓         |         |        |
 
 ### Other libraries
 Name                                               | Span/event creation | Extract | Inject |
