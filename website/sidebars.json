@@ -21,6 +21,10 @@
     "Python Agent": [
       "python-installation",
       "python-release-notes"
+    ],
+    "Go Agent": [
+      "go-installation",
+      "go-release-notes"
     ]
   }
 }

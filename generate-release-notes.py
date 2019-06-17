@@ -32,6 +32,11 @@ COMPONENTS = {
         'id': 'java-release-notes',
         'name': 'Scope Java Agent'
     },
+    'go-agent': {
+        'first_version': '0.1.0',
+        'id': 'go-release-notes',
+        'name': 'Scope Go Agent'
+    },
 }
 
 GITHUB_ENDPOINT = "https://api.github.com/graphql"
