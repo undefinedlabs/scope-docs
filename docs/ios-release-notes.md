@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.2.3
+
+*June 10, 2019*
+
+**Fixed**
+* Some test spans could appear as child of previous spans when previous span had asynchronous code running after the test ended.
+* Fixed potential crash when writing logs concurrently
+* Multiline stderr messages could appear as a single log in Scope
+
+**Added**
+* Print URL for Scope results in output
+
+
+
 ## Scope iOS Agent v0.2.2
 
 *May 23, 2019*

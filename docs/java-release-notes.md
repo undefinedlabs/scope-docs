@@ -5,6 +5,56 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.1.4
+
+*June 10, 2019*
+
+**Added**
+- Support ```MySQL``` ```v8.x``` instrumentation.
+- Support ```H2 (DBMS)``` ```v1.4.x``` instrumentation.
+- Added Scope Report URL to log when build finished.
+- Added auto-detection of ```metadata.repository``` based on ```.git``` folder.
+- Added auto-detection of ```metadata.commit``` based on ```.git``` folder.
+- Added environment variables detection for ```Travis CI```.
+- Added environment variables detection for ```GitLab```.
+- Added environment variables detection for ```Azure Pipelines```.
+- Added environment variables detection for ```BitBucket Pipelines```.
+- Added environment variables detection for ```AppVeyor```.
+- Support `SCOPE_AUTO_INSTRUMENT` flag to activate/deactivate instrumentation.
+- Support `SCOPE_SET_GLOBAL_TRACER` flag to activate/deactivate ScopeTracer as GlobalTracer.
+- Support `SCOPE_TEST_MODE` flag to set flush interval to one second/one minute.
+
+**Fixed**
+- Fixed ```NPE``` on logging instrumentation when there is no active ```Span```.
+- Fixed ```OkHttpClient``` connection leaked error.
+- Fixed empty information Spans on ```H2 (DBMS)```.
+- Fixed duplicate Spans on ```commit```/```rollback``` operations.
+- Fixed avoid symbolicating source frames with line number ```-1```.
+- Fixed avoid creating `span.kind=client` Spans if there is no previous active `Span`.
+- Fixed `ScopeAgent` to initialize only one time if it is used in several Maven plugins.
+- Fixed `exception.error.object` field to support `Exception` with self-references.
+- Fixed issue about closing `io.opentracing.Scope` when the `Span` finishes.
+
+
+## Scope Java Agent v0.1.3
+
+*May 30, 2019*
+
+**Added**
+
+- Support ```java.net (HttpURLConnection)``` instrumentation.
+- Support ```Apache Tomcat``` instrumentation from ```v7.x``` to ```v9.x```.
+
+**Changed**
+
+- Removed `event.exception.file` and `event.exception.line` if there is no attached source code.
+- Added `event.exception.java` information about `StackTraceElement` object. 
+- Removed ```(``` ```)``` characters for JUnit5 Test Names.
+
+**Fixed**
+- Fixed `event` value to lower case in `JUnit5`.
+
+
 ## Scope Java Agent v0.1.2
 
 *May 14, 2019*
