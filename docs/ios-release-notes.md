@@ -5,6 +5,22 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.2.4
+
+*July 09, 2019*
+
+**Fixed**
+* Some timestamps could appear rounded incorrectly
+* Some extra empty lines could appear in logs
+* Restore agent id after a crash happens during a test session, so all test session will use the same agent id
+* Fix an issue that could lose spans when test name was very long
+* Fix a crash when handling url's with data scheme
+
+**Added**
+* Support for disabling instrumentation
+* Added NOTICE file with all the licenses used in project
+
+
 ## Scope iOS Agent v0.2.3
 
 *June 10, 2019*

@@ -5,6 +5,39 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.1.6
+
+*June 28, 2019*
+
+**Added**
+- Added test classes to `test.coverage` info.
+
+**Fixed**
+- Fixed `test.coverage` information using `JDK 11`.
+- Fixed avoid being mandatory to have `gRPC` in the classpath.
+
+
+## Scope Java Agent v0.1.5
+
+*June 27, 2019*
+
+**Added**
+- Added `gRPC` `v1.4.0 to latest` client instrumentation.
+- Added `gRPC` `v1.4.0 to latest` server instrumentation. 
+- Added `test.coverage` info per test execution using `JaCoCo`.
+- Added `JMS` and `Spring-JMS` `v1.1 to latest` messaging instrumentation.  
+- Added support to configure `Scope` via `scope.toml` configuration file.
+
+**Changed**
+- Changed `db.statement` to reflect native SQLs and `db.prepared_statement` to reflect SQL prepared statements.
+- Changed `boolean` extraction logic for Environment Variables.
+- Changed `test.coverage` format to implement `Scope Universal Code Coverage` format.
+
+**Fixed**
+- Fixed `Baggage` `trace.kind = test` is only set on testing frameworks instrumentation.
+- Fixed avoid stopping `Scope Sender` by `JVM` before sending all `ScopeSpans`. 
+
+
 ## Scope Java Agent v0.1.4
 
 *June 10, 2019*
