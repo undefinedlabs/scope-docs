@@ -36,7 +36,7 @@ The Scope Java agent is compatible with the following libraries:
 ## Installation
 
 Installation is done via [Maven](https://maven.apache.org/). Add the Scope agent dependency and version property to your `pom.xml` file,
-replacing `0.1.0` with the latest version of the agent:
+replacing `0.1.6` with the latest version of the agent:
 
 ```xml
 <properties>
