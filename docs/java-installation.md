@@ -16,11 +16,20 @@ The Scope Java agent is compatible with the following JVMs:
 
 The Scope Java agent is compatible with the following libraries:
 
-| Name                                          | Span/event creation | Extract | Inject |
-|-----------------------------------------------|:-------------------:|---------|--------|
-| [`Junit 4`](https://junit.org/junit4/)        |          ✓          |         |        |
-| [`SLF4J`](https://www.slf4j.org/)             |          ✓          |         |        |
-| [`OkHttp3`](https://square.github.io/okhttp/) |          ✓          |         |    ✓   |
+| Name    | Versions | Span/event creation | Extract | Inject |
+|---------|:--------:|:-------------------:|:-------:|:------:|
+| [`Junit 4`](https://junit.org/junit4/) | `4.x` |          ✓          |         |        |
+| [`Junit 5`](https://junit.org/junit5/) | `5.4.x` |          ✓          |         |        |
+| [`TestNG`](https://testng.org/) | `6.14.x` |          ✓          |         |        |
+| [`SLF4J`](https://www.slf4j.org/) | `1.7.x` |          ✓          |         |        |
+| [`OkHttp3`](https://square.github.io/okhttp/) | `3.x.x` |          ✓          |         |          ✓          |
+| [`java.net (HttpURLConnection)`](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) | `1.7 to 12` |          ✓          |         |          ✓          |
+| [`Apache Tomcat`](http://tomcat.apache.org/) | `7.x to 9.x` |          ✓          |     ✓    |                    |
+| [`H2 DBMS`](https://www.h2database.com/html/main.html) | `1.4.x` |          ✓          |         |          ✓          |
+| [`MySQL`](https://www.h2database.com/html/main.html) | `v5.6, v5.7, v8.x` |          ✓          |         |          ✓          |
+| [`gRPC`](https://grpc.io/) | `v1.4 to v1.21` |          ✓          |    ✓     |          ✓          |
+| [`JMS`](https://docs.oracle.com/javaee/6/tutorial/doc/bncdq.html) | `v1.1 to v2` |          ✓          |    ✓     |          ✓          |
+| [`Spring-JMS`](https://spring.io/guides/gs/messaging-jms/) | `v1.1 to v2` |          ✓          |     ✓    |          ✓          |
 
 > Do you use a platform or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
@@ -31,7 +40,7 @@ replacing `0.1.0` with the latest version of the agent:
 
 ```xml
 <properties>
-  <scope.agent.version>0.1.1</scope.agent.version>
+  <scope.agent.version>0.1.6</scope.agent.version>
 </properties>
 ```
 ```xml
@@ -46,19 +55,67 @@ replacing `0.1.0` with the latest version of the agent:
 
 ## Usage
 
-To use the agent, configure the [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/) to use Scope agent as a Java agent:
+### Testing
+
+To use the agent, configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) 
+and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use Scope agent as a Java agent:
 
 ```xml
 <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-plugin</artifactId>
-  <configuration>
-    <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
-  </configuration>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<configuration>
+  <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
+</configuration>
 </plugin>
 ```
 
-After this, you can run your tests as you normally do, for example using the `mvn test` command.
+```xml
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-failsafe-plugin</artifactId>
+<configuration>
+   <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
+</configuration>
+<executions>
+    <execution>
+      <goals>
+         <goal>integration-test</goal>
+         <goal>verify</goal>
+      </goals>
+    </execution>
+</executions>
+</plugin>
+```
+
+After this, you can run your tests as you normally do, for example using the `mvn clean verify` command.
+
+
+### Server
+
+Modify your Java app startup script to add the `javaagent` parameter targeting to the downloaded Scope Agent JAR.
+
+```bash
+java -javaagent:/path/to/scope/agent/scope-agent.jar -jar /path/to/app/my-app.jar
+``` 
+
+Notice that it is needed that `$SCOPE_APIKEY`, `$SCOPE_API_ENDPOINT`, `$SCOPE_REPOSITORY`, and `$SCOPE_COMMIT_SHA` 
+had been set as environment variables in the executing environment.
+
+
+## Scope environment configuration
+
+The following environment variables may modify the Scope Agent behavior.
+
+| Environment variable  | Default | Description |
+|---|---|---|
+| `$SCOPE_AUTO_INSTRUMENT` | `true` | Boolean flag to apply Scope auto instrumentation |
+| `$SCOPE_SET_GLOBAL_TRACER` | `true` | Boolean flag to register `ScopeTracer` as `GlobalTracer` |
+| `$SCOPE_TESTING_MODE` | Autodetected | Boolean flag to indicate to `ScopeAgent` if a "heartbeat" must be sent every second (`true`) or every minute (`false`) |
+
+Autodetection of `$SCOPE_TESTING_MODE` property depends on whether the build has been triggered by a CI server (`true`), or not (`false`). Supported CI providers are listed below.
+
+If these properties are manually configured, they will be `true` only on encountering the string `true` configured on the environment variable. Any other value will be considered as `false`.
 
 
 ## CI provider configuration
@@ -80,5 +137,13 @@ The following optional parameters can also be configured:
 | `$SCOPE_REPOSITORY`  | Autodetected | Repository URL to use when sending data to Scope |
 | `$SCOPE_SOURCE_ROOT` | Autodetected | Repository root path                             |
 
-Autodetection of git information works if either tests run on [Jenkins](https://jenkins.io/), 
-[CircleCI](https://circleci.com/), [Travis CI](https://travis-ci.com/) or [GitLab CI](https://about.gitlab.com/).
+Autodetection of git information is available to the following CI providers: 
+
+* [`AppVeyorCI`](https://www.appveyor.com/)
+* [`BitBucket Pipelines`](https://bitbucket.org/product/features/pipelines)
+* [`CircleCI`](https://circleci.com/)
+* [`GitLab CI/CD`](https://docs.gitlab.com/ee/ci/)
+* [`Jenkins`](https://jenkins.io/)
+* [`Azure DevOps Server`](https://visualstudio.microsoft.com/tfs/)
+* [`Travis CI`](https://travis-ci.org/)
+
