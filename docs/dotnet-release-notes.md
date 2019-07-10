@@ -5,6 +5,31 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.9
+
+*July 10, 2019*
+
+Added:
+- Support for .toml agent configuration file.
+- Error tag on failed tests spans.
+- `db.prepare_statement` tag with the unresolved sql statement.
+- Adds http dispatcher support for `HttpClientTransportSerializer` and `HttpClientTransportEncoding` settings. 
+- Adds http server support for `EnableHttpServerInstrumentation` and `EnableHttpServerCodeCoverage` settings.
+- Support for the Universal Code Coverage Format.
+- Support for code coverage in http server requests.
+- DbParam object standard format implementation.
+- Support for the Universal Git Diff Summary Format.
+
+Changed:
+- Span tags according the semantic conventions.
+- Refactoring of the Tags class also including the coverage and execution plan tags.  
+- Environment variables now uses a fallback in order `PROCESS -> USER -> MACHINE`
+
+Fixed:
+- Span duration time precision.
+- Coverage DataCollector SourceRoot
+
+
 ## Scope .NET Agent v0.1.8
 
 *June 17, 2019*
