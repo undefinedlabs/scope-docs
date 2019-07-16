@@ -41,9 +41,13 @@ COMPONENTS = {
 
 GITHUB_ENDPOINT = "https://api.github.com/graphql"
 QUERY = '''
-query($owner: String!, $name: String!) {
+query($owner: String!, $name: String!, $after: String) {
   repository(owner: $owner, name: $name) {
-    releases(last:100, orderBy:{field:CREATED_AT, direction:DESC}) {
+    releases(first: 100, orderBy: {field:CREATED_AT, direction:DESC}, after: $after) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
       edges {
         node {
           id
@@ -85,24 +89,29 @@ if __name__ == "__main__":
         exit(1)
 
     for name, component in COMPONENTS.items():
-        response = requests.post(GITHUB_ENDPOINT, json={'query': QUERY, 'variables': {'owner': 'undefinedlabs', 'name': name}},
-                                 headers={'Authorization': 'token %s' % GITHUB_TOKEN})
-        response.raise_for_status()
-        result = response.json()
         releases = []
-        for node in result['data']['repository']['releases']['edges']:
-            release = node['node']
-            release_date = datetime.datetime.strptime(release['createdAt'], "%Y-%m-%dT%H:%M:%SZ")
-            if not release['name'] or release['isDraft'] or release['isPrerelease'] or semantic_version.Version(release['name']) < semantic_version.Version(component['first_version']):
-                continue
-            releases.append(
-                RELEASE_TEMPLATE.format(
-                    name=component['name'],
-                    version=release['name'],
-                    date=release_date.strftime("%B %d, %Y"),
-                    notes=release['description']
+        has_next_page = True
+        end_cursor = None
+        while has_next_page:
+            response = requests.post(GITHUB_ENDPOINT, json={'query': QUERY, 'variables': {'owner': 'undefinedlabs', 'name': name, 'after': end_cursor}},
+                                             headers={'Authorization': 'token %s' % GITHUB_TOKEN})
+            response.raise_for_status()
+            result = response.json()
+            for node in result['data']['repository']['releases']['edges']:
+                release = node['node']
+                release_date = datetime.datetime.strptime(release['createdAt'], "%Y-%m-%dT%H:%M:%SZ")
+                if not release['name'] or release['isDraft'] or release['isPrerelease'] or semantic_version.Version(release['name']) < semantic_version.Version(component['first_version']):
+                    continue
+                releases.append(
+                    RELEASE_TEMPLATE.format(
+                        name=component['name'],
+                        version=release['name'],
+                        date=release_date.strftime("%B %d, %Y"),
+                        notes=release['description']
+                    )
                 )
-            )
+            has_next_page = result['data']['repository']['releases']['pageInfo']['hasNextPage']
+            end_cursor = result['data']['repository']['releases']['pageInfo']['endCursor']
 
         with open('docs/%s.md' % component['id'], 'w') as f:
             f.write(PAGE_TEMPLATE.format(id=component['id'], name=component['name'], releases=''.join(releases)))
