@@ -5,6 +5,37 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.1.7
+
+*July 12, 2019*
+
+**Added**
+- Added `branch` name to the `agent.metadata`.
+- Added support propagation active `Span` between threads and thread pools.
+- Added `diff` information about working directory to `agent.metadata`.
+- Added `peer.service` tag, `test.language` tag, and `component` tag to `span` metadata.
+- Added `test.code` information to the test `Span`.
+- Added additional logs when `ScopeAgent` sends info to backend.
+
+**Changed**
+- Changed `span.db.params` format to the `Scope DB Params` standard format.
+- Changed `span.operationName` max 255 chars with Ellipsis.
+
+**Fixed**
+- Fixed avoid sending logging events when `NOP` Logger is configured.
+- Fixed `NPE` on `test` instrumentation.
+- Fixed `NPE` on `JUnit5 uniqueId`.
+- Fixed parameter type extraction on `H2 JDBC` instrumentation.
+- Fixed `NPE` on `SLF4J` instrumentation.
+- Fixed link with start and end line representation.
+- Fixed `MsgPack` serialization due to `Jackson` version.
+- Fixed report all `Ignored` tests when `Ignored` annotation is set at class level in `JUnit4`.
+- Fixed `test.code` link based on inner classes.
+- Fixed avoid reporting `Span` with empty `test.suite` tag in JUnit5.
+- Fixed avoid using `STOUT` to print logs.
+- Fixed avoid show `logging` traces when log level is not enabled.
+
+
 ## Scope Java Agent v0.1.6
 
 *June 28, 2019*
