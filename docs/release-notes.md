@@ -5,6 +5,48 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.0.0
+
+*July 16, 2019*
+
+**Notes:**
+* After the upgrade process finishes, administrators and users will be asked to login again.
+* The GitHub app needs to be updated with "read" access to "Commit statuses", and a subscription to the "Check run", "Check suite" and "Status" events.
+
+#### Added
+- **New**: Test exceptions. Tests now have a new tab listing all exceptions that happened as part of its execution, with full page reports.
+- **New**: Service dashboard. Now you can see a dashboard for each service, with a list of branches and commits, alongside aggregated test status and pull request status.
+- **New**:  Redesigned Explore view, filtered by commit, with aggregated tests and filters by test name or suite.
+- **New**: Test history. Now tests have a new tab "History" where results of the test in older and newer commits are shown to quickly identify where tests break.
+- Events now have a full page report view.
+- You are now able to choose a thread involved in an exception and see its stacktrace.
+- When you are asked to login, the URL you were trying to access is preserved.
+- Updated the 'Code' section on test executions, with the possibility of navigating the test source code.
+- Tag and branch information is now visible on the test execution view.
+- Added the ability to see the agent instructions on a namespace where all repositories have test results.
+- Breadcrumbs now show the namespace and service being shown.
+- Exceptions are now marked with an exclamation icon on the logs tab.
+- Events now show the source code context of the line that generated the event (where possible).
+
+#### Changed
+- Users can now only see repositories which they have read access to on GitHub.
+- Service list will show all branches in the repo and not just 5.
+- Minor styling improvements in events list in test execution detail.
+- Explore's status filter facet now keeps the counts when a status filter is applied.
+- Scope core logs are now formatted in JSON.
+
+#### Fixed
+- Fixed minor style issues in stack trace visualization.
+- Navigation of admin sections should be preserved on refresh. 
+- Fixed a bug where the event search in test execution details would freeze when no results were found.
+- Fixed GitHub annotations on Windows projects, or with more than 50 annotations.
+- Fixed a possible deadlock when processing GitHub webhooks.
+- Navigation of admin sections is now preserved on refresh. 
+- Compatibility with Universal Naming Convention (UNC) paths on tracing metadata.
+- Requests to GitHub are retried automatically on temporary server errors.
+- Fixed several bugs on the "updates" section of the admin panel.
+
+
 ## Scope v0.4.0
 
 *May 07, 2019*
