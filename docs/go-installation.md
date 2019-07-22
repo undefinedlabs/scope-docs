@@ -18,7 +18,7 @@ The Scope Go agent is compatible with the following libraries:
 | Name                                                         | Span/event creation | Extract | Inject |
 | ------------------------------------------------------------ | :-----------------: | :-----: | :----: |
 | [`testing`](https://golang.org/pkg/testing/)                 |          ✓          |         |        |
-| [`net/http`](https://golang.org/pkg/net/http/)               |          ✓          |         |    ✓   |
+| [`net/http`](https://golang.org/pkg/net/http/)               |          ✓          |    ✓    |    ✓   |
 
 > Do you use a language or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
