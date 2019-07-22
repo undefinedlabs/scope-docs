@@ -23,7 +23,7 @@ func main() {
 ```
 
 
-## Injecting the trace information to an outgoing request
+### Injecting the trace information to an outgoing request
 
 In order for the Scope Go agent to trace an outgoing request, you must attach the context to the it. For example:
 
@@ -46,3 +46,53 @@ func makeRequest(url string, ctx context.Context) err {
     // ...
 }
 ```
+
+
+## Instrumenting the HTTP server
+
+In order to instrument an HTTP server using the Scope Go agent, wrap the `http.Handler` you are serving with `nethttp.Middleware(h http.Handler)`.
+
+For example, if using the default handler (`http.DefaultServeMux`):
+
+```go
+import (
+	"github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+	"net/http"
+	"io"
+)
+
+func main() {
+    http.HandleFunc("/hello", func(w http.ResponseWriter, req *http.Request) {
+        io.WriteString(w, "Hello, world!\n")
+    })
+    
+    err := http.ListenAndServe(":8080", nethttp.Middleware(nil))
+	if err != nil {
+        panic(err)
+    }
+}
+```
+
+
+If you are using a custom handler, pass it to `nethttp.Middleware(h http.Handler)`:
+
+```go
+import (
+	"github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+	"net/http"
+	"io"
+)
+
+func main() {
+    handler := http.NewServeMux()
+    handler.HandleFunc("/hello", func(w http.ResponseWriter, req *http.Request) {
+        io.WriteString(w, "Hello, world!\n")
+    })
+    
+    err := http.ListenAndServe(":8080", nethttp.Middleware(handler))
+	if err != nil {
+        panic(err)
+    }
+}
+```
+
