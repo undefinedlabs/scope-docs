@@ -17,7 +17,8 @@ The Scope Go agent is compatible with the following libraries:
 
 | Name                                                         | Span/event creation | Extract | Inject |
 | ------------------------------------------------------------ | :-----------------: | :-----: | :----: |
-| [`testing`](https://golang.org/pkg/testing/)                   |          ✓          |         |        |
+| [`testing`](https://golang.org/pkg/testing/)                 |          ✓          |         |        |
+| [`net/http`](https://golang.org/pkg/net/http/)               |          ✓          |         |    ✓   |
 
 > Do you use a language or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
@@ -52,11 +53,14 @@ func TestMain(m *testing.M) {
 }
 
 func TestExample(t *testing.T) {
-	scopeagent.InstrumentTest(t, func(t *testing.T) {
-		// ... test code here
+	scopeagent.InstrumentTest(t, func(ctx context.Context, t *testing.T) {
+		// ... test code here. `ctx` has information about the currently active span
 	})
 }
 ```
+
+Please check the [HTTP instrumentation](go-http-instrumentation.md) article for instructions on how to trace outgoing
+HTTP requests.
 
 You can also use [OpenTracing's Go API](https://github.com/opentracing/opentracing-go/blob/master/README.md) to add your
 own custom spans and events. The Scope Agent's tracer will be registered as the global tracer automatically.
