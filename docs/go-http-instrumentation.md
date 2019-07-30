@@ -12,13 +12,13 @@ The Scope Go agent automatically instruments the default HTTP client at `http.De
 
 ```go
 import (
-	"github.com/undefinedlabs/go-agent/instrumentation/nethttp"
-	"net/http"
+    "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+    "net/http"
 )
 
 func main() {
-	client := &http.Client{Transport: &nethttp.Transport{}}
-	// ...
+    client := &http.Client{Transport: &nethttp.Transport{}}
+    // ...
 }
 ```
 
@@ -30,11 +30,11 @@ In order for the Scope Go agent to trace an outgoing request, you must attach th
 ```go
 import (
     "context"
-	"net/http"
+    "net/http"
 )
 
 func makeRequest(url string, ctx context.Context) err {
-	req, err := http.NewRequest("GET", url, nil)
+    req, err := http.NewRequest("GET", url, nil)
     if err != nil {
         return err
     }
@@ -56,9 +56,9 @@ For example, if using the default handler (`http.DefaultServeMux`):
 
 ```go
 import (
-	"github.com/undefinedlabs/go-agent/instrumentation/nethttp"
-	"net/http"
-	"io"
+    "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+    "net/http"
+    "io"
 )
 
 func main() {
@@ -67,7 +67,7 @@ func main() {
     })
     
     err := http.ListenAndServe(":8080", nethttp.Middleware(nil))
-	if err != nil {
+    if err != nil {
         panic(err)
     }
 }
@@ -78,9 +78,9 @@ If you are using a custom handler, pass it to `nethttp.Middleware(h http.Handler
 
 ```go
 import (
-	"github.com/undefinedlabs/go-agent/instrumentation/nethttp"
-	"net/http"
-	"io"
+    "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+    "net/http"
+    "io"
 )
 
 func main() {
@@ -90,7 +90,7 @@ func main() {
     })
     
     err := http.ListenAndServe(":8080", nethttp.Middleware(handler))
-	if err != nil {
+    if err != nil {
         panic(err)
     }
 }

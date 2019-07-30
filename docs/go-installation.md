@@ -42,20 +42,20 @@ For example:
 
 ```go
 import (
-	scopeagent "github.com/undefinedlabs/go-agent"
-	"testing"
+    scopeagent "github.com/undefinedlabs/go-agent"
+    "testing"
 )
 
 func TestMain(m *testing.M) {
-	result := m.Run()
-	scopeagent.GlobalAgent.Stop()  // This will ensure that we flush all pending results before exiting
-	os.Exit(result)
+    result := m.Run()
+    scopeagent.GlobalAgent.Stop()  // This will ensure that we flush all pending results before exiting
+    os.Exit(result)
 }
 
 func TestExample(t *testing.T) {
-	scopeagent.InstrumentTest(t, func(ctx context.Context, t *testing.T) {
-		// ... test code here. `ctx` has information about the currently active span
-	})
+    scopeagent.InstrumentTest(t, func(ctx context.Context, t *testing.T) {
+        // ... test code here. `ctx` has information about the currently active span
+    })
 }
 ```
 
