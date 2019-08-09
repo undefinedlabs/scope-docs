@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.4
+
+*August 09, 2019*
+
+#### Added
+
+* Support for the local development feature of Scope.
+* Autodetect git information when using installation of the agent via code.
+* Add flags to activate/deactivate autodetection of git information, testing mode, global tracer setup and autoinstrumentation.
+* Events now have information about the source code line where they were generated.
+
+#### Changed
+
+* HTTP client and server spans that have a status code of 4xx or 5xx are marked with `error = True`.
+* Spans with uncaught exceptions are marked with `error = True`.
+* Use MessagePack serialization when sending data to the backend.
+
+#### Fixed
+
+* Test code end line number is now properly calculated.
+
+
 ## Scope Python Agent v0.3.3
 
 *May 07, 2019*
