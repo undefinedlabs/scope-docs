@@ -5,6 +5,26 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.1.0
+
+*August 09, 2019*
+
+#### Added
+- Explore page now includes an interactive test execution duration histogram, and a duration filter facet.
+- Services and repositories in the service list can now be marked as favorite to pin them to the top.
+
+#### Changed
+- Installation and upgrades are now done using [Helm](https://helm.sh/). Please refer to Scope's documentation for more details.
+- Agent metadata now appears in its own tab in event and span details.
+- Tests in the explore view are now ordered by descending average execution time.
+
+#### Fixed
+- Fixed an issue when ingesting lots of test data from the same GitHub repository in a small amount of time
+- Commit message should now be correctly formatted in service dashboard
+- Stack trace should now appear in non-exception event reports
+- Minor improvements in explore and test execution detail pages
+
+
 ## Scope v1.0.0
 
 *July 16, 2019*
