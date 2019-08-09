@@ -5,6 +5,32 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.1.8
+
+*August 09, 2019*
+
+**Added**
+- Added `Scope` statistics based on log file.
+- Added support to configure `Scope` credentials based on selected profile by native app.
+- Added a credential checker of `SCOPE_APIKEY` and `SCOPE_API_ENDPOINT` before starting `ScopeTracer`.
+- Added external configuration properties for `Scope` reporter and sender.
+- Added support to add code coverage by configuration property.
+- Added automatization testing for every version of each instrumented library.
+- Added support for `test.code` and `source` to `Kotlin` projects.
+- Added support for `Parameterized` test on `JUnit4`, `JUnit5` and `TestNG`.
+
+**Changed**
+- Changed `Scope` log file path based on operative system.
+- Changed `log` filename to include `commit` hash.
+
+**Fixed**
+- Fixed show `test.code` when test is kept on super classes.
+- Fixed losing test spans when same test is launched multiple times in parallel on `JUnit4`.
+- Fixed encoding mismatching to create `Scope` log filenames.
+- Fixed `SourceCode` resolver errors when class is not loaded in the current test module.
+- Fixed avoid agent exception when `log` file path cannot be created/accessed.
+
+
 ## Scope Java Agent v0.1.7
 
 *July 12, 2019*

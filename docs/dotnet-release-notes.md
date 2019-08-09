@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.10
+
+*July 31, 2019*
+
+**Added:**
+- Desktop configuration file reader to load the current scope profile.
+- `no-params` option in the scope runner for long running apps with child processes (ex: Visual Studio).
+- Support for `test.arguments` and `test.traits`.
+- xUnit `[Theory]` parent span support.
+- Support for xUnit test logger ITestOutputHelper.
+        
+**Changed:**
+- Agent logs are now stored in the home scope folder for windows, ~/Library/Logs/Scope (OSX) and /var/log/scope (linux).
+- The dispatcher force flush is delayed to the end of all tests, so we don't block any thread until the end.
+- Diff summary is enabled by default (not working in linux).
+
+**Fixed:**
+- Fix missing covered lines on instructions with `brfalse.s` OpCode
+- Performance improvements.
+- Fixes code coverage in tests with multiple threads.
+
+
 ## Scope .NET Agent v0.1.9
 
 *July 10, 2019*
