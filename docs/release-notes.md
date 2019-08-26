@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.1.1
+
+*August 19, 2019*
+
+## Fixed
+* Performance issues when loading commits for repositories with longer commit histories
+
+
 ## Scope v1.1.0
 
 *August 09, 2019*
