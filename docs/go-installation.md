@@ -53,9 +53,9 @@ func TestMain(m *testing.M) {
 }
 
 func TestExample(t *testing.T) {
-    scopeagent.InstrumentTest(t, func(ctx context.Context, t *testing.T) {
-        // ... test code here. `ctx` has information about the currently active span
-    })
+    test := scopeagent.StartTest(t)
+    defer test.End()
+    // ... test code here. `test.ctx` has information about the currently active span
 }
 ```
 
