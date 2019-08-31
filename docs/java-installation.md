@@ -9,38 +9,38 @@ sidebar_label: Installation
 
 The Scope Java agent is compatible with the following JVMs:
 
-| JVM                                                                                        | Versions | Windows | Linux | OS X |
-|--------------------------------------------------------------------------------------------|----------|:-------:|:-----:|:----:|
-| [`OpenJDK JVM`](https://openjdk.java.net/)                                                 | 1.7, 1.8 |    ✓    |   ✓   |   ✓  |
-| [`Oracle Hotspot JVM`](https://www.oracle.com/technetwork/java/javase/overview/index.html) | 1.7, 1.8 |    ✓    |   ✓   |   ✓  |
+| JVM                | Versions   | Windows | Linux | OS X |
+|--------------------|------------|---------|-------|------|
+| [`OpenJDK JVM`](https://openjdk.java.net/)        | `1.7` to `12` |    ✓    |   ✓   |   ✓  |
+| [`Oracle Hotspot JVM`](https://www.oracle.com/technetwork/java/javase/overview/index.html) | `1.7` to `12` |    ✓    |   ✓   |   ✓  |
 
 The Scope Java agent is compatible with the following libraries:
 
 | Name    | Versions | Span/event creation | Extract | Inject |
 |---------|:--------:|:-------------------:|:-------:|:------:|
 | [`Junit 4`](https://junit.org/junit4/) | `4.x` |          ✓          |         |        |
-| [`Junit 5`](https://junit.org/junit5/) | `5.4.x` |          ✓          |         |        |
-| [`TestNG`](https://testng.org/) | `6.14.x` |          ✓          |         |        |
+| [`Junit 5`](https://junit.org/junit5/) | `5.x` |          ✓          |         |        |
+| [`TestNG`](https://testng.org/) | `6.4` to `6.14.x` |          ✓          |         |        |
 | [`SLF4J`](https://www.slf4j.org/) | `1.7.x` |          ✓          |         |        |
-| [`OkHttp3`](https://square.github.io/okhttp/) | `3.x.x` |          ✓          |         |          ✓          |
-| [`java.net (HttpURLConnection)`](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) | `1.7 to 12` |          ✓          |         |          ✓          |
-| [`Apache Tomcat`](http://tomcat.apache.org/) | `7.x to 9.x` |          ✓          |     ✓    |                    |
-| [`H2 DBMS`](https://www.h2database.com/html/main.html) | `1.4.x` |          ✓          |         |          ✓          |
-| [`MySQL`](https://www.h2database.com/html/main.html) | `v5.6, v5.7, v8.x` |          ✓          |         |          ✓          |
-| [`gRPC`](https://grpc.io/) | `v1.4 to v1.21` |          ✓          |    ✓     |          ✓          |
-| [`JMS`](https://docs.oracle.com/javaee/6/tutorial/doc/bncdq.html) | `v1.1 to v2` |          ✓          |    ✓     |          ✓          |
-| [`Spring-JMS`](https://spring.io/guides/gs/messaging-jms/) | `v1.1 to v2` |          ✓          |     ✓    |          ✓          |
+| [`OkHttp3`](https://square.github.io/okhttp/) | `3.8.1` to `4.0.x` |          ✓          |         |          ✓          |
+| [`java.net (HttpURLConnection)`](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) | `1.7` to `12` |          ✓          |         |          ✓          |
+| [`Apache Tomcat`](http://tomcat.apache.org/) | `7.x` to `9.x` |          ✓          |     ✓    |                    |
+| [`H2 DBMS`](https://www.h2database.com/html/main.html) | `1.3.146` to `1.4.x` |          ✓          |         |          ✓          |
+| [`MySQL`](https://www.h2database.com/html/main.html) | `5.6.x`, `5.7.x`, `8.x` |          ✓          |         |          ✓          |
+| [`gRPC`](https://grpc.io/) | `1.4.0` to `1.22.x` |          ✓          |    ✓     |          ✓          |
+| [`JMS`](https://docs.oracle.com/javaee/6/tutorial/doc/bncdq.html) | `1.1`, `2.x` |          ✓          |    ✓     |          ✓          |
+| [`Spring-JMS`](https://spring.io/guides/gs/messaging-jms/) | `1.1`, `2.x` |          ✓          |     ✓    |          ✓          |
 
 > Do you use a platform or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 ## Installation
 
 Installation is done via [Maven](https://maven.apache.org/). Add the Scope agent dependency and version property to your `pom.xml` file,
-replacing `0.1.6` with the latest version of the agent:
+replacing `0.1.8` with the latest version of the agent:
 
 ```xml
 <properties>
-  <scope.agent.version>0.1.6</scope.agent.version>
+  <scope.agent.version>0.1.8</scope.agent.version>
 </properties>
 ```
 ```xml
