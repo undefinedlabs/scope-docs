@@ -5,6 +5,29 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.11
+
+*August 28, 2019*
+
+**Added:**
+- The `SCOPE_LOGS_PATH` Environment variable and `logs_path` toml key to change the default log folder.
+- Commit hash in the log filename.
+- Test configurations aggregation based on both agent metadata and custom environment variables.
+- Add support to add aggregations programmatically.
+
+**Changed:**
+- The coverage engine has been changed to improve the performance and to enable or disable it at runtime with lower performance impact.
+- Parameterized test handling now are shown as a different test with a hash over the test arguments.
+- Change the duration calculation for skipped tests.
+- Better flush scheduling.
+
+**Fixes:**
+- Scheduled dispatcher task waits before process exit.
+- Serializing Assembly type on json.
+- Async continuations race condition.
+- Span log implementation from the ISpan interface.
+
+
 ## Scope .NET Agent v0.1.10
 
 *July 31, 2019*
