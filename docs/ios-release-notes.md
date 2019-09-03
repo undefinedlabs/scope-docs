@@ -5,6 +5,24 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.2.5
+
+*September 03, 2019*
+
+**Added**
+* Support for local development
+* Spans of Network request that return an error, or spans where exceptions happened are marked as error themselves
+* Support for Github Actions
+* Full support for Xcode 11
+* Coverage info per test (not activated)
+
+**Fix**
+* Previously agent could upload more symbols than needed if several configurations were being built
+* Agent reported a malformed repository if none existed
+* Small leak in network instrumentation
+* Sometimes a test could report incorrect/negative duration after a crash 
+
+
 ## Scope iOS Agent v0.2.4
 
 *July 09, 2019*
