@@ -5,6 +5,30 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.2.0
+
+*September 05, 2019*
+
+#### Added
+
+* **New**: Service Insights page. We have added a test history matrix, where you can easily check each test status across commits.
+* Added record counts to multiple tabs inside the test detail view.
+* Added build information to the test detail view header.
+
+#### Changed
+
+* Redesigned namespace onboarding page.
+* "Go To" buttons on the service list are now less prominent visually.
+
+#### Fixed
+
+* Fixed various bugs affecting GitHub checks.
+* Fixed iOS instructions for local development.
+* Fixed a bug that caused a backend crash when uploading certain iOS symbol files.
+* Minor fixes on local development.
+* Minor fixes on the explore view.
+
+
 ## Scope v1.1.1
 
 *August 19, 2019*
