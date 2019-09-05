@@ -56,6 +56,7 @@ For example, if using the default handler (`http.DefaultServeMux`):
 
 ```go
 import (
+    _ "github.com/undefinedlabs/go-agent"
     "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
     "net/http"
     "io"
@@ -78,6 +79,7 @@ If you are using a custom handler, pass it to `nethttp.Middleware(h http.Handler
 
 ```go
 import (
+    _ "github.com/undefinedlabs/go-agent"
     "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
     "net/http"
     "io"
