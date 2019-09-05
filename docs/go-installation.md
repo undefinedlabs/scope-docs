@@ -55,7 +55,7 @@ func TestMain(m *testing.M) {
 func TestExample(t *testing.T) {
     test := scopeagent.StartTest(t)
     defer test.End()
-    // ... test code here. `test.ctx` has information about the currently active span
+    // ... test code here. `test.Context()` has information about the currently active span
 }
 ```
 
