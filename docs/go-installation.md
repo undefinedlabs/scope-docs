@@ -59,8 +59,7 @@ func TestExample(t *testing.T) {
 }
 ```
 
-Please check the [HTTP instrumentation](go-http-instrumentation.md) article for instructions on how to trace outgoing
-HTTP requests.
+Please check the [HTTP instrumentation](go-http-instrumentation.md) article for instructions on how to trace HTTP requests (both client and server).
 
 You can also use [OpenTracing's Go API](https://github.com/opentracing/opentracing-go/blob/master/README.md) to add your
 own custom spans and events. The Scope Agent's tracer will be registered as the global tracer automatically.
