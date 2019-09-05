@@ -33,7 +33,7 @@ sidebar_label: Release notes
 
 *August 19, 2019*
 
-## Fixed
+#### Fixed
 * Performance issues when loading commits for repositories with longer commit histories
 
 
