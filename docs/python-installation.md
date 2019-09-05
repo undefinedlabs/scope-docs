@@ -29,32 +29,26 @@ The Scope Python agent is compatible with the following libraries:
 
 ## Installation
 
-Installation of the Scope Agent is done via [pip](https://pypi.org).
+Installation of the Scope Agent is done via [pip](https://pypi.org/project/scopeagent/).
 
 ```bash
 pip install scopeagent
 ```
 
-To use the agent, prefix your test or startup command with `scope-run`. For example:
+## Usage
+
+### Using the `scope-run` CLI
+
+To use the agent without modifying your source code, prefix your test or startup command with `scope-run`. For example:
 
 ```bash
 scope-run python -m unittest discover  # to run tests
 scope-run gunicorn myapp.wsgi          # if instrumenting dependent services in integration tests
 ```
 
-As an alternative, you can also install the agent in your application's code, as early in the execution as possible:
+> Please note that this method is [incompatible with `gevent`](https://github.com/gevent/gevent/issues/1016). Use the following method instead.
 
-```python
-import scopeagent
-
-agent = scopeagent.Agent(api_key="xxxxxxxx", api_endpoint="https://scope.mycompany.corp")
-agent.install()
-```
-
-After this, you can run your tests as you normally do, for example using `pytest` or `python -m unittest` commands.
-
-
-### Usage with `tox`
+#### Usage with `tox`
 
 In order to use the `scope-run` CLI with [`tox`](https://tox.readthedocs.io/en/latest/), make sure you prefix your
 testing command inside your `tox.ini` file, instead of the `tox` command itself.
@@ -74,6 +68,22 @@ commands =
 ```
 
 And then, run `tox` as usual.
+
+
+### Installing the agent in your code
+
+You can also install the agent in your application's code, as early in the execution as possible:
+
+```python
+import scopeagent
+
+agent = scopeagent.Agent(api_key="xxxxxxxx", api_endpoint="https://scope.mycompany.corp")
+agent.install()
+```
+
+> If using `gevent`, make sure monkey patching happens *before* installing the Scope agent
+
+After this, you can run your tests as you normally do, for example using `pytest` or `python -m unittest` commands.
 
 
 ## CI provider configuration
