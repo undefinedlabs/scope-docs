@@ -1,17 +1,7 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-// See https://docusaurus.io/docs/site-config for all the possible
-// site configuration options.
-
 const siteConfig = {
   title: 'Scope',
   tagline: 'Scope documentation',
-  url: 'https://scope.undefinedlabs.com',
+  url: 'https://docs.scope.dev',
   baseUrl: '/',
   projectName: 'docs',
   organizationName: 'undefinedlabs',
@@ -27,9 +17,8 @@ const siteConfig = {
   },
   onPageNav: 'separate',
   cleanUrl: true,
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
   enableUpdateTime: true,
+  editUrl: 'https://github.com/undefinedlabs/scope-docs/edit/master/docs/',
 };
 
 module.exports = siteConfig;

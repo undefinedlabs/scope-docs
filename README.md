@@ -1,6 +1,4 @@
-# docs
-
-Scope documentation site
+# Scope documentation
 
 ### Usage
  
