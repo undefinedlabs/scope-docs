@@ -62,6 +62,23 @@ In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/iO
 After installation, you can run your tests as you normally do, for example using the `xcodebuild test` command.
 
 
+### Local development integration
+
+For running tests in your local Xcode installation, the following environment variables must set in your test target ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
+
+| Key                   | Value                      |
+| --------------------- | -------------------------- |
+| `SCOPE_XCODE_APIKEY`       | `$(SCOPE_XCODE_APIKEY)`       |
+| `SCOPE_XCODE_API_ENDPOINT` | `$(SCOPE_XCODE_API_ENDPOINT)` |
+
+These environment variables are set automatically by the native Scope for Mac application that you can download from the "Local development" area of the Scope UI.
+The following command must also be run on the terminal:
+
+```bash
+defaults write com.apple.dt.Xcode UseSanitizedBuildSystemEnvironment -bool NO
+```
+
+
 ## CI provider configuration
 
 ### Jenkins
