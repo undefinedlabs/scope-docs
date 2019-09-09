@@ -27,7 +27,7 @@ The Scope Go agent is compatible with the following libraries:
 Installation of the Scope Agent is done via `go get`:
 
 ```bash
-go get -u github.com/undefinedlabs/go-agent
+go get -u go.undefinedlabs.com/scopeagent
 ```
 
 ## Usage
@@ -42,7 +42,7 @@ For example:
 
 ```go
 import (
-    scopeagent "github.com/undefinedlabs/go-agent"
+    "go.undefinedlabs.com/scopeagent"
     "testing"
 )
 

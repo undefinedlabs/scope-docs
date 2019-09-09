@@ -12,7 +12,7 @@ The Scope Go agent automatically instruments the default HTTP client at `http.De
 
 ```go
 import (
-    "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+    "go.undefinedlabs.com/scopeagent/instrumentation/nethttp"
     "net/http"
 )
 
@@ -56,8 +56,8 @@ For example, if using the default handler (`http.DefaultServeMux`):
 
 ```go
 import (
-    _ "github.com/undefinedlabs/go-agent"
-    "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+    _ "go.undefinedlabs.com/scopeagent"
+    "go.undefinedlabs.com/scopeagent/instrumentation/nethttp"
     "net/http"
     "io"
 )
@@ -79,8 +79,8 @@ If you are using a custom handler, pass it to `nethttp.Middleware(h http.Handler
 
 ```go
 import (
-    _ "github.com/undefinedlabs/go-agent"
-    "github.com/undefinedlabs/go-agent/instrumentation/nethttp"
+    _ "go.undefinedlabs.com/scopeagent"
+    "go.undefinedlabs.com/scopeagent/instrumentation/nethttp"
     "net/http"
     "io"
 )
@@ -97,4 +97,3 @@ func main() {
     }
 }
 ```
-
