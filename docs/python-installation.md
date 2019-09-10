@@ -1,8 +1,11 @@
 ---
 id: python-installation
-title: Python Agent instructions
+title: Python Agent installation
 sidebar_label: Installation
 ---
+
+The [Scope Python agent](https://github.com/undefinedlabs/scope-python-agent) is an open source project that helps 
+instrument your tests and runtime Python projects for use with [Scope](https://scope.dev).
 
 
 ## Compatibility
@@ -11,7 +14,7 @@ The Scope Python agent is compatible with the following versions of Python:
 
 | Language | Versions   |
 |----------|:----------:|
-| Python   | 2.7+, 3.4+ |
+| Python   | 2.7+, 3.5+ |
 
 The Scope Python agent is compatible with the following libraries:
 
@@ -25,7 +28,7 @@ The Scope Python agent is compatible with the following libraries:
 | [`kombu`](https://github.com/celery/kombu)                    |          ✓          |    ✓    |    ✓   |
 | [`logging`](https://docs.python.org/3/library/logging.html)   |          ✓          |         |        |
 
-> Do you use a python version or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a Python version or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
 
 ## Installation
 
@@ -35,18 +38,34 @@ Installation of the Scope Agent is done via [pip](https://pypi.org/project/scope
 pip install scopeagent
 ```
 
-## Usage
+## Instrumenting your tests
 
-### Using the `scope-run` CLI
+There are two ways to instrument your tests: using the `scope-run` CLI as a wrapper (easiest method), or by installing the agent
+in your Python code (giving you more control).
 
-To use the agent without modifying your source code, prefix your test or startup command with `scope-run`. For example:
 
+### Using the `scope-run` CLI wrapper
+
+To use the agent without modifying your source code, prefix your test command with `scope-run`:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--unittest-->
 ```bash
-scope-run python -m unittest discover  # to run tests
-scope-run gunicorn myapp.wsgi          # if instrumenting dependent services in integration tests
+scope-run python -m unittest discover
 ```
 
-> Please note that this method is [incompatible with `gevent`](https://github.com/gevent/gevent/issues/1016). Use the following method instead.
+<!--pytest-->
+```bash
+scope-run pytest
+```
+
+<!--Django tests-->
+```bash
+scope-run python manage.py test
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 #### Usage with `tox`
 
@@ -56,15 +75,12 @@ testing command inside your `tox.ini` file, instead of the `tox` command itself.
 For example:
 
 ```ini
-# content of: tox.ini , put in same dir as setup.py
-[tox]
-envlist = py27,py36
-
+# tox.ini
 [testenv]
-# install pytest in the virtualenv where commands will be executed
-deps = pytest
-commands =
-    scope-run pytest
+commands = scope-run pytest
+passenv =
+    SCOPE_APIKEY
+    SCOPE_API_ENDPOINT
 ```
 
 And then, run `tox` as usual.
@@ -83,12 +99,12 @@ agent.install()
 
 > If using `gevent`, make sure monkey patching happens *before* installing the Scope agent
 
-After this, you can run your tests as you normally do, for example using `pytest` or `python -m unittest` commands.
+After this, you can run your tests as you normally do (for example using `pytest` or `python -m unittest` commands).
 
 
 ## CI provider configuration
 
-The following environment variables (or parameters passed to `scope-run`) need to be configured in your CI provider:
+The following environment variables need to be configured in your CI provider:
 
 | Environment variable  | Description                                            |
 |-----------------------|--------------------------------------------------------|
