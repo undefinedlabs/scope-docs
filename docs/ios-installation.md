@@ -173,6 +173,24 @@ After this, configure your TravisCI project to add the following environment var
 | `SCOPE_APIKEY`       | The API key generated from the Scope UI     |
 | `SCOPE_API_ENDPOINT` | The API endpoint of your Scope installation |
 
+### Github Actions
+
+Add the following environment variables to your test target ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
+
+| Key                  | Value                   |
+| -------------------- | ----------------------- |
+| `SCOPE_APIKEY`       | `$(SCOPE_APIKEY)`       |
+| `SCOPE_API_ENDPOINT` | `$(SCOPE_API_ENDPOINT)` |
+| `SCOPE_COMMIT_SHA`   | `$(GITHUB_SHA)`         |
+| `SCOPE_SOURCE_ROOT`  | `$(GITHUB_WORKSPACE)`   |
+| `GITHUB_REPOSITORY`  | `$(GITHUB_REPOSITORY)`  |
+
+After this, configure your GitHub action to add the following environment variables ([instructions](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables)):
+
+| Key                  | Value                                       |
+| -------------------- | ------------------------------------------- |
+| `SCOPE_APIKEY`       | The API key generated from the Scope UI     |
+| `SCOPE_API_ENDPOINT` | The API endpoint of your Scope installation |
 
 ## Uploading symbol files
 
