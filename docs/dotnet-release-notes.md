@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.12
+
+*September 09, 2019*
+
+**Changed:**
+- The code coverage format has been changed to version 0.2.0
+- Scope configuration file changed to `Yaml` format
+
+**Fixes:**
+- Exceptions logged by a logger should have `event.type = "log"`
+- Health check flush in production mode
+
+
 ## Scope .NET Agent v0.1.11
 
 *August 28, 2019*

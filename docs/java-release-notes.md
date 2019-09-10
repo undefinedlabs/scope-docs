@@ -5,6 +5,37 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.1.9
+
+*September 10, 2019*
+
+**Added**
+- Added support for async/concurrent code coverage.
+- Added support for code coverage in server mode.
+- Added logic to use env var `SCOPE_LOG_ROOT_PATH` to set custom log file root path.
+- Added support to send aggregations info in agent metadata.
+- Added instrumentation for `Apache HttpClient` `4.3` to `4.5.9`.
+- Added support for `GitHub Actions` as `CI` provider. 
+- Added hashes based on `parameterized tests` on `JUnit4`, `JUnit5` and `TestNG`
+- Added support to configure `Logger` level threshold.
+
+**Changed**
+- Changed propagation context to avoid using `gRPC Context`.
+- Changed `test.coverage` by removing uncovered code lines information.
+- Changed coverage format to use an array `[line, column, count]` on boundaries.
+- Changed `Scope` configuration file from `TOML` to `YAML` syntax.
+- Changed `test.name` to avoid hash iterations on `JUnit4` and `JUnit5`.
+
+**Fixed**
+- Fixed `JUnit4` iteration extraction from `test.name` on parameterized tests.
+- Fixed avoid formatting log events with empty parameters array.
+- Fixed send spans/events every second in `SERVER` mode if they exist.
+- Fixed avoid parsing `null` payloads con coverage.
+- Fixed set correct logger level on start/end coverage session.
+- Fixed use `SOURCE_ROOT` as root path to gather source code files.
+- Fixed support `ForkJoinPool` to propagate `Context` for active span.
+
+
 ## Scope Java Agent v0.1.8
 
 *August 09, 2019*

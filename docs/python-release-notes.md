@@ -5,6 +5,29 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.5
+
+*September 10, 2019*
+
+#### Added
+
+* Allow installing the agent in code without passing any config (and use autodetection).
+* Added support for Django and Flask.
+
+#### Changed
+
+* The agent is now open source with an Apache 2.0 license.
+* Dropped compatibility with Python 3.4.
+
+#### Fixed
+
+* Flush span/event buffer if not empty every second regardless of healthcheck period (testing mode).
+* Ensure health checks are sent even if no spans are generated.
+* Log messages with level "ERROR" are now correctly marked as events of type "log".
+* Fixed dry run behaviour.
+* Fixed a compatibility issue when using the agent in conjunction with the Sentry SDK.
+
+
 ## Scope Python Agent v0.3.4
 
 *August 09, 2019*

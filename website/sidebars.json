@@ -24,8 +24,7 @@
     ],
     "Go Agent": [
       "go-installation",
-      "go-http-instrumentation",
-      "go-release-notes"
+      "go-http-instrumentation"
     ]
   }
 }
