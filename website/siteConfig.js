@@ -19,6 +19,8 @@ const siteConfig = {
   cleanUrl: true,
   enableUpdateTime: true,
   editUrl: 'https://github.com/undefinedlabs/scope-docs/edit/master/docs/',
+  docsSideNavCollapsible: true,
+  usePrism: ['go', 'python', 'swift', 'bash', 'ini', 'xml'],
 };
 
 module.exports = siteConfig;
