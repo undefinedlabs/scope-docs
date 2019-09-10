@@ -15,7 +15,7 @@ Name | Version |
 [GitHub.com](https://github.com) |  |
 [GitHub Enterprise](https://github.com/enterprise) | 2.16.1+ |
 
-> Do you use a source code management provider not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a source code management provider not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
 Each agent has its own list of compatible platforms and libraries - please check out their documentation.
 

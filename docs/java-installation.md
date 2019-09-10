@@ -31,7 +31,7 @@ The Scope Java agent is compatible with the following libraries:
 | [`JMS`](https://docs.oracle.com/javaee/6/tutorial/doc/bncdq.html) | `1.1`, `2.x` |          ✓          |    ✓     |          ✓          |
 | [`Spring-JMS`](https://spring.io/guides/gs/messaging-jms/) | `1.1`, `2.x` |          ✓          |     ✓    |          ✓          |
 
-> Do you use a platform or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a platform or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
 ## Installation
 

@@ -50,7 +50,7 @@ Name                                               | Span/event creation | Extra
 ` HttpClient`<br/>`WebClient`<br/>`HttpWebRequest` |          ✓          |         |    ✓   |
 
 
-> Do you use a platform or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a platform or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
 ## Installation
 

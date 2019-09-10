@@ -21,7 +21,7 @@ The Scope iOS agent is compatible with the following libraries:
 | [XCTestCase](https://developer.apple.com/documentation/xctest/xctestcase) |          ✓          |         |        |
 | [Alamofire](https://github.com/Alamofire/Alamofire)                       |          ✓          |         |    ✓   |
 
-> Do you use a language or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a language or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
 
 ## Installation

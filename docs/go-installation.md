@@ -20,7 +20,7 @@ The Scope Go agent is compatible with the following libraries:
 | [`testing`](https://golang.org/pkg/testing/)                 |          ✓          |         |        |
 | [`net/http`](https://golang.org/pkg/net/http/)               |          ✓          |    ✓    |    ✓   |
 
-> Do you use a language or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a language or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
 ## Installation
 

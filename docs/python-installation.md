@@ -28,7 +28,7 @@ The Scope Python agent is compatible with the following libraries:
 | [`kombu`](https://github.com/celery/kombu)                    |          ✓          |    ✓    |    ✓   |
 | [`logging`](https://docs.python.org/3/library/logging.html)   |          ✓          |         |        |
 
-> Do you use a Python version or library not listed here? Please [let us know](https://home.codescope.com/goto/support)!
+> Do you use a Python version or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
 ## Installation
 
