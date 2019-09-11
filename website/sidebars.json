@@ -6,25 +6,30 @@
     ],
     ".NET Agent": [
       "dotnet-installation",
+      "dotnet-compatibility",
       "dotnet-release-notes"
     ],
     "Java Agent": [
       "java-installation",
+      "java-compatibility",
       "java-release-notes"
     ],
     "iOS Agent": [
       "ios-installation",
+      "ios-compatibility",
       "ios-manual-logging",
       "ios-http-instrumentation",
       "ios-release-notes"
     ],
     "Python Agent": [
       "python-installation",
+      "python-compatibility",
       "python-runtime",
       "python-release-notes"
     ],
     "Go Agent": [
       "go-installation",
+      "go-compatibility",
       "go-http-instrumentation"
     ]
   }

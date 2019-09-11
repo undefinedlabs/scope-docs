@@ -1,36 +1,8 @@
 ---
 id: python-installation
-title: Python Agent installation
+title: Scope Python Agent installation
 sidebar_label: Installation
 ---
-
-The [Scope Python agent](https://github.com/undefinedlabs/scope-python-agent) is an open source project that helps 
-instrument your tests and runtime Python projects for use with [Scope](https://scope.dev).
-
-
-## Compatibility
-
-The Scope Python agent is compatible with the following versions of Python:
-
-| Language | Versions   |
-|----------|:----------:|
-| Python   | 2.7+, 3.5+ |
-
-The Scope Python agent is compatible with the following libraries:
-
-| Name                                                          | Span/event creation | Extract | Inject |
-|---------------------------------------------------------------|:-------------------:|:-------:|:------:|
-| [`celery`](http://www.celeryproject.org)                      |          ✓          |         |        |
-| [`gunicorn`](https://pypi.org/project/gunicorn/)              |          ✓          |    ✓    |        |
-| [`requests`](https://pypi.org/project/requests/)              |          ✓          |         |    ✓   |
-| [`unittest`](https://docs.python.org/3/library/unittest.html) |          ✓          |         |        |
-| [`pytest`](https://pytest.org)                                |          ✓          |         |        |
-| [`kombu`](https://github.com/celery/kombu)                    |          ✓          |    ✓    |    ✓   |
-| [`logging`](https://docs.python.org/3/library/logging.html)   |          ✓          |         |        |
-
-> Do you use a Python version or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
-
-## Installation
 
 Installation of the Scope Agent is done via [pip](https://pypi.org/project/scopeagent/).
 
@@ -106,27 +78,26 @@ After this, you can run your tests as you normally do (for example using `pytest
 Check out the [API reference](https://scope-python-agent.readthedocs.io/en/latest/api.html) documentation for details.
 
 
-## CI provider configuration
+## Environment variables
 
-The following environment variables need to be configured in your CI provider:
+The following environment variables need to be configured when instrumenting your tests or application:
 
-| Environment variable  | Description                                            |
-|-----------------------|--------------------------------------------------------|
-| `$SCOPE_APIKEY`       | API key to use when sending data to Scope              |
-| `$SCOPE_API_ENDPOINT` | API endpoint of the Scope installation to send data to |
-
+| Environment variable  | Default value    | Description                                            |
+|-----------------------|------------------|--------------------------------------------------------|
+| `$SCOPE_APIKEY`       |                  | API key to use when sending data to Scope              |
+| `$SCOPE_API_ENDPOINT` |                  | API endpoint of the Scope installation to send data to |
+| `$SCOPE_COMMIT_SHA`   | Autodetected (*) | Commit hash to use when sending data to Scope          |
+| `$SCOPE_REPOSITORY`   | Autodetected (*) | Repository URL to use when sending data to Scope       |
+| `$SCOPE_SOURCE_ROOT`  | Autodetected (*) | Repository root path                                   |
 
 The following optional parameters can also be configured:
 
-| Environment variable | Default      | Description                                      |
-|----------------------|--------------|--------------------------------------------------|
-| `$SCOPE_SERVICE`     | `default`    | Service name to use when sending data to Scope   |
-| `$SCOPE_COMMIT_SHA`  | Autodetected | Commit hash to use when sending data to Scope    |
-| `$SCOPE_REPOSITORY`  | Autodetected | Repository URL to use when sending data to Scope |
-| `$SCOPE_SOURCE_ROOT` | Autodetected | Repository root path                             |
+| Environment variable | Default value    | Description                                      |
+|----------------------|------------------|--------------------------------------------------|
+| `$SCOPE_SERVICE`     | `default`        | Service name to use when sending data to Scope   |
 
-Autodetection of git information works if either tests run on [Jenkins](https://jenkins.io/), 
-[CircleCI](https://circleci.com/), [Travis CI](https://travis-ci.com/) or [GitLab CI](https://about.gitlab.com/), 
+(*) Autodetection of git information works if either tests run on a [supported CI provider](python-compatibility.md#ci-providers),
 or if the `.git` folder is present locally, and there is an `origin` remote configured pointing to the right repository.
 
-These configuration settings can also be provided via CLI flags. Run `scope-run --help` for more information.
+These configuration settings can also be provided via CLI flags. Check out the 
+[CLI reference](https://scope-python-agent.readthedocs.io/en/latest/cli.html) documentation for details.

@@ -1,6 +1,6 @@
 ---
 id: go-http-instrumentation
-title: HTTP Instrumentation
+title: Scope Go Agent HTTP Instrumentation
 sidebar_label: HTTP Instrumentation
 ---
 

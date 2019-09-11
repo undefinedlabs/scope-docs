@@ -1,28 +1,9 @@
 ---
 id: go-installation
-title: Go Agent instructions
+title: Scope Go Agent instructions
 sidebar_label: Installation
 ---
 
-
-## Compatibility
-
-The Scope Go agent is compatible with the following versions of Go:
-
-| Language    | Version |
-| ----------- | :-----: |
-| Go          |  1.11+  |
-
-The Scope Go agent is compatible with the following libraries:
-
-| Name                                                         | Span/event creation | Extract | Inject |
-| ------------------------------------------------------------ | :-----------------: | :-----: | :----: |
-| [`testing`](https://golang.org/pkg/testing/)                 |          ✓          |         |        |
-| [`net/http`](https://golang.org/pkg/net/http/)               |          ✓          |    ✓    |    ✓   |
-
-> Do you use a language or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
-
-## Installation
 
 Installation of the Scope Agent is done via `go get`:
 
@@ -65,23 +46,23 @@ You can also use [OpenTracing's Go API](https://github.com/opentracing/opentraci
 own custom spans and events. The Scope Agent's tracer will be registered as the global tracer automatically.
 
 
-## CI provider configuration
+## Environment variables
 
-The following environment variables need to be configured in your CI provider:
+The following environment variables need to be configured when instrumenting your tests or application:
 
-| Environment variable | Description |
-|---|---|
-| `$SCOPE_APIKEY` | API key to use when sending data to Scope |
-| `$SCOPE_API_ENDPOINT` | API endpoint of the Scope installation to send data to |
-
+| Environment variable  | Default value    | Description                                            |
+|-----------------------|------------------|--------------------------------------------------------|
+| `$SCOPE_APIKEY`       |                  | API key to use when sending data to Scope              |
+| `$SCOPE_API_ENDPOINT` |                  | API endpoint of the Scope installation to send data to |
+| `$SCOPE_COMMIT_SHA`   | Autodetected (*) | Commit hash to use when sending data to Scope          |
+| `$SCOPE_REPOSITORY`   | Autodetected (*) | Repository URL to use when sending data to Scope       |
+| `$SCOPE_SOURCE_ROOT`  | Autodetected (*) | Repository root path                                   |
 
 The following optional parameters can also be configured:
 
-| Environment variable  | Default | Description |
-|---|---|---|
-| `$SCOPE_SERVICE` | `default` | Service name to use when sending data to Scope |
-| `$SCOPE_COMMIT_SHA` | Autodetected | Commit hash to use when sending data to Scope |
-| `$SCOPE_REPOSITORY` | Autodetected | Repository URL to use when sending data to Scope |
-| `$SCOPE_SOURCE_ROOT` | Autodetected | Repository root path |
+| Environment variable | Default value    | Description                                      |
+|----------------------|------------------|--------------------------------------------------|
+| `$SCOPE_SERVICE`     | `default`        | Service name to use when sending data to Scope   |
 
-Autodetection of git information works if either tests run on Jenkins, CircleCI, Travis or GitLab.
+(*) Autodetection of git information works if either tests run on a [supported CI provider](python-compatibility.md#ci-providers),
+or if the `.git` folder is present locally, and there is an `origin` remote configured pointing to the right repository.

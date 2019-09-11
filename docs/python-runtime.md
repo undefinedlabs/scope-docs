@@ -1,13 +1,13 @@
 ---
 id: python-runtime
-title: Python runtime instrumentation
+title: Scope Python Agent runtime instrumentation
 sidebar_label: Runtime instrumentation
 ---
 
-In order to see trace information from your Python services on integration and end-to-end tests from other services,
+In order to see trace information from your Python service on integration and end-to-end tests,
 you need to use the Scope agent to instrument your running service.
 
-This service might run, for example, in a Docker container on CI, or in a QA/staging environment.
+This service might run, for example, in a container on CI, or in a QA/staging environment.
 
 
 ## Using the `scope-run` CLI wrapper
