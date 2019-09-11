@@ -85,6 +85,8 @@ passenv =
 
 And then, run `tox` as usual.
 
+Check out the [CLI reference](https://scope-python-agent.readthedocs.io/en/latest/cli.html) documentation for details.
+
 
 ### Installing the agent in your code
 
@@ -100,6 +102,8 @@ agent.install()
 > If using `gevent`, make sure monkey patching happens *before* installing the Scope agent
 
 After this, you can run your tests as you normally do (for example using `pytest` or `python -m unittest` commands).
+
+Check out the [API reference](https://scope-python-agent.readthedocs.io/en/latest/api.html) documentation for details.
 
 
 ## CI provider configuration
