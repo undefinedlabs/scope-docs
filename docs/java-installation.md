@@ -10,7 +10,7 @@ sidebar_label: Installation
 The Scope Java agent is compatible with the following JVMs:
 
 | JVM                | Versions   | Windows | Linux | OS X |
-|--------------------|------------|---------|-------|------|
+|--------------------|:----------:|:-------:|:-----:|:----:|
 | [`OpenJDK JVM`](https://openjdk.java.net/)        | `1.7` to `12` |    ✓    |   ✓   |   ✓  |
 | [`Oracle Hotspot JVM`](https://www.oracle.com/technetwork/java/javase/overview/index.html) | `1.7` to `12` |    ✓    |   ✓   |   ✓  |
 
