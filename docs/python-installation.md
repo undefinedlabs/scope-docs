@@ -93,7 +93,7 @@ You can also install the agent in your application's code, as early in the execu
 ```python
 import scopeagent
 
-agent = scopeagent.Agent(api_key="xxxxxxxx", api_endpoint="https://scope.mycompany.corp")
+agent = scopeagent.Agent()
 agent.install()
 ```
 
