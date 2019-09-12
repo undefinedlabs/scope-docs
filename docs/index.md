@@ -38,7 +38,7 @@ in real time in Scope.
 
 ## Local development
 
-You can also Scope to debug tests that you run locally. In order to do so, download the **Scope Desktop** app for your OS:
+You can also use Scope to debug tests that you run locally. In order to do so, download the **Scope Desktop** app for your OS:
 
 * [Download Scope for Mac](https://home.codescope.com/goto/download-scope-for-mac)
 * [Download Scope for Windows](https://home.codescope.com/goto/download-scope-for-windows)
