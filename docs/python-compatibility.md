@@ -33,7 +33,7 @@ The Scope Python agent is compatible with the following libraries:
 
 ### CI providers
 
-The Scope .NET agent will work on any CI provider, but will autodetect build and git information 
+The Scope Python agent will work on any CI provider, but will autodetect build and git information 
 (repository, commit, branch and source root directory) if running on the following CI providers:
 
 * [Jenkins](https://jenkins.io/)
