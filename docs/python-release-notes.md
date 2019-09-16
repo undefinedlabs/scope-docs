@@ -5,7 +5,7 @@ sidebar_label: Release notes
 ---
 
 
-## <a href="https://github.com/undefinedlabs/scope-python-agent/releases/tag/0.3.5" target="_blank">Scope Python Agent v0.3.5</a>
+## Scope Python Agent v0.3.5
 
 *September 10, 2019*
 
@@ -28,7 +28,7 @@ sidebar_label: Release notes
 * Fixed a compatibility issue when using the agent in conjunction with the Sentry SDK.
 
 
-## <a href="https://github.com/undefinedlabs/scope-python-agent/releases/tag/0.3.4" target="_blank">Scope Python Agent v0.3.4</a>
+## Scope Python Agent v0.3.4
 
 *August 09, 2019*
 
@@ -50,7 +50,7 @@ sidebar_label: Release notes
 * Test code end line number is now properly calculated.
 
 
-## <a href="https://github.com/undefinedlabs/scope-python-agent/releases/tag/0.3.3" target="_blank">Scope Python Agent v0.3.3</a>
+## Scope Python Agent v0.3.3
 
 *May 07, 2019*
 
@@ -62,7 +62,7 @@ sidebar_label: Release notes
 
 
 
-## <a href="https://github.com/undefinedlabs/scope-python-agent/releases/tag/0.3.2" target="_blank">Scope Python Agent v0.3.2</a>
+## Scope Python Agent v0.3.2
 
 *April 17, 2019*
 
@@ -76,7 +76,7 @@ sidebar_label: Release notes
 * Fixed passing `--api-endpoint` on the `scope-run` CLI
 
 
-## <a href="https://github.com/undefinedlabs/scope-python-agent/releases/tag/0.3.1" target="_blank">Scope Python Agent v0.3.1</a>
+## Scope Python Agent v0.3.1
 
 *April 02, 2019*
 
@@ -92,7 +92,7 @@ sidebar_label: Release notes
 * Fixed WSGI instrumentation when using a `ClosingIterator`.
 
 
-## <a href="https://github.com/undefinedlabs/scope-python-agent/releases/tag/0.3.0" target="_blank">Scope Python Agent v0.3.0</a>
+## Scope Python Agent v0.3.0
 
 *March 20, 2019*
 
@@ -103,7 +103,7 @@ sidebar_label: Release notes
 * Added custom user agent header when sending data to Scope
 
 
-## <a href="https://github.com/undefinedlabs/scope-python-agent/releases/tag/0.2.0" target="_blank">Scope Python Agent v0.2.0</a>
+## Scope Python Agent v0.2.0
 
 *March 08, 2019*
 
