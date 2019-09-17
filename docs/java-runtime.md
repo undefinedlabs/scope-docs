@@ -18,15 +18,6 @@ cd /path/to/scope/agent
 curl -s -o scope-agent.jar "https://repo1.maven.org/maven2/com/undefinedlabs/scope/scope-agent/0.1.9/scope-agent-0.1.9.jar"
 ```
 
-Create / Modify `scope.yml` on the app root folder to disable testing mode
-
-```yaml
----
-scope:
-  mode:
-    testing: false
-```
-
 Modify your Java app startup script to add the `javaagent` parameter pointing to the downloaded Scope Agent JAR.
 
 ```bash
