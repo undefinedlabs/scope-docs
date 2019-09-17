@@ -22,7 +22,7 @@ Add the Scope agent dependency and version property to your `pom.xml` file, repl
 </dependency>
 ```
 
-### Gradle
+## Using Gradle
 Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing 0.1.9 with the latest version of the agent.
 
 ```
