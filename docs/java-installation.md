@@ -68,7 +68,7 @@ After this, you can run your tests as you normally do, for example using the `mv
 ### Using Gradle
 Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Scope agent based on the `configurations.testAgent` property.
 
-```
+```groovy
 test {
     jvmArgs = ["-javaagent:${configurations.testAgent.singleFile}"]
 }
