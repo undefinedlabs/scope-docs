@@ -65,7 +65,7 @@ Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-
 ```
 After this, you can run your tests as you normally do, for example using the `mvn clean verify` command.
 
-### Gradle
+### Using Gradle
 Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Scope agent based on the `configurations.testAgent` property.
 
 ```
