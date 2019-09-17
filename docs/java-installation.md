@@ -4,15 +4,16 @@ title: Scope Java Agent instructions
 sidebar_label: Installation
 ---
 
-Installation is done via [Maven](https://maven.apache.org/). Add the Scope agent dependency and version property to your `pom.xml` file,
-replacing `0.1.9` with the latest version of the agent:
+## Using Maven
 
-```xml
+Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.1.9` with the latest version of the agent:
+
+```
 <properties>
   <scope.agent.version>0.1.9</scope.agent.version>
 </properties>
 ```
-```xml
+```
 <dependency>
   <groupId>com.undefinedlabs.scope</groupId>
   <artifactId>scope-agent</artifactId>
@@ -21,59 +22,59 @@ replacing `0.1.9` with the latest version of the agent:
 </dependency>
 ```
 
+## Using Gradle
+Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing 0.1.9 with the latest version of the agent.
+
+```
+configurations {
+    testAgent
+}
+
+dependencies {
+    testAgent "com.undefinedlabs.scope:scope-agent:0.1.9"
+}
+```
 
 ## Instrumenting your tests
-
-To use instrument your tests, configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) 
-and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use the Scope Agent as a Java agent:
-
+### Maven
+Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use Scope agent as a Java agent:
 ```xml
 <plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-surefire-plugin</artifactId>
-<configuration>
-  <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
-</configuration>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <configuration>
+    <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
+  </configuration>
 </plugin>
-```
 
-```xml
 <plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-failsafe-plugin</artifactId>
-<configuration>
-   <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
-</configuration>
-<executions>
-    <execution>
-      <goals>
-         <goal>integration-test</goal>
-         <goal>verify</goal>
-      </goals>
-    </execution>
-</executions>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-failsafe-plugin</artifactId>
+  <configuration>
+     <argLine>-javaagent:${settings.localRepository}/com/undefinedlabs/scope/scope-agent/${scope.agent.version}/scope-agent-${scope.agent.version}.jar</argLine>
+  </configuration>
+  <executions>
+      <execution>
+        <goals>
+           <goal>integration-test</goal>
+           <goal>verify</goal>
+        </goals>
+      </execution>
+  </executions>
 </plugin>
 ```
-
 After this, you can run your tests as you normally do, for example using the `mvn clean verify` command.
 
+### Using Gradle
+Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Scope agent based on the `configurations.testAgent` property.
 
-### Runtime instrumentation
+```groovy
+test {
+    jvmArgs = ["-javaagent:${configurations.testAgent.singleFile}"]
+}
+```
 
-In order to see trace information from your Java service on integration and end-to-end tests,
-you need to use the Scope agent to instrument your running service.
-
-This service might run, for example, in a container on CI, or in a QA/staging environment.
-
-Modify your Java app startup script to add the `javaagent` parameter pointing to the downloaded Scope Agent JAR.
-
-```bash
-java -javaagent:/path/to/scope/agent/scope-agent.jar -jar /path/to/app/my-app.jar
-``` 
-
-Notice that it is needed that `$SCOPE_APIKEY`, `$SCOPE_API_ENDPOINT`, `$SCOPE_REPOSITORY`, and `$SCOPE_COMMIT_SHA` 
-had been set as environment variables in the executing environment.
-
+After this, you can run your tests as you normally do, for example using the `gradle cleanTest test --rerun-tasks` command.
 
 ## Scope environment configuration
 

@@ -24,6 +24,7 @@ The Scope Java agent is compatible with the following libraries:
 | [`TestNG`](https://testng.org/) | `6.4` to `6.14.x` |          ✓          |         |        |
 | [`SLF4J`](https://www.slf4j.org/) | `1.7.x` |          ✓          |         |        |
 | [`OkHttp3`](https://square.github.io/okhttp/) | `3.8.1` to `4.0.x` |          ✓          |         |          ✓          |
+| [`Apache HttpClient`](https://hc.apache.org/httpcomponents-client-4.5.x/index.html/) | `4.3` to `4.5.x` |          ✓          |         |          ✓          |
 | [`java.net (HttpURLConnection)`](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) | `1.7` to `12` |          ✓          |         |          ✓          |
 | [`Apache Tomcat`](http://tomcat.apache.org/) | `7.x` to `9.x` |          ✓          |     ✓    |                    |
 | [`H2 DBMS`](https://www.h2database.com/html/main.html) | `1.3.146` to `1.4.x` |          ✓          |         |          ✓          |
@@ -46,3 +47,5 @@ The Scope .NET agent will work on any CI provider, but will autodetect build and
 * [AppVeyor](https://www.appveyor.com/)
 * [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 * [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
+* [GitHub Actions](https://github.com/features/actions)
+
