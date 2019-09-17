@@ -1,9 +1,6 @@
 {
   "docs": {
-    "Scope": [
-      "index",
-      "release-notes"
-    ],
+    "Scope": ["index", "release-notes"],
     ".NET Agent": [
       "dotnet-installation",
       "dotnet-compatibility",
@@ -32,6 +29,11 @@
       "go-installation",
       "go-compatibility",
       "go-http-instrumentation"
+    ],
+    "Javascript Agent": [
+      "javascript-installation",
+      "javascript-compatibility",
+      "javascript-release-notes"
     ]
   }
 }
