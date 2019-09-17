@@ -4,7 +4,6 @@ title: Scope Java Agent instructions
 sidebar_label: Installation
 ---
 
-## Installation
 ### Maven
 
 Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.1.9` with the latest version of the agent:
