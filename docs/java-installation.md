@@ -8,12 +8,13 @@ sidebar_label: Installation
 
 Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.1.9` with the latest version of the agent:
 
-```
+```xml
 <properties>
   <scope.agent.version>0.1.9</scope.agent.version>
 </properties>
 ```
-```
+
+```xml
 <dependency>
   <groupId>com.undefinedlabs.scope</groupId>
   <artifactId>scope-agent</artifactId>
@@ -25,7 +26,7 @@ Add the Scope agent dependency and version property to your `pom.xml` file, repl
 ## Using Gradle
 Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing 0.1.9 with the latest version of the agent.
 
-```
+```groovy
 configurations {
     testAgent
 }
