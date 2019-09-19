@@ -4,11 +4,14 @@ title: Scope Javascript Agent release notes
 sidebar_label: Release notes
 ---
 
+
 ## Scope Javascript Agent v0.1.3
 
-_September 16, 2019_
+*September 16, 2019*
 
 #### Added
-
 - Add support for Jest.
-- Add support for Cypress.
+- Add support for Cypress. 
+
+
+

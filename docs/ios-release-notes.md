@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.2.6
+
+*September 19, 2019*
+
+**Added**
+* Support for Http instrumentation using `ScopeAgentClient.framework` 
+* Option to add Http instrumentation through `URLSessionConfiguration` class
+
+**Changed**
+* License covering the code
+* There is no need to use parameters when using scope-coverage
+* Use SaaS endpoint by default if none is specified
+
+**Fixed**
+* Improve OpenTracing specification in network Spans
+
+
 ## Scope iOS Agent v0.2.5
 
 *September 03, 2019*
