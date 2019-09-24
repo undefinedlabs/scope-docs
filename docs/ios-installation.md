@@ -108,10 +108,10 @@ Add the following environment variables to your test target ([instructions](http
 
 After this, add the following environment variables to your CI provider:
 
-| Key                      | Value                                       |
-|--------------------------|---------------------------------------------|
-| `SCOPE_APIKEY`           | The API key generated from the Scope UI     |
-| `SCOPE_API_ENDPOINT`     | The API endpoint of your Scope installation |
+| Environment variable  | Default value           | Description                                            |
+|-----------------------|-------------------------|--------------------------------------------------------|
+| `$SCOPE_APIKEY`       |                         | API key to use when sending data to Scope              |
+| `$SCOPE_API_ENDPOINT` | `https://app.scope.dev` | API endpoint of the Scope installation to send data to |
 
 
 ## Local development integration

@@ -101,3 +101,15 @@ or if the `.git` folder is present locally, and there is an `origin` remote conf
 
 These configuration settings can also be provided via CLI flags. Check out the 
 [CLI reference](https://scope-python-agent.readthedocs.io/en/latest/cli.html) documentation for details.
+
+The following environment variables are also available to modify the Scope Agent behavior.
+
+| Environment variable  | Default | Description |
+|---|---|---|
+| `$SCOPE_AUTO_INSTRUMENT` | `true` | Boolean flag to apply Scope auto instrumentation |
+| `$SCOPE_SET_GLOBAL_TRACER` | `true` | Boolean flag to register `ScopeTracer` as OpenTracing's global tracer |
+| `$SCOPE_TESTING_MODE` | Autodetected (*) | Boolean flag to indicate to `ScopeAgent` if it's running tests (`true`), or if it's being used for runtime instrumentation (`false`) |
+
+(*) Autodetection of `$SCOPE_TESTING_MODE` property depends on whether the build has been triggered by a CI server (`true`), or not (`false`).
+
+If these properties are manually configured, they will be `true` only on encountering the string `true` configured on the environment variable. Any other value will be considered as `false`.
