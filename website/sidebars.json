@@ -28,7 +28,9 @@
     "Go Agent": [
       "go-installation",
       "go-compatibility",
-      "go-http-instrumentation"
+      "go-http-instrumentation",
+      "go-grpc-instrumentation",
+      "go-process-instrumentation"
     ],
     "Javascript Agent": [
       "javascript-installation",
