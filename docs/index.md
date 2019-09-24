@@ -31,6 +31,7 @@ After that, you need to instrument your tests using the **Scope agent** for your
 * [iOS agent instructions](ios-installation.md)
 * [Python agent instructions](python-installation.md)
 * [Go agent instructions](go-installation.md)
+* [Javascript agent instructions](javascript-installation.md)
 
 Commit the changes to your repository and let your existing CI provider execute your tests. You will start seeing results
 in real time in Scope.
