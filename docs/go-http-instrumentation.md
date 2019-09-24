@@ -22,10 +22,8 @@ func main() {
 }
 ```
 
-
-### Injecting the trace information to an outgoing request
-
-In order for the Scope Go agent to trace an outgoing request, you must attach the context to it. For example:
+After this, in order for the Scope Go agent to trace an outgoing request, you must attach the current context to it. 
+For example:
 
 ```go
 import (

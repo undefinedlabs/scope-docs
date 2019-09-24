@@ -11,12 +11,12 @@ Installation of the Scope Agent is done via `go get`:
 go get -u go.undefinedlabs.com/scopeagent
 ```
 
-## Usage
+## Instrument your tests
 
 In order to instrument your tests that use Go's native [`testing`](https://golang.org/pkg/testing/) package, you
 have to follow these steps:
  
-1. Write a `TestMain(*testing.M)` function that calls `scopeagent.GlobalAgent.Stop()` before exiting.
+1. Write a `TestMain(*testing.M)` function that calls `scopeagent.GlobalAgent.Run(m)` before exiting.
 2. Call `scopeagent.StartTest(*testing.T)` at the beginning of each test, which will return a `scopeagent.Test` object, and `defer test.End()`.
 
 For example:
@@ -28,22 +28,25 @@ import (
 )
 
 func TestMain(m *testing.M) {
-    result := m.Run()
-    scopeagent.GlobalAgent.Stop()  // This will ensure that we flush all pending results before exiting
-    os.Exit(result)
+    os.Exit(scopeagent.GlobalAgent.Run(m))
 }
 
 func TestExample(t *testing.T) {
     test := scopeagent.StartTest(t)
     defer test.End()
-    // ... test code here. `test.Context()` has information about the currently active span
+    // ... test code here
 }
 ```
 
-Please check the [HTTP instrumentation](go-http-instrumentation.md) article for instructions on how to trace HTTP requests (both client and server).
+Note that after this, you can use `test.Context()` to refer to the context of the running test, which has information
+about the currently active span. This will allow the instrumentation to extend the test trace by adding child spans to it.
+
+Please check the [HTTP instrumentation](go-http-instrumentation.md) and [gRPC instrumentation](go-grpc-instrumentation.md) 
+articles for instructions on how to trace incoming and outgoing requests.
 
 You can also use [OpenTracing's Go API](https://github.com/opentracing/opentracing-go/blob/master/README.md) to add your
-own custom spans and events. The Scope Agent's tracer will be registered as the global tracer automatically.
+own custom spans and events. Use `test.Context()` to extend the test trace.
+The Scope Agent's tracer will be registered as the global tracer automatically.
 
 
 ## Environment variables
