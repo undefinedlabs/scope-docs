@@ -30,7 +30,8 @@
       "go-compatibility",
       "go-http-instrumentation",
       "go-grpc-instrumentation",
-      "go-process-instrumentation"
+      "go-process-instrumentation",
+      "go-release-notes"
     ],
     "Javascript Agent": [
       "javascript-installation",
