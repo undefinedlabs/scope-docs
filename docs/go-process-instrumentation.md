@@ -24,7 +24,6 @@ import (
 func myFunc(ctx context.Context) {
     // ...
     cmd := exec.Command("my-cli")
-    cmd.Env = os.Environ()
     process.InjectToCmd(ctx, cmd)
     // ...
 }
@@ -43,7 +42,6 @@ import (
 func myFunc(ctx context.Context) {
     // ...
     cmd := exec.Command("my-cli")
-    cmd.Env = os.Environ()
     span, ctx := process.InjectToCmdWithSpan(ctx, cmd)
     defer span.Finish()
     // ...
@@ -62,6 +60,7 @@ import (
     "os"
     "path/filepath"
 
+    "github.com/opentracing/opentracing-go"
     "go.undefinedlabs.com/scopeagent"
     "go.undefinedlabs.com/scopeagent/instrumentation/process"
 )
