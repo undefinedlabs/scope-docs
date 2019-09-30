@@ -54,13 +54,16 @@ For example, if using the default handler (`http.DefaultServeMux`):
 
 ```go
 import (
-    _ "go.undefinedlabs.com/scopeagent"
+    "go.undefinedlabs.com/scopeagent"
     "go.undefinedlabs.com/scopeagent/instrumentation/nethttp"
     "net/http"
     "io"
 )
 
 func main() {
+    // Make sure we stop the agent cleanly, flushing the buffer before exiting
+    defer scopeagent.Stop()
+
     http.HandleFunc("/hello", func(w http.ResponseWriter, req *http.Request) {
         io.WriteString(w, "Hello, world!\n")
     })
@@ -77,13 +80,16 @@ If you are using a custom handler, pass it to `nethttp.Middleware(h http.Handler
 
 ```go
 import (
-    _ "go.undefinedlabs.com/scopeagent"
+    "go.undefinedlabs.com/scopeagent"
     "go.undefinedlabs.com/scopeagent/instrumentation/nethttp"
     "net/http"
     "io"
 )
 
 func main() {
+    // Make sure we stop the agent cleanly, flushing the buffer before exiting
+    defer scopeagent.Stop()
+
     handler := http.NewServeMux()
     handler.HandleFunc("/hello", func(w http.ResponseWriter, req *http.Request) {
         io.WriteString(w, "Hello, world!\n")

@@ -67,7 +67,7 @@ import (
 
 func main() {
     // Make sure we stop the agent cleanly, flushing the buffer before exiting
-    defer scopeagent.GlobalAgent.Stop()
+    defer scopeagent.Stop()
 
     // Start a span representing this process execution, following the trace found in the environment (if available)
     span := process.StartSpan(filepath.Base(os.Args[0]))

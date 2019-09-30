@@ -32,12 +32,13 @@ import (
 )
 
 func TestMain(m *testing.M) {
-    os.Exit(scopeagent.GlobalAgent.Run(m))
+    os.Exit(scopeagent.Run(m))
 }
 
 func TestExample(t *testing.T) {
     test := scopeagent.StartTest(t)
     defer test.End()
+
     // ...
 }
 ```
@@ -59,7 +60,7 @@ import (
 
 func main() {
     // Make sure we stop the agent cleanly, flushing the buffer before exiting
-    defer scopeagent.GlobalAgent.Stop()
+    defer scopeagent.Stop()
 
     // ...
 }

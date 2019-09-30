@@ -18,8 +18,9 @@ The Scope Go agent is compatible with the following libraries:
 | ------------------------------------------------------------ | :-----------------: | :-----: | :----: |
 | [`testing`](https://golang.org/pkg/testing/)                 |          ✓          |         |        |
 | [`net/http`](https://golang.org/pkg/net/http/)               |          ✓          |    ✓    |    ✓   |
-| [`google.golang.org/grpc`](https://github.com/grpc/grpc-go)  |          ✓          |    ✓    |    ✓   |
 | [`os/exec`](https://golang.org/pkg/os/exec/)                 |          ✓          |    ✓    |    ✓   |
+| [`google.golang.org/grpc`](https://github.com/grpc/grpc-go)  |          ✓          |    ✓    |    ✓   |
+| [`log`](https://golang.org/pkg/log/)                         |          ✓          |         |        |
 
 > Do you use a language or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
