@@ -16,7 +16,6 @@ sidebar_label: Release notes
 
 #### Changed
 
-* The agent is now open source with an Apache 2.0 license.
 * Dropped compatibility with Python 3.4.
 
 #### Fixed

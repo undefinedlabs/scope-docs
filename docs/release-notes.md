@@ -5,6 +5,30 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.3.1
+
+*September 30, 2019*
+
+#### Added
+ - **New**: Test Report Performance tab, to visualize test duration over time for a specific test.
+ - **New**: Javascript Agent, with initial support for Jest and Cypress.
+ - **New**: Redesigned Test Report trace view.
+- Added infinite scroll pagination to log views.
+
+#### Changed
+- After the Scope GitHub app is installed on a namespace, repositories are loaded asynchronously and in parallel.
+
+#### Fixed
+- Fixed a bug where removed repositories would not be reactivated after re-adding them.
+- When applying the "flaky tests" filter on the Insights matrix, non-flaky results will still be shown.
+- Fixed a bug where commits from other branches would show up on the history tab.
+- Fixed GitHub checks when test names had spaces.
+- Minor fixes on Go agent instructions.
+- Tags now render correctly when the value is an object or an array.
+- Various other performance enhancement and bug fixes.
+- Branch name is now properly calculated when there is only a single commit in a branch
+
+
 ## Scope v1.3.0
 
 *September 24, 2019*
