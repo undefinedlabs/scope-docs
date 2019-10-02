@@ -7,8 +7,21 @@ sidebar_label: HTTP Instrumentation
 
 ## Instrumenting the HTTP client
 
-The Scope Go agent automatically instruments the default HTTP client at `http.DefaultClient`. If you create a custom
-`http.Client` instance, you must use the Scope Go agent transport:
+The Scope Go agent provides a helper function to instrument the default HTTP client at `http.DefaultClient`:
+
+```go
+import (
+    "go.undefinedlabs.com/scopeagent/instrumentation/nethttp"
+)
+
+func main() {
+    nethttp.PatchHttpDefaultClient()
+
+    // ...
+}
+```
+
+If you create a custom `http.Client` instance, you must use the Scope Go agent transport:
 
 ```go
 import (
@@ -18,6 +31,7 @@ import (
 
 func main() {
     client := &http.Client{Transport: &nethttp.Transport{}}
+
     // ...
 }
 ```
@@ -61,7 +75,7 @@ import (
 )
 
 func main() {
-    // Make sure we stop the agent cleanly, flushing the buffer before exiting
+    // Make sure we stop the agent cleanly before exiting
     defer scopeagent.Stop()
 
     http.HandleFunc("/hello", func(w http.ResponseWriter, req *http.Request) {
@@ -87,7 +101,7 @@ import (
 )
 
 func main() {
-    // Make sure we stop the agent cleanly, flushing the buffer before exiting
+    // Make sure we stop the agent cleanly before exiting
     defer scopeagent.Stop()
 
     handler := http.NewServeMux()

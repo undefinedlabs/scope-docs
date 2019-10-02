@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.2" target="_blank">Scope Go Agent v0.1.2</a>
+
+*October 02, 2019*
+
+#### Changed
+* The instrumentation now reports directly to the Scope tracer, but it can be configured to report to any OpenTracing-compatible tracer programmatically.
+* The Scope tracer will now not be automatically configured as OpenTracing's global tracer, but can still be set manually if desired.
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.1" target="_blank">Scope Go Agent v0.1.1</a>
 
 *September 30, 2019*

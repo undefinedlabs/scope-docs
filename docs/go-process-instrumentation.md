@@ -22,9 +22,9 @@ import (
 )
 
 func myFunc(ctx context.Context) {
-    // ...
     cmd := exec.Command("my-cli")
     process.InjectToCmd(ctx, cmd)
+
     // ...
 }
 ```
@@ -40,10 +40,10 @@ import (
 )
 
 func myFunc(ctx context.Context) {
-    // ...
     cmd := exec.Command("my-cli")
     span, ctx := process.InjectToCmdWithSpan(ctx, cmd)
     defer span.Finish()
+
     // ...
 }
 ```
@@ -66,7 +66,7 @@ import (
 )
 
 func main() {
-    // Make sure we stop the agent cleanly, flushing the buffer before exiting
+    // Make sure we stop the agent cleanly before exiting
     defer scopeagent.Stop()
 
     // Start a span representing this process execution, following the trace found in the environment (if available)
