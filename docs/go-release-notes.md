@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.3" target="_blank">Scope Go Agent v0.1.3</a>
+
+*October 02, 2019*
+
+#### Changed
+
+* Deprecate the "autoinstrumentation" setting. Now, the `http.DefaultClient` needs to be instrumented manually by calling `nethttp.PatchHttpDefaultClient()` as per the documentation.
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.2" target="_blank">Scope Go Agent v0.1.2</a>
 
 *October 02, 2019*
