@@ -5,6 +5,32 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.2.0
+
+*October 02, 2019*
+
+**Added**
+- Added fallback endpoint to `app.scope.dev` if `$SCOPE_API_ENDPOINT` EnvVar is not set.
+- Added `Scala` support from `2.10` to `2.13`.
+- Added `ScalaTest` support from `2.2.x` to `3.0.x`.
+- Added `Netty` support for versions `4.1.x.`.
+- Added `Akka Actors` support for versions `2.3.x` to `2.5.x`.
+- Added `Akka HTTP` support for versions `10.0.x` to `10.1.x`
+
+**Changed**
+- Changed `ByteBuddy` to `v1.9.16`.
+- Changed context propagation on `Thread`/`Executor` instrumentation to avoid using reflection.
+- Changed `CI_PROVIDER` on `GitHub Actions` to `GitHub`.
+- Changed use of `ScopeGlobalTracer` instead of `GlobalTracer` as default tracer facade.
+- Changed default value for `SCOPE_SET_GLOBAL_TRACER` to false.
+
+**Fixed**
+- Fixed support for configuration files with extension `.yaml` and `.yml`.
+- Fixed avoid applying coverage context propagation if coverage is not configured.
+- Fixed `NPE` on Jenkins settings due to `SOURCE_ROOT` setting.
+- Fixed set `error=true` when `HTTP 400` on `Akka HTTP`.
+
+
 ## Scope Java Agent v0.1.9
 
 *September 10, 2019*
