@@ -19,7 +19,7 @@ The Scope Java agent is compatible with the following Scala versions:
 
 | Scala                | Versions   | Windows | Linux | OS X |
 |--------------------|:----------:|:-------:|:-----:|:----:|
-| [`Scala-lang`](https://www.scala-lang.org/)        | `2.10` to `2.13` |    ✓    |   ✓   |   ✓  |
+| [`Scala`](https://www.scala-lang.org/)        | `2.10` to `2.13` |    ✓    |   ✓   |   ✓  |
 
 ### Libraries
 

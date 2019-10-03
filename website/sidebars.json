@@ -12,9 +12,6 @@
       "java-runtime",
       "java-release-notes"
     ],
-    "Scala Agent" : [
-      "scala-installation"
-    ],
     "iOS Agent": [
       "ios-installation",
       "ios-compatibility",
