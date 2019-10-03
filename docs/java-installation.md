@@ -6,11 +6,11 @@ sidebar_label: Installation
 
 ## Using Maven
 
-Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.1.9` with the latest version of the agent:
+Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.2.0` with the latest version of the agent:
 
 ```xml
 <properties>
-  <scope.agent.version>0.1.9</scope.agent.version>
+  <scope.agent.version>0.2.0</scope.agent.version>
 </properties>
 ```
 
@@ -24,7 +24,7 @@ Add the Scope agent dependency and version property to your `pom.xml` file, repl
 ```
 
 ## Using Gradle
-Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing 0.1.9 with the latest version of the agent.
+Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.2.0`  with the latest version of the agent.
 
 ```groovy
 configurations {
@@ -32,9 +32,27 @@ configurations {
 }
 
 dependencies {
-    testAgent "com.undefinedlabs.scope:scope-agent:0.1.9"
+    testAgent "com.undefinedlabs.scope:scope-agent:0.2.0"
 }
 ```
+
+## Using sbt
+
+Add the `sbt-javaagent` entry to the `project/plugins.sbt` file.
+```scala
+addSbtPlugin("com.lightbend.sbt" % "sbt-javaagent" % "0.1.5")
+```
+
+Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.2.0` with the latest version of the agent.
+```scala
+lazy val root = project
+  .in(file("."))
+  .enablePlugins(JavaAgent)
+  .settings(
+    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.0" % "test"
+  )
+```
+
 
 ## Instrumenting your tests
 ### Using Maven
@@ -77,6 +95,9 @@ test {
 
 After this, you can run your tests as you normally do, for example using the `gradle cleanTest test --rerun-tasks` command.
 
+### Using sbt
+No additional configuration is needed to use Scope agent in your `sbt` project. Now, you can run your tests as you normally do, for example using the `sbt clean test` command.
+
 ## Scope environment configuration
 
 The following environment variables may modify the Scope Agent behavior.
@@ -84,7 +105,7 @@ The following environment variables may modify the Scope Agent behavior.
 | Environment variable  | Default | Description |
 |---|---|---|
 | `$SCOPE_AUTO_INSTRUMENT` | `true` | Boolean flag to apply Scope auto instrumentation |
-| `$SCOPE_SET_GLOBAL_TRACER` | `true` | Boolean flag to register `ScopeTracer` as `GlobalTracer` |
+| `$SCOPE_SET_GLOBAL_TRACER` | `false` | Boolean flag to register `ScopeTracer` as `GlobalTracer` |
 | `$SCOPE_TESTING_MODE` | Autodetected | Boolean flag to indicate to `ScopeAgent` if a "heartbeat" must be sent every second (`true`) or every minute (`false`) |
 
 Autodetection of `$SCOPE_TESTING_MODE` property depends on whether the build has been triggered by a CI server (`true`), or not (`false`). Supported CI providers are listed below.
@@ -117,7 +138,7 @@ The following environment variables are also available to modify the Scope Agent
 | Environment variable  | Default | Description |
 |---|---|---|
 | `$SCOPE_AUTO_INSTRUMENT` | `true` | Boolean flag to apply Scope auto instrumentation |
-| `$SCOPE_SET_GLOBAL_TRACER` | `true` | Boolean flag to register `ScopeTracer` as OpenTracing's global tracer |
+| `$SCOPE_SET_GLOBAL_TRACER` | `false` | Boolean flag to register `ScopeTracer` as OpenTracing's global tracer |
 | `$SCOPE_TESTING_MODE` | Autodetected (*) | Boolean flag to indicate to `ScopeAgent` if it's running tests (`true`), or if it's being used for runtime instrumentation (`false`) |
 
 (*) Autodetection of `$SCOPE_TESTING_MODE` property depends on whether the build has been triggered by a CI server (`true`), or not (`false`).
