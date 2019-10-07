@@ -4,8 +4,8 @@ title: Scope Java Agent instructions
 sidebar_label: Installation
 ---
 
-## Using Maven
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Maven-->
 Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.2.0` with the latest version of the agent:
 
 ```xml
@@ -22,40 +22,8 @@ Add the Scope agent dependency and version property to your `pom.xml` file, repl
   <scope>provided</scope>
 </dependency>
 ```
+### Instrumenting your tests
 
-## Using Gradle
-Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.2.0`  with the latest version of the agent.
-
-```groovy
-configurations {
-    testAgent
-}
-
-dependencies {
-    testAgent "com.undefinedlabs.scope:scope-agent:0.2.0"
-}
-```
-
-## Using sbt
-
-Add the `sbt-javaagent` entry to the `project/plugins.sbt` file.
-```scala
-addSbtPlugin("com.lightbend.sbt" % "sbt-javaagent" % "0.1.5")
-```
-
-Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.2.0` with the latest version of the agent.
-```scala
-lazy val root = project
-  .in(file("."))
-  .enablePlugins(JavaAgent)
-  .settings(
-    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.0" % "test"
-  )
-```
-
-
-## Instrumenting your tests
-### Using Maven
 Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use Scope agent as a Java agent:
 ```xml
 <plugin>
@@ -84,7 +52,20 @@ Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-
 ```
 After this, you can run your tests as you normally do, for example using the `mvn clean verify` command.
 
-### Using Gradle
+<!--Gradle-->
+Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.2.0`  with the latest version of the agent.
+
+```groovy
+configurations {
+    testAgent
+}
+
+dependencies {
+    testAgent "com.undefinedlabs.scope:scope-agent:0.2.0"
+}
+```
+### Instrumenting your tests
+
 Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Scope agent based on the `configurations.testAgent` property.
 
 ```groovy
@@ -95,8 +76,29 @@ test {
 
 After this, you can run your tests as you normally do, for example using the `gradle cleanTest test --rerun-tasks` command.
 
-### Using sbt
-No additional configuration is needed to use Scope agent in your `sbt` project. Now, you can run your tests as you normally do, for example using the `sbt clean test` command.
+
+<!--sbt-->
+
+Add the `sbt-javaagent` entry to the `project/plugins.sbt` file.
+```scala
+addSbtPlugin("com.lightbend.sbt" % "sbt-javaagent" % "0.1.5")
+```
+
+Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.2.0` with the latest version of the agent.
+```scala
+lazy val root = project
+  .in(file("."))
+  .enablePlugins(JavaAgent)
+  .settings(
+    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.0" % "test"
+  )
+```
+### Instrumenting your tests
+
+After this, you can run your tests as you normally do, for example using the `sbt clean test` command.
+
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Scope environment configuration
 
