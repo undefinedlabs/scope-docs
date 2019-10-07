@@ -100,21 +100,6 @@ After this, you can run your tests as you normally do, for example using the `sb
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Scope environment configuration
-
-The following environment variables may modify the Scope Agent behavior.
-
-| Environment variable  | Default | Description |
-|---|---|---|
-| `$SCOPE_AUTO_INSTRUMENT` | `true` | Boolean flag to apply Scope auto instrumentation |
-| `$SCOPE_SET_GLOBAL_TRACER` | `false` | Boolean flag to register `ScopeTracer` as `GlobalTracer` |
-| `$SCOPE_TESTING_MODE` | Autodetected | Boolean flag to indicate to `ScopeAgent` if a "heartbeat" must be sent every second (`true`) or every minute (`false`) |
-
-Autodetection of `$SCOPE_TESTING_MODE` property depends on whether the build has been triggered by a CI server (`true`), or not (`false`). Supported CI providers are listed below.
-
-If these properties are manually configured, they will be `true` only on encountering the string `true` configured on the environment variable. Any other value will be considered as `false`.
-
-
 ## Environment variables
 
 The following environment variables need to be configured when instrumenting your tests or application:
