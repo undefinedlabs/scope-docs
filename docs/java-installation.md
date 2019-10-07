@@ -22,6 +22,8 @@ Add the Scope agent dependency and version property to your `pom.xml` file, repl
   <scope>provided</scope>
 </dependency>
 ```
+### Instrumenting your tests
+
 Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use Scope agent as a Java agent:
 ```xml
 <plugin>
@@ -62,6 +64,7 @@ dependencies {
     testAgent "com.undefinedlabs.scope:scope-agent:0.2.0"
 }
 ```
+### Instrumenting your tests
 
 Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Scope agent based on the `configurations.testAgent` property.
 
@@ -90,6 +93,8 @@ lazy val root = project
     javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.0" % "test"
   )
 ```
+### Instrumenting your tests
+
 After this, you can run your tests as you normally do, for example using the `sbt clean test` command.
 
 
