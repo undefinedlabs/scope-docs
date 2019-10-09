@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.6
+
+*October 09, 2019*
+
+#### Added
+* The agent now reports the `agent.type` metadata field
+
+#### Changed
+* By default, the API endpoint is now set to `https://app.scope.dev`
+* The instrumentation now reports directly to the Scope tracer, but it can be configured to report to any OpenTracing-compatible tracer programmatically.
+* The Scope tracer will now not be automatically configured as OpenTracing's global tracer, but can still be set manually if desired.
+
+#### Fixed
+* Fixed a bug where some CLI flags were not being parsed properly
+* Fixed support for process forking after the agent has been initialized
+
+
 ## Scope Python Agent v0.3.5
 
 *September 10, 2019*
