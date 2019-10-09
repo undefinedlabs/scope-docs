@@ -5,6 +5,38 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.3.3
+
+*October 09, 2019*
+
+#### Added
+- New syntax highlighting for viewing source code.
+
+#### Changed
+- Selecting a new branch on the Explore View resets any filter on the UI.
+
+#### Fixed
+- Fixed a bug that showed a blank page after deleting a namespace.
+- Fixed the commits order on the Test Performance Tab.
+- Several other minor bug fixes and enhancements
+
+
+## Scope v1.3.2
+
+*October 08, 2019*
+
+#### Added
+- New syntax highlighting for viewing source code.
+
+#### Changed
+- Selecting a new branch on the Explore View resets any filter on the UI.
+
+#### Fixed
+- Bug that showed a blank page after deleting a namespace.
+- Fixed the commits order on the Test Performance Tab.
+- Several other minor bug fixes and enhancements
+
+
 ## Scope v1.3.1
 
 *September 30, 2019*
