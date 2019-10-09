@@ -11,6 +11,12 @@ Here you will find instructions and reference information about how to install, 
 
 # Getting started
 
+## Create an account
+
+Go to [https://app.scope.dev](https://app.scope.dev) and log in using your GitHub account.
+
+> Using GitHub Enterprise? Scope is also available for deployment on-premises. Get in touch at <support@scope.dev> for details.
+
 ## Install the GitHub app
 
 First, you need to install the [Scope GitHub app](https://github.com/apps/scope-app) in the namespace(s) you plan to use with Scope.
@@ -39,7 +45,8 @@ in real time in Scope.
 
 ## Local development
 
-You can also use Scope to debug tests that you run locally. In order to do so, download the **Scope Desktop** app for your OS:
+You can also use Scope to debug tests that you run locally. The results will only be available to you.
+In order to do so, download the **Scope Desktop** app for your OS:
 
 * [Download Scope for Mac](https://home.codescope.com/goto/download-scope-for-mac)
 * [Download Scope for Windows](https://home.codescope.com/goto/download-scope-for-windows)
