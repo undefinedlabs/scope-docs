@@ -14,8 +14,7 @@ go get -u go.undefinedlabs.com/scopeagent
 ## Instrumenting your tests
 
 In order to instrument your tests that use Go's native [`testing`](https://golang.org/pkg/testing/) package, you
-have to call `scopeagent.Run()` before exiting (to gracefully stop the agent),
-and call `scopeagent.StartTest(t)` and `defer test.End()` on each test.
+have to call `scopeagent.Run(m)` in your `TestMain` function, and call `scopeagent.StartTest(t)` and `defer test.End()` on each test.
 
 For example:
 
@@ -26,14 +25,10 @@ import (
 )
 
 func TestMain(m *testing.M) {
-    // Make sure we gracefully stop the agent before exiting
     os.Exit(scopeagent.Run(m))
 }
 
 func TestExample(t *testing.T) {
-    // Instrument the test `t`
-    // The method `test.Context()` must be used to extend the trace
-    // when creating new spans or when making external requests
     test := scopeagent.StartTest(t)
     defer test.End()
 
@@ -44,65 +39,43 @@ func TestExample(t *testing.T) {
 Note that after this, you can use `test.Context()` to refer to the context of the running test, which has information
 about its trace. Use it when you make any external calls, and if you add any custom OpenTracing instrumentation.
 
-Check the [process instrumentation](go-process-instrumentation.md) if you plan to launch processes from your tests (for example, to test a CLI tool).
+Instrumentation for client libraries is done manually. Please check the different sections on the left for more information.
 
 ## Runtime instrumentation
 
-In order to install the agent in a runtime process (CLI or server), just import the Scope Go agent package and make
+In order to install the agent in a runtime process (CLI or server), create an `Agent` instance and make
 sure it is stopped cleanly before exiting (in order to flush any pending buffers). For example:
 
 ```go
 import (
-    "go.undefinedlabs.com/scopeagent"
+    "go.undefinedlabs.com/scopeagent/agent"
 )
 
 func main() {
-    // Make sure we stop the agent cleanly before exiting
-    defer scopeagent.Stop()
+    scopeAgent, err := agent.NewAgent()
+    if err != nil {
+        panic(err)
+    }
+    defer scopeAgent.Stop()
 
     // ...
 }
 ```
 
-The agent will be automatically installed and the instrumentation automatically configured if the API key was provided
-via an environment variable, or if used locally with _Scope for Mac_ or _Scope for Windows_ installed. Otherwise, the autoinstallation
-process will do nothing. Refer to [Manual installation](#manual-installation) for instructions to programmatically install and configure the agent.
+The agent will be automatically configured if the API key was provided via [environment variables](#environment-variables),
+or if used locally with _Scope for Mac_ or _Scope for Windows_ installed. Otherwise, you can use the 
+[`agent.WithApiKey()`](https://godoc.org/go.undefinedlabs.com/scopeagent/agent#WithApiKey) option
+to configure it manually.
 
-Instrumentation for client and server libraries in Go is done manually. 
-Please check the [HTTP instrumentation](go-http-instrumentation.md) and [gRPC instrumentation](go-grpc-instrumentation.md) 
-articles for instructions on how to trace incoming and outgoing requests.
+The agent will also try to automatically detect git information (repository URL, commit hash and source root path) using
+[environment variables](#environment-variables) and the local `.git` folder if available. Otherwise, you can use the 
+[`agent.WithGitInfo()`](https://godoc.org/go.undefinedlabs.com/scopeagent/agent#WithGitInfo) option
+to configure it manually, for example, if you embed this information in the resulting binary at build time.
 
+Refer to the [`scopeagent` package documentation](https://godoc.org/go.undefinedlabs.com/scopeagent/agent)
+for the full list of options available to programmatically configure the agent.
 
-### Manual installation
-
-The Scope Agent will automatically be installed if the API key can be autodetected (via environment variable, or via _Scope for Mac_ or _Scope for Windows_ in local development mode).
-
-However, it can also be installed programmatically. In order to do so, you must supply (at least) the API key, and configure the instrumentation library. For example:
-
-```go
-import (
-	"go.undefinedlabs.com/scopeagent/agent"
-	"go.undefinedlabs.com/scopeagent/instrumentation"
-)
-
-func main() {
-	// Create a custom agent instance
-	myAgent, err := agent.NewAgent(agent.WithApiKey("xxxxx"))
-	if err != nil {
-		panic(err)
-	}
-
-	// Make sure we stop the agent cleanly before exiting
-	defer myAgent.Stop()
-
-    // Configure the instrumentation library to use the custom agent's tracer
-	instrumentation.SetTracer(myAgent.Tracer())
-	
-	// ...
-}
-```
-
-Check out the [`scopeagent` package documentation](https://godoc.org/go.undefinedlabs.com/scopeagent/agent) for a full list of options when creating the agent.
+Instrumentation for server and client libraries is done manually. Please check the different sections on the left for more information.
 
 
 ## Custom OpenTracing instrumentation
@@ -112,7 +85,8 @@ own custom spans and events to your code. Always make sure to use a `context.Con
 instrumentation to extend the traces created by `scopeagent.StartTest`.
 
 In order to capture your custom instrumentation, Scope's agent has to be registered as OpenTracing's global tracer.
-There are two options to do this: set the environment variable `SCOPE_SET_GLOBAL_TRACER=true`, or in code, like in the following example:
+There are two options to do this: set the environment variable `SCOPE_SET_GLOBAL_TRACER=true`,
+or in code passing the option `WithSetGlobalTracer()`, like in the following example:
 
 ```go
 import (
@@ -121,8 +95,11 @@ import (
 )
 
 func main() {
-	// Register Scope's tracer as OpenTracing's global tracer to capture custom instrumentation
-	opentracing.SetGlobalTracer(scopeagent.GlobalAgent().Tracer())
+    scopeAgent, err := agent.NewAgent(agent.WithSetGlobalTracer())
+    if err != nil {
+        panic(err)
+    }
+    defer scopeAgent.Stop()
 
 	// ...
 }

@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.4" target="_blank">Scope Go Agent v0.1.4</a>
+
+*October 11, 2019*
+
+#### Added
+* Added new options for agent configuration: `WithSetGlobalTracer` and `WithGitInfo`.
+
+#### Changed
+* Now, the agent will not be autoinstalled on package import. An agent instance needs to be manually created for runtime instrumentation, or the `scopeagent.Run` helper needs to be used for testing instrumentation. Check the Scope documentation for more details.
+
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.3" target="_blank">Scope Go Agent v0.1.3</a>
 
 *October 02, 2019*

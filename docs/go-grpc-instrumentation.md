@@ -7,8 +7,9 @@ sidebar_label: gRPC Instrumentation
 
 ## Instrumenting the gRPC client
 
-The easiest way would be to use the Scope Go agent's `grpc.Dial`, which returns an instrumented client automatically.
-For example:
+First, make sure the agent has been [installed](go-installation.md) in your Go application.
+
+Then, add Scope's client interceptors when calling `grpc.Dial`. For example:
 
 ```go
 import (
@@ -17,25 +18,11 @@ import (
     "google.golang.org/grpc"
 )
 
-func myFunc() {
+func main() {
     // ...
-    conn, err := scopegrpc.Dial(address)
+    conn, err := grpc.Dial(address, scopegrpc.GetClientInterceptors()...)
+
     // ...
-}
-```
-
-Alternatively, you can manually add Scope's client interceptors when calling `grpc.Dial`. For example:
-
-```go
-import (
-    scopegrpc "go.undefinedlabs.com/scopeagent/instrumentation/grpc"
-
-    "google.golang.org/grpc"
-)
-
-func getInstrumentedGrpcClient(address string, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
-    opts = append(opts, scopegrpc.GetClientInterceptors()...)
-    return grpc.Dial(address, opts...)
 }
 ```
 
@@ -46,19 +33,21 @@ For example:
 
 ```go
 import (
-    "go.undefinedlabs.com/scopeagent"
     scopegrpc "go.undefinedlabs.com/scopeagent/instrumentation/grpc"
 
     "google.golang.org/grpc"
     pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
 
-func makeRequest(conn *grpc.ClientConn, ctx context.Context) err {
+func main() {
+    // ...
+    conn, err := grpc.Dial(address, scopegrpc.GetClientInterceptors()...)
     client := pb.NewGreeterClient(conn)
     r, err := client.SayHello(ctx, &pb.HelloRequest{Name: "world"})
     if err != nil {
         panic(err)
     }
+
     // ...
 }
 ```
@@ -66,37 +55,26 @@ func makeRequest(conn *grpc.ClientConn, ctx context.Context) err {
 
 ## Instrumenting the gRPC server
 
-The easiest way would be to use the Scope Go agent's `grpc.NewServer`, which returns an instrumented server automatically.
-For example:
+Add Scope's server interceptors when calling `grpc.NewServer()`. For example:
 
 ```go
 import (
+    "go.undefinedlabs.com/scopeagent/agent"
     scopegrpc "go.undefinedlabs.com/scopeagent/instrumentation/grpc"
 
     "google.golang.org/grpc"
 )
 
-func myFunc() {
+func main() {
+    // Make sure the agent is installed first
+    scopeAgent, err := agent.NewAgent()
+    if err != nil {
+        panic(err)
+    }
+    defer scopeAgent.Stop()
+
+    server := grpc.NewServer(scopegrpc.GetServerInterceptors()...)
+
     // ...
-    server := scopegrpc.NewServer()
-    // ...
-}
-```
-
-
-Alternatively, you can add Scope's server interceptors when calling `grpc.NewServer()`.
-For example:
-
-```go
-import (
-    "go.undefinedlabs.com/scopeagent"
-    scopegrpc "go.undefinedlabs.com/scopeagent/instrumentation/grpc"
-
-    "google.golang.org/grpc"
-)
-
-func getInstrumentedGrpcServer(opts ...grpc.ServerOption) *grpc.Server {
-    opts = append(opts, scopegrpc.GetServerInterceptors()...)
-    return grpc.NewServer(opts...)
 }
 ```

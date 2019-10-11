@@ -21,7 +21,8 @@ import (
     "go.undefinedlabs.com/scopeagent/instrumentation/process"
 )
 
-func myFunc(ctx context.Context) {
+func main() {
+    // ...
     cmd := exec.Command("my-cli")
     process.InjectToCmd(ctx, cmd)
 
@@ -39,7 +40,8 @@ import (
     "go.undefinedlabs.com/scopeagent/instrumentation/process"
 )
 
-func myFunc(ctx context.Context) {
+func main() {
+    // ...
     cmd := exec.Command("my-cli")
     span, ctx := process.InjectToCmdWithSpan(ctx, cmd)
     defer span.Finish()
@@ -61,13 +63,17 @@ import (
     "path/filepath"
 
     "github.com/opentracing/opentracing-go"
-    "go.undefinedlabs.com/scopeagent"
+    "go.undefinedlabs.com/scopeagent/agent"
     "go.undefinedlabs.com/scopeagent/instrumentation/process"
 )
 
 func main() {
-    // Make sure we stop the agent cleanly before exiting
-    defer scopeagent.Stop()
+    // Make sure the agent is installed first
+    scopeAgent, err := agent.NewAgent()
+    if err != nil {
+        panic(err)
+    }
+    defer scopeAgent.Stop()
 
     // Start a span representing this process execution, following the trace found in the environment (if available)
     span := process.StartSpan(filepath.Base(os.Args[0]))
