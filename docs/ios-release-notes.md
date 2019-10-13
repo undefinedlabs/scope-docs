@@ -5,6 +5,26 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.3.0
+
+*October 10, 2019*
+
+**Added**
+* Auto-intrumentation for Http requests and responses
+* Added support for manual testing 
+* Network spans include now the headers of requests and responses (filtering security sensible ones)
+* Scope can include the payloads of the request/responses when configured with `SCOPE_INSTRUMENTATION_HTTP_PAYLOADS` environment variable
+* Integrate Spans into native signpost interval, so if Scope is linked to the application the different spans will be seen as Signposts when profiling with Instruments
+
+**Changed**
+* Code added to instrument network requests or add instrumentation headers should not be needed now.
+* Don't set Scope as global OpenTracing tracer by default( standard Opentracing calls will not be automatically captured by Scope)
+* Scope.framework doesn't include complete OpenTracing library, if you want to use OpenTracing you need to link separately
+
+**Fixed**
+* Network responses were not being shown as children of the network request
+
+
 ## Scope iOS Agent v0.2.6
 
 *September 19, 2019*
