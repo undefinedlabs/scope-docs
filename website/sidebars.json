@@ -17,6 +17,7 @@
       "ios-compatibility",
       "ios-manual-logging",
       "ios-http-instrumentation",
+      "ios-manual-testing",
       "ios-release-notes"
     ],
     "Python Agent": [

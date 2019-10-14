@@ -116,7 +116,7 @@ After this, add the following environment variables to your CI provider:
 
 ## Local development integration
 
-For running tests in your local Xcode installation, the following environment variables must set in your test target ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
+For running tests in your local Xcode installation, the following environment variables must set in your **Test target** ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
 
 | Key                        | Value                         |
 | -------------------------- | ----------------------------- |
