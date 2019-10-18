@@ -37,7 +37,7 @@ In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/iO
 ## Instrumenting your tests
 
 After installation, you can run your tests as you normally do, for example using the `xcodebuild test` command. 
-Tests will be instrumented automatically.
+Tests, network requests and application logs will be instrumented automatically.
 
 
 ## CI provider configuration

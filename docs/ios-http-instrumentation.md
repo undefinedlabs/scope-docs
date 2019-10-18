@@ -4,11 +4,17 @@ title: Scope iOS Agent HTTP Instrumentation
 sidebar_label: HTTP Instrumentation
 ---
 
-To integrate logs and exceptions from services your integration tests interact with over HTTP, 
-you must append some headers to your outgoing requests that identify the test and context from where those request were made. 
-The following changes must be done on the client application side in order for this to work:
+The Scope iOS agent automatically instruments all your `Alamofire`, `URLSession` and `URLConnection` network connections, and collects many details about them (such as their request URL, request/response headers, status, etc.). The Scope agent can also show the beginning of the request and response payloads if running with the environment variable `SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=YES`.
 
-## Installation
+By auto instrumenting the HTTP requests, the Scope agent appends HTTP headers to outgoing requests that identify your tests and the context from where those request were made. This allows Scope to integrate logs and exceptions from external services your integration tests interact with over HTTP automatically.
+
+If for some reason you dont want this behaviour or you want only to instrument some requests, you can run your tests with the environment variable `SCOPE_INSTRUMENTATION_HTTP_CLIENT = NO` (which disables previous behaviour) , and add one of the following changes to your project to instrument the required requests:
+
+## Manual instrumentation
+
+If you don't want Scope to auto instrument all your outgoing requests, you can run your tests with the environment variable `SCOPE_INSTRUMENTATION_HTTP_CLIENT = NO`, and follow these instructions.
+
+### Installation
 
 Link your application or framework target with `ScopeAgent`
 
@@ -71,7 +77,7 @@ binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgentClient.jso
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 
-## Usage
+### Usage
 
 If you use the ScopeAgent framework you can use  `SAURLSessionObserver.adapt(_:)` or `SAURLSessionObserver.adaptConfiguration(_:)` methods to modify your `URLRequest` or `URLSessionConfiguration` objects. The interface of `SAURLSessionObserver.adapt(_:)` is as follows:
 

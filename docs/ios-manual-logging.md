@@ -4,12 +4,14 @@ title: Scope iOS Agent manual logging
 sidebar_label: Manual logging
 ---
 
-In order to improve the information you can get from Scope, you can also add your custom application logs. 
-It will allow you to contextualize much better the state of your application when you review the Scope output.
+Scope captures `NSLog`, `print` and `os_log` (stdout and stderr) output automatically, and associates them to the active span when they were generated if possible, or to the test span otherwise.
 
-In order to add your application logs to Scope, you need to do some changes to your code.
+In order for the Scope agent to capture information about the line of source code that generated each log event and use different log levels for later filtering, we recommend adding manual logging instrumentation, as described in the following sections.
 
-## Installation
+
+## Manual instrumentation
+
+### Installation
 
 Link your application or framework target with `ScopeAgent`
 
@@ -69,7 +71,7 @@ binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgentClient.jso
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 
-## Usage
+### Usage
 
 Use the `SALogger.log()` method to send your log messages to Scope. The interface of `SALogger.log()` is as follows:
 
