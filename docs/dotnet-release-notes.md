@@ -5,6 +5,21 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.13
+
+*October 22, 2019*
+
+**Added:**
+- Support for .NET Core 3.0
+- Scope api endpoint fallback to app.scope.dev if the environment variable is null.
+- Support for `scope.yml` and `scope.yaml` configuration filename.
+- Dapper ORM instrumentation
+- Support for TeamCity CI
+      
+**Fixes:**
+- Handling of multiple interceptors for databases.
+
+
 ## Scope .NET Agent v0.1.12
 
 *September 09, 2019*

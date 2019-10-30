@@ -62,3 +62,11 @@ The following optional parameters can also be configured:
 or if the `.git` folder is present locally, and there is an `origin` remote configured pointing to the right repository.
 
 These configuration settings can also be provided via CLI flags. Run `scope-run --help` for more information.
+
+For `TeamCity`, additional environment variables must be exposed from the Teamcity `Parameters` section:
+
+|          Name           |            Value               |
+|-------------------------|--------------------------------|
+| `env.BUILD_CHECKOUTDIR` | `%teamcity.build.checkoutDir%` |
+| `env.BUILD_ID`          | `%teamcity.build.id%`          |
+| `env.BUILD_VCS_URL`     | `%vcsroot.url%`                |
