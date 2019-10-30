@@ -38,6 +38,11 @@
       "javascript-installation",
       "javascript-compatibility",
       "javascript-release-notes"
+    ],
+    "Scope For Chrome": [
+      "scope-for-chrome-installation",
+      "scope-for-chrome-compatibility",
+      "scope-for-chrome-release-notes"
     ]
   }
 }

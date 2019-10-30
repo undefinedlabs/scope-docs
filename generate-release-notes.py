@@ -42,6 +42,11 @@ COMPONENTS = {
         'id': 'javascript-release-notes',
         'name': 'Scope Javascript Agent'
     },
+    'scope-for-chrome': {
+        'first_version': '0.3.2',
+        'id': 'scope-for-chrome-release-notes',
+        'name': 'Scope For Chrome'
+    },
 }
 
 GITHUB_ENDPOINT = "https://api.github.com/graphql"
