@@ -8,7 +8,7 @@ sidebar_label: Configuration
 
 You can send arbitrary metadata for every test associated with certain commit which will be shown by Scope.
 
-Additionally, it is possible to set a environment variable as metadata value for a certain metadata key, whose final value will be obtained in runtime during the build process.
+Additionally, it is possible to set na environment variable as metadata value for a certain key, whose final value will be evaluated at runtime.
 
 ### Using Environment Variables
 
