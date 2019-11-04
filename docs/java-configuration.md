@@ -4,7 +4,7 @@ title: Scope Java Agent configuration
 sidebar_label: Configuration
 ---
 
-## Send arbitrary metadata.
+## Adding agent metadata
 
 You can send arbitrary metadata for every test associated with certain commit which will be shown by Scope.
 
