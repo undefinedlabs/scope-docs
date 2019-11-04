@@ -42,3 +42,69 @@ scope:
     - sample.key1
     - sample.key2
 ```
+
+## Include DB statements values in DB span tags
+
+You can include DB statement values in the related DB spans.
+
+By default, Scope Java agent will not send DB statement values due to be considered sensitive information.
+
+### Using Environment Variables
+
+`SCOPE_INSTRUMENTATION_DB_STATEMENT_VALUES=true`
+
+### Using YAML Configuration file
+
+```yaml
+scope:
+  instrumentation:
+    db:
+      statement_values: true
+```
+
+## Include HTTP payloads in HTTP span tags
+
+You can include HTTP payloads in the related HTTP spans, truncated to the first 512 bytes.
+
+By default, Scope Java agent will not send HTTP payloads due to be considered sensitive information.
+
+
+### Using Environment Variables
+
+`SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true`
+
+### Using YAML Configuration file
+
+```yaml
+scope:
+  instrumentation:
+    http:
+      payloads: true
+```
+
+## Include additional HTTP Headers in HTTP span tags
+
+You can include additional HTTP Headers in HTTP span tags.
+
+By default, Scope Java agent will send common HTTP headers, filtering the content of those which can contain sensitive information, such as:
+
+- `Authorization`
+- `Cookie`
+- `Set-Cookie`
+
+Note that the content of every header configured explicitly to be shown in the HTTP span tags will not be filtered. 
+
+### Using Environment Variables
+
+`SCOPE_INSTRUMENTATION_HTTP_HEADERS="Authorization,My-Header-One,My-Header-Two"`
+
+### Using YAML Configuration file
+```yaml
+scope:
+  instrumentation:
+    http:
+      headers:
+        - Authorization
+        - My-Header-One
+        - My-Header-Two
+```
