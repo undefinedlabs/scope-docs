@@ -106,19 +106,22 @@ The following environment variables need to be configured when instrumenting you
 
 | Environment variable  | Default value           | Description                                            |
 |-----------------------|-------------------------|--------------------------------------------------------|
-| `$SCOPE_APIKEY`       |                         | API key to use when sending data to Scope              |
-| `$SCOPE_API_ENDPOINT` | `https://app.scope.dev` | API endpoint of the Scope installation to send data to |
-| `$SCOPE_COMMIT_SHA`   | Autodetected (*)        | Commit hash to use when sending data to Scope          |
-| `$SCOPE_REPOSITORY`   | Autodetected (*)        | Repository URL to use when sending data to Scope       |
-| `$SCOPE_SOURCE_ROOT`  | Autodetected (*)        | Repository root path                                   |
+| `$SCOPE_DSN`          |                         | API Endpoint and API Key in the form `https://<SCOPE_APIKEY>@<SCOPE_API_ENDPOINT>` to use when sending data to Scope (*)              |
+| `$SCOPE_APIKEY`       |                         | API key to use when sending data to Scope (*)             |
+| `$SCOPE_API_ENDPOINT` | `https://app.scope.dev` | API endpoint of the Scope installation to send data to (*) |
+| `$SCOPE_COMMIT_SHA`   | Autodetected (**)        | Commit hash to use when sending data to Scope          |
+| `$SCOPE_REPOSITORY`   | Autodetected (**)        | Repository URL to use when sending data to Scope       |
+| `$SCOPE_SOURCE_ROOT`  | Autodetected (**)        | Repository root path                                   |
+
+(*) `$SCOPE_DSN` prevails over `$SCOPE_API_ENDPOINT` and `$SCOPE_APIKEY`. 
+
+(**) Autodetection of git information works if either tests run on a [supported CI provider](java-compatibility.md#ci-providers).
 
 The following optional parameters can also be configured:
 
 | Environment variable | Default value    | Description                                      |
 |----------------------|------------------|--------------------------------------------------|
 | `$SCOPE_SERVICE`     | `default`        | Service name to use when sending data to Scope   |
-
-(*) Autodetection of git information works if either tests run on a [supported CI provider](java-compatibility.md#ci-providers).
 
 The following environment variables are also available to modify the Scope Agent behavior.
 
