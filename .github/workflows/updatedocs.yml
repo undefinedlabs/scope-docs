@@ -1,0 +1,33 @@
+name: Update Docs
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+      - name: Install python requirements
+        run: pip install -r requirements.txt
+      - name: Run script
+        run: python generate-release-notes.py
+        env:
+          GITHUB_TOKEN: ${{secrets.repositories_token}}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v1.6.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_BRANCH: update-release-notes
+          PULL_REQUEST_TITLE: "[CRON] Update Release Notes"
+          PULL_REQUEST_ASSIGNEES: fermayo
+          PULL_REQUEST_REVIEWERS: fermayo
+          COMMIT_MESSAGE: Update release docs
+          COMMIT_AUTHOR_EMAIL: juan@undefinedlabs.com
+          COMMIT_AUTHOR_NAME: Juan Fernandez
+          PULL_REQUEST_BODY: |
+            Automatic PR to update release notes of scope agents.
