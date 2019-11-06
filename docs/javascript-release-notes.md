@@ -5,6 +5,16 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.2.3
+
+*October 31, 2019*
+
+### Added
+- Add request type for http requests.
+- Control http aborts.
+- Send incomplete http spans as `incomplete` for easier debugging.
+
+
 ## Scope Javascript Agent v0.2.2
 
 *October 16, 2019*

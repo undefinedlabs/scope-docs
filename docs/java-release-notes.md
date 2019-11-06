@@ -5,6 +5,40 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.2.1
+
+*November 04, 2019*
+
+**Added**
+- Added capability to hide sensible information on datastores spans.
+- Added `http.response_payload` info on HTTP spans.
+- Added `http.response_headers` and `http.request_headers` on `HTTP` spans.
+- Added `language` tag to `scala` on `ScalaTest` and `Scala` frameworks.
+- Added support to use `SCOPE_DSN` has configuration for `SCOPE_APIKEY` and `SCOPE_API_ENDPOINT`.
+- Added `response.body` on `Sender` log message.
+- Added print all `ScopeSettings` in `DEBUG` log level.
+- Added `Statistics` on spans remote reporting.
+- Added `configuration` in `agent.metadata`. 
+- Added filename and line number in not symbolicated exceptions stacktrace object.
+- Added `db.statement.unavailable=disabled` info when DB statements are disabled.
+- Added `SCOPE_CONFIG_FILE` as environment variable to set the config file path manually.
+- Added `fileName` attribute on stack frames.
+- Added instrumentation for benchmark `JMH` for `v1.x`.
+
+**Changed**
+- Changed log information to show to user based on number of failed tests.
+- Changed set real `http.status_code` when `Tomcat` or `Netty` throws an exception.
+- Changed `scope.test_aggregations` by `scope.metadata`.
+- Changed `http.payload` on requests and responses from `null` to empty string.
+
+**Fixed**
+- Fixed support `nested classes` on `JUnit5` tests.
+- Fixed instrumentation for Runtime mode.
+- Fixed `git` information on Runtime/Local environment.
+- Fixed prevent `JVM` does not finish when `ScopeAgent` is run on Runtime.
+- Fixed prevent sending `healthcheck` info every second if it is not `testing.mode=true`
+
+
 ## Scope Java Agent v0.2.0
 
 *October 02, 2019*

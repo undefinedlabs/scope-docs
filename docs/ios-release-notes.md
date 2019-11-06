@@ -5,6 +5,39 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.3.3
+
+*October 31, 2019*
+
+**Added**
+* Support for iOS 13 Applications that use UIWindowScene
+* Report empty payloads when payload instrumentation is configured (Scope was not reporting the payload when empty)
+
+**Fixed**
+* Disabling network instrumentation was not working
+* Automatic network instrumentation could make some requests fail
+* Some instrumentation was being initialised before checking the environment variable
+
+
+## Scope iOS Agent v0.3.2
+
+*October 18, 2019*
+
+**Fixed**
+* Manual testing UI was not drawing correctly with some Xcode 11.1 projects
+
+
+## Scope iOS Agent v0.3.1
+
+*October 15, 2019*
+
+**Changed**
+* Use SCOPE_INSTRUMENTATION_HTTP_CLIENT env variable to disable network instrumentation
+
+**Fixed**
+* Crash in agent when logging some requests
+
+
 ## Scope iOS Agent v0.3.0
 
 *October 10, 2019*
