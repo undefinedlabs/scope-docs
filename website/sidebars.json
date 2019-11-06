@@ -10,6 +10,7 @@
       "java-installation",
       "java-compatibility",
       "java-runtime",
+      "java-configuration",
       "java-release-notes"
     ],
     "iOS Agent": [
