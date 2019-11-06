@@ -12,6 +12,12 @@ dotnet tool install --global ScopeAgent.Runner
 
 This will install the `scope-run` command globally in the machine.
 
+In case your have a previous version of the Scope Agent, you can update using:
+
+```bash
+dotnet tool update --global ScopeAgent.Runner
+```
+
 ## Instrumenting your tests
 
 To use the agent, prefix your test command with `scope-run`. For example:

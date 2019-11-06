@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.14
+
+*November 06, 2019*
+
+**Fixes:**
+- .NET Core 3.0 runtime targeting an old .NET Core version
+- Reduce package file size
+
+**Changes:**
+- Http and DB spans operation name now follows the agents semantic conventions
+
+
 ## Scope .NET Agent v0.1.13
 
 *October 22, 2019*
