@@ -5,6 +5,29 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.4.0
+
+*November 06, 2019*
+
+#### Added
+- **New**: you can now open issues on GitHub with all the debugging information available directly from the test detail page.
+- Source code snippets have now syntax highlighting.
+- The test trace view now displays events on top of the spans.
+- HTTP client and server spans now show payload data (if enabled in the agent).
+- New onboarding design that includes getting started projects.
+
+#### Changed
+- Selecting a new branch on the Explore View resets any filter on the UI.
+- Increased the density of commits on the performance tab of tests.
+- Stacktrace frames are now expanded by default.
+- Local development test report list now includes more information.
+
+#### Fixed
+- Bug that showed a blank page after deleting a namespace.
+- Fixed the commits order on the Test Performance Tab.
+- Several other minor bug fixes and enhancements
+
+
 ## Scope v1.3.3
 
 *October 09, 2019*
