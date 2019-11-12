@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope For Chrome v0.3.5
+
+*November 11, 2019*
+
+### Changed
+- Update scope logo
+
+
 ## Scope For Chrome v0.3.4
 
 *November 05, 2019*
