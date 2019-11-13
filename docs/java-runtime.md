@@ -11,11 +11,11 @@ This service might run, for example, in a container on CI, or in a QA/staging en
 
 ## Using `javaagent` VM param 
 
-Download the Scope Java Agent, replacing `0.2.0` with the latest version.
+Download the Scope Java Agent, replacing `0.2.1` with the latest version.
 
 ```bash
 cd /path/to/scope/agent
-curl -s -o scope-agent.jar "https://repo1.maven.org/maven2/com/undefinedlabs/scope/scope-agent/0.2.0/scope-agent-0.2.0.jar"
+curl -s -o scope-agent.jar "https://repo1.maven.org/maven2/com/undefinedlabs/scope/scope-agent/0.2.1/scope-agent-0.2.1.jar"
 ```
 
 Modify your Java app startup script to add the `javaagent` parameter pointing to the downloaded Scope Agent JAR.
