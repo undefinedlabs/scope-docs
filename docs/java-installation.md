@@ -6,11 +6,11 @@ sidebar_label: Installation
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Maven-->
-Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.2.1` with the latest version of the agent:
+Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.2.2` with the latest version of the agent:
 
 ```xml
 <properties>
-  <scope.agent.version>0.2.1</scope.agent.version>
+  <scope.agent.version>0.2.2</scope.agent.version>
 </properties>
 ```
 
@@ -53,7 +53,7 @@ Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-
 After this, you can run your tests as you normally do, for example using the `mvn clean verify` command.
 
 <!--Gradle-->
-Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.2.1`  with the latest version of the agent.
+Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.2.2`  with the latest version of the agent.
 
 ```groovy
 configurations {
@@ -61,7 +61,7 @@ configurations {
 }
 
 dependencies {
-    testAgent "com.undefinedlabs.scope:scope-agent:0.2.1"
+    testAgent "com.undefinedlabs.scope:scope-agent:0.2.2"
 }
 ```
 ### Instrumenting your tests
@@ -84,13 +84,13 @@ Add the `sbt-javaagent` entry to the `project/plugins.sbt` file.
 addSbtPlugin("com.lightbend.sbt" % "sbt-javaagent" % "0.1.5")
 ```
 
-Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.2.1` with the latest version of the agent.
+Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.2.2` with the latest version of the agent.
 ```scala
 lazy val root = project
   .in(file("."))
   .enablePlugins(JavaAgent)
   .settings(
-    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.1" % "test"
+    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.2" % "test"
   )
 ```
 ### Instrumenting your tests
