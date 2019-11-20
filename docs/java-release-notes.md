@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.2.2
+
+*November 18, 2019*
+
+**Added**
+- Added dependencies to `agent.metadata` based on `Maven`, `Gradle` and `Coursier` on platforms `Unix` and `Windows`.
+
+**Fixed**
+- Fixed Code Coverage reporting `null` filepath in some packages.
+- Fixed `test.coverage` to return correct start/end boundary.
+
+
 ## Scope Java Agent v0.2.1
 
 *November 04, 2019*
