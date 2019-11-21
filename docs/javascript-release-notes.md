@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.2.4
+
+*November 20, 2019*
+
+### Added
+- Support for `@testing-library/react`.
+- Improve time resolution in test duration.
+
+
 ## Scope Javascript Agent v0.2.3
 
 *October 31, 2019*

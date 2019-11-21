@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.15
+
+*November 19, 2019*
+
+**Added:**
+- DB params instrumentation flag. (disabled by default)
+- Http payload and headers instrumentation.
+- Dependencies version dictionary on metadata.
+- BenchmarkDotNet exporter for scope.
+- Scope DSN support.
+
+**Changes:**
+- Complete refactor of the agent. 
+- Standalone version of the coverage algorithm.
+- Error messages after finishing test suite.
+
+
 ## Scope .NET Agent v0.1.14
 
 *November 06, 2019*
