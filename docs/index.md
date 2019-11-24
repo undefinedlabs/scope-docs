@@ -48,8 +48,8 @@ in real time in Scope.
 You can also use Scope to debug tests that you run locally. The results will only be available to you.
 In order to do so, download the **Scope Desktop** app for your OS:
 
-* [Download Scope for Mac](https://home.codescope.com/goto/download-scope-for-mac)
-* [Download Scope for Windows](https://home.codescope.com/goto/download-scope-for-windows)
+* [Download Scope for Mac](https://home.undefinedlabs.com/goto/download-scope-for-mac)
+* [Download Scope for Windows](https://home.undefinedlabs.com/goto/download-scope-for-windows)
 
 After installation, head over to the **Local development/Scratchpad** section in Scope and click on **Configure App** to
 automatically set the appropriate credentials.
