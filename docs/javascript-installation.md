@@ -25,44 +25,50 @@ yarn add --dev @undefinedlabs/scope-agent
 
 ### Jest tests
 
-If you want to instrument tests run by Jest, you need to create a `reporter`.
-
-In `src/reporter.js`
+If you want to instrument tests run by Jest, you need to configure a custom [runner](https://jestjs.io/docs/en/configuration#runner-string), [testRunner](https://jestjs.io/docs/en/configuration#testrunner-string) and [setupFilesAfterEnv](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
 
 ```javascript
-const Reporter = require("@undefinedlabs/scope-agent").JestReporter;
-
-module.exports = Reporter;
-```
-
-Then you have to configure [jest reporter](https://jestjs.io/docs/en/configuration#reporters-array-modulename-modulename-options)
-to point to this file.
-
-For example:
-
-In your `jest.config.js`:
-
-```javascript
+// jest.config.js
 module.exports = {
   // ...
-  reporters: ["<rootDir>/src/reporter.js"]
+  testRunner: "@undefinedlabs/scope-agent/jestTestRunner",
+  runner: "@undefinedlabs/scope-agent/jestRunner",
+  setupFilesAfterEnv: ["@undefinedlabs/scope-agent/jestSetupTests"]
   // ...
 };
 ```
 
+You may also run your jest tests with inline configuration:
+
+```
+yarn test --testRunner=@undefinedlabs/scope-agent/jestTestRunner --runner=@undefinedlabs/scope-agent/jestRunner --setupFilesAfterEnv=@undefinedlabs/scope-agent/jestSetupTests
+```
+
 #### Create React App
 
-In your `package.json`:
+CRA does not allow `testRunner` or `runner` configuration for jest yet (more info in https://github.com/facebook/create-react-app/issues/2474) so you may not use the `jest` field in your `package.json`. The `setupFilesAfterEnv` configuration is already included in CRA via [setupTests.js](https://create-react-app.dev/docs/running-tests/#srcsetuptestsjs).
+
+You can define the configuration inline in your `package.json`:
 
 ```json
 ...
 "scripts": {
-  "test:scope": "react-scripts test --reporters=default --reporters=./src/reporter.js"
+  "test": "react-scripts test --testRunner=@undefinedlabs/scope-agent/jestTestRunner --runner=@undefinedlabs/scope-agent/jestRunner"
 }
 ...
 ```
 
-CRA does not allow `reporter` configuration for jest yet (more info in https://github.com/facebook/create-react-app/issues/2474) so you may not use the `jest` field in your `package.json`.
+And in your CRA's `src/setupTests.js` add the following line:
+
+```javascript
+import "@undefinedlabs/scope-agent/jestSetupTests";
+```
+
+After that you should be able to run your tests as you normally do e.g.:
+
+```
+yarn test
+```
 
 ### Cypress tests
 
@@ -77,9 +83,8 @@ Add the following to [cypress.json](https://docs.cypress.io/guides/references/co
 }
 ```
 
-Where `cypress/support/index.js`:
-
 ```javascript
+// cypress/support/index.js
 import { initializeCypress } from "@undefinedlabs/scope-agent";
 
 initializeCypress();
@@ -87,9 +92,8 @@ initializeCypress();
 // ... any other configuration here
 ```
 
-And `cypress/plugins/index.js`:
-
 ```javascript
+// cypress/plugins/index.js
 const { initCypressPlugin } = require("@undefinedlabs/scope-agent");
 
 module.exports = async (on, config) => {

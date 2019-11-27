@@ -40,6 +40,11 @@
       "javascript-compatibility",
       "javascript-release-notes"
     ],
+    "Node.js Agent": [
+      "nodejs-installation",
+      "nodejs-compatibility",
+      "nodejs-release-notes"
+    ],
     "Scope For Chrome": [
       "scope-for-chrome-installation",
       "scope-for-chrome-compatibility",
