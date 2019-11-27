@@ -5,6 +5,24 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.2.5
+
+*November 26, 2019*
+
+### Added
+- Add support for node js libraries: `express` and  `node-fetch`.
+- Add support for `console`: console logs now appear as span events.
+- Add support for `fetch` in ui tests: they now appear as new spans.
+
+### Fixed
+- Timing is now correctly calculated for tests shorter than 1ms.
+- Better calculation and higher resolution in time calculations for start times and durations.
+
+### Changed
+- The automatic instrumentation is now done through a jest `runner` and `testRunner` instead of a `reporter`.
+
+
+
 ## Scope Javascript Agent v0.2.4
 
 *November 20, 2019*
