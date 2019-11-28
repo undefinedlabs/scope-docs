@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.0
+
+*November 27, 2019*
+
+### Added
+- Add support for global exceptions in jest.
+- Add support for global click events.
+
+### Changed
+- Better ingest management.
+- Better automatic instrumentation.
+- Remove `testing-library/react` and `node-fetch` specific instrumentations.
+
+### Fixed
+- Errored spans are now sending `error=true` as span tag.
+
+
 ## Scope Javascript Agent v0.2.5
 
 *November 26, 2019*

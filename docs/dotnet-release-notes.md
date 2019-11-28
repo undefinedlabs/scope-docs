@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.16
+
+*November 27, 2019*
+
+**Changes:**
+- Remove the Error status from tests
+- Env vars renaming
+
+**Fixes:**
+- Runner arguments parser.
+
+
 ## Scope .NET Agent v0.1.15
 
 *November 19, 2019*
