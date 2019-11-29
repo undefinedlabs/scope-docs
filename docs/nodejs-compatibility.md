@@ -8,9 +8,9 @@ sidebar_label: Compatibility
 
 The instrumentation is automatic.
 
-| Name                       | Span/event creation | Inject | Extract |                   HTTP Server                   |                        HTTP Client                         |
-| -------------------------- | :-----------------: | :----: | :-----: | :---------------------------------------------: | :--------------------------------------------------------: |
-| [Jest](https://jestjs.io/) |          ✓          |   ✓    |    ✓    | [express](https://github.com/expressjs/express) | All clients using [http](https://nodejs.org/api/http.html) |
+| Name                       | Span/event creation | Inject | Extract | HTTP |
+| -------------------------- | :-----------------: | :----: | :-----: | :--: |
+| [Jest](https://jestjs.io/) |          ✓          |   ✓    |    ✓    |  ✓   |
 
 ### CI providers
 

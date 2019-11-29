@@ -49,3 +49,17 @@ You may also run your jest tests with inline configuration:
 ```
 yarn test --testRunner=@undefinedlabs/scope-agent/jestTestRunner --runner=@undefinedlabs/scope-agent/jestRunner --setupFilesAfterEnv=@undefinedlabs/scope-agent/jestSetupTests
 ```
+
+### HTTP servers
+
+You may also instrument your http server by simply including `require('@undefinedlabs/scope-agent/node')` at the top of your server main function. For example, in [express](https://expressjs.com/):
+
+```javascript
+// It needs to be before you import express
+require("@undefinedlabs/scope-agent/node");
+const express = require("express");
+
+const app = express();
+
+// Server configuration continues here
+```
