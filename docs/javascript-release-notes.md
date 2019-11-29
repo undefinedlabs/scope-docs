@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.1
+
+*November 28, 2019*
+
+### Changed
+- Improve Node.js automatic instrumentation.
+
+
 ## Scope Javascript Agent v0.3.0
 
 *November 27, 2019*

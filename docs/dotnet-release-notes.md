@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.18
+
+*November 28, 2019*
+
+**Fixes:**
+- Azure DevOps Pipelines CI support
+
+
+## Scope .NET Agent v0.1.17
+
+*November 28, 2019*
+
+**Changes:**
+
+- Rename `SCOPE_CODEPATH` to `SCOPE_CODE_PATH`
+
+
 ## Scope .NET Agent v0.1.16
 
 *November 27, 2019*

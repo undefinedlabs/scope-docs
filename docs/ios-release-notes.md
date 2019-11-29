@@ -5,6 +5,27 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.4.0
+
+*November 28, 2019*
+
+**Added**
+* **Code Path** functionality when project configured properly (see documentation)
+* SCOPE_DSN global variable replaces both SCOPE_APIKEY and SCOPE_API_ENDPOINT
+* SCOPE_XCODE_DSN global variables replaces both SCOPE_XCODE_APIKEY and SCOPE_XCODE_API_ENDPOINT
+* Library dependencies for the test run
+
+**Fixed**
+* URLSession methods that used URL directly where not adding instrumentation headers
+* Sometimes Code Path format was not being generated correctly
+* Symbols upload was not working if endpoint was not set, now it reports to app.scope.dev by default
+
+**Changed**
+* **Previous ERROR and FAIL status for tests are now unified in FAIL status**
+* Updated Scope Logo in manual testing
+* Xcode 11.2.1 used for building the framework
+
+
 ## Scope iOS Agent v0.3.3
 
 *October 31, 2019*
