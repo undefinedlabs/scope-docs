@@ -54,18 +54,16 @@ You just need to indicate the base package, and every sub-package, starting from
 ### Using Environment Variables
 
 ```sh
-SCOPE_CODE_COVERAGE=true
-SCOPE_CODE_COVERAGE_BASE_PACKAGES="foo.bar.xyz, bar.foo"
+SCOPE_CODE_PATH=true
+SCOPE_CODE_PATH_BASE_PACKAGES="foo.bar.xyz, bar.foo"
 ```
 
 ### Using YAML Configuration file
 
 ```yaml
 scope:
-  instrumentation:
-    testsframeworks:
-      code_coverage: true
-      code_coverage_base_packages: "foo.bar.xyz, bar.foo"
+  code_path: true
+  code_path_base_packages: "foo.bar.xyz, bar.foo"
 ```
 
 ## Include DB statements values in DB span tags
