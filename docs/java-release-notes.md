@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.2.3
+
+*November 29, 2019*
+
+**Changed**
+- Changed code path config property to `SCOPE_CODE_PATH`.
+- Changed `TEST_ERROR` status into `TEST_FAILED` status.
+
+
 ## Scope Java Agent v0.2.2
 
 *November 18, 2019*

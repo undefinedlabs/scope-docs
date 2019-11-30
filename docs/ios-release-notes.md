@@ -17,7 +17,6 @@ sidebar_label: Release notes
 
 **Fixed**
 * URLSession methods that used URL directly where not adding instrumentation headers
-* Sometimes Code Path format was not being generated correctly
 * Symbols upload was not working if endpoint was not set, now it reports to app.scope.dev by default
 
 **Changed**
