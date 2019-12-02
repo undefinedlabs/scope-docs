@@ -28,24 +28,6 @@ scope-run dotnet test
 
 All tests will be instrumented automatically.
 
-
-## Runtime instrumentation
-
-In order to see trace information from your .NET service on integration and end-to-end tests,
-you need to use the Scope agent to instrument your running service.
-
-This service might run, for example, in a container on CI, or in a QA/staging environment.
-
-To instrument in runtime, prefix your service startup command with `scope-run`. For example:
-                          
-```bash
-scope-run dotnet run
-```
-
-This will autoinstrument your application at runtime and will produce tracing information if it receives
-a request from an instrumented test or application.
-
-
 ## Environment variables
 
 The following environment variables need to be configured when instrumenting your tests or application:

@@ -3,7 +3,9 @@
     "Scope": ["index", "release-notes"],
     ".NET Agent": [
       "dotnet-installation",
+      "dotnet-configuration",
       "dotnet-compatibility",
+      "dotnet-runtime",
       "dotnet-release-notes"
     ],
     "Java Agent": [
