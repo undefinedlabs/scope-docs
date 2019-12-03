@@ -31,9 +31,9 @@ If you want to instrument tests run by Jest, you need to configure a custom [run
 // jest.config.js
 module.exports = {
   // ...
-  testRunner: "@undefinedlabs/scope-agent/jestTestRunner",
-  runner: "@undefinedlabs/scope-agent/jestRunner",
-  setupFilesAfterEnv: ["@undefinedlabs/scope-agent/jestSetupTests"]
+  testRunner: "@undefinedlabs/scope-agent/jest/testRunner",
+  runner: "@undefinedlabs/scope-agent/jest/runner",
+  setupFilesAfterEnv: ["@undefinedlabs/scope-agent/jest/setupTests"]
   // ...
 };
 ```
@@ -41,7 +41,7 @@ module.exports = {
 You may also run your jest tests with inline configuration:
 
 ```
-yarn test --testRunner=@undefinedlabs/scope-agent/jestTestRunner --runner=@undefinedlabs/scope-agent/jestRunner --setupFilesAfterEnv=@undefinedlabs/scope-agent/jestSetupTests
+yarn test --testRunner=@undefinedlabs/scope-agent/jest/testRunner --runner=@undefinedlabs/scope-agent/jest/runner --setupFilesAfterEnv=@undefinedlabs/scope-agent/jest/setupTests
 ```
 
 #### Create React App
@@ -53,7 +53,7 @@ You can define the configuration inline in your `package.json`:
 ```json
 ...
 "scripts": {
-  "test": "react-scripts test --testRunner=@undefinedlabs/scope-agent/jestTestRunner --runner=@undefinedlabs/scope-agent/jestRunner"
+  "test": "react-scripts test --testRunner=@undefinedlabs/scope-agent/jest/testRunner --runner=@undefinedlabs/scope-agent/jest/runner"
 }
 ...
 ```
@@ -61,7 +61,7 @@ You can define the configuration inline in your `package.json`:
 And in your CRA's `src/setupTests.js` add the following line:
 
 ```javascript
-import "@undefinedlabs/scope-agent/jestSetupTests";
+import "@undefinedlabs/scope-agent/jest/setupTests";
 ```
 
 After that you should be able to run your tests as you normally do e.g.:
@@ -85,16 +85,16 @@ Add the following to [cypress.json](https://docs.cypress.io/guides/references/co
 
 ```javascript
 // cypress/support/index.js
-import { initializeCypress } from "@undefinedlabs/scope-agent";
-
-initializeCypress();
+import "@undefinedlabs/scope-agent/cypress/support";
 
 // ... any other configuration here
 ```
 
 ```javascript
 // cypress/plugins/index.js
-const { initCypressPlugin } = require("@undefinedlabs/scope-agent");
+const {
+  initCypressPlugin
+} = require("@undefinedlabs/scope-agent/cypress/plugin");
 
 module.exports = async (on, config) => {
   // ... any other plugin goes here
