@@ -164,4 +164,36 @@ ${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/upload_symbols
 ${SRCROOT}/Carthage/Build/iOS/ScopeAgent.framework/upload_symbols
 ```
 
-or the path where the Carthage folder is located.
+   or the path where the Carthage folder is located.
+
+## Code Path Support
+
+To enable code path support for your tests, follow these steps:
+
+1. First, make sure your Xcode project is configured to generate the debug symbols file:
+
+   1. Click on your project and select **Build Settings**.
+   2. On **Debug Information Format** confirm **DWARF with dSYM File** is selected
+
+2. Enable code coverage in the "Test" action of your scheme ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev9e0e09978))
+
+3. In the "Test" action of your scheme, add the following script to the "Post-actions" section (You can add a `Run Script Action` post-action expanding the disclosure triangle ![img](https://help.apple.com/xcode/mac/10.1/en.lproj/Art/sce_schemeeditor_disclosuretriangleicon.png) next to the "Test" action "Post-actions")
+
+   **For Cocoapods:**
+
+   ```bash
+   ${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/scope-coverage
+   ```
+
+   **For Carthage:**
+
+   ```bash
+   ${SRCROOT}/Carthage/Build/iOS/ScopeAgent.framework/scope-coverage
+   ```
+
+   In the "Provide Build Setting" combo select the **Target Application** that will run the tests
+
+4. If your target also supports UI testing, for every **UITest target** you must duplicate the previous `Run Script Action` and select the **UITest target** in the "Provide Build Setting" combo.
+
+   
+
