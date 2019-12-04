@@ -5,6 +5,26 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.2
+
+*December 03, 2019*
+
+### Added
+- Added support for CI: Travis, Jenkins, Gitlab, AppVeyor, Azure Pipelines, Bitbucket pipelines, GitHub and TeamCity. 
+- Support for DSN.
+- Send dependencies as agent metadata. 
+
+### Changed
+- The agent is now resilient to missing configuration. 
+- Update test suite and test name.
+- Improve the distribution of the package. 
+
+### Fixed
+- All jest test status are now supported.
+- Missing spans in cypress due to race conditions should now appear.
+
+
+
 ## Scope Javascript Agent v0.3.1
 
 *November 28, 2019*
