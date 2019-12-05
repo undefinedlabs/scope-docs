@@ -1,26 +1,32 @@
 const siteConfig = {
-  title: 'Scope',
-  tagline: 'Scope documentation',
-  url: 'https://docs.scope.dev',
-  baseUrl: '/',
-  projectName: 'docs',
-  organizationName: 'undefinedlabs',
+  title: "Scope",
+  tagline: "Scope documentation",
+  url: "https://docs.scope.dev",
+  baseUrl: "/",
+  projectName: "docs",
+  organizationName: "undefinedlabs",
   headerLinks: [],
-  favicon: 'img/favicon.png',
+  favicon: "img/favicon.png",
+  headerIcon: "img/logo-scope.svg",
   colors: {
-    primaryColor: '#282F4E',
-    secondaryColor: '#4433D0',
+    primaryColor: "#282F4E",
+    secondaryColor: "#4433D0"
   },
-  copyright: `Copyright © ${new Date().getFullYear()} Undefined Labs, Inc.`,
+  copyright: `© ${new Date().getFullYear()} Undefined Labs, Inc.`,
   highlight: {
-    theme: 'default',
+    theme: "default"
   },
-  onPageNav: 'separate',
+  onPageNav: "separate",
   cleanUrl: true,
   enableUpdateTime: true,
-  editUrl: 'https://github.com/undefinedlabs/scope-docs/edit/master/docs/',
+  disableHeaderTitle: true,
+  editUrl: "https://github.com/undefinedlabs/scope-docs/edit/master/docs/",
   docsSideNavCollapsible: true,
   usePrism: true,
+  stylesheets: [
+    "https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap",
+    "https://fonts.googleapis.com/css?family=Maven+Pro:400,700&display=swap"
+  ]
 };
 
 module.exports = siteConfig;

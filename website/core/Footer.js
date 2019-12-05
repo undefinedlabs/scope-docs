@@ -1,18 +1,22 @@
-const React = require('react');
+import React from "react";
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <footer className="nav-footer" id="footer">
+const Footer = ({ config: { baseUrl, copyright } }) => (
+  <footer className="nav-footer" id="footer">
+    <div className="wrapper">
+      <a
+        href="https://undefinedlabs.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
-          src={`${this.props.config.baseUrl}img/logo_dark.png`}
+          src={`${baseUrl}img/logo-undefined.png`}
           alt="Undefined Labs"
-          width="226"
+          width="180"
         />
-        <section className="copyright">{this.props.config.copyright}</section>
-      </footer>
-    );
-  }
-}
+      </a>
+      <section className="copyright">{copyright}</section>
+    </div>
+  </footer>
+);
 
 module.exports = Footer;
