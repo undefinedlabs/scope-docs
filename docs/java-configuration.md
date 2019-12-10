@@ -43,6 +43,29 @@ scope:
     - sample.key2
 ```
 
+## Adding code path information
+
+You can add code path information to certain spans to show the executed lines given a certain test in a certain commit.
+
+Apart from the activation/deactivation of the code path flag, it is needed to configure which packages will be needed to be tracked by the Scope Java Agent.
+
+You just need to indicate the base package, and every sub-package, starting from that point, will be included as observable package.
+
+### Using Environment Variables
+
+```sh
+SCOPE_CODE_PATH=true
+SCOPE_CODE_PATH_BASE_PACKAGES="foo.bar.xyz, bar.foo"
+```
+
+### Using YAML Configuration file
+
+```yaml
+scope:
+  code_path: true
+  code_path_base_packages: "foo.bar.xyz, bar.foo"
+```
+
 ## Include DB statements values in DB span tags
 
 You can include DB statement values in the related DB spans.
