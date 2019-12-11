@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.19
+
+*December 10, 2019*
+
+**Adds:**
+- Retry option for failing tests.
+- Support for .NET Core 3.1
+
+
 ## Scope .NET Agent v0.1.18
 
 *November 28, 2019*
