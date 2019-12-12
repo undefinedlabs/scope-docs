@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.20
+
+*December 11, 2019*
+
+**Adds:**
+- Support for integration test with the Microsoft.AspNetCore.Mvc.Testing package.
+
+
 ## Scope .NET Agent v0.1.19
 
 *December 10, 2019*
