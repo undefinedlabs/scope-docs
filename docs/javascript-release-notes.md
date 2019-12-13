@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.3
+
+*December 12, 2019*
+
+### Changed
+- User agent is now sent as http header in ingest
+
+
+
 ## Scope Javascript Agent v0.3.2
 
 *December 03, 2019*
