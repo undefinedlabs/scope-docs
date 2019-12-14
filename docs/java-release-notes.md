@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.2.4
+
+*December 13, 2019*
+
+**Changed**
+
+- Changed `User-Agent` to `scope-agent-java/VERSION`.
+
+
 ## Scope Java Agent v0.2.3
 
 *November 29, 2019*

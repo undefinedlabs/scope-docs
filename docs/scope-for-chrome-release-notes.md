@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope For Chrome v0.3.6
+
+*December 13, 2019*
+
+### Changed 
+- Bump dependencies 
+
+
 ## Scope For Chrome v0.3.5
 
 *November 11, 2019*
