@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.4.2
+
+*December 18, 2019*
+
+**Fixed**
+* Code Path information failed to generate in with complex code
+
+
 ## Scope iOS Agent v0.4.1
 
 *December 16, 2019*

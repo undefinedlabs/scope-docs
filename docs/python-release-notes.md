@@ -5,6 +5,17 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.7
+
+*December 18, 2019*
+
+#### Added
+* Instrumentation for [Uvicorn](https://www.uvicorn.org) (ASGI server).
+* Add support for `DSN`.
+* Remove error state (now only fail).
+* Add support for more CIs: AppVeyor, Azure Pipelines, Bitbucket pipelines, GitHub and TeamCity.
+
+
 ## Scope Python Agent v0.3.6
 
 *October 09, 2019*
