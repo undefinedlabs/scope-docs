@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.4
+
+*December 19, 2019*
+
+### Changed
+- Auto instrumentation is enabled by default.
+
+
 ## Scope Javascript Agent v0.3.3
 
 *December 12, 2019*

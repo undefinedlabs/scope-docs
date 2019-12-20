@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.8
+
+*December 19, 2019*
+
+### Fixed
+* Autoinstrumentation is now active by default 
+
+
 ## Scope Python Agent v0.3.7
 
 *December 18, 2019*
