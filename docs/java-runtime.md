@@ -24,4 +24,4 @@ Modify your Java app startup script to add the `javaagent` parameter pointing to
 java -javaagent:/path/to/scope/agent/scope-agent.jar -jar /path/to/app/my-app.jar
 ``` 
 
-Notice that it is needed that `$SCOPE_APIKEY`, `$SCOPE_API_ENDPOINT` had been set as environment variables in the executing environment.
+Notice that setting the `$SCOPE_DSN` environment variable is required.

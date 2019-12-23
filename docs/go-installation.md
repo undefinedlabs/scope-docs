@@ -111,13 +111,12 @@ func main() {
 
 The following environment variables need to be configured when instrumenting your tests or application:
 
-| Environment variable  | Default value           | Description                                            |
-|-----------------------|-------------------------|--------------------------------------------------------|
-| `$SCOPE_APIKEY`       | Autodetected (1)        | API key to use when sending data to Scope              |
-| `$SCOPE_API_ENDPOINT` | Autodetected (1) or `https://app.scope.dev` | API endpoint of the Scope installation to send data to |
-| `$SCOPE_COMMIT_SHA`   | Autodetected (2)        | Commit hash to use when sending data to Scope          |
-| `$SCOPE_REPOSITORY`   | Autodetected (2)        | Repository URL to use when sending data to Scope       |
-| `$SCOPE_SOURCE_ROOT`  | Autodetected (2)        | Repository root path                                   |
+| Environment variable  | Default value           | Description                                                       |
+|-----------------------|-------------------------|-------------------------------------------------------------------|
+| `$SCOPE_DSN`          |                         | Data source name (DSN) of Scope to be used when reporting results |
+| `$SCOPE_COMMIT_SHA`   | Autodetected (2)        | Commit hash to use when sending data to Scope                     |
+| `$SCOPE_REPOSITORY`   | Autodetected (2)        | Repository URL to use when sending data to Scope                  |
+| `$SCOPE_SOURCE_ROOT`  | Autodetected (2)        | Repository root path                                              |
 
 (1) Autodetection of the API key and endpoint is only done if the instrumented process is running on a machine with _Scope for Mac_
 or _Scope for Windows_ installed and configured.

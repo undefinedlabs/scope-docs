@@ -139,16 +139,14 @@ After this, you can run your tests as you normally do, for example using the `sb
 
 The following environment variables need to be configured when instrumenting your tests or application:
 
-| Environment variable | Default value       | Description                                                                                                               |
-| -------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `$SCOPE_DSN`         |                     | Data source name (DSN) of Scope to be used when reporting results (\*) |
-| `$SCOPE_COMMIT_SHA`  | Autodetected (\*\*) | Commit hash to use when sending data to Scope                                                                             |
-| `$SCOPE_REPOSITORY`  | Autodetected (\*\*) | Repository URL to use when sending data to Scope                                                                          |
-| `$SCOPE_SOURCE_ROOT` | Autodetected (\*\*) | Repository root path                                                                                                      |
+| Environment variable | Default value     | Description                                                       |
+| -------------------- | ----------------- | ----------------------------------------------------------------- |
+| `$SCOPE_DSN`         |                   | Data source name (DSN) of Scope to be used when reporting results |
+| `$SCOPE_COMMIT_SHA`  | Autodetected (\*) | Commit hash to use when sending data to Scope                     |
+| `$SCOPE_REPOSITORY`  | Autodetected (\*) | Repository URL to use when sending data to Scope                  |
+| `$SCOPE_SOURCE_ROOT` | Autodetected (\*) | Repository root path                                              |
 
-(\*) `$SCOPE_DSN` prevails over `$SCOPE_API_ENDPOINT` and `$SCOPE_APIKEY`.
-
-(\*\*) Autodetection of git information works if either tests run on a [supported CI provider](java-compatibility.md#ci-providers).
+(\*) Autodetection of git information works if either tests run on a [supported CI provider](java-compatibility.md#ci-providers).
 
 The following optional parameters can also be configured:
 

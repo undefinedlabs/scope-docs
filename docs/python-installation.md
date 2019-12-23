@@ -51,8 +51,7 @@ For example:
 [testenv]
 commands = scope-run pytest
 passenv =
-    SCOPE_APIKEY
-    SCOPE_API_ENDPOINT
+    SCOPE_DSN
 ```
 
 And then, run `tox` as usual.
@@ -82,13 +81,12 @@ Check out the [API reference](https://scope-python-agent.readthedocs.io/en/lates
 
 The following environment variables need to be configured when instrumenting your tests or application:
 
-| Environment variable  | Default value           | Description                                            |
-|-----------------------|-------------------------|--------------------------------------------------------|
-| `$SCOPE_APIKEY`       |                         | API key to use when sending data to Scope              |
-| `$SCOPE_API_ENDPOINT` | `https://app.scope.dev` | API endpoint of the Scope installation to send data to |
-| `$SCOPE_COMMIT_SHA`   | Autodetected (*)        | Commit hash to use when sending data to Scope          |
-| `$SCOPE_REPOSITORY`   | Autodetected (*)        | Repository URL to use when sending data to Scope       |
-| `$SCOPE_SOURCE_ROOT`  | Autodetected (*)        | Repository root path                                   |
+| Environment variable  | Default value           | Description                                                       |
+|-----------------------|-------------------------|-------------------------------------------------------------------|
+| `$SCOPE_DSN`          |                         | Data source name (DSN) of Scope to be used when reporting results |
+| `$SCOPE_COMMIT_SHA`   | Autodetected (*)        | Commit hash to use when sending data to Scope                     |
+| `$SCOPE_REPOSITORY`   | Autodetected (*)        | Repository URL to use when sending data to Scope                  |
+| `$SCOPE_SOURCE_ROOT`  | Autodetected (*)        | Repository root path                                              |
 
 The following optional parameters can also be configured:
 
