@@ -6,6 +6,7 @@
       "dotnet-configuration",
       "dotnet-compatibility",
       "dotnet-runtime",
+      "dotnet-benchmark-instrumentation",
       "dotnet-release-notes"
     ],
     "Java Agent": [

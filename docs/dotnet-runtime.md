@@ -4,8 +4,6 @@ title: Scope .NET Agent runtime instrumentation
 sidebar_label: Runtime instrumentation
 ---
 
-## Runtime instrumentation
-
 In order to see trace information from your .NET service on integration and end-to-end tests,
 you need to use the Scope agent to instrument your running service.
 
