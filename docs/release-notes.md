@@ -5,6 +5,34 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.5.0
+
+*December 23, 2019*
+
+#### Added
+- **New: Code Path**. The Scope agents for iOS, Java and .NET now support collecting per-test code coverage information that is accessible in the UI, in a new tab named "Code Path".
+- **New: Email notifications**. Users can now subscribe to email notifications on a per-service basis, to receive emails every time a branch is "broken" or "fixed".
+- **New: Test differential states**. Tests are now marked as "added" if they were seen for the first time and as "broken" or "fixed" if they changed status between commits.
+- **New: Benchmark test support**. The test performance tab can now show performance historical information for benchmark tests, based on operations per second instead of test duration.
+- **New: Manual testing support**. Tests performed using the Scope for Chrome extension are now shown in a separate section under "Local development".
+- **New: Scope agent for Node.js**. The Scope agent for Javascript can now be used to instrument Node.js tests and applications.
+- When tests are parametrized, their parameters now show on the UI.
+- SQL statements are now syntax highlighted.
+
+#### Changed
+- Agents are now configured using a single parameter, Scope DSN, instead of API key and endpoint separately.
+- The test status "ERROR" has been removed, and tests will show up as "FAIL" instead.
+- Removed the test execution count column from the inspect view and replaced it with a small badge.
+- Updates to Scope are now only available through the Helm CLI.
+- Built-in TLS termination has been deprecated in favor of using ingress TLS.
+- Sessions are now kept active for up to one week.
+- Updated the Scope logo.
+
+#### Fixed
+- Fixed an issue when trying to ingest binary data.
+- Several other small bug fixes.
+
+
 ## Scope v1.4.0
 
 *November 06, 2019*
