@@ -63,3 +63,11 @@ const app = express();
 
 // Server configuration continues here
 ```
+
+## Environment variables
+
+The following environment variables need to be configured when instrumenting your tests:
+
+| Environment variable | Default value | Description                                                    |
+| -------------------- | ------------- | -------------------------------------------------------------- |
+| `$SCOPE_DSN`         |               | Data source name (DSN) of Scope to be used when reporting results |

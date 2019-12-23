@@ -107,10 +107,9 @@ module.exports = async (on, config) => {
 
 The following environment variables need to be configured when instrumenting your tests:
 
-| Environment variable  | Default value | Description                                            |
-| --------------------- | ------------- | ------------------------------------------------------ |
-| `$SCOPE_APIKEY`       |               | API key to use when sending data to Scope              |
-| `$SCOPE_API_ENDPOINT` |               | API endpoint of the Scope installation to send data to |
+| Environment variable | Default value | Description                                                    |
+| -------------------- | ------------- | -------------------------------------------------------------- |
+| `$SCOPE_DSN`         |               | Data source name (DSN) of Scope to be used when reporting results |
 
 ### Cypress
 
