@@ -46,15 +46,14 @@ If you want to run your application from Xcode in your simulator or device, the 
 
 | Key                        | Value                         |
 | -------------------------- | ----------------------------- |
-| `SCOPE_XCODE_APIKEY`       | `$(SCOPE_XCODE_APIKEY)`       |
-| `SCOPE_XCODE_API_ENDPOINT` | `$(SCOPE_XCODE_API_ENDPOINT)` |
+| `SCOPE_XCODE_DSN`          | `$(SCOPE_XCODE_DSN)`          |
+
 
 Alternatively, if you want to distribute the instrumented application (e.g. to the QA team), then you must add the following entries in your application's `Info.plist`:
 
-| Key                  | Type     | Value                         |
-| -------------------- | -------- | ----------------------------- |
-| `SCOPE_APIKEY`       | `String` | `<Your Scope API key>`        |
-| `SCOPE_API_ENDPOINT` | `String` | `<Your Scope API endpoint>`   |
+| Key         | Type     | Value                                    |
+| ----------- | -------- | ---------------------------------------- |
+| `SCOPE_DSN` | `String` | `<Your Data source name (DSN) of Scope>` |
 
 
 ## Usage

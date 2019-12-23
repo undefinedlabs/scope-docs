@@ -48,8 +48,7 @@ Add the following environment variables to your test target ([instructions](http
 <!--Jenkins-->
 | Key                      | Value                       |
 |--------------------------|-----------------------------|
-| `SCOPE_APIKEY`           | `$(SCOPE_APIKEY)`           |
-| `SCOPE_API_ENDPOINT`     | `$(SCOPE_API_ENDPOINT)`     |
+| `SCOPE_DSN`              | `$(SCOPE_DSN)`              |
 | `SCOPE_COMMIT_SHA`       | `$(GIT_COMMIT)`             |
 | `SCOPE_REPOSITORY`       | `$(GIT_URL)`                |
 | `SCOPE_SOURCE_ROOT`      | `$(WORKSPACE)`              |
@@ -61,8 +60,7 @@ Add the following environment variables to your test target ([instructions](http
 <!--CircleCI-->
 | Key                      | Value                         |
 |--------------------------|-------------------------------|
-| `SCOPE_APIKEY`           | `$(SCOPE_APIKEY)`             |
-| `SCOPE_API_ENDPOINT`     | `$(SCOPE_API_ENDPOINT)`       |
+| `SCOPE_DSN`              | `$(SCOPE_DSN)`                |
 | `SCOPE_COMMIT_SHA`       | `$(CIRCLE_SHA1)`              |
 | `SCOPE_REPOSITORY`       | `$(CIRCLE_REPOSITORY_URL)`    |
 | `SCOPE_SOURCE_ROOT`      | `$(CIRCLE_WORKING_DIRECTORY)` |
@@ -73,8 +71,7 @@ Add the following environment variables to your test target ([instructions](http
 <!--GitLab CI-->
 | Key                  | Value                   |
 | -------------------- | ----------------------- |
-| `SCOPE_APIKEY`       | `$(SCOPE_APIKEY)`       |
-| `SCOPE_API_ENDPOINT` | `$(SCOPE_API_ENDPOINT)` |
+| `SCOPE_DSN`          | `$(SCOPE_DSN)`          |
 | `SCOPE_COMMIT_SHA`   | `$(CI_COMMIT_SHA)`      |
 | `SCOPE_REPOSITORY`   | `$(CI_REPOSITORY_URL)`  |
 | `SCOPE_SOURCE_ROOT`  | `$(CI_PROJECT_DIR)`     |
@@ -85,8 +82,7 @@ Add the following environment variables to your test target ([instructions](http
 <!--Travis-->
 | Key                   | Value                      |
 | --------------------- | -------------------------- |
-| `SCOPE_APIKEY`        | `$(SCOPE_APIKEY)`          |
-| `SCOPE_API_ENDPOINT`  | `$(SCOPE_API_ENDPOINT)`    |
+| `SCOPE_DSN`           | `$(SCOPE_DSN)`             |
 | `SCOPE_COMMIT_SHA`    | `$(TRAVIS_COMMIT)`         |
 | `SCOPE_SOURCE_ROOT`   | `$(TRAVIS_BUILD_DIR)`      |
 | `TRAVIS`              | `$(TRAVIS)`                |
@@ -97,8 +93,7 @@ Add the following environment variables to your test target ([instructions](http
 <!--GitHub Actions-->
 | Key                  | Value                   |
 | -------------------- | ----------------------- |
-| `SCOPE_APIKEY`       | `$(SCOPE_APIKEY)`       |
-| `SCOPE_API_ENDPOINT` | `$(SCOPE_API_ENDPOINT)` |
+| `SCOPE_DSN`          | `$(SCOPE_DSN)`          |
 | `SCOPE_COMMIT_SHA`   | `$(GITHUB_SHA)`         |
 | `SCOPE_SOURCE_ROOT`  | `$(GITHUB_WORKSPACE)`   |
 | `GITHUB_REPOSITORY`  | `$(GITHUB_REPOSITORY)`  |
@@ -108,10 +103,9 @@ Add the following environment variables to your test target ([instructions](http
 
 After this, add the following environment variables to your CI provider:
 
-| Environment variable  | Default value           | Description                                            |
-|-----------------------|-------------------------|--------------------------------------------------------|
-| `$SCOPE_APIKEY`       |                         | API key to use when sending data to Scope              |
-| `$SCOPE_API_ENDPOINT` | `https://app.scope.dev` | API endpoint of the Scope installation to send data to |
+| Environment variable | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| `$SCOPE_DSN`        | Data source name (DSN) of Scope to be used when reporting results |
 
 
 ## Local development integration
@@ -120,8 +114,7 @@ For running tests in your local Xcode installation, the following environment va
 
 | Key                        | Value                         |
 | -------------------------- | ----------------------------- |
-| `SCOPE_XCODE_APIKEY`       | `$(SCOPE_XCODE_APIKEY)`       |
-| `SCOPE_XCODE_API_ENDPOINT` | `$(SCOPE_XCODE_API_ENDPOINT)` |
+| `SCOPE_XCODE_DSN`          | `$(SCOPE_XCODE_DSN)`          |
 
 These environment variables are set automatically by the native Scope for Mac application that you can download from the **Local development/Scratchpad** area of Scope.
 
@@ -196,4 +189,3 @@ To enable code path support for your tests, follow these steps:
 4. If your target also supports UI testing, for every **UITest target** you must duplicate the previous `Run Script Action` and select the **UITest target** in the "Provide Build Setting" combo.
 
    
-
