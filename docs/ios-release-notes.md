@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.4.3
+
+*December 23, 2019*
+
+**Changed**
+* Improve Code Path evaluation time with big binaries
+
+
 ## Scope iOS Agent v0.4.2
 
 *December 18, 2019*
