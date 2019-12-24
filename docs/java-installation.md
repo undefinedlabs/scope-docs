@@ -35,11 +35,11 @@ Start using Scope with the [Getting Started Java Project with Maven + GitHub Act
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Maven-->
 
-Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.2.3` with the latest version of the agent:
+Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.2.4` with the latest version of the agent:
 
 ```xml
 <properties>
-  <scope.agent.version>0.2.3</scope.agent.version>
+  <scope.agent.version>0.2.4</scope.agent.version>
 </properties>
 ```
 
@@ -86,7 +86,7 @@ After this, you can run your tests as you normally do, for example using the `mv
 
 <!--Gradle-->
 
-Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.2.3` with the latest version of the agent.
+Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.2.4` with the latest version of the agent.
 
 ```groovy
 configurations {
@@ -94,7 +94,7 @@ configurations {
 }
 
 dependencies {
-    testAgent "com.undefinedlabs.scope:scope-agent:0.2.3"
+    testAgent "com.undefinedlabs.scope:scope-agent:0.2.4"
 }
 ```
 
@@ -118,14 +118,14 @@ Add the `sbt-javaagent` entry to the `project/plugins.sbt` file.
 addSbtPlugin("com.lightbend.sbt" % "sbt-javaagent" % "0.1.5")
 ```
 
-Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.2.3` with the latest version of the agent.
+Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.2.4` with the latest version of the agent.
 
 ```scala
 lazy val root = project
   .in(file("."))
   .enablePlugins(JavaAgent)
   .settings(
-    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.3" % "test"
+    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.2.4" % "test"
   )
 ```
 
