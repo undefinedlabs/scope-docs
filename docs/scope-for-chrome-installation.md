@@ -20,4 +20,4 @@ Scope For Chrome requires the installation of the [Scope For Windows](https://ho
 
 Scope For Chrome requires the installation of the [Scope For Mac](https://home.undefinedlabs.com/goto/download-scope-for-mac).
 
-For a more detailed description watch [Scope For Chrome: How To Install And Use](https://youtu.be/qjDs1k9Z_MM).
+For a more detailed description watch [Scope For Chrome: How To Install And Use](https://youtu.be/dIjCvJB00hE).
