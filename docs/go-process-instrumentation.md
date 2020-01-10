@@ -77,7 +77,7 @@ func main() {
     defer scopeAgent.Stop()
 
     // Start a span representing this process execution, following the trace found in the environment (if available)
-    span := process.StartSpan(fmt.Sprintf("%s %s", filepath.Base(os.Args[0]), strings.Join(os.Args[1:], " ")))
+    span := process.StartSpan()
     defer span.Finish()
 
     // Create a new context to be used in my application
