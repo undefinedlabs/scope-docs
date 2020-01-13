@@ -9,7 +9,7 @@ sidebar_label: Installation
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Maven-->
 
-Add a step to your GitHub Actions workflow YAML that uses the [scope-for-maven](<(https://github.com/marketplace/actions/scope-for-maven)>) action:
+Add a step to your GitHub Actions workflow YAML that uses the [scope-for-maven](https://github.com/marketplace/actions/scope-for-maven) action:
 
 ```yaml
 steps:
@@ -27,6 +27,27 @@ steps:
 You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-maven).
 
 Start using Scope with the [Getting Started Java Project with Maven + GitHub Actions](https://github.com/scope-demo/scope-java-maven-starter) right now!
+
+<!--Gradle-->
+
+Add a step to your GitHub Actions workflow YAML that uses the [scope-for-gradle](https://github.com/marketplace/actions/scope-for-gradle) action:
+
+```yaml
+steps:
+  - uses: actions/checkout@master
+  - name: Set up JDK 1.8
+    uses: actions/setup-java@v1
+    with:
+      java-version: 1.8
+  - name: Scope for Maven Action
+    uses: undefinedlabs/scope-for-gradle-action@v1
+    with:
+      dsn: ${{secrets.SCOPE_DSN}}
+```
+
+You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-gradle).
+
+Start using Scope with the [Getting Started Java Project with Gradle + GitHub Actions](https://github.com/scope-demo/scope-java-gradle-starter) right now!
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
