@@ -10,7 +10,7 @@
     "format": "prettier --write '**/*.{html,css,js,json,md}'"
   },
   "devDependencies": {
-    "docusaurus": "^1.14.3",
+    "docusaurus": "^1.14.4",
     "husky": "^4.0.5",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1"
