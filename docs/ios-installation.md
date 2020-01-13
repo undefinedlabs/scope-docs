@@ -69,6 +69,7 @@ Add the following environment variables to your test target ([instructions](http
 | `CIRCLE_BUILD_URL`       | `$(CIRCLE_BUILD_URL)`         |
 
 <!--GitLab CI-->
+
 | Key                  | Value                   |
 | -------------------- | ----------------------- |
 | `SCOPE_DSN`          | `$(SCOPE_DSN)`          |
@@ -91,12 +92,27 @@ Add the following environment variables to your test target ([instructions](http
 | `TRAVIS_BUILD_NUMBER` | `$(TRAVIS_BUILD_NUMBER)`   |
 
 <!--GitHub Actions-->
+
 | Key                  | Value                   |
 | -------------------- | ----------------------- |
 | `SCOPE_DSN`          | `$(SCOPE_DSN)`          |
 | `SCOPE_COMMIT_SHA`   | `$(GITHUB_SHA)`         |
 | `SCOPE_SOURCE_ROOT`  | `$(GITHUB_WORKSPACE)`   |
 | `GITHUB_REPOSITORY`  | `$(GITHUB_REPOSITORY)`  |
+
+<!--TeamCity-->
+
+| Key                 | Value                  |
+| ------------------- | ---------------------- |
+| `SCOPE_DSN`         | `$(SCOPE_DSN)`         |
+| `SCOPE_COMMIT_SHA`  | `$(BUILD_VCS_NUMBER)`  |
+| `SCOPE_REPOSITORY`  | `$(BUILD_VCS_URL)`     |
+| `SCOPE_SOURCE_ROOT` | `$(BUILD_CHECKOUTDIR)` |
+| `BUILD_ID`          | `$(BUILD_ID)`          |
+| `BUILD_NUMBER`      | `$(BUILD_NUMBER)`      |
+| `SERVER_URL`        | `$(SERVER_URL)`        |
+
+
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
