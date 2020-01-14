@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.4.4
+
+*January 13, 2020*
+
+**Added**
+* Agent writes a log file with all the logs generated from agent. This file is saved in `Library/Logs` folder of the app running in the simulator/device
+* Support for TeamCity CI
+
+**Fixed**
+* Duration of the first test run was higher than it should
+
+
 ## Scope iOS Agent v0.4.3
 
 *December 23, 2019*
