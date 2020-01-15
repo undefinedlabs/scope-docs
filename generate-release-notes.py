@@ -48,7 +48,7 @@ COMPONENTS = {
         'name': 'Scope For Chrome'
     },
     'scope-import': {
-        'first_version': '0.1.0',
+        'first_version': '0.1.1',
         'id': 'import-release-notes',
         'name': 'Scope Import'
     }
