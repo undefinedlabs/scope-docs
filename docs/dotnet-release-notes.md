@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.21
+
+*January 14, 2020*
+
+**Fixes:**
+- Multi dotnet core version support and debug flag error.
+- Symbols resolver now write to log in case of an exception.
+
+
 ## Scope .NET Agent v0.1.20
 
 *December 11, 2019*
