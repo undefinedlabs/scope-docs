@@ -19,9 +19,9 @@ Additionally, it is possible to set an environment variable as metadata value fo
 ```yaml
 scope:
   metadata:
-    - sample.key1: $SAMPLE_VAR1
-    - sample.key2: $SAMPLE_VAR2
-    - sample.key3: sampleValue3
+    sample.key1: $SAMPLE_VAR1
+    sample.key2: $SAMPLE_VAR2
+    sample.key3: sampleValue3
 ```
 
 ## Select agent metadata as test configuration
@@ -91,7 +91,6 @@ You can include HTTP payloads in the related HTTP spans, truncated to the first 
 
 By default, Scope Java agent will not send HTTP payloads due to be considered sensitive information.
 
-
 ### Using Environment Variables
 
 `SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true`
@@ -115,13 +114,14 @@ By default, Scope Java agent will send common HTTP headers, filtering the conten
 - `Cookie`
 - `Set-Cookie`
 
-Note that the content of every header configured explicitly to be shown in the HTTP span tags will not be filtered. 
+Note that the content of every header configured explicitly to be shown in the HTTP span tags will not be filtered.
 
 ### Using Environment Variables
 
 `SCOPE_INSTRUMENTATION_HTTP_HEADERS="Authorization,My-Header-One,My-Header-Two"`
 
 ### Using YAML Configuration file
+
 ```yaml
 scope:
   instrumentation:
