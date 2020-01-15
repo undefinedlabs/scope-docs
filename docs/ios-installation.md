@@ -4,9 +4,29 @@ title: Scope iOS Agent instructions
 sidebar_label: Installation
 ---
 
-Installation of the Scope Agent is done via [CocoaPods](https://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage).
+## Using GitHub Actions
 
-### CocoaPods
+You can simply add a step to your GitHub Actions workflow YAML that uses the [scope-for-ios-action](https://github.com/undefinedlabs/scope-for-ios-action) action:
+
+```yaml
+steps:
+  - name: Checkout
+    uses: actions/checkout@v1
+  - name: Scope for iOS
+    uses: undefinedlabs/scope-for-ios-action@v1
+    with:
+      dsn: ${{ secrets.SCOPE_DSN }} #required
+```
+
+You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-ios), for further configuration. No more steps are needed to run you tests in Scope.
+
+Start using Scope with the [Getting Started iOS with GitHub Actions](https://github.com/scope-demo/scope-ios-actions-starter) right now!
+
+## Manual installation
+
+Manual installation of the Scope Agent is done via [CocoaPods](https://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage).
+
+#### CocoaPods
 
 Add the `ScopeAgent` pod to the test target(s) in your `Podfile`. For example:
 
@@ -19,7 +39,7 @@ end
 Then, run `pod install` to install the agent in your project.
 
 
-### Carthage
+#### Carthage
 
 Add the `ScopeAgent` dependency to your `Cartfile`:
 
@@ -34,13 +54,13 @@ In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/iO
 > Currently, the official OpenTracing library for iOS only supports installation using Cocoapods. If you are interested in adding custom traces with OpenTracing to your app using Carthage, please use [https://github.com/undefinedlabs/opentracing-objc](https://github.com/undefinedlabs/opentracing-objc)
 
 
-## Instrumenting your tests
+### Instrumenting your tests
 
 After installation, you can run your tests as you normally do, for example using the `xcodebuild test` command. 
 Tests, network requests and application logs will be instrumented automatically.
 
 
-## CI provider configuration
+### CI provider configuration
 
 Add the following environment variables to your test target ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
 
@@ -124,7 +144,7 @@ After this, add the following environment variables to your CI provider:
 | `$SCOPE_DSN`        | Data source name (DSN) of Scope to be used when reporting results |
 
 
-## Local development integration
+### Local development integration
 
 For running tests in your local Xcode installation, the following environment variables must set in your **Test target** ([instructions](https://help.apple.com/xcode/mac/10.1/index.html?localePath=en.lproj#/dev3ec8a1cb4)):
 
@@ -143,7 +163,7 @@ defaults write com.apple.dt.Xcode UseSanitizedBuildSystemEnvironment -bool NO
 After these steps, after running your tests locally in Xcode, you will get a test report in Scope with the results.
 
 
-## Uploading symbol files
+### Uploading symbol files
 
 By default, crash stack traces will be partially symbolicated. In order to fully symbolicate them and show file and line information,
 you must run the following script as part of your build phase for the test targets:
@@ -175,7 +195,7 @@ ${SRCROOT}/Carthage/Build/iOS/ScopeAgent.framework/upload_symbols
 
    or the path where the Carthage folder is located.
 
-## Code Path Support
+### Code Path Support
 
 To enable code path support for your tests, follow these steps:
 
