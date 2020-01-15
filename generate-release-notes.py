@@ -47,6 +47,11 @@ COMPONENTS = {
         'id': 'scope-for-chrome-release-notes',
         'name': 'Scope For Chrome'
     },
+    'scope-import': {
+        'first_version': '0.1.0',
+        'id': 'import-release-notes',
+        'name': 'Scope Import'
+    }
 }
 
 GITHUB_ENDPOINT = "https://api.github.com/graphql"

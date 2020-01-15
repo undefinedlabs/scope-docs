@@ -52,6 +52,11 @@
       "scope-for-chrome-installation",
       "scope-for-chrome-compatibility",
       "scope-for-chrome-release-notes"
+    ],
+    "Scope Import": [
+      "import-installation",
+      "import-compatibility",
+      "import-release-notes"
     ]
   }
 }
