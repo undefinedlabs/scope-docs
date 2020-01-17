@@ -27,7 +27,13 @@ If you haven’t done it yet, install the Scope Import CLI running the following
 <!--Linux/MacOS-->
 
 ```
-curl https://home.undefinedlabs.com/download/scope-import/`uname -s`/`uname -m` -o /usr/local/bin/scope-import && chmod +x /usr/local/bin/scope-import
+curl -L https://home.undefinedlabs.com/download/scope-import/`uname -s`/`uname -m` -o /usr/local/bin/scope-import && chmod +x /usr/local/bin/scope-import
+```
+
+### Usage
+
+```
+./scope-import --path path/to/test-reports
 ```
 
 <!--Windows-->
@@ -38,13 +44,13 @@ wget https://home.undefinedlabs.com/download/scope-import/windows/x86_64 -OutFil
 
 If you use a Windows 32bit machine, change the architecture in the URL to `i386`.
 
-<!--END_DOCUSAURUS_CODE_TABS-->
-
 ### Usage
 
 ```
-scope-import --path path/to/test-reports
+scope-import.exe --path path/to/test-reports
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Environment variables
 
