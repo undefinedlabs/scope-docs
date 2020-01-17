@@ -43,7 +43,7 @@ If you use a Windows 32bit machine, change the architecture in the URL to `i386`
 ### Usage
 
 ```
-./scope-import --path path/to/test-reports
+scope-import --path path/to/test-reports
 ```
 
 ## Environment variables
