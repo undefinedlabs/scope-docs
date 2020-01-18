@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.9
+
+*January 17, 2020*
+
+### Added
+* Add support for [pytest-benchmark](https://pypi.org/project/pytest-benchmark/)
+* Instrumentation of HTTP headers and payloads.
+* Add `testing` metadata to distinguish runtime and testing implementation.
+* Add project dependencies to the agent metadata.
+* Add support for adding arbitrary metadata to the agent.
+
+
+
 ## Scope Python Agent v0.3.8
 
 *December 19, 2019*
