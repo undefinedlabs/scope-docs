@@ -28,6 +28,7 @@
       "python-installation",
       "python-compatibility",
       "python-runtime",
+      "python-configuration",
       "python-release-notes"
     ],
     "Go Agent": [
