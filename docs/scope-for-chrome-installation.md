@@ -6,7 +6,7 @@ sidebar_label: Installation
 
 Scope For Chrome is a browser extension that allows you to run manual tests against any web application and automatically connect the results to your Scope instance.
 
-Installation of Scope For Chrome is done via [Chrome Web Store](http://home.undefinedlabs.com/goto/scope-for-chrome).
+Installation of Scope For Chrome is done via [Chrome Web Store](https://home.undefinedlabs.com/goto/scope-for-chrome-download).
 
 ## Windows
 
