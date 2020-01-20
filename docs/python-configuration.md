@@ -28,7 +28,7 @@ scope:
 
 You can include HTTP payloads in the related HTTP spans, truncated to the first 512 bytes.
 
-By default, Scope Python Agent will not send HTTP payloads due to be considered sensitive information.
+By default, Scope Python Agent will not send HTTP payloads as they are considered sensitive information.
 
 ### Using Environment Variables
 

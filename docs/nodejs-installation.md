@@ -4,6 +4,30 @@ title: Scope Node.js Agent installation
 sidebar_label: Installation
 ---
 
+## GitHub Actions
+
+Add a step to your GitHub Actions workflow YAML that uses the [Scope-for-Javascript](https://github.com/marketplace/actions/scope-for-javascript) action:
+
+```yaml
+steps:
+  - uses: actions/checkout@v1
+  - uses: actions/setup-node@v1
+    with:
+      node-version: 12
+      registry-url: https://registry.npmjs.org/
+  - name: Install dependencies
+    run: npm install
+  - name: Scope for Javascript
+    uses: undefinedlabs/scope-for-javascript-action@v1
+    with:
+      dsn: ${{secrets.SCOPE_DSN}} # required
+      command: npm test # optional - default is 'npm test'
+```
+
+You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-javascript).
+
+## Manual
+
 Installation of the Scope Agent is done via [npm](https://www.npmjs.com/package/@undefinedlabs/scope-agent).
 
 <!--DOCUSAURUS_CODE_TABS-->
@@ -21,9 +45,9 @@ yarn add --dev @undefinedlabs/scope-agent
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Instrumenting your tests
+### Instrumenting your tests
 
-### Jest tests
+#### Jest tests
 
 If you want to instrument tests run by Jest, you need to configure a custom [runner](https://jestjs.io/docs/en/configuration#runner-string), [testRunner](https://jestjs.io/docs/en/configuration#testrunner-string) and [setupFilesAfterEnv](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
 
@@ -50,7 +74,7 @@ You may also run your jest tests with inline configuration:
 yarn test --testRunner=@undefinedlabs/scope-agent/jest/testRunner --runner=@undefinedlabs/scope-agent/jest/runner --setupFilesAfterEnv=@undefinedlabs/scope-agent/jest/setupTests
 ```
 
-### HTTP servers
+#### HTTP servers
 
 You may also instrument your http server by simply including `require('@undefinedlabs/scope-agent/node')` at the top of your server main function. For example, in [express](https://expressjs.com/):
 
@@ -68,6 +92,6 @@ const app = express();
 
 The following environment variables need to be configured when instrumenting your tests:
 
-| Environment variable | Default value | Description                                                    |
-| -------------------- | ------------- | -------------------------------------------------------------- |
+| Environment variable | Default value | Description                                                       |
+| -------------------- | ------------- | ----------------------------------------------------------------- |
 | `$SCOPE_DSN`         |               | Data source name (DSN) of Scope to be used when reporting results |

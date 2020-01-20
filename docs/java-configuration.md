@@ -70,7 +70,7 @@ scope:
 
 You can include DB statement values in the related DB spans.
 
-By default, Scope Java agent will not send DB statement values due to be considered sensitive information.
+By default, Scope Java agent will not send DB statement values as they are considered sensitive information.
 
 ### Using Environment Variables
 
@@ -89,7 +89,7 @@ scope:
 
 You can include HTTP payloads in the related HTTP spans, truncated to the first 512 bytes.
 
-By default, Scope Java agent will not send HTTP payloads due to be considered sensitive information.
+By default, Scope Java agent will not send HTTP payloads as they are considered sensitive information.
 
 ### Using Environment Variables
 

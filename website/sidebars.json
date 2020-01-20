@@ -42,11 +42,13 @@
     "Javascript Agent": [
       "javascript-installation",
       "javascript-compatibility",
+      "javascript-configuration",
       "javascript-release-notes"
     ],
     "Node.js Agent": [
       "nodejs-installation",
       "nodejs-compatibility",
+      "nodejs-configuration",
       "nodejs-release-notes"
     ],
     "Scope For Chrome": [
