@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.10
+
+*January 20, 2020*
+
+### Fixed
+* Fix wrong repository url for GitHub Actions. 
+* Fix wrong initialisation of agent for runtime instrumentation. 
+
+
 ## Scope Python Agent v0.3.9
 
 *January 17, 2020*
