@@ -1,6 +1,6 @@
 ---
 id: ios-installation
-title: Scope iOS Agent instructions
+title: Scope iOS/Mac Agent instructions
 sidebar_label: Installation
 ---
 

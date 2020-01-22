@@ -1,10 +1,10 @@
 ---
 id: ios-http-instrumentation
-title: Scope iOS Agent HTTP Instrumentation
+title: Scope iOS/Mac Agent HTTP Instrumentation
 sidebar_label: HTTP Instrumentation
 ---
 
-The Scope iOS agent automatically instruments all your `Alamofire`, `URLSession` and `URLConnection` network connections, and collects many details about them (such as their request URL, request/response headers, status, etc.). The Scope agent can also show the beginning of the request and response payloads if running with the environment variable `SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=YES`.
+The Scope agent automatically instruments all your `Alamofire`, `URLSession` and `URLConnection` network connections, and collects many details about them (such as their request URL, request/response headers, status, etc.). The Scope agent can also show the beginning of the request and response payloads if running with the environment variable `SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=YES`.
 
 By auto instrumenting the HTTP requests, the Scope agent appends HTTP headers to outgoing requests that identify your tests and the context from where those request were made. This allows Scope to integrate logs and exceptions from external services your integration tests interact with over HTTP automatically.
 
@@ -40,10 +40,10 @@ end
 Add the `ScopeAgent` dependency to your `Cartfile` if not already done in previous steps, and run `cart update`
 
 ```
-binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgent.json"
+binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json"
 ```
 
-In your application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the
+In your application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/<platform>` to the
 *Linked frameworks and Libraries* in General target settings or to the *Link Binaries With Libraries* build phase. 
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -71,7 +71,7 @@ end
 <!--Carthage-->
 
 ```
-binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgentClient.json"
+binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgentClient.json"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->

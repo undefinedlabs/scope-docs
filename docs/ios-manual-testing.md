@@ -1,10 +1,12 @@
 ---
 id: ios-manual-testing
-title: Scope iOS Agent Manual testing
+title: Scope iOS/Mac Agent Manual testing
 sidebar_label: Manual testing
 ---
 
-The Scope iOS agent allows you to perform manual tests on your application that will be recorded for later troubleshooting in Scope. You can either run your application from Xcode in your simulator or device, or distribute a build to your testers with the functionality built-in.
+> Currently this feature is only available for iOS platform
+
+The Scope agent allows you to perform manual tests on your application that will be recorded for later troubleshooting in Scope. You can either run your application from Xcode in your simulator or device, or distribute a build to your testers with the functionality built-in.
 
 The results will appear in your **Local Development scratchpad** in Scope
 

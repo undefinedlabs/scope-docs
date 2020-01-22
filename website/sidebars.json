@@ -16,7 +16,7 @@
       "java-configuration",
       "java-release-notes"
     ],
-    "iOS Agent": [
+    "iOS/Mac Agent": [
       "ios-installation",
       "ios-compatibility",
       "ios-manual-logging",

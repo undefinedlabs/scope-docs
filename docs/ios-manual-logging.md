@@ -1,6 +1,6 @@
 ---
 id: ios-manual-logging
-title: Scope iOS Agent manual logging
+title: Scope iOS/Mac Agent manual logging
 sidebar_label: Manual logging
 ---
 
@@ -36,11 +36,11 @@ end
 <!--Carthage-->
 Add the `ScopeAgent` dependency to your `Cartfile` if not already done in previous steps, and run `cart update`
 
-```
-binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgent.json"
+```bash
+binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json"
 ```
 
-In your application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the
+In your application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/<platform>` to the
 *Linked frameworks and Libraries* in General target settings or to the *Link Binaries With Libraries* build phase. 
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -64,8 +64,8 @@ end
 ```
 
 <!--Carthage-->
-```
-binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgentClient.json"
+```bash
+binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgentClient.json"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
