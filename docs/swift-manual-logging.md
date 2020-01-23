@@ -1,6 +1,6 @@
 ---
-id: ios-manual-logging
-title: Scope iOS/Mac Agent manual logging
+id: swift-manual-logging
+title: Scope Swift Agent manual logging
 sidebar_label: Manual logging
 ---
 

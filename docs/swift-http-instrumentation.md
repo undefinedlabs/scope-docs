@@ -1,6 +1,6 @@
 ---
-id: ios-http-instrumentation
-title: Scope iOS/Mac Agent HTTP Instrumentation
+id: swift-http-instrumentation
+title: Scope Swift Agent HTTP Instrumentation
 sidebar_label: HTTP Instrumentation
 ---
 

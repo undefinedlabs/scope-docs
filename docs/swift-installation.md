@@ -1,24 +1,24 @@
 ---
-id: ios-installation
-title: Scope iOS/Mac Agent instructions
+id: swift-installation
+title: Scope Swift Agent instructions
 sidebar_label: Installation
 ---
 
 ## Using GitHub Actions
 
-You can simply add a step to your GitHub Actions workflow YAML that uses the [scope-for-ios-action](https://github.com/undefinedlabs/scope-for-ios-action) action:
+You can simply add a step to your GitHub Actions workflow YAML that uses the [scope-for-swift-action](https://github.com/undefinedlabs/scope-for-swift-action) action:
 
 ```yaml
 steps:
   - name: Checkout
     uses: actions/checkout@v1
-  - name: Scope for iOS
-    uses: undefinedlabs/scope-for-ios-action@v1
+  - name: Scope for Swift
+    uses: undefinedlabs/scope-for-swift-action@v1
     with:
       dsn: ${{ secrets.SCOPE_DSN }} #required
 ```
 
-You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-ios), for further configuration. No more steps are needed to run you tests in Scope.
+You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-swift), for further configuration. No more steps are needed to run you tests in Scope.
 
 Start using Scope with the [Getting Started iOS with GitHub Actions](https://github.com/scope-demo/scope-ios-actions-starter) right now!
 
@@ -51,7 +51,7 @@ Then, run `cart update` to install the agent in your project.
 
 In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/<platform>` to the `Link Binaries With Libraries` build phase.
 
-> Currently, the official OpenTracing library for iOS only supports installation using Cocoapods. If you are interested in adding custom traces with OpenTracing to your app using Carthage, please use [https://github.com/undefinedlabs/opentracing-objc](https://github.com/undefinedlabs/opentracing-objc)
+> Currently, the official OpenTracing library only supports installation using Cocoapods. If you are interested in adding custom traces with OpenTracing to your app using Carthage, please use [https://github.com/undefinedlabs/opentracing-objc](https://github.com/undefinedlabs/opentracing-objc)
 
 
 ### Instrumenting your tests

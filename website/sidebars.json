@@ -16,13 +16,13 @@
       "java-configuration",
       "java-release-notes"
     ],
-    "iOS/Mac Agent": [
-      "ios-installation",
-      "ios-compatibility",
-      "ios-manual-logging",
-      "ios-http-instrumentation",
-      "ios-manual-testing",
-      "ios-release-notes"
+    "Swift Agent": [
+      "swift-installation",
+      "swift-compatibility",
+      "swift-manual-logging",
+      "swift-http-instrumentation",
+      "swift-manual-testing",
+      "swift-release-notes"
     ],
     "Python Agent": [
       "python-installation",

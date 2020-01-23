@@ -12,10 +12,10 @@ COMPONENTS = {
         'id': 'release-notes',
         'name': 'Scope'
     },
-    'scope-ios-agent': {
+    'scope-swift-agent': {
         'first_version': '0.1.13',
-        'id': 'ios-release-notes',
-        'name': 'Scope iOS Agent'
+        'id': 'swift-release-notes',
+        'name': 'Scope Swift Agent'
     },
     'scope-python-agent': {
         'first_version': '0.2.0',

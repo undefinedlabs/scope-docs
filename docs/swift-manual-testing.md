@@ -1,6 +1,6 @@
 ---
-id: ios-manual-testing
-title: Scope iOS/Mac Agent Manual testing
+id: swift-manual-testing
+title: Scope Swift Agent Manual testing
 sidebar_label: Manual testing
 ---
 
