@@ -5,6 +5,37 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.5" target="_blank">Scope Go Agent v0.1.5</a>
+
+*January 23, 2020*
+
+**Added:**
+- Windows path support (#83)
+- Benchmarks support (#84)
+- SCOPE_DSN support (#87)
+- TeamCity CI support (#89)
+- Logs folder selection per platform (#86)
+- Http client and server payload instrumentation (#88) 
+- Sql instrumentation (#90)
+- Test status tag values (#92)
+- Agent id in payload first level (#93)
+- Custom user agent support (#98) 
+- Custom agent type support (#104) 
+- Expose testing mode flag in agent metadata (#108)
+- Extract dependencies from go mod graph if is available (#95) 
+- Testing auto instrumentation (#102) 
+- Benchmark auto instrumentation (#117) 
+- Monkey patching on testing.T.common logging methods (#118) 
+
+**Changed:**
+- Do not finish parent span on HTTP client requests (#75)
+- Calculate NTP offset in the recorder lazily
+- Cmd OperationName (#82) 
+- Release span lock before ingest call (#101)
+- Logging as a separated instrumentation (#111) 
+- Remove double panic (#114)
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.4" target="_blank">Scope Go Agent v0.1.4</a>
 
 *October 11, 2019*
