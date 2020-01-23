@@ -11,10 +11,10 @@ Installation of the Scope Go agent is done via `go get`:
 go get -u go.undefinedlabs.com/scopeagent
 ```
 
-## Instrumenting your tests
+## Instrumenting your tests and benchmarks
 
 In order to instrument your tests that use Go's native [`testing`](https://golang.org/pkg/testing/) package, you
-have to call `scopeagent.Run(m)` in your `TestMain` function, and call `scopeagent.StartTest(t)` and `defer test.End()` on each test.
+have to call `scopeagent.Run(m)` in your `TestMain` function, and all tests and benchmarks in the package will be instrumented.
 
 For example:
 
@@ -29,17 +29,67 @@ func TestMain(m *testing.M) {
 }
 
 func TestExample(t *testing.T) {
-    test := scopeagent.StartTest(t)
-    defer test.End()
+    // ...
+}
 
+func BenchmarkExample(b *testing.B) {
     // ...
 }
 ```
 
-Note that after this, you can use `test.Context()` to refer to the context of the running test, which has information
+Note that after this, you can use `scopeagent.GetContextFromTest(t)` to refer to the context of the running test, which has information
 about its trace. Use it when you make any external calls, and if you add any custom OpenTracing instrumentation.
 
 Instrumentation for client libraries is done manually. Please check the different sections on the left for more information.
+
+### Instrumenting subtests
+
+Subtests instrumentation is not automatic and it's done by replacing the standard `t.Run` call with the Scope Go agent `test.Run` function, for example:
+
+```go
+import (
+    "go.undefinedlabs.com/scopeagent"
+    "testing"
+)
+
+func TestMain(m *testing.M) {
+    os.Exit(scopeagent.Run(m))
+}
+
+func TestExample(t *testing.T) {
+    test := scopeagent.GetTest(t)   // Gets the Scope Go agent representation of test `t`
+    test.Run("Sub Test", func(t *testing.T) {
+	// ...	
+    })
+    
+    // ...	
+}
+```
+
+## Instrumenting sub benchmarks
+
+Sub benchmarks instrumentation is not automatic and it's done by replacing the standard `b.Run` call with the Scope Go agent `bench.Run` function, for example:
+
+```go
+import (
+    "go.undefinedlabs.com/scopeagent"
+    "testing"
+)
+
+func TestMain(m *testing.M) {
+    os.Exit(scopeagent.Run(m))
+}
+
+func BenchmarkExample(b *testing.B) {
+    bench := scopeagent.GetBenchmark(b) // Gets the Scope Go agent representation of benchmark `b`
+    bench.Run("Sub Benchmark", func(b *testing.B) {
+	// ...	
+    })
+    
+    // ...	
+}
+```
+
 
 ## Runtime instrumentation
 
