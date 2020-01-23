@@ -5,6 +5,33 @@ sidebar_label: Release notes
 ---
 
 
+## Scope iOS Agent v0.5.1
+
+*January 22, 2020*
+
+**Added**
+* Support for macOS and tvOS projects
+
+**Changed**
+* **Important for Cocoapods configuration**: upload_symbols and scope-coverage paths have changed, check documentation for new paths and reconfigure project
+* Path for Carthage distribution is now  `https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json`
+
+**Fixed**
+* SCOPE_DSN now supports including newline and `/` characters at the end
+
+
+## Scope iOS Agent v0.5.0
+
+*January 22, 2020*
+
+**Added**
+* Support for macOS and tvOS projects
+
+**Changed**
+* **Important for Cocoapods configuration**: upload_symbols and scope-coverage paths have changed, check documentation for new paths and reconfigure project
+* Path for Carthage distribution is now  `https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json`
+
+
 ## Scope iOS Agent v0.4.4
 
 *January 13, 2020*
