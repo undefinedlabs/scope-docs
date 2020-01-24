@@ -4,7 +4,7 @@ title: Scope Swift Agent HTTP Instrumentation
 sidebar_label: HTTP Instrumentation
 ---
 
-The Scope agent automatically instruments all your `Alamofire`, `URLSession` and `URLConnection` network connections, and collects many details about them (such as their request URL, request/response headers, status, etc.). The Scope agent can also show the beginning of the request and response payloads if running with the environment variable `SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=YES`.
+The Scope Swift agent automatically instruments all your `Alamofire`, `URLSession` and `URLConnection` network connections, and collects many details about them (such as their request URL, request/response headers, status, etc.). The Scope agent can also show the beginning of the request and response payloads if running with the environment variable `SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=YES`.
 
 By auto instrumenting the HTTP requests, the Scope agent appends HTTP headers to outgoing requests that identify your tests and the context from where those request were made. This allows Scope to integrate logs and exceptions from external services your integration tests interact with over HTTP automatically.
 
@@ -178,4 +178,3 @@ AlamofireTracing.session.request(url).responseJSON { response in
   ...
 }
 ```
-

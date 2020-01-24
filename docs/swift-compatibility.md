@@ -4,7 +4,7 @@ title: Scope Swift Agent compatibility
 sidebar_label: Compatibility
 ---
 
-The Scope agent is compatible with iOS, macOS and tvOS platforms and the following languages:
+The Scope Swift agent is compatible with iOS, macOS and tvOS platforms and the following languages:
 
 | Language    | Version |
 | ----------- | :-----: |
@@ -14,7 +14,7 @@ The Scope agent is compatible with iOS, macOS and tvOS platforms and the followi
 
 ### Libraries
 
-The Scope agent is compatible with the following libraries:
+The Scope Swift agent is compatible with the following libraries:
 
 | Name                                                                      | Span/event creation | Extract | Inject |
 |---------------------------------------------------------------------------|:-------------------:|:-------:|:------:|

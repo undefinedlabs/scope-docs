@@ -6,7 +6,7 @@ sidebar_label: Installation
 
 ## Using GitHub Actions
 
-You can simply add a step to your GitHub Actions workflow YAML that uses the [scope-for-swift-action](https://github.com/undefinedlabs/scope-for-swift-action) action:
+You can simply add a step to your GitHub Actions workflow YAML that uses the [scope-for-swift-action](https://github.com/marketplace/actions/scope-for-swift) action:
 
 ```yaml
 steps:
