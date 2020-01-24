@@ -19,7 +19,7 @@ Link your application or framework target with `ScopeAgent`
 <!--Cocoapods-->
 By adding the pod to your `Podfile` and running `pod install`. For example:
 
-```
+```ruby
 target 'MyApp' do
  pod 'ScopeAgent'
 end
@@ -27,7 +27,7 @@ end
 
 or
 
-```
+```ruby
 target 'MyFramework' do
  pod 'ScopeAgent'
 end
@@ -36,7 +36,7 @@ end
 <!--Carthage-->
 Add the `ScopeAgent` dependency to your `Cartfile` if not already done in previous steps, and run `cart update`
 
-```bash
+```ruby
 binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json"
 ```
 
@@ -57,14 +57,14 @@ Install this dependency to your test targets by adding:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Cocoapods-->
-```
+```ruby
 target 'MyTests' do
  pod 'ScopeAgentClient'
 end
 ```
 
 <!--Carthage-->
-```bash
+```ruby
 binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgentClient.json"
 ```
 

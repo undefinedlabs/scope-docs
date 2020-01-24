@@ -43,7 +43,7 @@ Then, run `pod install` to install the agent in your project.
 
 Add the `ScopeAgent` dependency to your `Cartfile`:
 
-```
+```ruby
 binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json"
 ```
 

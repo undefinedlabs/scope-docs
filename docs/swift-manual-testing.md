@@ -18,7 +18,7 @@ Link your application target with `ScopeAgent`
 <!--Cocoapods-->
 By adding the pod to your `Podfile` and running `pod install`. For example:
 
-```
+```ruby
 target 'MyApp' do
  pod 'ScopeAgent'
 end
@@ -26,7 +26,7 @@ end
 
 or
 
-```
+```ruby
 target 'MyFramework' do
  pod 'ScopeAgent'
 end
