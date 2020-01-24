@@ -60,7 +60,7 @@ import (
 )
 
 func main() {
-    log.SetFlags(log.LstdFlags | log.Lmicroseconds | log.Lshortfile)
+    log.SetFlags(log.LstdFlags | log.Lmicroseconds | log.Llongfile)
 
     // ...
 }
@@ -78,7 +78,7 @@ import (
 )
 
 func main() {
-    myLogger := log.New(os.Stderr, "", log.LstdFlags|log.Lmicroseconds|log.Lshortfile)
+    myLogger := log.New(os.Stderr, "", log.LstdFlags|log.Lmicroseconds|log.Llongfile)
 
     logging.PatchLogger(myLogger)
 
