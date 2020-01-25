@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Import v0.1.4
+
+*January 24, 2020*
+
+**Fixed**
+- Fixed allow scientific notation on test duration.
+
+
+
 ## Scope Import v0.1.3
 
 *January 17, 2020*
