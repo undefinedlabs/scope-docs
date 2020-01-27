@@ -1,24 +1,24 @@
 ---
-id: ios-installation
-title: Scope iOS Agent instructions
+id: swift-installation
+title: Scope Swift Agent instructions
 sidebar_label: Installation
 ---
 
 ## Using GitHub Actions
 
-You can simply add a step to your GitHub Actions workflow YAML that uses the [scope-for-ios-action](https://github.com/undefinedlabs/scope-for-ios-action) action:
+You can simply add a step to your GitHub Actions workflow YAML that uses the [scope-for-swift-action](https://github.com/marketplace/actions/scope-for-swift) action:
 
 ```yaml
 steps:
   - name: Checkout
     uses: actions/checkout@v1
-  - name: Scope for iOS
-    uses: undefinedlabs/scope-for-ios-action@v1
+  - name: Scope for Swift
+    uses: undefinedlabs/scope-for-swift-action@v1
     with:
       dsn: ${{ secrets.SCOPE_DSN }} #required
 ```
 
-You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-ios), for further configuration. No more steps are needed to run you tests in Scope.
+You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-for-swift), for further configuration. No more steps are needed to run you tests in Scope.
 
 Start using Scope with the [Getting Started iOS with GitHub Actions](https://github.com/scope-demo/scope-ios-actions-starter) right now!
 
@@ -43,15 +43,15 @@ Then, run `pod install` to install the agent in your project.
 
 Add the `ScopeAgent` dependency to your `Cartfile`:
 
-```
-binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgent.json"
+```ruby
+binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json"
 ```
 
 Then, run `cart update` to install the agent in your project.
 
-In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the `Link Binaries With Libraries` build phase.
+In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/<platform>` to the `Link Binaries With Libraries` build phase.
 
-> Currently, the official OpenTracing library for iOS only supports installation using Cocoapods. If you are interested in adding custom traces with OpenTracing to your app using Carthage, please use [https://github.com/undefinedlabs/opentracing-objc](https://github.com/undefinedlabs/opentracing-objc)
+> Currently, the official OpenTracing library only supports installation using Cocoapods. If you are interested in adding custom traces with OpenTracing to your app using Carthage, please use [https://github.com/undefinedlabs/opentracing-objc](https://github.com/undefinedlabs/opentracing-objc)
 
 
 ### Instrumenting your tests
@@ -183,17 +183,38 @@ you must run the following script as part of your build phase for the test targe
 
 **For Cocoapods:**
 
+<!--DOCUSAURUS_CODE_TABS-->
+<!--iOS-->
 ```bash
-${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/upload_symbols
+${PODS_ROOT}/ScopeAgent/ios/ScopeAgent.framework/upload_symbols
 ```
+<!--Mac-->
+```bash
+${PODS_ROOT}/ScopeAgent/mac/ScopeAgent.framework/Resources/upload_symbols
+```
+<!--tvOS-->
+```bash
+${PODS_ROOT}/ScopeAgent/tvos/ScopeAgent.framework/upload_symbols
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 **For Carthage:**
 
+<!--DOCUSAURUS_CODE_TABS-->
+<!--iOS-->
 ```bash
 ${SRCROOT}/Carthage/Build/iOS/ScopeAgent.framework/upload_symbols
 ```
-
-   or the path where the Carthage folder is located.
+<!--Mac-->
+```bash
+${SRCROOT}/Carthage/Build/Mac/ScopeAgent.framework/Resources/upload_symbols
+```
+<!--tvOS-->
+```bash
+${SRCROOT}/Carthage/Build/tvOS/ScopeAgent.framework/upload_symbols  
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Code Path Support
 
@@ -210,15 +231,41 @@ To enable code path support for your tests, follow these steps:
 
    **For Cocoapods:**
 
+<!--DOCUSAURUS_CODE_TABS-->
+<!--iOS-->
    ```bash
-   ${PODS_ROOT}/ScopeAgent/ScopeAgent.framework/scope-coverage
+   ${PODS_ROOT}/ScopeAgent/ios/ScopeAgent.framework/scope-coverage
    ```
+<!--Mac-->
+
+   ```bash
+   ${PODS_ROOT}/ScopeAgent/mac/ScopeAgent.framework/Resources/scope-coverage
+   ```
+<!--tvOS-->
+
+   ```bash
+   ${PODS_ROOT}/ScopeAgent/tvos/ScopeAgent.framework/scope-coverage
+   ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
    **For Carthage:**
 
+<!--DOCUSAURUS_CODE_TABS-->
+<!--iOS-->
    ```bash
    ${SRCROOT}/Carthage/Build/iOS/ScopeAgent.framework/scope-coverage
    ```
+<!--Mac-->
+
+   ```bash
+   ${SRCROOT}/Carthage/Build/Mac/ScopeAgent.framework/Resources/scope-coverage
+   ```
+<!--tvOS-->
+
+   ```bash
+   ${SRCROOT}/Carthage/Build/tvOS/ScopeAgent.framework/scope-coverage
+   ```
+<!--END_DOCUSAURUS_CODE_TABS-->
 
    In the "Provide Build Setting" combo select the **Target Application** that will run the tests
 

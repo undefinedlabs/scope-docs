@@ -1,6 +1,6 @@
 ---
-id: ios-manual-logging
-title: Scope iOS Agent manual logging
+id: swift-manual-logging
+title: Scope Swift Agent manual logging
 sidebar_label: Manual logging
 ---
 
@@ -19,7 +19,7 @@ Link your application or framework target with `ScopeAgent`
 <!--Cocoapods-->
 By adding the pod to your `Podfile` and running `pod install`. For example:
 
-```
+```ruby
 target 'MyApp' do
  pod 'ScopeAgent'
 end
@@ -27,7 +27,7 @@ end
 
 or
 
-```
+```ruby
 target 'MyFramework' do
  pod 'ScopeAgent'
 end
@@ -36,11 +36,11 @@ end
 <!--Carthage-->
 Add the `ScopeAgent` dependency to your `Cartfile` if not already done in previous steps, and run `cart update`
 
-```
-binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgent.json"
+```ruby
+binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json"
 ```
 
-In your application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/iOS` to the
+In your application or framework targets, add `ScopeAgent.framework` located in `Carthage/Build/<platform>` to the
 *Linked frameworks and Libraries* in General target settings or to the *Link Binaries With Libraries* build phase. 
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -57,15 +57,15 @@ Install this dependency to your test targets by adding:
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Cocoapods-->
-```
+```ruby
 target 'MyTests' do
  pod 'ScopeAgentClient'
 end
 ```
 
 <!--Carthage-->
-```
-binary "https://releases.undefinedlabs.com/scope/agents/ios/ScopeAgentClient.json"
+```ruby
+binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgentClient.json"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->

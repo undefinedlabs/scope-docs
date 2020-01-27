@@ -1,20 +1,28 @@
 ---
-id: ios-compatibility
-title: Scope iOS Agent compatibility
+id: swift-compatibility
+title: Scope Swift Agent compatibility
 sidebar_label: Compatibility
 ---
 
-The Scope iOS agent is compatible with the following languages:
+The Scope Swift agent is compatible with the following platforms:
+
+| Platform    | Version |
+| ----------- | :-----: |
+| iOS         |  10.0+  |
+| macOS       |  10.12+ |
+| tvOS        |  10.0+  |
+
+and the following languages:
 
 | Language    | Version |
-|-------------|:-------:|
-| Objective-C |   2.0+  |
-| Swift       |   4.0+  |
+| ----------- | :-----: |
+| Swift       |  4.0+   |
+| Objective-C |  2.0+   |
 
 
 ### Libraries
 
-The Scope iOS agent is compatible with the following libraries:
+The Scope Swift agent is compatible with the following libraries:
 
 | Name                                                                      | Span/event creation | Extract | Inject |
 |---------------------------------------------------------------------------|:-------------------:|:-------:|:------:|
