@@ -42,3 +42,47 @@ scope:
     http:
       payloads: true
 ```
+
+## Include DB statements values in DB span tags
+
+You can include DB statement values in the related DB spans.
+
+By default, the Scope Python agent will not send DB statement values as they are considered sensitive information.
+
+### Using Environment Variables
+
+`SCOPE_INSTRUMENTATION_DB_STATEMENT_VALUES=true`
+
+### Using YAML Configuration file
+
+```yaml
+scope:
+  instrumentation:
+    db:
+      statement_values: true
+```
+
+## Include additional HTTP Headers in HTTP span tags
+
+You can include additional HTTP Headers in HTTP span tags.
+
+By default, the Scope Python agent will send common HTTP headers, filtering the content of those which can contain sensitive information, such as:
+
+- `Authorization`
+- `Cookie`
+- `Set-Cookie`
+
+### Using Environment Variables
+
+`SCOPE_INSTRUMENTATION_HTTP_HEADERS="My-Header-One,My-Header-Two"`
+
+### Using YAML Configuration file
+
+```yaml
+scope:
+  instrumentation:
+    http:
+      headers:
+        - My-Header-One
+        - My-Header-Two
+```
