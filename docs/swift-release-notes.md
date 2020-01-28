@@ -5,7 +5,7 @@ sidebar_label: Release notes
 ---
 
 
-## Scope iOS Agent v0.5.1
+## Scope Swift Agent v0.5.1
 
 *January 22, 2020*
 
@@ -20,7 +20,7 @@ sidebar_label: Release notes
 * SCOPE_DSN now supports including newline and `/` characters at the end
 
 
-## Scope iOS Agent v0.5.0
+## Scope Swift Agent v0.5.0
 
 *January 22, 2020*
 
@@ -32,7 +32,7 @@ sidebar_label: Release notes
 * Path for Carthage distribution is now  `https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json`
 
 
-## Scope iOS Agent v0.4.4
+## Scope Swift Agent v0.4.4
 
 *January 13, 2020*
 
@@ -44,7 +44,7 @@ sidebar_label: Release notes
 * Duration of the first test run was higher than it should
 
 
-## Scope iOS Agent v0.4.3
+## Scope Swift Agent v0.4.3
 
 *December 23, 2019*
 
@@ -52,7 +52,7 @@ sidebar_label: Release notes
 * Improve Code Path evaluation time with big binaries
 
 
-## Scope iOS Agent v0.4.2
+## Scope Swift Agent v0.4.2
 
 *December 18, 2019*
 
@@ -60,7 +60,7 @@ sidebar_label: Release notes
 * Code Path information failed to generate in with complex code
 
 
-## Scope iOS Agent v0.4.1
+## Scope Swift Agent v0.4.1
 
 *December 16, 2019*
 
@@ -80,7 +80,7 @@ sidebar_label: Release notes
 * Xcode 11.2.1 used for building the framework
 
 
-## Scope iOS Agent v0.4.0
+## Scope Swift Agent v0.4.0
 
 *November 28, 2019*
 
@@ -100,7 +100,7 @@ sidebar_label: Release notes
 * Xcode 11.2.1 used for building the framework
 
 
-## Scope iOS Agent v0.3.3
+## Scope Swift Agent v0.3.3
 
 *October 31, 2019*
 
@@ -114,7 +114,7 @@ sidebar_label: Release notes
 * Some instrumentation was being initialised before checking the environment variable
 
 
-## Scope iOS Agent v0.3.2
+## Scope Swift Agent v0.3.2
 
 *October 18, 2019*
 
@@ -122,7 +122,7 @@ sidebar_label: Release notes
 * Manual testing UI was not drawing correctly with some Xcode 11.1 projects
 
 
-## Scope iOS Agent v0.3.1
+## Scope Swift Agent v0.3.1
 
 *October 15, 2019*
 
@@ -133,7 +133,7 @@ sidebar_label: Release notes
 * Crash in agent when logging some requests
 
 
-## Scope iOS Agent v0.3.0
+## Scope Swift Agent v0.3.0
 
 *October 10, 2019*
 
@@ -153,7 +153,7 @@ sidebar_label: Release notes
 * Network responses were not being shown as children of the network request
 
 
-## Scope iOS Agent v0.2.6
+## Scope Swift Agent v0.2.6
 
 *September 19, 2019*
 
@@ -170,7 +170,7 @@ sidebar_label: Release notes
 * Improve OpenTracing specification in network Spans
 
 
-## Scope iOS Agent v0.2.5
+## Scope Swift Agent v0.2.5
 
 *September 03, 2019*
 
@@ -188,7 +188,7 @@ sidebar_label: Release notes
 * Sometimes a test could report incorrect/negative duration after a crash 
 
 
-## Scope iOS Agent v0.2.4
+## Scope Swift Agent v0.2.4
 
 *July 09, 2019*
 
@@ -204,7 +204,7 @@ sidebar_label: Release notes
 * Added NOTICE file with all the licenses used in project
 
 
-## Scope iOS Agent v0.2.3
+## Scope Swift Agent v0.2.3
 
 *June 10, 2019*
 
@@ -218,7 +218,7 @@ sidebar_label: Release notes
 
 
 
-## Scope iOS Agent v0.2.2
+## Scope Swift Agent v0.2.2
 
 *May 23, 2019*
 
@@ -236,7 +236,7 @@ sidebar_label: Release notes
 * Improved accuracy of asynchronous activity
 
 
-## Scope iOS Agent v0.2.1
+## Scope Swift Agent v0.2.1
 
 *April 30, 2019*
 
@@ -249,7 +249,7 @@ sidebar_label: Release notes
 * Spans that crashed could appear with shorter duration than real, even with duration 0
 
 
-## Scope iOS Agent v0.2.0
+## Scope Swift Agent v0.2.0
 
 *April 17, 2019*
 
@@ -271,7 +271,7 @@ sidebar_label: Release notes
 * Full compatibility with opentracing  0.5.0
 
 
-## Scope iOS Agent v0.1.19
+## Scope Swift Agent v0.1.19
 
 *April 03, 2019*
 
@@ -286,7 +286,7 @@ sidebar_label: Release notes
 
 
 
-## Scope iOS Agent v0.1.18
+## Scope Swift Agent v0.1.18
 
 *April 01, 2019*
 
@@ -295,7 +295,7 @@ sidebar_label: Release notes
 * Fixed potential crash when handling end of asynchronous child Spans
 
 
-## Scope iOS Agent v0.1.17
+## Scope Swift Agent v0.1.17
 
 *March 25, 2019*
 
@@ -314,7 +314,7 @@ sidebar_label: Release notes
 
 
 
-## Scope iOS Agent v0.1.16
+## Scope Swift Agent v0.1.16
 
 *March 15, 2019*
 
@@ -323,7 +323,7 @@ sidebar_label: Release notes
 * Fixed a bug when trying to call `SALogger.log()` from applications that link to `ScopeAgent`
 
 
-## Scope iOS Agent v0.1.15
+## Scope Swift Agent v0.1.15
 
 *March 15, 2019*
 
@@ -332,7 +332,7 @@ sidebar_label: Release notes
 * `ScopeAgent` now exposes `SALogger.log()` for applications to send custom log events to Scope
 
 
-## Scope iOS Agent v0.1.13
+## Scope Swift Agent v0.1.13
 
 *March 08, 2019*
 

@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.5
+
+*January 27, 2020*
+
+## Changed
+- Testing mode can now be controlled via `SCOPE_TESTING_MODE` env variable, to distinguish between runtime and testing instrumentation.  
+
+
 ## Scope Javascript Agent v0.3.4
 
 *December 19, 2019*
