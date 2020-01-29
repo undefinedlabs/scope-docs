@@ -5,6 +5,21 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.2
+
+*January 28, 2020*
+
+**Changed**
+* Rename agent to Swift, changing agent.type metadata 
+* Lower deployment target for the agent to versions (10.0 for iOS and tvOS and 10.12 for macOS)
+* Improve information when some error happens during testing.
+
+**Fixed**
+* Writing log file sometimes could produce a crash when the tests ended.
+* User-Agent header was being modified when instrumenting network calls
+
+
+
 ## Scope Swift Agent v0.5.1
 
 *January 22, 2020*

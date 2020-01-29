@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.11
+
+*January 28, 2020*
+
+### Added
+* A link to the test results is shown in the console after your tests are run.
+* It is now possible to configure whether to show DB statements in the span metadata.
+* It is now possible to add custom headers in your HTTP instrumentation. 
+
+### Changed
+* `psycopg2` instrumentation has been updated with more metadata. 
+
+
+
 ## Scope Python Agent v0.3.10
 
 *January 20, 2020*

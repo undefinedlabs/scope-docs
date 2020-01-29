@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.1.22-beta.1
+
+*January 28, 2020*
+
+**Fixes:**
+- Git info attribute in the coverage processor.
+
+
 ## Scope .NET Agent v0.1.21
 
 *January 14, 2020*
