@@ -3,8 +3,8 @@
     "Scope": ["index", "release-notes"],
     ".NET Agent": [
       "dotnet-installation",
-      "dotnet-configuration",
       "dotnet-compatibility",
+      "dotnet-configuration",
       "dotnet-runtime",
       "dotnet-benchmark-instrumentation",
       "dotnet-release-notes"
@@ -12,8 +12,8 @@
     "Java Agent": [
       "java-installation",
       "java-compatibility",
-      "java-runtime",
       "java-configuration",
+      "java-runtime",
       "java-release-notes"
     ],
     "Swift Agent": [
@@ -27,8 +27,8 @@
     "Python Agent": [
       "python-installation",
       "python-compatibility",
-      "python-runtime",
       "python-configuration",
+      "python-runtime",
       "python-release-notes"
     ],
     "Go Agent": [
