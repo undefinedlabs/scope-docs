@@ -5,6 +5,21 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.6" target="_blank">Scope Go Agent v0.1.6</a>
+
+*January 30, 2020*
+
+**Added:**
+- Configuration metadata and configuration keys support.
+
+**Changed:**
+- Improvements in the grpc instrumentation (#126)
+
+**Fixed:**
+- Test results Url fix (#120)
+- Fix http 401 response handler (#125)
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.5" target="_blank">Scope Go Agent v0.1.5</a>
 
 *January 23, 2020*
