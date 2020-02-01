@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.12
+
+*January 31, 2020*
+
+### Fixed
+* The link to the test results is not incorrectly shown when no tests have been found.
+
+
+
 ## Scope Python Agent v0.3.11
 
 *January 28, 2020*

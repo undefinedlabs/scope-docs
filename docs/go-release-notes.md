@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.7" target="_blank">Scope Go Agent v0.1.7</a>
+
+*January 31, 2020*
+
+**Added:**
+- Test retry support on fail.
+- Go 1.11 support
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.6" target="_blank">Scope Go Agent v0.1.6</a>
 
 *January 30, 2020*
