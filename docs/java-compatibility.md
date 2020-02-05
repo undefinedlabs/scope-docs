@@ -21,6 +21,14 @@ The Scope Java agent is compatible with the following Scala versions:
 | -------------------------------------- | :--------------: | :-----: | :---: | :--: |
 | [`Scala`](https://www.scala-lang.org/) | `2.10` to `2.13` |    ✓    |   ✓   |  ✓   |
 
+### Kotlin versions
+
+The Scope Java agent is compatible with the following Kotlin versions:
+
+| Kotlin                              | Versions | Windows | Linux | OS X |
+| ----------------------------------- | :------: | :-----: | :---: | :--: |
+| [`Kotlin`](https://kotlinlang.org/) | `1.3.x`  |    ✓    |   ✓   |  ✓   |
+
 ### Libraries
 
 The Scope Java agent is compatible with the following libraries:
@@ -88,3 +96,4 @@ The Scope Java agent will work on any CI provider, but will autodetect build and
 - [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
 - [GitHub Actions](https://github.com/features/actions)
+- [Buildkite](https://buildkite.com/)
