@@ -33,7 +33,7 @@ curl -L https://home.undefinedlabs.com/download/scope-import/`uname -s`/`uname -
 ### Usage
 
 ```
-./scope-import --path path/to/test-reports
+scope-import --path path/to/test-reports
 ```
 
 <!--Windows-->
