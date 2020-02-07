@@ -64,9 +64,3 @@ The following environment variables need to be configured when instrumenting you
 | `$SCOPE_SOURCE_ROOT` | Autodetected (\*) | Repository root path                                              |
 
 (\*) Autodetection of git information works if tool is run to import test reports on a [supported CI provider](import-compatibility.md#ci-providers).
-
-The following optional parameters can also be configured:
-
-| Environment variable | Default value | Description                                    |
-| -------------------- | ------------- | ---------------------------------------------- |
-| `$SCOPE_SERVICE`     | `default`     | Service name to use when sending data to Scope |

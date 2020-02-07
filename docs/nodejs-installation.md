@@ -95,3 +95,12 @@ The following environment variables need to be configured when instrumenting you
 | Environment variable | Default value | Description                                                       |
 | -------------------- | ------------- | ----------------------------------------------------------------- |
 | `$SCOPE_DSN`         |               | Data source name (DSN) of Scope to be used when reporting results |
+
+For `TeamCity`, additional environment variables must be exposed from the Teamcity `Parameters` section:
+
+| Name                    | Value                          |
+| ----------------------- | ------------------------------ |
+| `env.BUILD_CHECKOUTDIR` | `%teamcity.build.checkoutDir%` |
+| `env.BUILD_ID`          | `%teamcity.build.id%`          |
+| `env.BUILD_VCS_URL`     | `%vcsroot.url%`                |
+

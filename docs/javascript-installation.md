@@ -137,6 +137,14 @@ The following environment variables need to be configured when instrumenting you
 | -------------------- | ------------- | ----------------------------------------------------------------- |
 | `$SCOPE_DSN`         |               | Data source name (DSN) of Scope to be used when reporting results |
 
+For `TeamCity`, additional environment variables must be exposed from the Teamcity `Parameters` section:
+
+| Name                    | Value                          |
+| ----------------------- | ------------------------------ |
+| `env.BUILD_CHECKOUTDIR` | `%teamcity.build.checkoutDir%` |
+| `env.BUILD_ID`          | `%teamcity.build.id%`          |
+| `env.BUILD_VCS_URL`     | `%vcsroot.url%`                |
+
 ### Cypress
 
 To configure environment variables in cypress you can have a look at [cypress documentation](https://docs.cypress.io/guides/guides/environment-variables.html#Setting) on this.

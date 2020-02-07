@@ -19,6 +19,7 @@
     "Swift Agent": [
       "swift-installation",
       "swift-compatibility",
+      "swift-configuration",
       "swift-manual-logging",
       "swift-http-instrumentation",
       "swift-manual-testing",
@@ -34,6 +35,7 @@
     "Go Agent": [
       "go-installation",
       "go-compatibility",
+      "go-configuration",
       "go-logging-instrumentation",
       "go-http-instrumentation",
       "go-grpc-instrumentation",
@@ -55,6 +57,7 @@
     "Scope Import": [
       "import-installation",
       "import-compatibility",
+      "import-configuration",
       "import-release-notes"
     ]
   }

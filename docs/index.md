@@ -32,7 +32,7 @@ After that, you need to instrument your tests using the **Scope agent** for your
 
 - [.NET agent instructions](dotnet-installation.md)
 - [Java agent instructions](java-installation.md)
-- [iOS agent instructions](ios-installation.md)
+- [Swift agent instructions](swift-installation.md)
 - [Python agent instructions](python-installation.md)
 - [Go agent instructions](go-installation.md)
 - [Javascript agent instructions](javascript-installation.md)

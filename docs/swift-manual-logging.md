@@ -137,5 +137,4 @@ SALogger.log(items,
             filename:fileName, 
             line:line, 
             fields: ["function Name":functionName])
-
 ```

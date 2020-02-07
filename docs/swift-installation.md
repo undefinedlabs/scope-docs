@@ -132,7 +132,13 @@ Add the following environment variables to your test target ([instructions](http
 | `BUILD_NUMBER`      | `$(BUILD_NUMBER)`      |
 | `SERVER_URL`        | `$(SERVER_URL)`        |
 
+For `TeamCity`, additional environment variables must be exposed from the Teamcity `Parameters` section:
 
+| Name                    | Value                          |
+| ----------------------- | ------------------------------ |
+| `env.BUILD_CHECKOUTDIR` | `%teamcity.build.checkoutDir%` |
+| `env.BUILD_ID`          | `%teamcity.build.id%`          |
+| `env.BUILD_VCS_URL`     | `%vcsroot.url%`                |
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 

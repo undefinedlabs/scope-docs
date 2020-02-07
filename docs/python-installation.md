@@ -110,26 +110,14 @@ The following environment variables need to be configured when instrumenting you
 | `$SCOPE_REPOSITORY`  | Autodetected (\*) | Repository URL to use when sending data to Scope                  |
 | `$SCOPE_SOURCE_ROOT` | Autodetected (\*) | Repository root path                                              |
 
-The following optional parameters can also be configured:
-
-| Environment variable | Default value | Description                                    |
-| -------------------- | ------------- | ---------------------------------------------- |
-| `$SCOPE_SERVICE`     | `default`     | Service name to use when sending data to Scope |
-
 (\*) Autodetection of git information works if either tests run on a [supported CI provider](python-compatibility.md#ci-providers),
 or if the `.git` folder is present locally, and there is an `origin` remote configured pointing to the right repository.
 
-These configuration settings can also be provided via CLI flags. Check out the
-[CLI reference](https://scope-python-agent.readthedocs.io/en/latest/cli.html) documentation for details.
+For `TeamCity`, additional environment variables must be exposed from the Teamcity `Parameters` section:
 
-The following environment variables are also available to modify the Scope Agent behavior.
+| Name                    | Value                          |
+| ----------------------- | ------------------------------ |
+| `env.BUILD_CHECKOUTDIR` | `%teamcity.build.checkoutDir%` |
+| `env.BUILD_ID`          | `%teamcity.build.id%`          |
+| `env.BUILD_VCS_URL`     | `%vcsroot.url%`                |
 
-| Environment variable       | Default           | Description                                                                                                                          |
-| -------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `$SCOPE_AUTO_INSTRUMENT`   | `true`            | Boolean flag to apply Scope auto instrumentation                                                                                     |
-| `$SCOPE_SET_GLOBAL_TRACER` | `false`           | Boolean flag to register `ScopeTracer` as OpenTracing's global tracer                                                                |
-| `$SCOPE_TESTING_MODE`      | Autodetected (\*) | Boolean flag to indicate to `ScopeAgent` if it's running tests (`true`), or if it's being used for runtime instrumentation (`false`) |
-
-(\*) Autodetection of `$SCOPE_TESTING_MODE` property depends on whether the build has been triggered by a CI server (`true`), or not (`false`).
-
-If these properties are manually configured, they will be `true` only on encountering the string `true` configured on the environment variable. Any other value will be considered as `false`.

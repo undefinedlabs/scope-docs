@@ -161,34 +161,15 @@ func main() {
 
 The following environment variables need to be configured when instrumenting your tests or application:
 
-| Environment variable  | Default value           | Description                                                       |
-|-----------------------|-------------------------|-------------------------------------------------------------------|
-| `$SCOPE_DSN`          |                         | Data source name (DSN) of Scope to be used when reporting results |
-| `$SCOPE_COMMIT_SHA`   | Autodetected (2)        | Commit hash to use when sending data to Scope                     |
-| `$SCOPE_REPOSITORY`   | Autodetected (2)        | Repository URL to use when sending data to Scope                  |
-| `$SCOPE_SOURCE_ROOT`  | Autodetected (2)        | Repository root path                                              |
+| Environment variable | Default value    | Description                                                  |
+| -------------------- | ---------------- | ------------------------------------------------------------ |
+| `$SCOPE_DSN`         | (1)              | Data source name (DSN) of Scope to be used when reporting results |
+| `$SCOPE_COMMIT_SHA`  | Autodetected (2) | Commit hash to use when sending data to Scope                |
+| `$SCOPE_REPOSITORY`  | Autodetected (2) | Repository URL to use when sending data to Scope             |
+| `$SCOPE_SOURCE_ROOT` | Autodetected (2) | Repository root path                                         |
 
-(1) Autodetection of the API key and endpoint is only done if the instrumented process is running on a machine with _Scope for Mac_
+(1) Autodetection of the SCOPE_DSN is only done if the instrumented process is running on a machine with _Scope for Mac_
 or _Scope for Windows_ installed and configured.
 
 (2) Autodetection of git information works if either tests run on a [supported CI provider](go-compatibility.md#ci-providers),
 or if the `.git` folder is present locally, and there is an `origin` remote configured pointing to the right repository.
-
-The following optional parameters can also be configured:
-
-| Environment variable | Default value    | Description                                      |
-|----------------------|------------------|--------------------------------------------------|
-| `$SCOPE_SERVICE`     | `default`        | Service name to use when sending data to Scope   |
-
-The following environment variables are also available to modify the Scope Agent behavior.
-
-| Environment variable  | Default | Description |
-|---|---|---|
-| `$SCOPE_SET_GLOBAL_TRACER` | `false` | Boolean flag to register `ScopeTracer` as OpenTracing's global tracer |
-| `$SCOPE_TESTING_MODE` | Autodetected (*) | Boolean flag to indicate to `ScopeAgent` if it's running tests (`true`), or if it's being used for runtime instrumentation (`false`) |
-
-(*) Autodetection of `$SCOPE_TESTING_MODE` property depends on whether the build has been triggered by a CI server (`true`), or not (`false`),
-or if the tests are started using `scopeagent.Run()`.
-
-If these properties are manually configured, they will be `true` only on encountering the string `true` configured on the environment variable. 
-Any other value will be considered as `false`.

@@ -33,3 +33,14 @@ The Scope Swift agent is compatible with the following libraries:
 
 
 > Do you use a language or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
+
+* ### CI providers
+
+  The Scope Swift agent will work on the following CI providers:
+
+  - [Jenkins](https://jenkins.io/)
+  - [CircleCI](https://circleci.com/)
+  - [GitLab CI](https://docs.gitlab.com/ee/ci/)
+  - [Travis](https://travis-ci.org/)
+  - [GitHub Actions](https://github.com/features/actions)
+  - [TeamCity](https://www.jetbrains.com/teamcity/)

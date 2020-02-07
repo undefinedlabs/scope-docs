@@ -69,14 +69,6 @@ The following environment variables need to be configured when instrumenting you
 (*) Autodetection of git information works if either tests run on a [supported CI provider](dotnet-compatibility.md#ci-providers),
 or if the `.git` folder is present locally, and there is an `origin` remote configured pointing to the right repository.
 
-The following optional parameters can also be configured:
-
-| Environment variable | Default value    | Description                                      |
-|----------------------|------------------|--------------------------------------------------|
-| `$SCOPE_SERVICE`     | `default`        | Service name to use when sending data to Scope   |
-
-These configuration settings can also be provided via CLI flags. Run `scope-run --help` for more information.
-
 For `TeamCity`, additional environment variables must be exposed from the Teamcity `Parameters` section:
 
 |          Name           |            Value               |
@@ -84,3 +76,6 @@ For `TeamCity`, additional environment variables must be exposed from the Teamci
 | `env.BUILD_CHECKOUTDIR` | `%teamcity.build.checkoutDir%` |
 | `env.BUILD_ID`          | `%teamcity.build.id%`          |
 | `env.BUILD_VCS_URL`     | `%vcsroot.url%`                |
+
+
+
