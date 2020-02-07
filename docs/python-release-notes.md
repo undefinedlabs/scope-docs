@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.13
+
+*February 06, 2020*
+
+### Added
+* Support for BuildKite
+
+### Fixed
+* GitHub build links are now correctly shown.
+
+
+
+
+
 ## Scope Python Agent v0.3.12
 
 *January 31, 2020*

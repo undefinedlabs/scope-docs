@@ -5,6 +5,24 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.8" target="_blank">Scope Go Agent v0.1.8</a>
+
+*February 06, 2020*
+
+**Added:**
+- Support Buildkite CI provider (#133)
+- Auto Instrument without TestMain (#137)
+- Runner configuration by env vars (#138)
+
+**Changes:**
+- Reflection refactor (#130)
+- Remove http client events on normal requests, write if an error occurs (#140)
+
+**Fixes:**
+- Fix nil in Current User (#134)
+- Checks if GetBody() is nil before call (#139)
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.7" target="_blank">Scope Go Agent v0.1.7</a>
 
 *January 31, 2020*
