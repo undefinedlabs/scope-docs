@@ -5,6 +5,16 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.9" target="_blank">Scope Go Agent v0.1.9</a>
+
+*February 07, 2020*
+
+**Fixes:**
+- Lock in r.span reader to avoid race condition (#144)
+- Avoid panic and agent failure in case of not DSN or ApiKey (#147)
+
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.8" target="_blank">Scope Go Agent v0.1.8</a>
 
 *February 06, 2020*

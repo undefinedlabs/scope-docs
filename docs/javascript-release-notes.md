@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.6
+
+*February 07, 2020*
+
+## Added
+- Add support for BuildKite.
+- Richer agent metadata like node versions, cypress version and more.
+- Now a link to the results is shown after jest tests are run.
+
+## Changed
+- `fetch` instrumentation in jest is now richer.
+- 4xx and 5xx http responses are shown as error spans.
+
+
+
+
+
 ## Scope Javascript Agent v0.3.5
 
 *January 27, 2020*
