@@ -29,6 +29,18 @@ The Scope Java agent is compatible with the following Kotlin versions:
 | ----------------------------------- | :------: | :-----: | :---: | :--: |
 | [`Kotlin`](https://kotlinlang.org/) | `1.3.x`  |    ✓    |   ✓   |  ✓   |
 
+### Build tools
+
+The Scope Java agent is compatible with the following build tools:
+
+| Name                                                                               |        Versions        |
+| ---------------------------------------------------------------------------------- | :--------------------: |
+| [`Maven`](https://maven.apache.org/)                                               |        `3.6.x`         |
+| [`Maven Surefire Plugin`](http://maven.apache.org/surefire/maven-surefire-plugin/) | `2.22.x` to `3.0.0-M4` |
+| [`Maven Failsafe Plugin`](http://maven.apache.org/surefire/maven-failsafe-plugin/) | `2.22.x` to `3.0.0-M4` |
+| [`Gradle`](https://gradle.org/)                                                    |        `5.6.x`         |
+| [`sbt`](https://www.scala-sbt.org/)                                                |        `1.3.x`         |
+
 ### Libraries
 
 The Scope Java agent is compatible with the following libraries:
