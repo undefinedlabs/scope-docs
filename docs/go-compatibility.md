@@ -37,3 +37,4 @@ The Scope Go agent will work on any CI provider, but will autodetect build and g
 * [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 * [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
 * [GitHub Actions](https://github.com/features/actions)
+* [Buildkite](https://buildkite.com)
