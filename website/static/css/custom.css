@@ -27,3 +27,7 @@ a {
 .nav-footer .copyright {
   text-align: left;
 }
+
+.tabs .tab-pane {
+  padding: 16px 0;
+}
