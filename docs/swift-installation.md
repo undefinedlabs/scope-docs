@@ -140,6 +140,18 @@ For `TeamCity`, additional environment variables must be exposed from the Teamci
 | `env.BUILD_ID`          | `%teamcity.build.id%`          |
 | `env.BUILD_VCS_URL`     | `%vcsroot.url%`                |
 
+<!--Buildkite-->
+
+| Key                      | Value                              |
+| ------------------------ | ---------------------------------- |
+| `SCOPE_DSN`              | `$(SCOPE_DSN)`                     |
+| `SCOPE_COMMIT_SHA`       | `$(BUILDKITE_COMMIT)`              |
+| `SCOPE_REPOSITORY`       | `$(BUILDKITE_REPO)`                |
+| `SCOPE_SOURCE_ROOT`      | `$(BUILDKITE_BUILD_CHECKOUT_PATH)` |
+| `BUILDKITE_BUILD_ID`     | `$(BUILDKITE_BUILD_ID)`            |
+| `BUILDKITE_BUILD_NUMBER` | `$(BUILDKITE_BUILD_NUMBER)`        |
+| `BUILDKITE_BUILD_URL`    | `$(BUILDKITE_BUILD_URL)`           |
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 
