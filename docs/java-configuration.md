@@ -12,13 +12,14 @@ The behaviour of the Scope Agent can be modified using environment variables or 
 
 Scope auto instruments your code and tests by default. You can disable this behaviour.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_AUTO_INSTRUMENT=false
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -26,38 +27,40 @@ scope:
     enabled: false
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Changing service name
 
 You can specify the name of the service when sending data to Scope. Scope uses `default` as fallback.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_SERVICE="service-name"
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
-  service: 'service-name'
+  service: "service-name"
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Setting Scope as Global Tracer
 
 If you set Scope as OpenTracing Global Tracer, your own spans will be captured and shown as part of the Scope trace view for a certain test.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_SET_GLOBAL_TRACER=true
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -65,19 +68,20 @@ scope:
     global: true
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Change testing mode
 
 This variable indicates whether the agent is running tests (`true`) or it is being used for runtime instrumentation (`false`). If `SCOPE_TESTING_MODE` is not set, the agent sets to `true` when testing frameworks are present in classpath. Otherwise, the agent sets to `false`.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_TESTING_MODE=false
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -85,7 +89,7 @@ scope:
     testing: false
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Adding agent metadata
 
@@ -93,13 +97,14 @@ You can send arbitrary metadata for every test associated with certain commit wh
 
 Additionally, it is possible to set an environment variable as metadata value for a certain key, whose final value will be evaluated at runtime.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_METADATA="sample.key1=$SAMPLE_VAR1,sample.key2=$SAMPLE_VAR2,sample.key3=sampleValue3"
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -109,7 +114,7 @@ scope:
     sample.key3: sampleValue3
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Select agent metadata as test configuration
 
@@ -117,11 +122,14 @@ Yon can select metadata keys to be considered as relevant in the configuration o
 
 By default, Scope Java agent adds the `java.version` metadata key to the test configuration.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
-`SCOPE_CONFIGURATION="sample.key1,sample.key2"`
+```sh
+SCOPE_CONFIGURATION="sample.key1,sample.key2"
+```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -130,7 +138,7 @@ scope:
     - sample.key2
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Adding code path information
 
@@ -140,14 +148,15 @@ Apart from the activation/deactivation of the code path flag, it is needed to co
 
 You just need to indicate the base package, and every sub-package, starting from that point, will be included as observable package.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_CODE_PATH=true
 SCOPE_CODE_PATH_BASE_PACKAGES="foo.bar.xyz, bar.foo"
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -155,7 +164,7 @@ scope:
   code_path_base_packages: "foo.bar.xyz, bar.foo"
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Include DB statements values in DB span tags
 
@@ -163,15 +172,14 @@ You can include DB statement values in the related DB spans.
 
 By default, Scope Java Agent will not send DB statement values as they are considered sensitive information.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_INSTRUMENTATION_DB_STATEMENT_VALUES=true
 ```
 
-
-
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -180,7 +188,7 @@ scope:
       statement_values: true
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Include HTTP payloads in HTTP span tags
 
@@ -188,15 +196,14 @@ You can include HTTP payloads in the related HTTP spans, truncated to the first 
 
 By default, Scope Java Agent will not send HTTP payloads as they are considered sensitive information.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true
 ```
 
-
-
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -205,7 +212,7 @@ scope:
       payloads: true
 ```
 
-
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Include additional HTTP Headers in HTTP span tags
 
@@ -219,15 +226,14 @@ By default, Scope Java agent will send common HTTP headers, filtering the conten
 
 Note that the content of every header configured explicitly to be shown in the HTTP span tags will not be filtered.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_INSTRUMENTATION_HTTP_HEADERS="Authorization,My-Header-One,My-Header-Two"
 ```
 
-
-
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -238,3 +244,5 @@ scope:
         - My-Header-One
         - My-Header-Two
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
