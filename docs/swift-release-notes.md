@@ -5,6 +5,25 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.4
+
+*February 13, 2020*
+
+**Added**
+* Support for adding agent metadata
+* Agent metadata can be selected as test configuration
+* Additional HTTP Headers can be added to HTTP span tags
+* Support for Buildkite CI
+
+**Changed**
+* Agent can now handle when environment variables include newline and/or space characters at the end
+* Network instrumentation overhead reduced for non instrumented calls
+* Improve error messages from scope_upload and process-coverage scripts
+
+**Fixed**
+* Symbols sometimes were not uploaded properly. 
+
+
 ## Scope Swift Agent v0.5.3
 
 *January 29, 2020*
