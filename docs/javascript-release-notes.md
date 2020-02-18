@@ -5,6 +5,17 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.7
+
+*February 17, 2020*
+
+## Fixed
+- Fix 4xx and 5xx http responses not being shown as errors yet.
+
+
+
+
+
 ## Scope Javascript Agent v0.3.6
 
 *February 07, 2020*

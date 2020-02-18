@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.5
+
+*February 17, 2020*
+
+**Fixed**
+* Manual testing was not being loaded properly
+
+
 ## Scope Swift Agent v0.5.4
 
 *February 13, 2020*
