@@ -4,7 +4,7 @@ title: Scope Node.js configuration
 sidebar_label: Configuration
 ---
 
-> If these properties are manually configured, use `true` or `false` only for the boolean value.
+> If these properties are manually configured, use only `true` or `false` for boolean values.
 
 The behaviour of the Scope Agent can be modified using environment variables or a configuration file `scope.yml` in the source root of the project.
 
@@ -12,13 +12,14 @@ The behaviour of the Scope Agent can be modified using environment variables or 
 
 Scope auto instruments your code and tests by default. You can disable this behaviour.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_AUTO_INSTRUMENT=false
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -26,33 +27,50 @@ scope:
     enabled: false
 ```
 
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Changing service name
 
 You can specify the name of the service when sending data to Scope. Scope uses `default` as fallback.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_SERVICE="service-name"
 ```
 
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
-  service: 'service-name'
+  service: "service-name"
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Change testing mode
 
-This variable indicates whether the agent is running tests (`true`) or it is being used for runtime instrumentation (`false`). By default it will run in testing mode
+This variable indicates whether the agent is running tests (`true`) or it is being used for runtime instrumentation (`false`).
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_TESTING_MODE=false
 ```
+
+<!--YAML Configuration File-->
+
+```yaml
+scope:
+  mode:
+    testing: false
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+If `SCOPE_TESTING_MODE` is not specified, the agent sets it to `true`.
 
 ## Include HTTP payloads in HTTP span tags
 
@@ -60,15 +78,14 @@ You can include HTTP payloads in the related HTTP spans, truncated to the first 
 
 By default, Scope Node.js Agent will not send HTTP payloads as they are considered sensitive information.
 
-### Using Environment Variables
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
 
 ```sh
 SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true
 ```
 
-
-
-### Using YAML Configuration file
+<!--YAML Configuration File-->
 
 ```yaml
 scope:
@@ -76,3 +93,5 @@ scope:
     http:
       payloads: true
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->

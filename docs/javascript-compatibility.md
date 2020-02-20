@@ -26,3 +26,4 @@ The Scope Javascript agent will work on any CI provider, but will autodetect bui
 - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
 - [GitHub Actions](https://github.com/features/actions)
 - [TeamCity](https://www.jetbrains.com/teamcity/)
+- [Buildkite](https://buildkite.com/)
