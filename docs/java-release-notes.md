@@ -4,13 +4,13 @@ title: Scope Java Agent release notes
 sidebar_label: Release notes
 ---
 
+
 ## Scope Java Agent v0.3.0
 
-_February 20, 2020_
+*February 20, 2020*
 
 **Added**
-
-- Added logic to support `OpenTelemetry` inject and extract `tracecontext`.
+- Added logic to support `OpenTelemetry` inject and extract `tracecontext`. 
 - Added `agent.metadata.testing` flag based on if a testing framework is present on classpath.
 - Added `tracestate` header with `tracer.baggage` content.
 - Added support for `TeamCity` CI.
@@ -19,13 +19,11 @@ _February 20, 2020_
 - Added improvement to Log traces when Scope Agent could not be started.
 
 **Changed**
-
 - Changed `ByteBuddy` version to `1.10.7`.
 - Changed log traces to avoid showing `SCOPE_APIKEY` and `SCOPE_API_ENDPOINT`.
 - Changed configuration based on new `scope.yaml` spec.
 
 **Fixed**
-
 - Fixed `scope.medatada` yaml to use dictionaries.
 - Fixed prevent to send `null` version in ingest `User-Agent`.
 - Fixed coverage session propagation.
@@ -36,42 +34,42 @@ _February 20, 2020_
 - Fixed avoid error on SLF4J instrumentation on MockLoggers.
 - Fixed class loading prevalence of same classes with different version.
 
+
 ## Scope Java Agent v0.2.4
 
-_December 13, 2019_
+*December 13, 2019*
 
 **Changed**
 
 - Changed `User-Agent` to `scope-agent-java/VERSION`.
 
+
 ## Scope Java Agent v0.2.3
 
-_November 29, 2019_
+*November 29, 2019*
 
 **Changed**
-
 - Changed code path config property to `SCOPE_CODE_PATH`.
 - Changed `TEST_ERROR` status into `TEST_FAILED` status.
 
+
 ## Scope Java Agent v0.2.2
 
-_November 18, 2019_
+*November 18, 2019*
 
 **Added**
-
 - Added dependencies to `agent.metadata` based on `Maven`, `Gradle` and `Coursier` on platforms `Unix` and `Windows`.
 
 **Fixed**
-
 - Fixed Code Coverage reporting `null` filepath in some packages.
 - Fixed `test.coverage` to return correct start/end boundary.
 
+
 ## Scope Java Agent v0.2.1
 
-_November 04, 2019_
+*November 04, 2019*
 
 **Added**
-
 - Added capability to hide sensible information on datastores spans.
 - Added `http.response_payload` info on HTTP spans.
 - Added `http.response_headers` and `http.request_headers` on `HTTP` spans.
@@ -80,7 +78,7 @@ _November 04, 2019_
 - Added `response.body` on `Sender` log message.
 - Added print all `ScopeSettings` in `DEBUG` log level.
 - Added `Statistics` on spans remote reporting.
-- Added `configuration` in `agent.metadata`.
+- Added `configuration` in `agent.metadata`. 
 - Added filename and line number in not symbolicated exceptions stacktrace object.
 - Added `db.statement.unavailable=disabled` info when DB statements are disabled.
 - Added `SCOPE_CONFIG_FILE` as environment variable to set the config file path manually.
@@ -88,26 +86,24 @@ _November 04, 2019_
 - Added instrumentation for benchmark `JMH` for `v1.x`.
 
 **Changed**
-
 - Changed log information to show to user based on number of failed tests.
 - Changed set real `http.status_code` when `Tomcat` or `Netty` throws an exception.
 - Changed `scope.test_aggregations` by `scope.metadata`.
 - Changed `http.payload` on requests and responses from `null` to empty string.
 
 **Fixed**
-
 - Fixed support `nested classes` on `JUnit5` tests.
 - Fixed instrumentation for Runtime mode.
 - Fixed `git` information on Runtime/Local environment.
 - Fixed prevent `JVM` does not finish when `ScopeAgent` is run on Runtime.
 - Fixed prevent sending `healthcheck` info every second if it is not `testing.mode=true`
 
+
 ## Scope Java Agent v0.2.0
 
-_October 02, 2019_
+*October 02, 2019*
 
 **Added**
-
 - Added fallback endpoint to `app.scope.dev` if `$SCOPE_API_ENDPOINT` EnvVar is not set.
 - Added `Scala` support from `2.10` to `2.13`.
 - Added `ScalaTest` support from `2.2.x` to `3.0.x`.
@@ -116,7 +112,6 @@ _October 02, 2019_
 - Added `Akka HTTP` support for versions `10.0.x` to `10.1.x`
 
 **Changed**
-
 - Changed `ByteBuddy` to `v1.9.16`.
 - Changed context propagation on `Thread`/`Executor` instrumentation to avoid using reflection.
 - Changed `CI_PROVIDER` on `GitHub Actions` to `GitHub`.
@@ -124,29 +119,27 @@ _October 02, 2019_
 - Changed default value for `SCOPE_SET_GLOBAL_TRACER` to false.
 
 **Fixed**
-
 - Fixed support for configuration files with extension `.yaml` and `.yml`.
 - Fixed avoid applying coverage context propagation if coverage is not configured.
 - Fixed `NPE` on Jenkins settings due to `SOURCE_ROOT` setting.
 - Fixed set `error=true` when `HTTP 400` on `Akka HTTP`.
 
+
 ## Scope Java Agent v0.1.9
 
-_September 10, 2019_
+*September 10, 2019*
 
 **Added**
-
 - Added support for async/concurrent code coverage.
 - Added support for code coverage in server mode.
 - Added logic to use env var `SCOPE_LOG_ROOT_PATH` to set custom log file root path.
 - Added support to send aggregations info in agent metadata.
 - Added instrumentation for `Apache HttpClient` `4.3` to `4.5.9`.
-- Added support for `GitHub Actions` as `CI` provider.
+- Added support for `GitHub Actions` as `CI` provider. 
 - Added hashes based on `parameterized tests` on `JUnit4`, `JUnit5` and `TestNG`
 - Added support to configure `Logger` level threshold.
 
 **Changed**
-
 - Changed propagation context to avoid using `gRPC Context`.
 - Changed `test.coverage` by removing uncovered code lines information.
 - Changed coverage format to use an array `[line, column, count]` on boundaries.
@@ -154,7 +147,6 @@ _September 10, 2019_
 - Changed `test.name` to avoid hash iterations on `JUnit4` and `JUnit5`.
 
 **Fixed**
-
 - Fixed `JUnit4` iteration extraction from `test.name` on parameterized tests.
 - Fixed avoid formatting log events with empty parameters array.
 - Fixed send spans/events every second in `SERVER` mode if they exist.
@@ -163,12 +155,12 @@ _September 10, 2019_
 - Fixed use `SOURCE_ROOT` as root path to gather source code files.
 - Fixed support `ForkJoinPool` to propagate `Context` for active span.
 
+
 ## Scope Java Agent v0.1.8
 
-_August 09, 2019_
+*August 09, 2019*
 
 **Added**
-
 - Added `Scope` statistics based on log file.
 - Added support to configure `Scope` credentials based on selected profile by native app.
 - Added a credential checker of `SCOPE_APIKEY` and `SCOPE_API_ENDPOINT` before starting `ScopeTracer`.
@@ -179,24 +171,22 @@ _August 09, 2019_
 - Added support for `Parameterized` test on `JUnit4`, `JUnit5` and `TestNG`.
 
 **Changed**
-
 - Changed `Scope` log file path based on operative system.
 - Changed `log` filename to include `commit` hash.
 
 **Fixed**
-
 - Fixed show `test.code` when test is kept on super classes.
 - Fixed losing test spans when same test is launched multiple times in parallel on `JUnit4`.
 - Fixed encoding mismatching to create `Scope` log filenames.
 - Fixed `SourceCode` resolver errors when class is not loaded in the current test module.
 - Fixed avoid agent exception when `log` file path cannot be created/accessed.
 
+
 ## Scope Java Agent v0.1.7
 
-_July 12, 2019_
+*July 12, 2019*
 
 **Added**
-
 - Added `branch` name to the `agent.metadata`.
 - Added support propagation active `Span` between threads and thread pools.
 - Added `diff` information about working directory to `agent.metadata`.
@@ -205,12 +195,10 @@ _July 12, 2019_
 - Added additional logs when `ScopeAgent` sends info to backend.
 
 **Changed**
-
 - Changed `span.db.params` format to the `Scope DB Params` standard format.
 - Changed `span.operationName` max 255 chars with Ellipsis.
 
 **Fixed**
-
 - Fixed avoid sending logging events when `NOP` Logger is configured.
 - Fixed `NPE` on `test` instrumentation.
 - Fixed `NPE` on `JUnit5 uniqueId`.
@@ -224,120 +212,115 @@ _July 12, 2019_
 - Fixed avoid using `STOUT` to print logs.
 - Fixed avoid show `logging` traces when log level is not enabled.
 
+
 ## Scope Java Agent v0.1.6
 
-_June 28, 2019_
+*June 28, 2019*
 
 **Added**
-
 - Added test classes to `test.coverage` info.
 
 **Fixed**
-
 - Fixed `test.coverage` information using `JDK 11`.
 - Fixed avoid being mandatory to have `gRPC` in the classpath.
 
+
 ## Scope Java Agent v0.1.5
 
-_June 27, 2019_
+*June 27, 2019*
 
 **Added**
-
 - Added `gRPC` `v1.4.0 to latest` client instrumentation.
-- Added `gRPC` `v1.4.0 to latest` server instrumentation.
+- Added `gRPC` `v1.4.0 to latest` server instrumentation. 
 - Added `test.coverage` info per test execution using `JaCoCo`.
-- Added `JMS` and `Spring-JMS` `v1.1 to latest` messaging instrumentation.
+- Added `JMS` and `Spring-JMS` `v1.1 to latest` messaging instrumentation.  
 - Added support to configure `Scope` via `scope.toml` configuration file.
 
 **Changed**
-
 - Changed `db.statement` to reflect native SQLs and `db.prepared_statement` to reflect SQL prepared statements.
 - Changed `boolean` extraction logic for Environment Variables.
 - Changed `test.coverage` format to implement `Scope Universal Code Coverage` format.
 
 **Fixed**
-
 - Fixed `Baggage` `trace.kind = test` is only set on testing frameworks instrumentation.
-- Fixed avoid stopping `Scope Sender` by `JVM` before sending all `ScopeSpans`.
+- Fixed avoid stopping `Scope Sender` by `JVM` before sending all `ScopeSpans`. 
+
 
 ## Scope Java Agent v0.1.4
 
-_June 10, 2019_
+*June 10, 2019*
 
 **Added**
-
-- Support `MySQL` `v8.x` instrumentation.
-- Support `H2 (DBMS)` `v1.4.x` instrumentation.
+- Support ```MySQL``` ```v8.x``` instrumentation.
+- Support ```H2 (DBMS)``` ```v1.4.x``` instrumentation.
 - Added Scope Report URL to log when build finished.
-- Added auto-detection of `metadata.repository` based on `.git` folder.
-- Added auto-detection of `metadata.commit` based on `.git` folder.
-- Added environment variables detection for `Travis CI`.
-- Added environment variables detection for `GitLab`.
-- Added environment variables detection for `Azure Pipelines`.
-- Added environment variables detection for `BitBucket Pipelines`.
-- Added environment variables detection for `AppVeyor`.
+- Added auto-detection of ```metadata.repository``` based on ```.git``` folder.
+- Added auto-detection of ```metadata.commit``` based on ```.git``` folder.
+- Added environment variables detection for ```Travis CI```.
+- Added environment variables detection for ```GitLab```.
+- Added environment variables detection for ```Azure Pipelines```.
+- Added environment variables detection for ```BitBucket Pipelines```.
+- Added environment variables detection for ```AppVeyor```.
 - Support `SCOPE_AUTO_INSTRUMENT` flag to activate/deactivate instrumentation.
 - Support `SCOPE_SET_GLOBAL_TRACER` flag to activate/deactivate ScopeTracer as GlobalTracer.
 - Support `SCOPE_TEST_MODE` flag to set flush interval to one second/one minute.
 
 **Fixed**
-
-- Fixed `NPE` on logging instrumentation when there is no active `Span`.
-- Fixed `OkHttpClient` connection leaked error.
-- Fixed empty information Spans on `H2 (DBMS)`.
-- Fixed duplicate Spans on `commit`/`rollback` operations.
-- Fixed avoid symbolicating source frames with line number `-1`.
+- Fixed ```NPE``` on logging instrumentation when there is no active ```Span```.
+- Fixed ```OkHttpClient``` connection leaked error.
+- Fixed empty information Spans on ```H2 (DBMS)```.
+- Fixed duplicate Spans on ```commit```/```rollback``` operations.
+- Fixed avoid symbolicating source frames with line number ```-1```.
 - Fixed avoid creating `span.kind=client` Spans if there is no previous active `Span`.
 - Fixed `ScopeAgent` to initialize only one time if it is used in several Maven plugins.
 - Fixed `exception.error.object` field to support `Exception` with self-references.
 - Fixed issue about closing `io.opentracing.Scope` when the `Span` finishes.
 
+
 ## Scope Java Agent v0.1.3
 
-_May 30, 2019_
+*May 30, 2019*
 
 **Added**
 
-- Support `java.net (HttpURLConnection)` instrumentation.
-- Support `Apache Tomcat` instrumentation from `v7.x` to `v9.x`.
+- Support ```java.net (HttpURLConnection)``` instrumentation.
+- Support ```Apache Tomcat``` instrumentation from ```v7.x``` to ```v9.x```.
 
 **Changed**
 
 - Removed `event.exception.file` and `event.exception.line` if there is no attached source code.
-- Added `event.exception.java` information about `StackTraceElement` object.
-- Removed `(` `)` characters for JUnit5 Test Names.
+- Added `event.exception.java` information about `StackTraceElement` object. 
+- Removed ```(``` ```)``` characters for JUnit5 Test Names.
 
 **Fixed**
-
 - Fixed `event` value to lower case in `JUnit5`.
+
 
 ## Scope Java Agent v0.1.2
 
-_May 14, 2019_
+*May 14, 2019*
 
 **Added**
-
 - Supported absolute source code info in Span.
 - Supported absolute source code info in Exception events.
 - Supported absolute source code info in Logging events.
-- Added `event.context.event_id` to avoid duplicated Events.
-- Added `agent.type` in Metadata.
+- Added ```event.context.event_id``` to avoid duplicated Events.
+- Added ```agent.type``` in Metadata.
 - Added synchronization Span/Event timestamps using NTP offset.
-- Support instrumentation `JUnit5` Test Framework.
-- Support instrumentation `TestNG` Test Framework.
+- Support instrumentation ```JUnit5``` Test Framework.
+- Support instrumentation ```TestNG``` Test Framework.
 
 **Changed**
-
-- Span `span.test.code` has been renamed to `span.source`.
-- Span `span.test.framework` now shows the test framework used to create tests.
+- Span ```span.test.code``` has been renamed to ```span.source```.
+- Span ```span.test.framework``` now shows the test framework used to create tests.
 
 **Fixed**
+- Fixed instrumentation ```OkHttp3 Client v3.12.x``` in ```JDK1.7```.
 
-- Fixed instrumentation `OkHttp3 Client v3.12.x` in `JDK1.7`.
 
 ## Scope Java Agent v0.1.1
 
-_May 07, 2019_
+*May 07, 2019*
 
 **Added**
 
@@ -345,8 +328,12 @@ _May 07, 2019_
 - Support instrumentation SLF4J Logging
 - Support instrumentation OkHttp3 Client
 
+
 ## Scope Java Agent v0.1.0
 
-_April 24, 2019_
+*April 24, 2019*
 
 Initial agent release
+
+
+
