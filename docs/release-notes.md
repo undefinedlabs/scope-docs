@@ -9,213 +9,59 @@ sidebar_label: Release notes
 
 *February 19, 2020*
 
-#### Added
-- **New: macOS and tvOS support**. We have renamed the Scope iOS Agent into Scope Swift Agent, and added support for both macOS and tvOS.
-- Added support for Buildkite.
-- The setup wizard step for creating the GitHub App now links to a prepopulated "create new GitHub App" form (Scope Enterprise only).
-- Added ability to configure SSL certificates to authenticate with an SMTP server for notifications (Scope Enterprise only).
-
-#### Changed
-- Removed summary section from notification emails.
-- Redesigned aggregated tests status chart in Explore sidebar.
-- GraphQL API now returns "Forbidden" when the user is authenticated but has no access to the requested resource.
-- The agent ingest API will now reject test results that could not be tied to a repository and commit on Scope, helping with troubleshooting agent configuration problems.
-- Emails are now sent individually to each user instead of using "blind carbon copy".
-- The first untested commits for each branch are now auto expanded on the service explore view.
-- Added dedicated worker queue for test results processing for improved responsiveness and robustness (Scope Enterprise only).
-
 #### Fixed
-- Improved performance of queries involving commit status calculations.
-- Custom database icons now show up in the Test Report Trace view.
-- Source tab for logs does not show up anymore if source is not available.
-- Hover tooltips are displayed in the right position without flickering in Test Report Performance view.
-- Test runs are correctly loaded again in Test Report History tab.
-- CORS has been deactivated in the agent ingest API to allow collecting tracing information from browser-based agents.
-- Email notifications now parse markdown format in commit messages and respect new lines.
-- If a commit fails and passes when the build is retried, a "fixed" notification will be sent now.
-- Fixed the "Add new repo" link for non-owners of the organization on GitHub.
-- Revoke user access tokens when `github_app_authorization` webhooks are received.
-- Improved the reliability of the GitHub checks.
-- Tasks are now retried if GitHub API fails with a "rate limit exceeded" message.
-- Fix external redirection to test reports with names that include the `/` character.
-- All GitHub API calls now use the `Authorization` header when using user tokens instead of the deprecated URL parameter (Scope Enterprise only).
-- Improved performance of the test history matrix.
+- Improved performance of the Insights matrix.
+
 
 
 ## Scope v1.6.5
 
 *February 15, 2020*
 
-#### Added
-- **New: macOS and tvOS support**. We have renamed the Scope iOS Agent into Scope Swift Agent, and added support for both macOS and tvOS.
-- Added support for Buildkite.
-- The setup wizard step for creating the GitHub App now links to a prepopulated "create new GitHub App" form (Scope Enterprise only).
-- Added ability to configure SSL certificates to authenticate with an SMTP server for notifications (Scope Enterprise only).
-
 #### Changed
-- Removed summary section from notification emails.
-- Redesigned aggregated tests status chart in Explore sidebar.
-- GraphQL API now returns "Forbidden" when the user is authenticated but has no access to the requested resource.
-- The agent ingest API will now reject test results that could not be tied to a repository and commit on Scope, helping with troubleshooting agent configuration problems.
-- Emails are now sent individually to each user instead of using "blind carbon copy".
-- The first untested commits for each branch are now auto expanded on the service explore view.
-- Added dedicated worker queue for test results processing for improved responsiveness and robustness (Scope Enterprise only).
-
-#### Fixed
-- Improved performance of queries involving commit status calculations.
-- Custom database icons now show up in the Test Report Trace view.
-- Source tab for logs does not show up anymore if source is not available.
-- Hover tooltips are displayed in the right position without flickering in Test Report Performance view.
-- Test runs are correctly loaded again in Test Report History tab.
-- CORS has been deactivated in the agent ingest API to allow collecting tracing information from browser-based agents.
-- Email notifications now parse markdown format in commit messages and respect new lines.
-- If a commit fails and passes when the build is retried, a "fixed" notification will be sent now.
-- Fixed the "Add new repo" link for non-owners of the organization on GitHub.
-- Revoke user access tokens when `github_app_authorization` webhooks are received.
-- Improved the reliability of the GitHub checks.
-- Tasks are now retried if GitHub API fails with a "rate limit exceeded" message.
-- Fix external redirection to test reports with names that include the `/` character.
-- All GitHub API calls now use the `Authorization` header when using user tokens instead of the deprecated URL parameter (Scope Enterprise only).
+- Added a dedicated worker process for processing test results for improved performance and resilience (Scope Enterprise only).
 
 
 ## Scope v1.6.4
 
 *February 13, 2020*
 
-#### Added
-- **New: macOS and tvOS support**. We have renamed the Scope iOS Agent into Scope Swift Agent, and added support for both macOS and tvOS.
-- Added support for Buildkite.
-- The setup wizard step for creating the GitHub App now links to a prepopulated "create new GitHub App" form (Scope Enterprise only).
-- Added ability to configure SSL certificates to authenticate with an SMTP server for notifications (Scope Enterprise only).
-
 #### Changed
-- Removed summary section from notification emails.
-- Redesigned aggregated tests status chart in Explore sidebar.
-- GraphQL API now returns "Forbidden" when the user is authenticated but has no access to the requested resource.
-- The agent ingest API will now reject test results that could not be tied to a repository and commit on Scope, helping with troubleshooting agent configuration problems.
-- Emails are now sent individually to each user instead of using "blind carbon copy".
-- The first untested commits for each branch are now auto expanded on the service explore view.
+- Only the 10 most recent branches are now shown in the service list.
 
 #### Fixed
-- Improved performance of queries involving commit status calculations.
-- Custom database icons now show up in the Test Report Trace view.
-- Source tab for logs does not show up anymore if source is not available.
-- Hover tooltips are displayed in the right position without flickering in Test Report Performance view.
-- Test runs are correctly loaded again in Test Report History tab.
-- CORS has been deactivated in the agent ingest API to allow collecting tracing information from browser-based agents.
-- Email notifications now parse markdown format in commit messages and respect new lines.
-- If a commit fails and passes when the build is retried, a "fixed" notification will be sent now.
-- Fixed the "Add new repo" link for non-owners of the organization on GitHub.
-- Revoke user access tokens when `github_app_authorization` webhooks are received.
-- Improved the reliability of the GitHub checks.
-- Tasks are now retried if GitHub API fails with a "rate limit exceeded" message.
-- Fix external redirection to test reports with names that include the `/` character.
-- All GitHub API calls now use the `Authorization` header when using user tokens instead of the deprecated URL parameter (Scope Enterprise only).
+- Branch search in explore is now case insensitive.
+- Fix broken links in empty repositories in service list.
+
 
 
 ## Scope v1.6.3
 
 *February 11, 2020*
 
-#### Added
-- **New: macOS and tvOS support**. We have renamed the Scope iOS Agent into Scope Swift Agent, and added support for both macOS and tvOS.
-- Added support for Buildkite.
-- The setup wizard step for creating the GitHub App now links to a prepopulated "create new GitHub App" form (Scope Enterprise only).
-- Added ability to configure SSL certificates to authenticate with an SMTP server for notifications (Scope Enterprise only).
-
-#### Changed
-- Removed summary section from notification emails.
-- Redesigned aggregated tests status chart in Explore sidebar.
-- GraphQL API now returns "Forbidden" when the user is authenticated but has no access to the requested resource.
-- The agent ingest API will now reject test results that could not be tied to a repository and commit on Scope, helping with troubleshooting agent configuration problems.
-- Emails are now sent individually to each user instead of using "blind carbon copy".
-- The first untested commits for each branch are now auto expanded on the service explore view.
-
 #### Fixed
-- Improved performance of queries involving commit status calculations.
-- Custom database icons now show up in the Test Report Trace view.
-- Source tab for logs does not show up anymore if source is not available.
-- Hover tooltips are displayed in the right position without flickering in Test Report Performance view.
-- Test runs are correctly loaded again in Test Report History tab.
-- CORS has been deactivated in the agent ingest API to allow collecting tracing information from browser-based agents.
-- Email notifications now parse markdown format in commit messages and respect new lines.
-- If a commit fails and passes when the build is retried, a "fixed" notification will be sent now.
-- Fixed the "Add new repo" link for non-owners of the organization on GitHub.
-- Revoke user access tokens when `github_app_authorization` webhooks are received.
-- Improved the reliability of the GitHub checks.
-- Tasks are now retried if GitHub API fails with a "rate limit exceeded" message.
-- Fix external redirection to test reports with names that include the `/` character.
-- All GitHub API calls now use the `Authorization` header when using user tokens instead of the deprecated URL parameter (Scope Enterprise only).
+- Improved performance in Insights, Explore and Service List pages.
 
 
 ## Scope v1.6.2
 
 *February 10, 2020*
 
-#### Added
-- **New: macOS and tvOS support**. We have renamed the Scope iOS Agent into Scope Swift Agent, and added support for both macOS and tvOS.
-- Added support for Buildkite.
-- The setup wizard step for creating the GitHub App now links to a prepopulated "create new GitHub App" form (Scope Enterprise only).
-- Added ability to configure SSL certificates to authenticate with an SMTP server for notifications (Scope Enterprise only).
-
-#### Changed
-- Removed summary section from notification emails.
-- Redesigned aggregated tests status chart in Explore sidebar.
-- GraphQL API now returns "Forbidden" when the user is authenticated but has no access to the requested resource.
-- The agent ingest API will now reject test results that could not be tied to a repository and commit on Scope, helping with troubleshooting agent configuration problems.
-- Emails are now sent individually to each user instead of using "blind carbon copy".
-- The first untested commits for each branch are now auto expanded on the service explore view.
-
 #### Fixed
-- Improved performance of queries involving commit status calculations.
-- Custom database icons now show up in the Test Report Trace view.
-- Source tab for logs does not show up anymore if source is not available.
-- Hover tooltips are displayed in the right position without flickering in Test Report Performance view.
-- Test runs are correctly loaded again in Test Report History tab.
-- CORS has been deactivated in the agent ingest API to allow collecting tracing information from browser-based agents.
-- Email notifications now parse markdown format in commit messages and respect new lines.
-- If a commit fails and passes when the build is retried, a "fixed" notification will be sent now.
-- Fixed the "Add new repo" link for non-owners of the organization on GitHub.
-- Revoke user access tokens when `github_app_authorization` webhooks are received.
-- Improved the reliability of the GitHub checks.
-- Tasks are now retried if GitHub API fails with a "rate limit exceeded" message.
-- Fix external redirection to test reports with names that include the `/` character.
-- All GitHub API calls now use the `Authorization` header when using user tokens instead of the deprecated URL parameter (Scope Enterprise only).
+- Fixed a bug when handling multi-page responses from GitHub API.
+- Pull requests are now updated in Scope even if either the base branch and/or the head branch were deleted.
+- Fixed a crash on the UI when Intercom is not configured (Scope Enterprise only).
+- Fixed a bug on the Insights matrix that prevented it from loading.
 
 
 ## Scope v1.6.1
 
 *February 08, 2020*
 
-#### Added
-- **New: macOS and tvOS support**. We have renamed the Scope iOS Agent into Scope Swift Agent, and added support for both macOS and tvOS.
-- Added support for Buildkite.
-- The setup wizard step for creating the GitHub App now links to a prepopulated "create new GitHub App" form (Scope Enterprise only).
-- Added ability to configure SSL certificates to authenticate with an SMTP server for notifications (Scope Enterprise only).
-
-#### Changed
-- Removed summary section from notification emails.
-- Redesigned aggregated tests status chart in Explore sidebar.
-- GraphQL API now returns "Forbidden" when the user is authenticated but has no access to the requested resource.
-- The agent ingest API will now reject test results that could not be tied to a repository and commit on Scope, helping with troubleshooting agent configuration problems.
-- Emails are now sent individually to each user instead of using "blind carbon copy".
-- The first untested commits for each branch are now auto expanded on the service explore view.
-
 #### Fixed
-- Improved performance of queries involving commit status calculations.
-- Custom database icons now show up in the Test Report Trace view.
-- Source tab for logs does not show up anymore if source is not available.
-- Hover tooltips are displayed in the right position without flickering in Test Report Performance view.
-- Test runs are correctly loaded again in Test Report History tab.
-- CORS has been deactivated in the agent ingest API to allow collecting tracing information from browser-based agents.
-- Email notifications now parse markdown format in commit messages and respect new lines.
-- If a commit fails and passes when the build is retried, a "fixed" notification will be sent now.
-- Fixed the "Add new repo" link for non-owners of the organization on GitHub.
-- Revoke user access tokens when `github_app_authorization` webhooks are received.
-- Improved the reliability of the GitHub checks.
-- Tasks are now retried if GitHub API fails with a "rate limit exceeded" message.
-- Fix external redirection to test reports with names that include the `/` character.
-- All GitHub API calls now use the `Authorization` header when using user tokens instead of the deprecated URL parameter (Scope Enterprise only).
+- Fixed a bug when handling empty responses from GitHub API.
+- Fixed a validation bug on agent ingest API.
+- Fixed a bug when calculating services for the service list page.
 
 
 ## Scope v1.6.0
@@ -257,28 +103,8 @@ sidebar_label: Release notes
 
 *February 07, 2020*
 
-#### Added
-- **New: Code Path**. The Scope agents for iOS, Java and .NET now support collecting per-test code coverage information that is accessible in the UI, in a new tab named "Code Path".
-- **New: Email notifications**. Users can now subscribe to email notifications on a per-service basis, to receive emails every time a branch is "broken" or "fixed".
-- **New: Test differential states**. Tests are now marked as "added" if they were seen for the first time and as "broken" or "fixed" if they changed status between commits.
-- **New: Benchmark test support**. The test performance tab can now show performance historical information for benchmark tests, based on operations per second instead of test duration.
-- **New: Manual testing support**. Tests performed using the Scope for Chrome extension are now shown in a separate section under "Local development".
-- **New: Scope agent for Node.js**. The Scope agent for Javascript can now be used to instrument Node.js tests and applications.
-- When tests are parametrized, their parameters now show on the UI.
-- SQL statements are now syntax highlighted.
-
-#### Changed
-- Agents are now configured using a single parameter, Scope DSN, instead of API key and endpoint separately.
-- The test status "ERROR" has been removed, and tests will show up as "FAIL" instead.
-- Removed the test execution count column from the inspect view and replaced it with a small badge.
-- Updates to Scope are now only available through the Helm CLI.
-- Built-in TLS termination has been deprecated in favor of using ingress TLS.
-- Sessions are now kept active for up to one week.
-- Updated the Scope logo.
-
 #### Fixed
-- Fixed an issue when trying to ingest binary data.
-- Several other small bug fixes.
+- Fixed a bug on the GitHub checks update process.
 
 
 ## Scope v1.5.0
@@ -336,16 +162,10 @@ sidebar_label: Release notes
 
 *October 09, 2019*
 
-#### Added
-- New syntax highlighting for viewing source code.
-
-#### Changed
-- Selecting a new branch on the Explore View resets any filter on the UI.
-
 #### Fixed
-- Fixed a bug that showed a blank page after deleting a namespace.
-- Fixed the commits order on the Test Performance Tab.
-- Several other minor bug fixes and enhancements
+- Fixed a bug when displaying icons on Safari.
+- The test source tab now appears properly on the test detail view.
+- Fixed minor bugs on the test performance tab.
 
 
 ## Scope v1.3.2
@@ -368,24 +188,12 @@ sidebar_label: Release notes
 
 *September 30, 2019*
 
-#### Added
- - **New**: Test Report Performance tab, to visualize test duration over time for a specific test.
- - **New**: Javascript Agent, with initial support for Jest and Cypress.
- - **New**: Redesigned Test Report trace view.
-- Added infinite scroll pagination to log views.
-
 #### Changed
-- After the Scope GitHub app is installed on a namespace, repositories are loaded asynchronously and in parallel.
+- Updated all dependencies to their latest stable versions
 
 #### Fixed
-- Fixed a bug where removed repositories would not be reactivated after re-adding them.
-- When applying the "flaky tests" filter on the Insights matrix, non-flaky results will still be shown.
-- Fixed a bug where commits from other branches would show up on the history tab.
-- Fixed GitHub checks when test names had spaces.
-- Minor fixes on Go agent instructions.
-- Tags now render correctly when the value is an object or an array.
-- Various other performance enhancement and bug fixes.
 - Branch name is now properly calculated when there is only a single commit in a branch
+- Fix iOS symbolication for some symbol files
 
 
 ## Scope v1.3.0
