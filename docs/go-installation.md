@@ -14,14 +14,36 @@ go get -u go.undefinedlabs.com/scopeagent
 ## Instrumenting your tests and benchmarks
 
 In order to instrument your tests that use Go's native [`testing`](https://golang.org/pkg/testing/) package, you
-have to call `scopeagent.Run(m)` in your `TestMain` function, and all tests and benchmarks in the package will be instrumented.
+have to import `go.undefinedlabs.com/scopeagent/autoinstrument` and all tests and benchmarks in the package will be automatically instrumented through monkey patching.
 
 For example:
 
 ```go
 import (
-    "go.undefinedlabs.com/scopeagent"
     "testing"
+
+    _ "go.undefinedlabs.com/scopeagent/autoinstrument"
+)
+
+func TestExample(t *testing.T) {
+    // ...
+}
+
+func BenchmarkExample(b *testing.B) {
+    // ...
+}
+```
+
+The automatic test instrumentation by imports is achieved using monkey patching. As an alternative, you can call `scopeagent.Run(m)` in your `TestMain` function.
+
+For example:
+
+```go
+import (
+    "os"
+    "testing"
+
+    "go.undefinedlabs.com/scopeagent"
 )
 
 func TestMain(m *testing.M) {
@@ -48,18 +70,16 @@ Subtests instrumentation is not automatic and it's done by replacing the standar
 
 ```go
 import (
-    "go.undefinedlabs.com/scopeagent"
     "testing"
-)
 
-func TestMain(m *testing.M) {
-    os.Exit(scopeagent.Run(m))
-}
+    "go.undefinedlabs.com/scopeagent"
+    _ "go.undefinedlabs.com/scopeagent/autoinstrument"
+)
 
 func TestExample(t *testing.T) {
     test := scopeagent.GetTest(t)   // Gets the Scope Go agent representation of test `t`
     test.Run("Sub Test", func(t *testing.T) {
-	// ...	
+      // ...
     })
     
     // ...	
@@ -72,18 +92,16 @@ Sub benchmarks instrumentation is not automatic and it's done by replacing the s
 
 ```go
 import (
-    "go.undefinedlabs.com/scopeagent"
     "testing"
-)
 
-func TestMain(m *testing.M) {
-    os.Exit(scopeagent.Run(m))
-}
+    "go.undefinedlabs.com/scopeagent"
+    _ "go.undefinedlabs.com/scopeagent/autoinstrument"
+)
 
 func BenchmarkExample(b *testing.B) {
     bench := scopeagent.GetBenchmark(b) // Gets the Scope Go agent representation of benchmark `b`
     bench.Run("Sub Benchmark", func(b *testing.B) {
-	// ...	
+      // ...
     })
     
     // ...	
@@ -140,8 +158,9 @@ or in code passing the option `WithSetGlobalTracer()`, like in the following exa
 
 ```go
 import (
-	"github.com/opentracing/opentracing-go"
-	"go.undefinedlabs.com/scopeagent"
+    "github.com/opentracing/opentracing-go"
+
+    "go.undefinedlabs.com/scopeagent"
 )
 
 func main() {
@@ -151,7 +170,7 @@ func main() {
     }
     defer scopeAgent.Stop()
 
-	// ...
+    // ...
 }
 ```
 

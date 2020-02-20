@@ -41,6 +41,7 @@
       "go-http-instrumentation",
       "go-grpc-instrumentation",
       "go-process-instrumentation",
+      "go-sql-instrumentation",
       "go-release-notes"
     ],
     "Javascript Agent": [

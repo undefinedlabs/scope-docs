@@ -14,13 +14,15 @@ The Scope Go agent is compatible with the following versions of Go:
 
 The Scope Go agent is compatible with the following libraries:
 
-| Name                                                         | Span/event creation | Extract | Inject |
-| ------------------------------------------------------------ | :-----------------: | :-----: | :----: |
-| [`testing`](https://golang.org/pkg/testing/)                 |          ✓          |         |        |
-| [`net/http`](https://golang.org/pkg/net/http/)               |          ✓          |    ✓    |    ✓   |
-| [`os/exec`](https://golang.org/pkg/os/exec/)                 |          ✓          |    ✓    |    ✓   |
-| [`google.golang.org/grpc`](https://github.com/grpc/grpc-go)  |          ✓          |    ✓    |    ✓   |
-| [`log`](https://golang.org/pkg/log/)                         |          ✓          |         |        |
+| Name                                                                        | Span/event creation | Extract | Inject |
+| --------------------------------------------------------------------------- | :-----------------: | :-----: | :----: |
+| [`testing`](https://golang.org/pkg/testing/)                                |          ✓          |         |        |
+| [`net/http`](https://golang.org/pkg/net/http/)                              |          ✓          |    ✓    |    ✓   |
+| [`os/exec`](https://golang.org/pkg/os/exec/)                                |          ✓          |    ✓    |    ✓   |
+| [`google.golang.org/grpc`](https://github.com/grpc/grpc-go)                 |          ✓          |    ✓    |    ✓   |
+| [`log`](https://golang.org/pkg/log/)                                        |          ✓          |         |        |
+| [`github.com/lib/pq`](https://github.com/lib/pq)                            |          ✓          |         |        |
+| [`github.com/go-sql-driver/mysql`](https://github.com/go-sql-driver/mysql)  |          ✓          |         |        |
 
 > Do you use a language or library not listed here? Please [let us know](https://home.undefinedlabs.com/goto/support)!
 
