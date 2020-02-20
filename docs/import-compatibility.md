@@ -68,4 +68,5 @@ The Scope Import tool will work on any CI provider, but will autodetect build an
 - [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
 - [GitHub Actions](https://github.com/features/actions)
+- [TeamCity](https://www.jetbrains.com/teamcity/)
 - [Buildkite](https://buildkite.com/)

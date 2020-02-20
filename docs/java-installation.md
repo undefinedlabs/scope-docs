@@ -305,6 +305,16 @@ If you are running your application or tests inside a container, forward the fol
 - `GITHUB_REPOSITORY`
 - `GITHUB_SHA`
 
+<!-- TeamCity -->
+
+- `SCOPE_DSN`
+- `TEAMCITY_VERSION`
+- `BUILD_VCS_URL`
+- `BUILD_CHECKOUTDIR`
+- `BUILD_ID`
+- `BUILD_NUMBER`
+- `SERVER_URL`
+
 <!-- Buildkite -->
 
 - `SCOPE_DSN`
