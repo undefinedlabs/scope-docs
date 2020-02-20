@@ -8,6 +8,63 @@ The behaviour of the Scope Agent can be modified using environment variables or 
 
 > If these properties are manually configured, use `true` or `false` only for the boolean value.
 
+## Changing Scope Logger level
+
+You can change the Scope Logger level using the values `error`, `warn`, `info`, `debug` and `trace` levels. By default, Scope Logger level is `info`.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_LOGGER_LEVEL=debug
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+logger:
+  level: "debug"
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+## Changing Scope Logger root path
+
+By default, Scope Java agent will create a log file in the following folder path based on your platform:
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!-- Windows -->
+
+`%APPDATA%/scope/logs/`
+
+<!-- Linux -->
+
+`/var/log/scope/`
+
+<!-- macOS -->
+
+`~/Library/Logs/Scope/`
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+You can set the Scope Logger root path manually.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_LOGGER_ROOT=/home/user/projects/scope/log/
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+logger:
+  root: "/home/user/projects/scope/log/"
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ## Disabling Scope instrumentation
 
 Scope auto instruments your code and tests by default. You can disable this behaviour.
@@ -16,15 +73,14 @@ Scope auto instruments your code and tests by default. You can disable this beha
 <!--Environment Variable-->
 
 ```sh
-SCOPE_AUTO_INSTRUMENT=false
+SCOPE_INSTRUMENTATION_ENABLED=false
 ```
 
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    enabled: false
+instrumentation:
+  enabled: false
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -43,8 +99,7 @@ SCOPE_SERVICE="service-name"
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  service: "service-name"
+service: "service-name"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -57,15 +112,14 @@ If you set Scope as OpenTracing Global Tracer, your own spans will be captured a
 <!--Environment Variable-->
 
 ```sh
-SCOPE_SET_GLOBAL_TRACER=true
+SCOPE_TRACER_GLOBAL=true
 ```
 
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  tracer:
-    global: true
+tracer:
+  global: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -84,9 +138,7 @@ SCOPE_TESTING_MODE=false
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  mode:
-    testing: false
+testing_mode: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -107,11 +159,10 @@ SCOPE_METADATA="sample.key1=$SAMPLE_VAR1,sample.key2=$SAMPLE_VAR2,sample.key3=sa
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  metadata:
-    sample.key1: $SAMPLE_VAR1
-    sample.key2: $SAMPLE_VAR2
-    sample.key3: sampleValue3
+metadata:
+  sample.key1: $SAMPLE_VAR1
+  sample.key2: $SAMPLE_VAR2
+  sample.key3: sampleValue3
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -132,10 +183,9 @@ SCOPE_CONFIGURATION="sample.key1,sample.key2"
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  configuration:
-    - sample.key1
-    - sample.key2
+configuration:
+  - sample.key1
+  - sample.key2
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -152,16 +202,16 @@ You just need to indicate the base package, and every sub-package, starting from
 <!--Environment Variable-->
 
 ```sh
-SCOPE_CODE_PATH=true
+SCOPE_CODE_PATH_ENABLED=true
 SCOPE_CODE_PATH_BASE_PACKAGES="foo.bar.xyz, bar.foo"
 ```
 
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  code_path: true
-  code_path_base_packages: "foo.bar.xyz, bar.foo"
+code_path:
+  enabled: true
+  base_packages: "foo.bar.xyz, bar.foo"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -182,10 +232,9 @@ SCOPE_INSTRUMENTATION_DB_STATEMENT_VALUES=true
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    db:
-      statement_values: true
+instrumentation:
+  db:
+    statement_values: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -206,10 +255,9 @@ SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    http:
-      payloads: true
+instrumentation:
+  http:
+    payloads: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -224,7 +272,7 @@ By default, Scope Java agent will send common HTTP headers, filtering the conten
 - `Cookie`
 - `Set-Cookie`
 
-Note that the content of every header configured explicitly to be shown in the HTTP span tags will not be filtered.
+> Note that the content of every header configured explicitly to be shown in the HTTP span tags will **not** be filtered.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Environment Variable-->
@@ -236,13 +284,12 @@ SCOPE_INSTRUMENTATION_HTTP_HEADERS="Authorization,My-Header-One,My-Header-Two"
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    http:
-      headers:
-        - Authorization
-        - My-Header-One
-        - My-Header-Two
+instrumentation:
+  http:
+    headers:
+      - Authorization
+      - My-Header-One
+      - My-Header-Two
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
