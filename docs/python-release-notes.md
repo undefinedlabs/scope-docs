@@ -5,6 +5,22 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.14
+
+*February 19, 2020*
+
+### Fixed
+* Fix logic in Database statement values configuration.
+* Fix logic in HTTP headers to show configuration.
+* Ingest now times out to avoid deadlocks.
+
+### Added
+* Global tracer can be configured through `scope.yml`.
+
+
+
+
+
 ## Scope Python Agent v0.3.13
 
 *February 06, 2020*

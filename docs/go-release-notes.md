@@ -5,6 +5,29 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.12" target="_blank">Scope Go Agent v0.1.12</a>
+
+*February 19, 2020*
+
+**Added:**
+- Codepath implementation (#103)
+- Expand '~' in source root (#159)
+- Support to split a big payload in multiples payloads (#158)
+- Http server instrumentation, panic support (#156)
+
+**Changed:**
+- Environment variables handler and missing keys (#154)
+- Statement values instrumentation option rename (#161)
+- SetTestingMode refactor (#163)
+- Removes the ScopeDisableMonkeyPatching env var (#164)
+
+**Fixes:**
+- Fix go vet ./... in the agent (#155)
+- Fixes retries response status code 400 (#157)
+- Fixes panic handling of the agent runner (#160) 
+
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.11" target="_blank">Scope Go Agent v0.1.11</a>
 
 *February 11, 2020*
