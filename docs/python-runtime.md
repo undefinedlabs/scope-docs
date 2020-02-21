@@ -9,6 +9,7 @@ you need to use the Scope agent to instrument your running service.
 
 This service might run, for example, in a container on CI, or in a QA/staging environment.
 
+> If you're running the Scope Python Agent in runtime mode, you need to set [`SCOPE_TESTING_MODE`](python-configuration.md#change-testing-mode) to `false`.
 
 ## Using the `scope-run` CLI wrapper
 
@@ -16,22 +17,24 @@ To use the agent without modifying your source code, prefix the startup command 
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--gunicorn-->
+
 ```bash
 scope-run gunicorn -w 4 myapp:app
 ```
 
 <!--uWSGI-->
+
 ```bash
 scope-run uwsgi --http :9090 --wsgi-file foobar.py
 ```
 
 <!--Other WSGI-compliant servers-->
+
 ```bash
 scope-run python manage.py runserver
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
-
 
 ## Installing the agent in your code
 
@@ -44,6 +47,6 @@ agent = scopeagent.Agent()
 agent.install()
 ```
 
-> If using `gevent`, make sure gevent's monkey patching happens *before* installing the Scope agent
+> If using `gevent`, make sure gevent's monkey patching happens _before_ installing the Scope agent
 
 After this, you can run the startup command of your WSGI-compliant server as before.

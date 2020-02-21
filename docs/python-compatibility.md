@@ -44,3 +44,4 @@ The Scope Python agent will work on any CI provider, but will autodetect build a
 - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
 - [GitHub Actions](https://github.com/features/actions)
 - [TeamCity](https://www.jetbrains.com/teamcity/)
+- [Buildkite](https://buildkite.com/)
