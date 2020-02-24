@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Import v0.1.6
+
+*February 24, 2020*
+
+**Changed**
+- Updated dependency `scope-go-agent` to version 0.1.12.
+
+
 ## Scope Import v0.1.5
 
 *February 11, 2020*
