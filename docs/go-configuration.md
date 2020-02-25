@@ -64,9 +64,24 @@ func main() {
 }
 ```
 
-
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+## Adding Code Path information
+
+Automatically, the Go agent collects the Code Path information from a test execution when the code coverage is enabled.
+
+> Please note because the Code Path is extracted from the code coverage, in order to collect the Code Path of a given test,
+> this should be executed without `t.Parallel()`. For tests in parallel the Code Path is disabled.
+
+> Code Coverage in Go excludes `_test.go` files, so if a test doesn't use any other package the Code Path could be empty.
+
+To enable Code Path, run your tests using code coverage, for example:
+
+```bash
+$ go test -v -covermode=count ./...
+
+$ go test -v -race -covermode=atomic ./...
+```
 
 ## Setting Scope as Global Tracer
 

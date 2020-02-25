@@ -286,7 +286,7 @@ ${SRCROOT}/Carthage/Build/tvOS/ScopeAgent.framework/upload_symbols
 
 ### Code Path Support
 
-To enable code path support for your tests, follow these steps:
+To enable Code Path support for your tests, follow these steps:
 
 1. First, make sure your Xcode project is configured to generate the debug symbols file:
 

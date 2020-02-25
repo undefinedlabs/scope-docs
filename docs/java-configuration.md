@@ -190,11 +190,11 @@ configuration:
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Adding code path information
+## Adding Code Path information
 
-You can add code path information to certain spans to show the executed lines given a certain test in a certain commit.
+You can add Code Path information to certain spans to show the executed lines given a certain test in a certain commit.
 
-Apart from the activation/deactivation of the code path flag, it is needed to configure which packages will be needed to be tracked by the Scope Java Agent.
+Apart from the activation/deactivation of the Code Path flag, it is needed to configure which packages will be needed to be tracked by the Scope Java Agent.
 
 You just need to indicate the base package, and every sub-package, starting from that point, will be included as observable package.
 

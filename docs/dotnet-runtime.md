@@ -18,9 +18,9 @@ scope-run dotnet run
 This will autoinstrument your application at runtime and will produce tracing information if it receives
 a request from an instrumented test or application.
 
-## Adding code path information for runtime binaries
+## Adding Code Path information for runtime binaries
 
-Enabling the code path information of runtime applications requires to patch the assemblies 
+Enabling the Code Path information of runtime applications requires to patch the assemblies 
 with the coverage algorithm (apart of enabling it in the [configuration](dotnet-configuration.md)). 
 
 To patch them you have to run the following command inside the folder where the binaries are:

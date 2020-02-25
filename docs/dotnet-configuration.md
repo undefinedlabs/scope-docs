@@ -136,11 +136,11 @@ scope:
 
 
 
-## Adding code path information
+## Adding Code Path information
 
-You can add code path information to show the executed lines of a certain test in a certain commit.
+You can add Code Path information to show the executed lines of a certain test in a certain commit.
 
-By default, Scope .NET Agent will not send code path information.
+By default, Scope .NET Agent will not send Code Path information.
 
 ### Using Environment Variables
 
