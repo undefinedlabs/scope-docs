@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.15
+
+*February 26, 2020*
+
+### Changed
+* Add maximum size of ingest payloads.
+* Adapt `scope.yml` configuration.
+
+
+
+
+
+
 ## Scope Python Agent v0.3.14
 
 *February 19, 2020*
