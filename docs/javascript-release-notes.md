@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.3.9
+
+*February 26, 2020*
+
+## Fixed
+- Fix release tag
+
+
+
+
+
+## Scope Javascript Agent v0.3.8
+
+*February 26, 2020*
+
+## Fixed
+- Fix minor bugs
+
+
+
+
+
 ## Scope Javascript Agent v0.3.7
 
 *February 17, 2020*
