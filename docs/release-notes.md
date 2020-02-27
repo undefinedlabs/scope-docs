@@ -5,6 +5,30 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.7.0
+
+*February 27, 2020*
+
+#### Added
+- **New**: Scope now supports pull requests from forks. A new tab has been added to the Service Explore view where all the open PRs.
+- Google Analytics support (Scope Enterprise only).
+
+#### Changed
+- Better handling of unknown urls and login redirections.
+- Number of services in Services dashboard tabs are now styled.
+- Admin section removed and simplified setup wizard (Scope Enterprise only).
+
+#### Fixed
+- Always load the default branch and show it on top in all branch lists.
+- Do not carry the filter query parameters from the Inspect page to the Explore page.
+- Added an empty placeholder in the Code Path tab when there is no code path information.
+- Hide source section in the event detail view of Test Report if not available.
+- Fixed a bug when opening GitHub issues with long stacktraces and with source paths that fall outside of the project directory.
+- Improved resilience against GitHub API going down.
+- Improved performance of test results processing.
+- Improved performance when loading long traces in the test detail view.
+
+
 ## Scope v1.6.6
 
 *February 19, 2020*
