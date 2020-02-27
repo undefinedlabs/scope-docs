@@ -10,7 +10,7 @@ sidebar_label: Release notes
 *February 27, 2020*
 
 #### Added
-- **New**: Scope now supports pull requests from forks. A new tab has been added to the Service Explore view where all the open PRs.
+- **New**: Scope now supports pull requests from forks. A new tab has been added to the Service Explore view with all the open PRs of that repository and any forks.
 - Google Analytics support (Scope Enterprise only).
 
 #### Changed
@@ -24,6 +24,7 @@ sidebar_label: Release notes
 - Added an empty placeholder in the Code Path tab when there is no code path information.
 - Hide source section in the event detail view of Test Report if not available.
 - Fixed a bug when opening GitHub issues with long stacktraces and with source paths that fall outside of the project directory.
+- Users that are removed from an organization no longer receive email notifications.
 - Improved resilience against GitHub API going down.
 - Improved performance of test results processing.
 - Improved performance when loading long traces in the test detail view.
