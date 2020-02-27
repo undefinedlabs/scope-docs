@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.16
+
+*February 27, 2020*
+
+### Fixed
+* Test code should now be displayed correctly for `pytest`
+
+
 ## Scope Python Agent v0.3.15
 
 *February 26, 2020*
