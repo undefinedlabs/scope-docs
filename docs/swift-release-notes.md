@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.6
+
+*February 27, 2020*
+
+**Fixed**
+* CodePath was not being generated correctly in some projects
+
+
 ## Scope Swift Agent v0.5.5
 
 *February 17, 2020*
