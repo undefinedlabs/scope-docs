@@ -25,9 +25,8 @@ SCOPE_AUTO_INSTRUMENT=false
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    enabled: false
+instrumentation:
+  enabled: false
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -46,8 +45,7 @@ SCOPE_SERVICE="service-name"
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  service: "service-name"
+service: "service-name"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -66,9 +64,8 @@ SCOPE_SET_GLOBAL_TRACER=true
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  tracer:
-    global: true
+tracer:
+  global: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -87,9 +84,7 @@ SCOPE_TESTING_MODE=false
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  mode:
-    testing: false
+testing_mode: false
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -112,11 +107,10 @@ SCOPE_METADATA="sample.key1=$SAMPLE_VAR1,sample.key2=$SAMPLE_VAR2,sample.key3=sa
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  metadata:
-    sample.key1: $SAMPLE_VAR1
-    sample.key2: $SAMPLE_VAR2
-    sample.key3: sampleValue3
+metadata:
+  sample.key1: $SAMPLE_VAR1
+  sample.key2: $SAMPLE_VAR2
+  sample.key3: sampleValue3
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -137,10 +131,9 @@ SCOPE_INSTRUMENTATION_DB_STATEMENT_VALUES=true
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    db:
-      statement_values: true
+instrumentation:
+  db:
+    statement_values: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -161,10 +154,9 @@ SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    http:
-      payloads: true
+instrumentation:
+  http:
+    payloads: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -191,13 +183,12 @@ SCOPE_INSTRUMENTATION_HTTP_HEADERS="Authorization,My-Header-One,My-Header-Two"
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    http:
-      headers:
-        - Authorization
-        - My-Header-One
-        - My-Header-Two
+instrumentation:
+  http:
+    headers:
+      - Authorization
+      - My-Header-One
+      - My-Header-Two
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
