@@ -47,7 +47,7 @@ Add the `ScopeAgent` dependency to your `Cartfile`:
 binary "https://releases.undefinedlabs.com/scope/agents/carthage/ScopeAgent.json"
 ```
 
-Then, run `cart update` to install the agent in your project.
+Then, run `carthage update` to install the agent in your project.
 
 In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/<platform>` to the `Link Binaries With Libraries` build phase.
 
