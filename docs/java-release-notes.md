@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.3.1
+
+*February 21, 2020*
+
+**Added**
+- Added the capability to use tilde for home user dir in unix systems.
+
+
 ## Scope Java Agent v0.3.0
 
 *February 20, 2020*
