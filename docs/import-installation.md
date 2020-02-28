@@ -200,6 +200,9 @@ If you are running your application or tests inside a container, forward the fol
 - `SCOPE_DSN`
 - `GITHUB_REPOSITORY`
 - `GITHUB_SHA`
+- `GITHUB_WORKSPACE`
+- `GITHUB_RUN_ID`
+- `GITHUB_RUN_NUMBER`
 
 <!-- TeamCity -->
 
