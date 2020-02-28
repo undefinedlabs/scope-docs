@@ -47,9 +47,9 @@ yarn add --dev @undefinedlabs/scope-agent
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-### Instrumenting your tests
+## Instrumenting your tests
 
-#### Jest tests
+### Jest
 
 If you want to instrument tests run by Jest, you need to configure a custom [runner](https://jestjs.io/docs/en/configuration#runner-string), [testRunner](https://jestjs.io/docs/en/configuration#testrunner-string) and [setupFilesAfterEnv](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
 
@@ -64,13 +64,15 @@ module.exports = {
 };
 ```
 
+> If you have already configured `setupFilesAfterEnv`, `"@undefinedlabs/scope-agent/jest/setupTests"` needs to be added to the array, e.g. `setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect", "@undefinedlabs/scope-agent/jest/setupTests"]`
+
 You may also run your jest tests with inline configuration:
 
 ```
 yarn test --testRunner=@undefinedlabs/scope-agent/jest/testRunner --runner=@undefinedlabs/scope-agent/jest/runner --setupFilesAfterEnv=@undefinedlabs/scope-agent/jest/setupTests
 ```
 
-##### Create React App
+#### Create React App
 
 CRA does not allow `testRunner` or `runner` configuration for jest yet (more info in https://github.com/facebook/create-react-app/issues/2474) so you may not use the `jest` field in your `package.json`. The `setupFilesAfterEnv` configuration is already included in CRA via [setupTests.js](https://create-react-app.dev/docs/running-tests/#srcsetuptestsjs).
 
@@ -96,7 +98,7 @@ After that you should be able to run your tests as you normally do e.g.:
 yarn test
 ```
 
-#### Cypress tests
+### Cypress
 
 If you want to instrument tests run by Cypress you need to add the scope-agent plugin.
 

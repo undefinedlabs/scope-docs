@@ -22,9 +22,8 @@ SCOPE_AUTO_INSTRUMENT=false
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    enabled: false
+instrumentation:
+  enabled: false
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -43,8 +42,7 @@ SCOPE_SERVICE="service-name"
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  service: "service-name"
+service: "service-name"
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -63,9 +61,8 @@ SCOPE_TESTING_MODE=false
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  mode:
-    testing: false
+mode:
+  testing: false
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -88,10 +85,9 @@ SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true
 <!--YAML Configuration File-->
 
 ```yaml
-scope:
-  instrumentation:
-    http:
-      payloads: true
+instrumentation:
+  http:
+    payloads: true
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->

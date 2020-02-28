@@ -45,9 +45,9 @@ yarn add --dev @undefinedlabs/scope-agent
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-### Instrumenting your tests
+## Instrumenting your tests
 
-#### Jest tests
+### Jest
 
 If you want to instrument tests run by Jest, you need to configure a custom [runner](https://jestjs.io/docs/en/configuration#runner-string), [testRunner](https://jestjs.io/docs/en/configuration#testrunner-string) and [setupFilesAfterEnv](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
 
@@ -61,6 +61,8 @@ module.exports = {
   // ...
 };
 ```
+
+> If you have already configured `setupFilesAfterEnv`, `"@undefinedlabs/scope-agent/jest/setupTests"` needs to be added to the array, e.g. `setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect", "@undefinedlabs/scope-agent/jest/setupTests"]`
 
 After that you should be able to run your tests as you normally do e.g.:
 
