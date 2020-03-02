@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.7.1
+
+*March 02, 2020*
+
+#### Changed
+- When adding a repository, existing open pull requests will be imported in Scope.
+- Only the first file is expanded by default in Code Path tab of a Test Report.
+- Oldest commit now used as base when comparing commits in the Test Report History tab.
+- HTTP coverage tag in Test Report span metadata is now hidden.
+- Updated Go instructions.
+- New required permissions in GitHub App wizard (Scope Enterprise only).
+
+#### Fixed
+- Retry GitHub API requests on connection or read timeout, and on 5xx errors when fetching an authorization token.
+- Fixed a bug that prevented the setup wizard from completing successfully (Scope Enterprise only).
+
+
 ## Scope v1.7.0
 
 *February 27, 2020*
