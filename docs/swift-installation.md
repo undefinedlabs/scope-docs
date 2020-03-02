@@ -115,12 +115,14 @@ Add the following environment variables to your test target ([instructions](http
 
 <!--GitHub Actions-->
 
-| Key                  | Value                   |
+| Key                 | Value                  |
 | -------------------- | ----------------------- |
-| `SCOPE_DSN`          | `$(SCOPE_DSN)`          |
-| `SCOPE_COMMIT_SHA`   | `$(GITHUB_SHA)`         |
-| `SCOPE_SOURCE_ROOT`  | `$(GITHUB_WORKSPACE)`   |
-| `GITHUB_REPOSITORY`  | `$(GITHUB_REPOSITORY)`  |
+| `SCOPE_DSN`         | `$(SCOPE_DSN)`         |
+| `SCOPE_COMMIT_SHA`  | `$(GITHUB_SHA)`        |
+| `SCOPE_SOURCE_ROOT` | `$(GITHUB_WORKSPACE)`  |
+| `GITHUB_REPOSITORY` | `$(GITHUB_REPOSITORY)` |
+| `GITHUB_RUN_ID`     | `$(GITHUB_RUN_ID)`     |
+| `GITHUB_RUN_NUMBER` | `$(GITHUB_RUN_NUMBER)` |
 
 <!--TeamCity-->
 
