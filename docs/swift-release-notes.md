@@ -5,6 +5,17 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.7
+
+*March 02, 2020*
+
+**Added**
+* Support GitHub Actions Run ID and Run Number
+
+**Fixed**
+* CodePath was not being generated in some projects
+
+
 ## Scope Swift Agent v0.5.6
 
 *February 27, 2020*
