@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.3.2
+
+*February 28, 2020*
+
+**Added**
+* Added `GITHUB_RUN_ID` and `GITHUB_RUN_NUMBER` for GitHub actions build.
+
+
 ## Scope Java Agent v0.3.1
 
 *February 21, 2020*
