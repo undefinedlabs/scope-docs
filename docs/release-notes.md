@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.7.3
+
+*March 04, 2020*
+
+#### Added
+- Added ability to disable the calculation of differential test states (Scope Enterprise only).
+
+
 ## Scope v1.7.2
 
 *March 03, 2020*
