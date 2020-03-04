@@ -5,6 +5,22 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.4.0
+
+*March 04, 2020*
+
+**Added**
+- Added limit of spans and events per request.
+- Added retries on HTTP 500 on sending to Scope Backend.
+
+**Fixed**
+- Fixed `Opentelemetry` `tracestate` header.
+- Fixed NPE when Git diff is being calculated.
+- Fixed Throwable serialization on Exception events.
+- Fixed starting agent on Runtime due to spans buffers size.
+- Fixed showing logs when agent runs on Runtime.
+
+
 ## Scope Java Agent v0.3.2
 
 *February 28, 2020*
