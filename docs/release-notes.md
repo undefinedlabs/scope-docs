@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.7.2
+
+*March 03, 2020*
+
+#### Fixed
+- Improved performance of test processing.
+- Added missing `webhook_active` parameter to GitHub App wizard (Scope Enterprise only).
+
+
 ## Scope v1.7.1
 
 *March 02, 2020*
