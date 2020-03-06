@@ -78,7 +78,7 @@ The Scope Java agent is compatible with the following libraries:
 
 | Name                                                                                                        |       Versions       | Span/event creation | Extract | Inject |
 | ----------------------------------------------------------------------------------------------------------- | :------------------: | :-----------------: | :-----: | :----: |
-| [`OkHttp3`](https://square.github.io/okhttp/)                                                               |  `3.8.1` to `4.0.x`  |          ✓          |         |   ✓    |
+| [`OkHttp3`](https://square.github.io/okhttp/)                                                               |  `3.8.1` to `4.4.x`  |          ✓          |         |   ✓    |
 | [`Apache HttpClient`](https://hc.apache.org/httpcomponents-client-4.5.x/index.html/)                        |   `4.3` to `4.5.x`   |          ✓          |         |   ✓    |
 | [`java.net (HttpURLConnection)`](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) |    `1.7` to `12`     |          ✓          |         |   ✓    |
 | [`gRPC`](https://grpc.io/)                                                                                  | `1.4.0` to `1.26.x`  |          ✓          |    ✓    |   ✓    |
