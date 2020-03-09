@@ -5,6 +5,30 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.5.1
+
+*March 09, 2020*
+
+**Fixed**
+- Fixed request / response payloads instrumentation regression added in version `0.5.0`.
+
+
+## Scope Java Agent v0.5.0
+
+*March 06, 2020*
+
+**Added**
+- Added `stacktrace` to `HTTP` client spans (opt-in)
+- Added `stacktrace` to `DB` client spans (opt-in)
+- Added support for `OkHttp3` version `4.x.y`
+
+**Changed**
+- Changed `ByteBuddy` version to v`1.10.8`.
+
+**Fixed**
+- Fixed `http.request.payload` data in HTTP spans.
+
+
 ## Scope Java Agent v0.4.0
 
 *March 04, 2020*
