@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.8
+
+*March 09, 2020*
+
+**Added**
+* Save Code coverage on crashed tests
+* Limit the number of logs to 10000 per span
+
+**Fixed**
+* Avoid long delays when sending data if there are too many spans or events.
+
+
 ## Scope Swift Agent v0.5.7
 
 *March 02, 2020*
