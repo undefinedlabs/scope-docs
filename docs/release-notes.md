@@ -5,6 +5,29 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.8.0
+
+*March 09, 2020*
+
+#### Added
+- **New**: Manual testing. You can now record manual testing sessions in Chrome and iOS devices and see the results in Scope. Check out the documentation for more details.
+- Make commit and branch labels link to GitHub in Explore commit details panel.
+- Add link to GitHub in commit tooltip.
+- Support for using database read-only replicas for improved performance (Scope Enterprise only).
+
+#### Changed
+- Show build number instead of build ID in explore view where possible.
+- Hide `node.versions` tag in Test Report Trace tab.
+
+#### Fixed
+- Fixed a bug where the span detail incorrectly showed `0`.
+- Better handling of GitHub API errors and timeouts.
+- Fixed a bug when processing push webhooks or adding new repositories with lots of commits.
+- Stacktrace frames of the Exceptions detail are now expanded by default.
+- Fix inconsistent grouping and sorting of test reports in Local Development Scratchpad.
+- Fix misplacement of language icon and label in Test Report Exceptions tab.
+
+
 ## Scope v1.7.3
 
 *March 04, 2020*
