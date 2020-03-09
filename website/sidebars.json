@@ -57,6 +57,11 @@
       "nodejs-runtime",
       "nodejs-release-notes"
     ],
+    "Scope For Chrome": [
+      "scope-for-chrome-installation",
+      "scope-for-chrome-compatibility",
+      "scope-for-chrome-release-notes"
+    ],
     "Scope Import": [
       "import-installation",
       "import-compatibility",
