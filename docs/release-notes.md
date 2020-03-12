@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.9.0
+
+*March 12, 2020*
+
+#### Added
+
+- Added new "Settings" section in the service explore view with instructions to add a Scope status badge to a README file.
+
+#### Fixed
+
+- Improved performance of agent ingest API.
+- Fixed email notifications when a branch is broken when it's created.
+
+
 ## Scope v1.8.0
 
 *March 09, 2020*
