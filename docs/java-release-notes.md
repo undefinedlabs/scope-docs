@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.5.2
+
+*March 12, 2020*
+
+**Fixed**
+- Fixed detection `testingMode` on `ScalaTests`.
+
+
 ## Scope Java Agent v0.5.1
 
 *March 09, 2020*
