@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.9
+
+*March 16, 2020*
+
+**Fixed**
+* Fixed Code Path when paths generated from build files contained space character
+* Some errors were still reporting Scope APIKEY instead of SCOPE_DSN 
+
+
 ## Scope Swift Agent v0.5.8
 
 *March 09, 2020*
