@@ -5,6 +5,36 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.13" target="_blank">Scope Go Agent v0.1.13</a>
+
+*March 18, 2020*
+
+**Added:**
+- Adds BuildId and Build Number for GH Actions (#186) 
+- Parallel flag detector for CodePath (#180) 
+- Goroutines global panic handler (#188)
+- Enable optional stacktrace tag in http and sql instrumentation. (#184) 
+- Standard logger with context support (#131) 
+- .git folder parser alternative without external dependencies (#197) 
+- Support for projects without go.mod (#153) 
+-  Adds panic stacktraces inside the logs (#202) 
+
+**Changed:**
+- Coverage detection (#168) 
+- Recorder buffer refactor (#177) 
+- Remove test.code empty (#192) 
+- Forbid empty sourceroot and go.mod path finder (#194) 
+- Ci branch and improved container detector (#201) 
+
+**Fixed:**
+- Fix support for import autoinstrument and TestMain scopeagent.Run (#145)
+- Ensure the correct folder permissions when creating log folders (#183) 
+- Try to extract request body payload when the `GetBody` func is nil (#189)
+- Clean filepath to fix windows path issue (#172)
+- Improves panic reports to scope and fixes source field on events (#170)
+- Remove invalid peer.service tag (#198) 
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.12" target="_blank">Scope Go Agent v0.1.12</a>
 
 *February 19, 2020*
