@@ -139,6 +139,7 @@ If you are running your application or tests inside a container, forward the fol
 - `BUILD_ID`
 - `BUILD_NUMBER`
 - `BUILD_URL`
+- `GIT_BRANCH`
 
 <!-- CircleCI -->
 
@@ -148,6 +149,7 @@ If you are running your application or tests inside a container, forward the fol
 - `CIRCLE_SHA1`
 - `CIRCLE_BUILD_NUM`
 - `CIRCLE_BUILD_URL`
+- `CIRCLE_BRANCH`
 
 <!-- GitLab CI -->
 
@@ -157,6 +159,8 @@ If you are running your application or tests inside a container, forward the fol
 - `CI_COMMIT_SHA`
 - `CI_JOB_ID`
 - `CI_JOB_URL`
+- `CI_COMMIT_BRANCH`
+- `CI_COMMIT_REF_NAME`
 
 <!-- Travis -->
 
@@ -176,6 +180,8 @@ If you are running your application or tests inside a container, forward the fol
 - `APPVEYOR_BUILD_ID`
 - `APPVEYOR_BUILD_NUMBER`
 - `APPVEYOR_PROJECT_SLUG`
+- `APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH`
+- `APPVEYOR_REPO_BRANCH`
 
 <!-- Azure Pipelines -->
 
@@ -187,13 +193,17 @@ If you are running your application or tests inside a container, forward the fol
 - `Build.BuildNumber`
 - `System.TeamFoundationCollectionUri`
 - `System.TeamProject`
+- `Build.SourceBranchName`
+- `Build.SourceBranch`
 
 <!-- Bitbucket Pipelines -->
 
 - `SCOPE_DSN`
 - `BITBUCKET_GIT_SSH_ORIGIN`
 - `BITBUCKET_COMMIT`
+- `BITBUCKET_CLONE_DIR`
 - `BITBUCKET_BUILD_NUMBER`
+- `BITBUCKET_BRANCH`
 
 <!-- GitHub Actions -->
 
@@ -203,6 +213,7 @@ If you are running your application or tests inside a container, forward the fol
 - `GITHUB_WORKSPACE`
 - `GITHUB_RUN_ID`
 - `GITHUB_RUN_NUMBER`
+- `GITHUB_REF`
 
 <!-- TeamCity -->
 
@@ -223,5 +234,6 @@ If you are running your application or tests inside a container, forward the fol
 - `BUILDKITE_BUILD_ID`
 - `BUILDKITE_BUILD_NUMBER`
 - `BUILDKITE_BUILD_URL`
+- `BUILDKITE_BRANCH`
 
 <!--END_DOCUSAURUS_CODE_TABS-->
