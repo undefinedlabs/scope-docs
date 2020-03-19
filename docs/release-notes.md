@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.9.1
+
+*March 19, 2020*
+
+#### Fixed
+
+- Fixed caching headers for Scope badges.
+- Not show services in the service list if Scope has been uninstalled from their repositories.
+- Performance fix when calculating differential test states.
+
+
+
 ## Scope v1.9.0
 
 *March 12, 2020*
