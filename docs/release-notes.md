@@ -12,7 +12,7 @@ sidebar_label: Release notes
 #### Fixed
 
 - Fixed caching headers for Scope badges.
-- Not show services in the service list if Scope has been uninstalled from their repositories.
+- Don't show services in the service list if Scope has been uninstalled from their repositories.
 - Performance fix when calculating differential test states.
 
 
