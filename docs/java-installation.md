@@ -60,7 +60,7 @@ Add the Scope agent dependency and version property to your `pom.xml` file, repl
 
 ```xml
 <properties>
-  <scope.agent.version>0.3.2</scope.agent.version>
+  <scope.agent.version>0.6.1</scope.agent.version>
 </properties>
 ```
 
@@ -115,7 +115,7 @@ configurations {
 }
 
 dependencies {
-    testAgent "com.undefinedlabs.scope:scope-agent:0.3.2"
+    testAgent "com.undefinedlabs.scope:scope-agent:0.6.1"
 }
 ```
 
@@ -146,7 +146,7 @@ lazy val root = project
   .in(file("."))
   .enablePlugins(JavaAgent)
   .settings(
-    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.3.2" % "test"
+    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.6.1" % "test"
   )
 ```
 
