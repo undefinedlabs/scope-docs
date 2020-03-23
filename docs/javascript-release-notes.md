@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.4.0
+
+*March 23, 2020*
+
+## Added
+- [`pg`](https://node-postgres.com/features/queries) test and runtime instrumentation support. 
+- [`node-redis`](https://github.com/NodeRedis/node-redis) test and runtime instrumentation support.
+- A message is logged when `SCOPE_DSN` is not set and tests run just like they would without Scope. 
+- You may now add custom metadata to the agent through configuration.
+- Support for `keydown` events in `jsdom`. 
+
+
+## Changed
+- Improve connection with the ingest backend.
+- Limit number of events per span. 
+
+## Fixed
+- Traces are flushed when the process is shut down in runtime instrumentation. 
+- Minor bugs and inconsistencies fixed.
+- Fix http instrumentation bugs.
+
+
 ## Scope Javascript Agent v0.3.9
 
 *February 26, 2020*
