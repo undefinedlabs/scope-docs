@@ -10,11 +10,11 @@ const siteConfig = {
   headerIcon: "img/logo-scope.svg",
   colors: {
     primaryColor: "#282F4E",
-    secondaryColor: "#4433D0"
+    secondaryColor: "#4433D0",
   },
   copyright: `© ${new Date().getFullYear()} Undefined Labs, Inc.`,
   highlight: {
-    theme: "default"
+    theme: "default",
   },
   onPageNav: "separate",
   cleanUrl: true,
@@ -25,8 +25,8 @@ const siteConfig = {
   usePrism: true,
   stylesheets: [
     "https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap",
-    "https://fonts.googleapis.com/css?family=Maven+Pro:400,700&display=swap"
-  ]
+    "https://fonts.googleapis.com/css?family=Maven+Pro:400,700&display=swap",
+  ],
 };
 
 module.exports = siteConfig;
