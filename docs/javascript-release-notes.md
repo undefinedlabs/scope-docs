@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.4.1
+
+*March 25, 2020*
+
+## Changed
+- cypress instrumentation has been improved with more robust ingests.
+
+## Fixed
+- Fixed bug where the agent would crash with older node versions. 
+
+
+
 ## Scope Javascript Agent v0.4.0
 
 *March 23, 2020*
