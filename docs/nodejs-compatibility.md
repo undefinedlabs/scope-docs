@@ -4,19 +4,29 @@ title: Scope Node.js Agent compatibility
 sidebar_label: Compatibility
 ---
 
+### Node.js versions
+
+The Scope Node.js Agent is compatible with the following versions of Node.js:
+
+| Language |     Versions     |
+| -------- | :--------------: |
+| Node.js  | 10.x, 12.x, 13.x |
+
 ### Testing libraries
 
 The instrumentation is automatic.
 
-| Name                       | Span/event creation | Inject | Extract |
-| -------------------------- | :-----------------: | :----: | :-----: |
-| [Jest](https://jestjs.io/) |          ✓          |   ✓    |    ✓    |
+| Name                       | Span/event creation | Inject and extract |    HTTP client    |      User events      | Console logs | Exceptions |
+| -------------------------- | :-----------------: | :----------------: | :---------------: | :-------------------: | :----------: | :--------: |
+| [Jest](https://jestjs.io/) |          ✓          |         ✓          | `fetch` and `xhr` | `click` and `keydown` |      ✓       |     ✓      |
 
 ### Libraries
 
 | Name                                       | Span/event creation | Inject | Extract |
 | ------------------------------------------ | :-----------------: | :----: | :-----: |
 | [`http`](https://nodejs.org/api/http.html) |          ✓          |   ✓    |    ✓    |
+| [`pg`](https://node-postgres.com/)         |          ✓          |        |    ✓    |
+| [`redis`](https://redis.js.org/)           |          ✓          |        |    ✓    |
 
 ### CI providers
 

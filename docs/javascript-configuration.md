@@ -16,7 +16,7 @@ Scope auto instruments your code and tests by default. You can disable this beha
 <!--Environment Variable-->
 
 ```sh
-SCOPE_AUTO_INSTRUMENT=false
+SCOPE_INSTRUMENTATION_ENABLED=false
 ```
 
 <!--YAML Configuration File-->
@@ -69,6 +69,28 @@ mode:
 
 If `SCOPE_TESTING_MODE` is not specified, the agent sets it to `true`.
 
+## Adding agent metadata
+
+You can send arbitrary metadata for every test associated with a certain commit.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_METADATA="sample.key1=sampleValue1,sample.key2=sampleValue2,sample.key3=sampleValue3"
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+metadata:
+  sample.key1: sampleValue1
+  sample.key2: sampleValue2
+  sample.key3: sampleValue3
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ## Include HTTP payloads in HTTP span tags
 
 You can include HTTP payloads in the related HTTP spans, truncated to the first 512 bytes.
@@ -88,6 +110,38 @@ SCOPE_INSTRUMENTATION_HTTP_PAYLOADS=true
 instrumentation:
   http:
     payloads: true
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+## Include additional HTTP Headers in HTTP span tags
+
+You can include additional HTTP Headers in HTTP span tags.
+
+By default, Scope Javascript Agent will send common HTTP headers, filtering the content of those which can contain sensitive information, such as:
+
+- `Authorization`
+- `Cookie`
+- `Set-Cookie`
+
+> Note that the content of every header configured explicitly to be shown in the HTTP span tags will **not** be filtered.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_INSTRUMENTATION_HTTP_HEADERS="Authorization,My-Header-One,My-Header-Two"
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+instrumentation:
+  http:
+    headers:
+      - Authorization
+      - My-Header-One
+      - My-Header-Two
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->

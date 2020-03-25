@@ -8,7 +8,7 @@ In order to see trace information from your Node.js service on integration and e
 
 This service might run, for example, in a container on CI, or in a QA/staging environment.
 
-> If you're running the Scope Python Agent in runtime mode, you need to set [`SCOPE_TESTING_MODE`](python-configuration.md#change-testing-mode) to `false`.
+> If you're running the Scope Node.js Agent in runtime mode, you need to set [`SCOPE_TESTING_MODE`](python-configuration.md#change-testing-mode) to `false`.
 
 ### HTTP servers
 
