@@ -5,6 +5,42 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.6.3
+
+*March 26, 2020*
+
+**Fixed**
+- Fixed `GitDiff` on projects without commits. 
+
+
+## Scope Java Agent v0.6.2
+
+*March 20, 2020*
+
+**Fixed**
+- Fixed algorithm remove `/refs/heads` form branch.
+
+
+## Scope Java Agent v0.6.1
+
+*March 19, 2020*
+
+**Fixed**
+- Fixed remove `/refs/heads/` from `metadata.branch` if necessary.
+
+
+## Scope Java Agent v0.6.0
+
+*March 19, 2020*
+
+**Added**
+- Added feature to configure `connection pool size` and `keep alive duration`.
+- Added detection of `SCOPE_BRANCH` from CI server.
+
+**Fixed**
+- Fixed detection `incontainer` for `ecs`, `kubepods` and  `actions_job`.
+
+
 ## Scope Java Agent v0.5.2
 
 *March 12, 2020*
