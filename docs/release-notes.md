@@ -5,6 +5,31 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.10.0
+
+*March 27, 2020*
+
+#### Added
+
+- **New**: Slack notifications. You can now link your Slack workspace to your Scope namespace(s) and suscribe to broken (and fixed) branch notifications in either public or private channels, or as private messages.
+- Added the ability to permanently delete services.
+- Added a filter by tests status in the Insights History section.
+
+#### Changed
+
+- Design changes to Insights History section.
+- Show warning banner on top when impersonating a user (Scope Enterprise only).
+
+#### Fixed
+
+- Show more than 20 services in the service list view.
+- Improved browser support.
+- Improved performance for calculating test differential states (added, broken, fixed).
+- Improved overall GraphQL API performance.
+- Support for long operation names in spans.
+- Better handling of API errors when contacting GitHub.
+
+
 ## Scope v1.9.1
 
 *March 19, 2020*
