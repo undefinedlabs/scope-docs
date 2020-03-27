@@ -20,7 +20,7 @@ sidebar_label: Release notes
 
 #### Added
 
-- **New**: Slack notifications. You can now link your Slack workspace to your Scope namespace(s) and suscribe to broken (and fixed) branch notifications in either public or private channels, or as private messages.
+- **New**: Slack notifications. You can now link your Slack workspace to your Scope namespace(s) and subscribe to broken (and fixed) branch notifications in either public or private channels, or as private messages.
 - Added the ability to permanently delete services.
 - Added a filter by tests status in the Insights History section.
 
