@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.10.1
+
+*March 27, 2020*
+
+#### Fixed
+
+- The test differential states feature flag now disables the entire feature properly (Scope Enterprise only).
+
+
 ## Scope v1.10.0
 
 *March 27, 2020*
