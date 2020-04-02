@@ -5,6 +5,17 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.4.2
+
+*April 02, 2020*
+
+## Fixed
+- Fixed travis URL in builds.
+- Fix bug in fetch instrumentation.
+- Fix retry logic in ingest. 
+
+
+
 ## Scope Javascript Agent v0.4.1
 
 *March 25, 2020*
