@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.10.2
+
+*April 02, 2020*
+
+#### Fixed
+
+* Fixed commits getting stuck in "running" status if no test results were received.
+* Fixed calculating diff states on recently added services.
+* Limited the amount of characters on GitHub checks payloads to avoid errors.
+* Fixed a bug when calculating GitHub checks status.
+* Improved performance on the Insights matrix.
+* Support Slack notifications in private messages with the Slack bot.
+
+
 ## Scope v1.10.1
 
 *March 27, 2020*
