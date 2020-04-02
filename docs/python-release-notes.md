@@ -5,6 +5,16 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.3.17
+
+*April 02, 2020*
+
+### Fixed
+* GitHub Actions build number and build id are now correctly shown.
+* Fix logic in ingest when there is an error response.
+* Fix Travis build URL.
+
+
 ## Scope Python Agent v0.3.16
 
 *February 27, 2020*
