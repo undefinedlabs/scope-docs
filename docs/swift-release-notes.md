@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.5.10
+
+*April 13, 2020*
+
+**Fixed**
+* Code Path was not working when using Xcode 11.4 to compile and run tests
+
+
+
 ## Scope Swift Agent v0.5.9
 
 *March 16, 2020*
