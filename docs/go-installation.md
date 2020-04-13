@@ -4,7 +4,6 @@ title: Scope Go Agent instructions
 sidebar_label: Installation
 ---
 
-
 Installation of the Scope Go agent is done via `go get`:
 
 ```bash
@@ -81,8 +80,8 @@ func TestExample(t *testing.T) {
     test.Run("Sub Test", func(t *testing.T) {
       // ...
     })
-    
-    // ...	
+
+    // ...
 }
 ```
 
@@ -103,11 +102,10 @@ func BenchmarkExample(b *testing.B) {
     bench.Run("Sub Benchmark", func(b *testing.B) {
       // ...
     })
-    
-    // ...	
+
+    // ...
 }
 ```
-
 
 ## Runtime instrumentation
 
@@ -131,12 +129,12 @@ func main() {
 ```
 
 The agent will be automatically configured if the API key was provided via [environment variables](#environment-variables),
-or if used locally with _Scope for Mac_ or _Scope for Windows_ installed. Otherwise, you can use the 
+or if used locally with _Scope for Mac_ or _Scope for Windows_ installed. Otherwise, you can use the
 [`agent.WithApiKey()`](https://godoc.org/go.undefinedlabs.com/scopeagent/agent#WithApiKey) option
 to configure it manually.
 
 The agent will also try to automatically detect git information (repository URL, commit hash and source root path) using
-[environment variables](#environment-variables) and the local `.git` folder if available. Otherwise, you can use the 
+[environment variables](#environment-variables) and the local `.git` folder if available. Otherwise, you can use the
 [`agent.WithGitInfo()`](https://godoc.org/go.undefinedlabs.com/scopeagent/agent#WithGitInfo) option
 to configure it manually, for example, if you embed this information in the resulting binary at build time.
 
@@ -145,11 +143,10 @@ for the full list of options available to programmatically configure the agent.
 
 Instrumentation for server and client libraries is done manually. Please check the different sections on the left for more information.
 
-
 ## Custom OpenTracing instrumentation
 
 You can use [OpenTracing's Go API](https://github.com/opentracing/opentracing-go/blob/master/README.md) to add your
-own custom spans and events to your code. Always make sure to use a `context.Context` object that comes from Scope's 
+own custom spans and events to your code. Always make sure to use a `context.Context` object that comes from Scope's
 instrumentation to extend the traces created by `scopeagent.StartTest`.
 
 In order to capture your custom instrumentation, Scope's agent has to be registered as OpenTracing's global tracer.
@@ -186,7 +183,6 @@ The following environment variables need to be configured when instrumenting you
 | `SCOPE_COMMIT_SHA`   | Required     | Optional     |      ✓       |
 | `SCOPE_REPOSITORY`   | Required     | Optional     |      ✓       |
 | `SCOPE_SOURCE_ROOT`  | Required     | Optional     |      ✓       |
-
 
 ### SCOPE_DSN
 
@@ -285,6 +281,7 @@ If you are running your application or tests inside a container, forward the fol
 - `TRAVIS_COMMIT`
 - `TRAVIS_BUILD_ID`
 - `TRAVIS_BUILD_NUMBER`
+- `TRAVIS_BUILD_WEB_URL`
 
 <!-- AppVeyor -->
 

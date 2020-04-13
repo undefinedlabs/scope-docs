@@ -5,6 +5,24 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.2.0" target="_blank">Scope Go Agent v0.2.0</a>
+
+*April 13, 2020*
+
+**Added**
+- Added capability to set the function where the test source code is kept manually (#214)
+
+**Changed**
+- Calculation of the test suite and test name for subtests (#214)
+
+**Fixed**
+- Fixed Travis Build URL (#212)
+- Fixed test start time when a test is marked as `t.Parallel()` (#214)
+- Fixed bug in `t.Log` monkey patching methods, due a problem in Golang `reflect.makefunc` (#214)
+- Avoid accessing 'agent.recoder' if not initialized (#216)
+
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.1.15" target="_blank">Scope Go Agent v0.1.15</a>
 
 *March 26, 2020*
