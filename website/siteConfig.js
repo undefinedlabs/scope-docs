@@ -27,6 +27,7 @@ const siteConfig = {
     "https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap",
     "https://fonts.googleapis.com/css?family=Maven+Pro:400,700&display=swap",
   ],
+  gaTrackingId: "UA-112562098-10",
 };
 
 module.exports = siteConfig;
