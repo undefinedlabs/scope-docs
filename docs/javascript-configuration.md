@@ -145,3 +145,25 @@ instrumentation:
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+## Code Path
+
+You can add Code Path information that will show the executed lines in a certain test at a certain commit.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_CODE_PATH_ENABLED=true
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+code_path:
+  enabled: true
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+> This is only available for tests run by Jest for the moment and it needs extra configuration. Have a look at the [code path configuration](javascript-installation#code-path).

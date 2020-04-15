@@ -49,20 +49,20 @@ yarn add --dev @undefinedlabs/scope-agent
 
 ### Jest
 
-If you want to instrument tests run by Jest, you need to configure a custom [runner](https://jestjs.io/docs/en/configuration#runner-string), [testRunner](https://jestjs.io/docs/en/configuration#testrunner-string) and [setupFilesAfterEnv](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
+If you want to instrument tests run by Jest, you need to configure the following parameters: [testRunner](https://jestjs.io/docs/en/configuration#testrunner-string), [globalSetup](https://jestjs.io/docs/en/configuration#globalsetup-string) and [setupFilesAfterEnv](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
 
 ```javascript
 // jest.config.js
 module.exports = {
   // ...
   testRunner: "@undefinedlabs/scope-agent/jest/testRunner",
-  runner: "@undefinedlabs/scope-agent/jest/runner",
-  setupFilesAfterEnv: ["@undefinedlabs/scope-agent/jest/setupTests"]
+  globalSetup: "@undefinedlabs/scope-agent/jest/globalSetup",
+  setupFilesAfterEnv: ["@undefinedlabs/scope-agent/jest/setupTests"],
   // ...
 };
 ```
 
-> If you have already configured `setupFilesAfterEnv`, `"@undefinedlabs/scope-agent/jest/setupTests"` needs to be added to the array, e.g. `setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect", "@undefinedlabs/scope-agent/jest/setupTests"]`
+> If you have custom `testRunner`, `globalSetup` or `setupFilesAfterEnv` go to [Custom configuration](nodejs-installation#custom-configuration).
 
 After that you should be able to run your tests as you normally do e.g.:
 
@@ -70,11 +70,126 @@ After that you should be able to run your tests as you normally do e.g.:
 yarn test
 ```
 
-You may also run your jest tests with inline configuration:
+If you want to skip `jest.config.js` you may also run your tests with inline configuration:
 
 ```
-yarn test --testRunner=@undefinedlabs/scope-agent/jest/testRunner --runner=@undefinedlabs/scope-agent/jest/runner --setupFilesAfterEnv=@undefinedlabs/scope-agent/jest/setupTests
+yarn test --testRunner=@undefinedlabs/scope-agent/jest/testRunner --globalSetup=@undefinedlabs/scope-agent/jest/globalSetup --setupFilesAfterEnv=@undefinedlabs/scope-agent/jest/setupTests
 ```
+
+#### Older versions of Jest
+
+If you are using a version older than `24.0.0` (`>=23.0.0`) you may use `setupTestFrameworkScriptFile` instead of `setupFilesAfterEnv`:
+
+```javascript
+// jest.config.js
+module.exports = {
+  // ...
+  testRunner: "@undefinedlabs/scope-agent/jest/testRunner",
+  globalSetup: "@undefinedlabs/scope-agent/jest/globalSetup",
+  setupTestFrameworkScriptFile: "@undefinedlabs/scope-agent/jest/setupTests",
+  // ...
+};
+```
+
+#### Custom configuration
+
+> If you are using Jest's default `testRunner`, `globalSetup` and `setupFilesAfterEnv`, you may ignore this section.
+
+If you have a custom configuration in any of the three parameters [`testRunner`](https://jestjs.io/docs/en/configuration#testrunner-string), [`globalSetup`](https://jestjs.io/docs/en/configuration#globalsetup-string) or [`setupFilesAfterEnv`](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array), this section describes how you can make them work with Scope Node.js Agent.
+
+##### `testRunner`
+
+Create a file in your project's folder e.g. `src/customTestRunner.js`:
+
+```javascript
+// src/customTestRunner.js
+const createScopeTestRunner = require("@undefinedlabs/scope-agent/jest/createTestRunner");
+const yourCustomTestRunner = require("path/to/your/testRunner");
+
+module.exports = createScopeTestRunner(yourCustomTestRunner);
+```
+
+Now point your Jest configuration to that file:
+
+```javascript
+// jest.config.js
+module.exports = {
+  // ...
+  testRunner: "<rootDir>/src/customTestRunner.js",
+  // ...
+};
+```
+
+##### `globalSetup`
+
+Create a file in your project's folder e.g. `src/customGlobalSetup.js`:
+
+```javascript
+// src/customGlobalSetup.js
+const globalSetup = require("@undefinedlabs/scope-agent/jest/globalSetup");
+const yourCustomGlobalSetup = require("path/to/your/globalSetup");
+
+module.exports = async (globalConfig) => {
+  yourCustomGlobalSetup(globalConfig);
+  await globalSetup(globalConfig);
+};
+```
+
+Now point your Jest configuration to that file:
+
+```javascript
+// jest.config.js
+module.exports = {
+  // ...
+  globalSetup: "<rootDir>/src/customGlobalSetup.js",
+  // ...
+};
+```
+
+##### `setupFilesAfterEnv`
+
+For `setupFilesAfterEnv` you can simply add `"@undefinedlabs/scope-agent/jest/setupTests"` to the array:
+
+```javascript
+// jest.config.js
+module.exports = {
+  // ...
+  setupFilesAfterEnv: [
+    "<rootDir>/src/yourOldSetupFilesAfterEnv.js",
+    "@testing-library/jest-dom/extend-expect",
+    "@undefinedlabs/scope-agent/jest/setupTests",
+  ],
+  // ...
+};
+```
+
+If you are using the deprecated `setupTestFrameworkScriptFile` you can simply add
+
+```javascript
+// yourOldSetupTestFrameworkScriptFile.js
+require("@undefinedlabs/scope-agent/jest/setupTests");
+```
+
+to the top of your configuration file.
+
+### Code Path
+
+Code Path in Scope Node.js Agent leverages `babel` coverage in Jest, so if you want code path in your test results you also need to include the `coverage` option in your configuration:
+
+```javascript
+// jest.config.js
+module.exports = {
+  // ...
+  coverage: true,
+  forceCoverageMatch: ["**/*.test.js"], // optional if you want to include your test files in the coverage report
+  testRunner: "@undefinedlabs/scope-agent/jest/testRunner",
+  globalSetup: "@undefinedlabs/scope-agent/jest/globalSetup",
+  setupFilesAfterEnv: ["@undefinedlabs/scope-agent/jest/setupTests"],
+  // ...
+};
+```
+
+You also need to setup the [Code Path configuration](nodejs-configuration#code-path).
 
 ## Environment variables
 

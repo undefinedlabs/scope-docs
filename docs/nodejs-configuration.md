@@ -168,3 +168,25 @@ instrumentation:
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+## Code Path
+
+You can add Code Path information that will show the executed lines in a certain test at a certain commit.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_CODE_PATH_ENABLED=true
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+code_path:
+  enabled: true
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+> Code path needs extra configuration in Jest. Have a look at the [code path configuration](nodejs-installation#code-path).

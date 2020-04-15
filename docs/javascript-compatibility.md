@@ -8,18 +8,20 @@ sidebar_label: Compatibility
 
 The Scope Javascript Agent is compatible with the following versions of Node.js:
 
-| Language |     Versions     |
-| -------- | :--------------: |
-| Node.js  | 10.x, 12.x, 13.x |
+| Language |        Versions        |
+| -------- | :--------------------: |
+| Node.js  | `10.x`, `12.x`, `13.x` |
 
 ### Testing libraries
 
 The instrumentation is automatic.
 
-| Name                               | Span/event creation | Inject and extract |    HTTP client    |      User events      | Console logs | Route changes | Exceptions |
-| ---------------------------------- | :-----------------: | :----------------: | :---------------: | :-------------------: | :----------: | :-----------: | :--------: |
-| [Jest](https://jestjs.io/)         |          ✓          |         ✓          | `fetch` and `xhr` | `click` and `keydown` |      ✓       |               |     ✓      |
-| [Cypress](https://www.cypress.io/) |          ✓          |         ✓          | `fetch` and `xhr` |  `click` and `type`   |      ✓       |       ✓       |     ✓      |
+| Name                               |         Versions         | Span/event creation | Inject and extract |    HTTP client    |      User events      | Console logs | Route changes | Exceptions |
+| ---------------------------------- | :----------------------: | :-----------------: | :----------------: | :---------------: | :-------------------: | :----------: | :-----------: | :--------: |
+| [Jest](https://jestjs.io/)         | `24.0.0`(\*) to `25.3.0` |          ✓          |         ✓          | `fetch` and `xhr` | `click` and `keydown` |      ✓       |               |     ✓      |
+| [Cypress](https://www.cypress.io/) |    `3.5.0` to `4.3.0`    |          ✓          |         ✓          | `fetch` and `xhr` |  `click` and `type`   |      ✓       |       ✓       |     ✓      |
+
+(\*) Compatibility with `>=23.0.0` can be achieved. Have a look at [installation instructions](javascript-installation#older-versions-of-jest).
 
 ### CI providers
 

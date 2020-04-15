@@ -8,25 +8,27 @@ sidebar_label: Compatibility
 
 The Scope Node.js Agent is compatible with the following versions of Node.js:
 
-| Language |     Versions     |
-| -------- | :--------------: |
-| Node.js  | 10.x, 12.x, 13.x |
+| Language |        Versions        |
+| -------- | :--------------------: |
+| Node.js  | `10.x`, `12.x`, `13.x` |
 
 ### Testing libraries
 
 The instrumentation is automatic.
 
-| Name                       | Span/event creation | Inject and extract |    HTTP client    |      User events      | Console logs | Exceptions |
-| -------------------------- | :-----------------: | :----------------: | :---------------: | :-------------------: | :----------: | :--------: |
-| [Jest](https://jestjs.io/) |          ✓          |         ✓          | `fetch` and `xhr` | `click` and `keydown` |      ✓       |     ✓      |
+| Name                       |         Versions         | Span/event creation | Inject and extract |    HTTP client    |      User events      | Console logs | Route changes | Exceptions |
+| -------------------------- | :----------------------: | :-----------------: | :----------------: | :---------------: | :-------------------: | :----------: | :-----------: | :--------: |
+| [Jest](https://jestjs.io/) | `24.0.0`(\*) to `25.3.0` |          ✓          |         ✓          | `fetch` and `xhr` | `click` and `keydown` |      ✓       |               |     ✓      |
+
+(\*) Compatibility with `>=23.0.0` can be achieved. Have a look at [installation instructions](nodejs-installation#older-versions-of-jest).
 
 ### Libraries
 
-| Name                                       | Span/event creation | Inject | Extract |
-| ------------------------------------------ | :-----------------: | :----: | :-----: |
-| [`http`](https://nodejs.org/api/http.html) |          ✓          |   ✓    |    ✓    |
-| [`pg`](https://node-postgres.com/)         |          ✓          |        |    ✓    |
-| [`redis`](https://redis.js.org/)           |          ✓          |        |    ✓    |
+| Name                                       |      Versions      | Span/event creation | Inject | Extract |
+| ------------------------------------------ | :----------------: | :-----------------: | :----: | :-----: |
+| [`http`](https://nodejs.org/api/http.html) |  Node.js `>=10.x`  |          ✓          |   ✓    |    ✓    |
+| [`pg`](https://node-postgres.com/)         | `7.0.0` to `8.0.2` |          ✓          |        |    ✓    |
+| [`redis`](https://redis.js.org/)           | `2.8.0` to `3.0.2` |          ✓          |        |    ✓    |
 
 ### CI providers
 
