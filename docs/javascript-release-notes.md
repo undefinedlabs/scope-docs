@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.5.0
+
+*April 15, 2020*
+
+## Added
+- **Code Path**: You may now run your tests with per test code coverage.
+
+## Changed
+- Remove dependency on `jest-jasmine2` and `jest-runner`.
+- Change `jest` configuration: now using `globalSetup` and not using `runner` anymore.
+
+
+
 ## Scope Javascript Agent v0.4.2
 
 *April 02, 2020*
