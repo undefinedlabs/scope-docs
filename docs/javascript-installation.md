@@ -64,7 +64,7 @@ module.exports = {
 };
 ```
 
-> If you have custom `testRunner`, `globalSetup` or `setupFilesAfterEnv` go to [Custom configuration](javascript-installation#custom-configuration).
+> If you have custom `globalSetup` or `setupFilesAfterEnv` go to [Custom configuration](javascript-installation#custom-configuration).
 
 If you want to skip `jest.config.js` you may also run your tests with inline configuration:
 
@@ -117,30 +117,7 @@ module.exports = {
 
 > If you are using Jest's default `testRunner`, `globalSetup` and `setupFilesAfterEnv`, you may ignore this section.
 
-If you have a custom configuration in any of the three parameters [`testRunner`](https://jestjs.io/docs/en/configuration#testrunner-string), [`globalSetup`](https://jestjs.io/docs/en/configuration#globalsetup-string) or [`setupFilesAfterEnv`](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array), this section describes how you can make them work with Scope Javascript Agent.
-
-##### `testRunner`
-
-Create a file in your project's folder e.g. `src/customTestRunner.js`:
-
-```javascript
-// src/customTestRunner.js
-const createScopeTestRunner = require("@undefinedlabs/scope-agent/jest/createTestRunner");
-const yourCustomTestRunner = require("path/to/your/testRunner");
-
-module.exports = createScopeTestRunner(yourCustomTestRunner);
-```
-
-Now point your Jest configuration to that file:
-
-```javascript
-// jest.config.js
-module.exports = {
-  // ...
-  testRunner: "<rootDir>/src/customTestRunner.js",
-  // ...
-};
-```
+If you have a custom configuration in [`globalSetup`](https://jestjs.io/docs/en/configuration#globalsetup-string) or [`setupFilesAfterEnv`](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array), this section describes how you can make them work with Scope Javascript Agent.
 
 ##### `globalSetup`
 
@@ -193,6 +170,10 @@ require("@undefinedlabs/scope-agent/jest/setupTests");
 ```
 
 to the top of your configuration file.
+
+##### `testRunner`
+
+Usage of a custom `testRunner` is not supported yet.
 
 ### Code Path
 
