@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.10.3
+
+*April 14, 2020*
+
+#### Fixed
+
+- Performance improvements for background processing of tests.
+- Performance improvements on the Insights history matrix.
+- Background tasks are now retried on transient connectivity errors with the database.
+- GitHub API requests are now retried on 401 errors as a workaround for issues with installation token consistency on GitHub's side.
+
+
+
 ## Scope v1.10.2
 
 *April 02, 2020*
