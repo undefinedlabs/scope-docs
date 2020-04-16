@@ -5,6 +5,17 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.2.1" target="_blank">Scope Go Agent v0.2.1</a>
+
+*April 16, 2020*
+
+**Changed**
+- Use `crypto/rand` to generate random seed (#223)
+
+**Fixed**
+- Avoid setting test source code if span is `nil` (#221)
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.2.0" target="_blank">Scope Go Agent v0.2.0</a>
 
 *April 13, 2020*
