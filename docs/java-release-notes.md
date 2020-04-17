@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.7.0
+
+*April 03, 2020*
+
+**Added**
+- Added intelligent test runner to skip cached tests.
+- Send `metadata` only once.
+
+**Fixed**
+- Fixed runtime initialization. Broken since `0.6.0`.
+- Fixed `TravisCI` build URL.
+
+
 ## Scope Java Agent v0.6.3
 
 *March 26, 2020*
