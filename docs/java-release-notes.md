@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.8.0
+
+*April 20, 2020*
+
+**Added**
+- Send cached Java test to backend.
+
+
 ## Scope Java Agent v0.7.0
 
 *April 03, 2020*
