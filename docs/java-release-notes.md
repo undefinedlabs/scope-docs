@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.8.1
+
+*April 20, 2020*
+
+**Changed**
+- Send `configuration.keys` instead of `configuration` in `agent.metadata`.
+
+
 ## Scope Java Agent v0.8.0
 
 *April 20, 2020*
