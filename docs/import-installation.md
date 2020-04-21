@@ -13,7 +13,9 @@ Add a step to your GitHub Actions workflow YAML that uses the [scope-import](htt
     uses: undefinedlabs/scope-import-action@v1
     with:
       dsn: ${{ secrets.SCOPE_DSN }}
-      path: path/to/test-reports
+      path: |
+        path/to/test-reports01
+        path/to/test-reports02
 ```
 
 You can find further information of this action at the [GitHub Marketplace](https://github.com/marketplace/actions/scope-import).
@@ -33,7 +35,7 @@ curl -L https://home.undefinedlabs.com/download/scope-import/`uname -s`/`uname -
 ### Usage
 
 ```
-scope-import --path path/to/test-reports
+scope-import path/to/test-reports01 path/to/test-reports02
 ```
 
 <!--Windows-->
@@ -47,7 +49,7 @@ If you use a Windows 32bit machine, change the architecture in the URL to `i386`
 ### Usage
 
 ```
-scope-import.exe --path path/to/test-reports
+scope-import.exe path\to\test-reports01 path\to\test-reports02
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
