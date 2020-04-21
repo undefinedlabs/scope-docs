@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Import v0.2.0
+
+*April 21, 2020*
+
+**Added**
+- Supported multiple folders in same `scope-import` command.
+
+**Changed**
+- Use of `--path` flag has been **deprecated**.
+- Updated dependency `scope-go-agent` to version `0.2.1`.
+
+
 ## Scope Import v0.1.6
 
 *February 24, 2020*
