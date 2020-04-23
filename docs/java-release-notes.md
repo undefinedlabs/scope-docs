@@ -5,6 +5,22 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.9.0
+
+*April 23, 2020*
+
+**Added**
+- Detection and report of `unfinished` spans.
+- Detection and report ingest errors to backend.
+- Detection and report the end of agent execution to backend.
+
+**Changed**
+- `ScalaTest` tests uses full qualified suite name.
+
+**Fixed**
+- Fixed start and finish timestamp on `skipped` and `cached` tests.
+
+
 ## Scope Java Agent v0.8.1
 
 *April 20, 2020*

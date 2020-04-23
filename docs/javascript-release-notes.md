@@ -5,6 +5,26 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.5.2
+
+*April 23, 2020*
+
+## Fixed
+- `~` is properly expanded in source root.
+
+
+
+
+## Scope Javascript Agent v0.5.1
+
+*April 23, 2020*
+
+## Fixed
+- `~` is properly expanded in source root.
+
+
+
+
 ## Scope Javascript Agent v0.5.0
 
 *April 15, 2020*
