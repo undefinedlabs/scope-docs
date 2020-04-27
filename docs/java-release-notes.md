@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.10.0
+
+*April 24, 2020*
+
+**Added**
+- Detection and report of `test.code` in `ScalaTest` tests.
+- Detection and report of `code.path` for `ScalaTest` tests.
+- Enable intelligent test runner to skip cached `ScalaTest` tests.
+
+**Fixed**
+- Fixed statistics for skipped `Test Started Spans` in `ScalaTest` tests.
+
+
 ## Scope Java Agent v0.9.0
 
 *April 23, 2020*
