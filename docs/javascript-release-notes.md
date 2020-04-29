@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.6.0
+
+*April 29, 2020*
+
+## Added
+- Intelligent Test Runner support: automatically cache tests that are not affected by your commit changes.
+- Automatically retry failed tests.
+
+## Changed
+- HTTP connections are kept alive.
+- Add option to set global tracer for opentracing.
+
+
+
 ## Scope Javascript Agent v0.5.2
 
 *April 23, 2020*
