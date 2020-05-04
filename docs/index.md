@@ -26,7 +26,7 @@ and select the namespace where you want to install Scope. You can then select th
 
 You will be redirected to Scope, and in a few seconds, your namespace and the repositories you selected will appear.
 
-## Instrument your tests
+## Instrument your automated tests
 
 After that, you need to instrument your tests using the **Scope agent** for your platform:
 
@@ -37,6 +37,9 @@ After that, you need to instrument your tests using the **Scope agent** for your
 - [Go agent instructions](go-installation.md)
 - [Javascript agent instructions](javascript-installation.md)
 - [Node.js agent instructions](nodejs-installation.md)
+
+If the platform you use is not listed here, we also provide the [Scope Import](import-installation.md) tool that can be
+used to import jUnit XML files with your test results.
 
 Commit the changes to your repository and let your existing CI provider execute your tests. You will start seeing results
 in real time in Scope.
@@ -54,6 +57,19 @@ automatically set the appropriate credentials.
 
 Once the application has been configured, running your instrumented tests will automatically create a test report in your **Scratchpad** section.
 You can also open the desktop app menu and go directly to any of the last five test reports.
+
+
+## Manual testing
+
+Scope also allows you to record manual browser tests using the [Scope for Chrome](scope-for-chrome-installation.md) extension.
+
+First, setup the **Scope Desktop** app for your OS as described in the previous section. Then, head over to the
+[Chrome Web Store](https://home.undefinedlabs.com/goto/scope-for-chrome-download) and install the Scope for Chrome extension.
+
+Once install, you can start a recording by clicking on the Scope logo that appears in your browser. Click it again to 
+finish the recording. All manual test recordings will be available in the **Local development/Manual Testing** section
+in Scope.
+
 
 ## Questions?
 
