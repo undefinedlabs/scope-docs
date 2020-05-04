@@ -5,6 +5,21 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.11.0
+
+*April 30, 2020*
+
+**Added**
+- Enable intelligent test runner to skip cached `JUnit4` tests run with `PowerMockRunner`.
+
+**Fixed**
+- Avoid instrumenting `HttpURLConnection` mock objects.
+- Detection of `SourceCode` filepath conflicts.
+- Register `code_path` internal statistics only on `ScopeLogger` `TRACE` level.
+- Use `Reader` to read `cached` tests from backend response.
+- Avoid detecting dependencies which has been marked as `no_tracked` explicitly.
+
+
 ## Scope Java Agent v0.10.0
 
 *April 24, 2020*
