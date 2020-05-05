@@ -71,55 +71,64 @@ Add the following environment variables to your test target ([instructions](http
 | Key                      | Value                       |
 |--------------------------|-----------------------------|
 | `SCOPE_DSN`              | `$(SCOPE_DSN)`              |
-| `SCOPE_COMMIT_SHA`       | `$(GIT_COMMIT)`             |
-| `SCOPE_REPOSITORY`       | `$(GIT_URL)`                |
-| `SCOPE_SOURCE_ROOT`      | `$(WORKSPACE)`              |
+| `GIT_COMMIT`             | `$(GIT_COMMIT)`             |
+| `GIT_URL`                | `$(GIT_URL)`                |
+| `WORKSPACE`              | `$(WORKSPACE)`              |
+| `GIT_BRANCH`             | `$(GIT_BRANCH)`             |
 | `JENKINS_URL`            | `$(JENKINS_URL)`            |
 | `BUILD_ID`               | `$(BUILD_ID)`               |
 | `BUILD_NUMBER`           | `$(BUILD_NUMBER)`           |
 | `BUILD_URL`              | `$(BUILD_URL)`              |
 
 <!--CircleCI-->
-| Key                      | Value                         |
-|--------------------------|-------------------------------|
-| `SCOPE_DSN`              | `$(SCOPE_DSN)`                |
-| `SCOPE_COMMIT_SHA`       | `$(CIRCLE_SHA1)`              |
-| `SCOPE_REPOSITORY`       | `$(CIRCLE_REPOSITORY_URL)`    |
-| `SCOPE_SOURCE_ROOT`      | `$(CIRCLE_WORKING_DIRECTORY)` |
-| `CIRCLECI`               | `$(CIRCLECI)`                 |
-| `CIRCLE_BUILD_NUM`       | `$(CIRCLE_BUILD_NUM)`         |
-| `CIRCLE_BUILD_URL`       | `$(CIRCLE_BUILD_URL)`         |
+| Key                        | Value                         |
+|--------------------------- |-------------------------------|
+| `SCOPE_DSN`                | `$(SCOPE_DSN)`                |
+| `CIRCLE_SHA1`              | `$(CIRCLE_SHA1)`              |
+| `CIRCLE_REPOSITORY_URL`    | `$(CIRCLE_REPOSITORY_URL)`    |
+| `CIRCLE_WORKING_DIRECTORY` | `$(CIRCLE_WORKING_DIRECTORY)` |
+| `CIRCLE_BRANCH `           | `$(CIRCLE_BRANCH)`            |
+| `CIRCLECI`                 | `$(CIRCLECI)`                 |
+| `CIRCLE_BUILD_NUM`         | `$(CIRCLE_BUILD_NUM)`         |
+| `CIRCLE_BUILD_URL`         | `$(CIRCLE_BUILD_URL)`         |
+
 
 <!--GitLab CI-->
 
 | Key                  | Value                   |
-| -------------------- | ----------------------- |
+| -------------------  | ----------------------- |
 | `SCOPE_DSN`          | `$(SCOPE_DSN)`          |
-| `SCOPE_COMMIT_SHA`   | `$(CI_COMMIT_SHA)`      |
-| `SCOPE_REPOSITORY`   | `$(CI_REPOSITORY_URL)`  |
-| `SCOPE_SOURCE_ROOT`  | `$(CI_PROJECT_DIR)`     |
+| `CI_COMMIT_SHA`      | `$(CI_COMMIT_SHA)`      |
+| `CI_REPOSITORY_URL`  | `$(CI_REPOSITORY_URL)`  |
+| `CI_PROJECT_DIR`     | `$(CI_PROJECT_DIR)`     |
+| `CI_COMMIT_BRANCH`   | `$(CI_COMMIT_BRANCH)`   |
+| `CI_COMMIT_REF_NAME` | `$(CI_COMMIT_REF_NAME)` |
 | `GITLAB_CI`          | `$(GITLAB_CI)`          |
 | `CI_JOB_ID`          | `$(CI_JOB_ID)`          |
 | `CI_JOB_URL`         | `$(CI_JOB_URL)`         |
 
 <!--Travis-->
-| Key                   | Value                      |
-| --------------------- | -------------------------- |
-| `SCOPE_DSN`           | `$(SCOPE_DSN)`             |
-| `SCOPE_COMMIT_SHA`    | `$(TRAVIS_COMMIT)`         |
-| `SCOPE_SOURCE_ROOT`   | `$(TRAVIS_BUILD_DIR)`      |
-| `TRAVIS`              | `$(TRAVIS)`                |
-| `TRAVIS_REPO_SLUG`    | `$(TRAVIS_REPO_SLUG)`      |
-| `TRAVIS_BUILD_ID`     | `$(TRAVIS_BUILD_ID)`       |
-| `TRAVIS_BUILD_NUMBER` | `$(TRAVIS_BUILD_NUMBER)`   |
+| Key                          | Value                           |
+| ---------------------------- | ------------------------------- |
+| `SCOPE_DSN`                  | `$(SCOPE_DSN)`                  |
+| `TRAVIS_COMMIT`              | `$(TRAVIS_COMMIT)`              |
+| `TRAVIS_BUILD_DIR`           | `$(TRAVIS_BUILD_DIR)`           |
+| `TRAVIS`                     | `$(TRAVIS)`                     |
+| `TRAVIS_REPO_SLUG`           | `$(TRAVIS_REPO_SLUG)`           |
+| `TRAVIS_BUILD_ID`            | `$(TRAVIS_BUILD_ID)`            |
+| `TRAVIS_BUILD_NUMBER`        | `$(TRAVIS_BUILD_NUMBER)`        |
+| `TRAVIS_PULL_REQUEST_BRANCH` | `$(TRAVIS_PULL_REQUEST_BRANCH)` |
+| `TRAVIS_BRANCH`              | `$(TRAVIS_BRANCH)`              |
+| `TRAVIS_BUILD_WEB_URL `      | `$(TRAVIS_BUILD_WEB_URL)`       |
 
 <!--GitHub Actions-->
 
 | Key                 | Value                  |
-| -------------------- | ----------------------- |
+| ------------------- | ---------------------- |
 | `SCOPE_DSN`         | `$(SCOPE_DSN)`         |
-| `SCOPE_COMMIT_SHA`  | `$(GITHUB_SHA)`        |
-| `SCOPE_SOURCE_ROOT` | `$(GITHUB_WORKSPACE)`  |
+| `GITHUB_SHA`        | `$(GITHUB_SHA)`        |
+| `GITHUB_WORKSPACE`  | `$(GITHUB_WORKSPACE)`  |
+| `GITHUB_REF`        | `$(GITHUB_REF)`        |
 | `GITHUB_REPOSITORY` | `$(GITHUB_REPOSITORY)` |
 | `GITHUB_RUN_ID`     | `$(GITHUB_RUN_ID)`     |
 | `GITHUB_RUN_NUMBER` | `$(GITHUB_RUN_NUMBER)` |
@@ -129,9 +138,9 @@ Add the following environment variables to your test target ([instructions](http
 | Key                 | Value                  |
 | ------------------- | ---------------------- |
 | `SCOPE_DSN`         | `$(SCOPE_DSN)`         |
-| `SCOPE_COMMIT_SHA`  | `$(BUILD_VCS_NUMBER)`  |
-| `SCOPE_REPOSITORY`  | `$(BUILD_VCS_URL)`     |
-| `SCOPE_SOURCE_ROOT` | `$(BUILD_CHECKOUTDIR)` |
+| `BUILD_VCS_NUMBER`  | `$(BUILD_VCS_NUMBER)`  |
+| `BUILD_VCS_URL`     | `$(BUILD_VCS_URL)`     |
+| `BUILD_CHECKOUTDIR` | `$(BUILD_CHECKOUTDIR)` |
 | `BUILD_ID`          | `$(BUILD_ID)`          |
 | `BUILD_NUMBER`      | `$(BUILD_NUMBER)`      |
 | `SERVER_URL`        | `$(SERVER_URL)`        |
@@ -146,15 +155,56 @@ For `TeamCity`, additional environment variables must be exposed from the Teamci
 
 <!--Buildkite-->
 
-| Key                      | Value                              |
-| ------------------------ | ---------------------------------- |
-| `SCOPE_DSN`              | `$(SCOPE_DSN)`                     |
-| `SCOPE_COMMIT_SHA`       | `$(BUILDKITE_COMMIT)`              |
-| `SCOPE_REPOSITORY`       | `$(BUILDKITE_REPO)`                |
-| `SCOPE_SOURCE_ROOT`      | `$(BUILDKITE_BUILD_CHECKOUT_PATH)` |
-| `BUILDKITE_BUILD_ID`     | `$(BUILDKITE_BUILD_ID)`            |
-| `BUILDKITE_BUILD_NUMBER` | `$(BUILDKITE_BUILD_NUMBER)`        |
-| `BUILDKITE_BUILD_URL`    | `$(BUILDKITE_BUILD_URL)`           |
+| Key                             | Value                              |
+| ------------------------------- | ---------------------------------- |
+| `SCOPE_DSN`                     | `$(SCOPE_DSN)`                     |
+| `BUILDKITE_COMMIT`              | `$(BUILDKITE_COMMIT)`              |
+| `BUILDKITE_REPO`                | `$(BUILDKITE_REPO)`                |
+| `BUILDKITE_BUILD_CHECKOUT_PATH` | `$(BUILDKITE_BUILD_CHECKOUT_PATH)` |
+| `BUILDKITE_BRANCH`              | `$(BUILDKITE_BRANCH)`              |
+| `BUILDKITE_BUILD_ID`            | `$(BUILDKITE_BUILD_ID)`            |
+| `BUILDKITE_BUILD_NUMBER`        | `$(BUILDKITE_BUILD_NUMBER)`        |
+| `BUILDKITE_BUILD_URL`           | `$(BUILDKITE_BUILD_URL)`           |
+
+<!--Bitbucket Pipelines-->
+
+| Key                        | Value                              |
+| -------------------------- | ---------------------------------- |
+| `SCOPE_DSN`                | `$(SCOPE_DSN)`                     |
+| `BITBUCKET_COMMIT`         | `$(BITBUCKET_COMMIT)`              |
+| `BITBUCKET_GIT_SSH_ORIGIN` | `$(BITBUCKET_GIT_SSH_ORIGIN)`      |
+| `BITBUCKET_CLONE_DIR`      | `$(BITBUCKET_CLONE_DIR)`           |
+| `BITBUCKET_BRANCH`         | `$(BITBUCKET_BRANCH)`              |
+| `BITBUCKET_BUILD_NUMBER`   | `$(BITBUCKET_BUILD_NUMBER)`        |
+
+<!--AppVeyor-->
+
+| Key                                      | Value                                       |
+| ---------------------------------------- | ------------------------------------------- |
+| `SCOPE_DSN`                              | `$(SCOPE_DSN)`                              |
+| `APPVEYOR_REPO_COMMIT`                   | `$(APPVEYOR_REPO_COMMIT)`                   |
+| `APPVEYOR_REPO_NAME`                     | `$(APPVEYOR_REPO_NAME)`                     |
+| `APPVEYOR_BUILD_FOLDER`                  | `$(APPVEYOR_BUILD_FOLDER)`                  |
+| `APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH` | `$(APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH)` |
+| `APPVEYOR_REPO_BRANCH`                   | `$(APPVEYOR_REPO_BRANCH)`                   |
+| `APPVEYOR_BUILD_ID`                      | `$(APPVEYOR_BUILD_ID)`                      |
+| `APPVEYOR_BUILD_NUMBER`                  | `$(APPVEYOR_BUILD_NUMBER)`                  |
+| `APPVEYOR_PROJECT_SLUG`                  | `$(APPVEYOR_PROJECT_SLUG)`                  |
+
+<!--Azure Pipelines-->
+
+| Key                                  | Value                                   |
+| ------------------------------------ | --------------------------------------- |
+| `SCOPE_DSN`                          | `$(SCOPE_DSN)`                          |
+| `BUILD_SOURCEVERSION`                | `$(BUILD_SOURCEVERSION)`                |
+| `BUILD_REPOSITORY_URI`               | `$(BUILD_REPOSITORY_URI)`               |
+| `BUILD_SOURCESDIRECTORY`             | `$(BUILD_SOURCESDIRECTORY)`             |
+| `BUILD_SOURCEBRANCHNAME`             | `$(BUILD_SOURCEBRANCHNAME)`             |
+| `BUILD_SOURCEBRANCH`                 | `$(BUILD_SOURCEBRANCH)`                 |
+| `BUILD_BUILDID`                      | `$(BUILD_BUILDID)`                      |
+| `BUILD_BUILDNUMBER`                  | `$(BUILD_BUILDNUMBER)`                  |
+| `SYSTEM_TEAMPROJECT`                 | `$(SYSTEM_TEAMPROJECT)`                 |
+| `SYSTEM_TEAMFOUNDATIONCOLLECTIONURI` | `$(SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)` |
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -200,7 +250,7 @@ This is a required setting when running in CI.
 `SCOPE_SOURCE_ROOT` contains the absolute path to where the root of the project is located inside the filesystem. This information is used to automatically show excerpts of source code in the Scope UI in stacktraces, in the "Code Path" tab,
 etc.
 
-If not explicitly set, the agent will try to automatically detect it reding the source root from the environment variable set by the CI provider.
+If not explicitly set, the agent will try to automatically detect it reading the source root from the environment variable set by the CI provider.
 
 Example: `/home/user/projects/scope-docs`
 
