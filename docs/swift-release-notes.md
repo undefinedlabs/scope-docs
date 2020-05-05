@@ -5,6 +5,27 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.6.0
+
+*May 05, 2020*
+
+**Added**
+* Support for Intelligent test runner, only runs tests that check that code changed between commits (needs Xcode 11.4+)
+* Support for runtime skipped tests in XCTest (needs Xcode 11.4+)
+* Add support for runtime evaluated metadata values, it was documented but not implemented
+* Support for unfinished spans, spans that were started during a test and not finished are now also reported to the backend.
+* Support for more CI: Bitbucket Pipelines, AppVeyor and Azure Pipelines
+* Add testing bundle to test spans in `test.traits`tag
+
+
+**Changed**
+* **Test Environment variables for XCode** (Check documentation for exact changes for your CI)
+* Reduced size of data sent to Scope
+* Added msgpack format for sending tests results
+* Agent is now compiled with Xcode 11.4
+* Improved error messages
+
+
 ## Scope Swift Agent v0.5.13
 
 *April 21, 2020*
