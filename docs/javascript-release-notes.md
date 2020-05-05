@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.6.1
+
+*May 05, 2020*
+
+## Fixed
+- Fix logic in skipping tests with intelligent test runner.
+- Fix minor bugs.
+
+
 ## Scope Javascript Agent v0.6.0
 
 *April 29, 2020*
