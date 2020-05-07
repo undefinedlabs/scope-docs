@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.3.0" target="_blank">Scope Go Agent v0.3.0</a>
+
+*May 07, 2020*
+
+**Added:**
+- Logrus instrumentation hook (#224) 
+- Cached tests support - Intelligent Test Runner (#178)
+
+**Changed:**
+- Update dependencies (#226, #227, #228, #230)
+- Show initialization error messages only if `SCOPE_DEBUG` is set (#229)
+- Send metadata until at least one payload is successfully delivered (#182)
+- Cryptorand logs in case of error (#232)
+- Rand algorithm changes (#233)
+- Trace IDs are now 128 bits. (#234)
+
+**Fixed:**
+- Metadata serialization data race (#231)
+
+**NOTE:** all agents involved in a trace must be updated to support 128 bits.
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.2.1" target="_blank">Scope Go Agent v0.2.1</a>
 
 *April 16, 2020*
