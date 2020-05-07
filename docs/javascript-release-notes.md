@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.7.0
+
+*May 07, 2020*
+
+## Change
+- **BREAKING CHANGE**: Trace IDs are now 128 bits length.
+
+
 ## Scope Javascript Agent v0.6.1
 
 *May 05, 2020*
