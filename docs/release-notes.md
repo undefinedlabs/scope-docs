@@ -5,6 +5,16 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.10.4
+
+*May 07, 2020*
+
+#### Fixed
+
+* Support longer trace IDs and hash span IDs using trace IDs to avoid collisions
+
+
+
 ## Scope v1.10.3
 
 *April 14, 2020*
