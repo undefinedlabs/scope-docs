@@ -5,6 +5,17 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.6.1
+
+*May 07, 2020*
+
+**Changed**
+* TraceId changed to 128 bit. **Note:** all agents involved in a trace must be updated to support 128 bit
+
+**Fixed** 
+* Network request sometimes didn't report status or response and were marked wrongly as unfinished
+
+
 ## Scope Swift Agent v0.6.0
 
 *May 05, 2020*
