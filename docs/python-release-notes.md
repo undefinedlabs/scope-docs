@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.4.0
+
+*May 07, 2020*
+
+## Changed
+- Trace IDs are now 128 bits. **Note:** all agents involved in a trace must be updated to support 128 bits
+
+
+
 ## Scope Python Agent v0.3.17
 
 *April 02, 2020*

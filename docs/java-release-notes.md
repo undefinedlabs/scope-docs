@@ -5,6 +5,27 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.12.0
+
+*May 07, 2020*
+
+**Added**
+- Detection and cache tests based on `JUnit38` runner. 
+- Use 128 bits for OT `traceID`.
+- Include `java.class_path` as default configuration key.
+
+**Changed**
+- Cached tests list are logged in `DEBUG` mode.
+- Show `METADATA` on `ScopeLogger` on agent startup.
+- Avoid detecting and sending `code.path` if  test source code file cannot be identified uniquely.
+
+**Fixed**
+- Avoid failing tests on failure instrumentation for HttpServlet
+- Avoid preventing failing test phase if `SCOPE_DSN` is not defined.
+- Use cache map to discover executable lines for known classes.
+- Avoid detecting `target/munged` files as source code files.
+
+
 ## Scope Java Agent v0.11.0
 
 *April 30, 2020*
