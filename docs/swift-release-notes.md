@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.6.2
+
+*May 07, 2020*
+
+**Fixed** 
+* Agent was not reporting correctly when running with GitHub Actions
+
+
+
 ## Scope Swift Agent v0.6.1
 
 *May 07, 2020*
