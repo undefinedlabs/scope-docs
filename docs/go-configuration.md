@@ -394,6 +394,20 @@ func main() {
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+## Include indirect dependencies in agent metadatada
+
+By default, Scope Go Agent will send all direct dependencies from the golang project declared in the `go.mod` file.
+
+You can configure Scope to send all indirect dependencies from the project using `go list -m json all`.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_DEPENDENCIES_INDIRECT=true
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Include DB statements values in DB span tags
 
@@ -544,3 +558,46 @@ You can also specify a custom log directory:
 ```sh
 SCOPE_LOGGER_ROOT=/home/user/my-logs
 ```
+
+## Scope Intelligent Test Runner
+
+Scope's Intelligent Test Runner will selectively run only the subset of tests affected by code changes.
+
+### Enable or disable
+
+Through this configuration parameter you can enable or disable Scope Intelligent Test Runner. The rest of `SCOPE_RUNNER` configuration parameters will have no effect if `ENABLED` is false.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_RUNNER_ENABLED=true
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Included and excluded branches
+
+There are two parameters to control the branches in which you want to run the Scope Intelligent Test Runner: `SCOPE_RUNNER_INCLUDE_BRANCHES` and `SCOPE_RUNNER_EXCLUDE_BRANCHES`. The way they work is the following:
+
+- If `SCOPE_RUNNER_INCLUDE_BRANCHES` is configured, only configured branches are included.
+- If `SCOPE_RUNNER_EXCLUDE_BRANCHES` is configured, all branches except configured branches are included.
+- If both `SCOPE_RUNNER_INCLUDE_BRANCHES` and `SCOPE_RUNNER_EXCLUDE_BRANCHES` are configured, the runner will only take into account `SCOPE_RUNNER_INCLUDE_BRANCHES`. If the same branch is configured, a warning message will be shown.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_RUNNER_INCLUDE_BRANCHES=feature-branch-1,feature-branch-2
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_RUNNER_EXCLUDE_BRANCHES=master
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->

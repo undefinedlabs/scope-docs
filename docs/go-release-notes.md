@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.3.1" target="_blank">Scope Go Agent v0.3.1</a>
+
+*May 12, 2020*
+
+**Changed:**
+- Local cache struct, NTP cache and improvements in cached tests (#236)
+- Bump dependencies versions (#238)
+- Remove unused defaultAgent var (#237)
+
+**Fixed:**
+- Dependency map algorithm fix (#235)
+
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.3.0" target="_blank">Scope Go Agent v0.3.0</a>
 
 *May 07, 2020*
