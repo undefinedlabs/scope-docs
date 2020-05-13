@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.13.0
+
+*May 13, 2020*
+
+**Fixed**
+- Fixed `checkstyle` and `pmd` issues to increase maintainability. 
+
+
 ## Scope Java Agent v0.12.0
 
 *May 07, 2020*
