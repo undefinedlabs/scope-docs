@@ -8,6 +8,39 @@ sidebar_label: Configuration
 
 The behaviour of the Scope Agent can be modified using environment variables or a configuration file `scope.yml` in the source root of the project.
 
+An example `scope.yml`:
+
+```yaml
+service: "service-name"
+repository: "https://github.com/undefinedlabs/scope-docs.git"
+source_root: "/home/user/projects/scope-docs"
+code_path:
+  enabled: true
+metadata:
+  sample.key1: sampleValue1
+testing_mode: true
+instrumentation:
+  enabled: true
+  db:
+    statement_values: true
+  http:
+    payloads: true
+    headers:
+      - Authorization
+      - My-Header-One
+      - My-Header-Two
+tracer:
+  global: true
+runner:
+  enabled: true
+  fail_retries: 5
+  include_branches:
+    - feature-branch-1
+    - feature-branch-2
+  exclude_branches:
+    - master
+```
+
 ## Disabling Scope instrumentation
 
 Scope auto instruments your code and tests by default. You can disable this behaviour.

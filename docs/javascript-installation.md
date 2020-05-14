@@ -271,6 +271,8 @@ This is a required setting. If not explicitly set, the agent will try to automat
 
 Examples values: `https://github.com/undefinedlabs/scope-docs.git`, `git@github.com:undefinedlabs/scope-docs.git`
 
+> This parameter may also be configured in a [`scope.yml` file](javascript-configuration.md) using the key `repository`.
+
 ### SCOPE_SOURCE_ROOT
 
 `SCOPE_SOURCE_ROOT` contains the absolute path to where the root of the project is located inside the filesystem. This
@@ -283,6 +285,8 @@ This is a required setting. If not explicitly set, the agent will try to automat
 3. If not, it will be set to the working directory of the command used to launch the application or tests.
 
 Example value: `/home/user/projects/scope-docs`
+
+> This parameter may also be configured in a  [`scope.yml` file](javascript-configuration.md) using the key `source_root`.
 
 ## Running tests inside a container
 

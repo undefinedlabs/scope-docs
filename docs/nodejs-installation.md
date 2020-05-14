@@ -220,6 +220,8 @@ If not explicitly set, the agent will try to automatically detect it using the f
 
 Example values: `https://github.com/undefinedlabs/scope-docs.git`, `git@github.com:undefinedlabs/scope-docs.git`
 
+> This parameter may also be configured in a [`scope.yml` file](nodejs-configuration.md) using the key `repository`.
+
 ### SCOPE_SOURCE_ROOT
 
 This is a required setting in testing mode, and optional in runtime mode.
@@ -235,6 +237,8 @@ If not explicitly set, the agent will try to automatically detect it using the f
 3. If not, it will be set to the working directory of the command used to launch the application or tests.
 
 Example value: `/home/user/projects/scope-docs`
+
+> This parameter may also be configured in a [`scope.yml` file](nodejs-configuration.md) using the key `source_root`.
 
 ## Running tests inside a container
 
