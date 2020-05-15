@@ -5,6 +5,29 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.2.0
+
+*May 14, 2020*
+
+**Added:**
+- Testing mode in metadata
+- Buildkite support
+- CreateDefaultBinder and ConfigureWebDefaults AspNetCore method wrapper
+        
+**Changed:**
+- Trace IDs are now 128 bits.
+        
+**Fixes:**
+- Git info attribute in the coverage processor.
+- TestMapPropagationCodec fixes
+- Coverage middleware key fix
+- Test report shown on runtime mode
+- Support for git HEAD hash and symbolic ref
+- ASP.NET Core middleware status code
+        
+**NOTE:** all agents involved in a trace must be updated to support 128 bits.
+
+
 ## Scope .NET Agent v0.1.22-beta.1
 
 *January 28, 2020*
