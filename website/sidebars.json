@@ -1,6 +1,10 @@
 {
   "docs": {
-    "Scope": ["index", "release-notes"],
+    "Scope": [
+      "index",
+      "intelligent-test-runner",
+      "release-notes"
+    ],
     ".NET Agent": [
       "dotnet-installation",
       "dotnet-compatibility",
