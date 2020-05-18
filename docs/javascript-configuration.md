@@ -203,7 +203,7 @@ code_path:
 
 ## Scope Intelligent Test Runner
 
-Scope's Intelligent Test Runner will selectively run only the subset of tests affected by code changes.
+Scope's Intelligent Test Runner will selectively run only the subset of tests affected by code changes. For more information go to [Scope Intelligent Test Runner](intelligent-test-runner).
 
 ### Enable or disable
 
