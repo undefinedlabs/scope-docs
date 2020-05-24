@@ -5,6 +5,29 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.11.0
+
+*May 11, 2020*
+
+#### Added
+* **New: Intelligent Test Runner (beta)**. With the new Intelligent Test Runner, only tests that are affected by changes in your code are actually run on your CI build, saving up to 90% of testing time. [Check the documentation for more information](https://home.undefinedlabs.com/goto/itr-docs).
+* Email subscriptions can now also be managed in the namespace settings page.
+
+#### Changed
+* Only repository admins can now delete services.
+* Only namespace owners can now configure the Slack integration.
+* Pull requests opened from the default branch will now be hidden from the service explore view.
+* GraphQL API mutations now use the standard error mechanism instead of returning errors in a special `error` attribute.
+
+
+#### Fixed
+* Fixed a bug where the "Watch" button did not reflect the right status when pressed.
+* Remove storage duplication of test execution tags for more efficient ingest pipeline.
+* Fixed processing of Windows paths.
+* Cache responses from GitHub API to lower the probability of hitting their rate limit.
+* Other minor bug fixes and enhancements.
+
+
 ## Scope v1.10.4
 
 *May 07, 2020*
