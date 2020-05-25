@@ -5,6 +5,28 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.11.2
+
+*May 25, 2020*
+
+#### Fixed
+* Fixed bug in a background task call that was preventing tests from being processed.
+
+
+## Scope v1.11.1
+
+*May 25, 2020*
+
+#### Changes
+* Intelligent Test Runner now skips tests on the same commit on which they passed.
+* Commit hashes are now validated on the ingest endpoint.
+
+#### Fixes
+* Fixed a performance issue with how code coverage was being aggregated.
+* Fixed an internal background worker issue that was causing tests to be processed with lower priority than expected.
+* Support for GitHub `converted_to_draft` webhook.
+
+
 ## Scope v1.11.0
 
 *May 11, 2020*
