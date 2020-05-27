@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.7.1
+
+*May 27, 2020*
+
+## Fixed
+- Fix a bug where test code would not appear in Cypress under some circumstances. 
+- Fix a bug where failed snapshot tests were not retried with the intelligent test runner. 
+
+
 ## Scope Javascript Agent v0.7.0
 
 *May 07, 2020*
