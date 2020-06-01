@@ -5,6 +5,23 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.14.0
+
+*June 01, 2020*
+
+**Added**
+- Source file paths resolved using class metadata properties.
+
+**Changed**
+- ITR now sends spans using state `CACHE` by default.
+- Removed `SCOPE_SEND_SPANS` flag.
+
+**Fixed**
+- Performance improvements on classes instrumentation.
+- All dependencies are now inside of `com.undefinedlabs.scope.deps` package.
+- Fixed ITR to be compatible with full `4.x` version.
+
+
 ## Scope Java Agent v0.13.0
 
 *May 13, 2020*
