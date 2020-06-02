@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.7.2
+
+*June 02, 2020*
+
+## Added
+- Requests done via `cy.request` are now instrumented
+
+## Fixed
+- Cypress support file no longer attempts to import files from the file system under some circumstances. 
+- `cy.spy` and `cy.stub` can now be safely used for `window.fetch` and `console` functions. 
+
+
 ## Scope Javascript Agent v0.7.1
 
 *May 27, 2020*
