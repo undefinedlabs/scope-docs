@@ -287,3 +287,9 @@ runner:
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+### Limitations
+
+#### Style files
+
+The logic to skip tests uses the code coverage provided by the Scope Javascript Agent, which is based on the coverage provided by Jest. This does not include _style_ files, so if your tests depend on assertions on styles, the Scope Javascript Agent won't be able to correctly tell whether your tests should run or not.
