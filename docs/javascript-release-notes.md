@@ -9,10 +9,10 @@ sidebar_label: Release notes
 
 *June 02, 2020*
 
-## Added
+### Added
 - Requests done via `cy.request` are now instrumented
 
-## Fixed
+### Fixed
 - Cypress support file no longer attempts to import files from the file system under some circumstances. 
 - `cy.spy` and `cy.stub` can now be safely used for `window.fetch` and `console` functions. 
 
@@ -21,7 +21,7 @@ sidebar_label: Release notes
 
 *May 27, 2020*
 
-## Fixed
+### Fixed
 - Fix a bug where test code would not appear in Cypress under some circumstances. 
 - Fix a bug where failed snapshot tests were not retried with the intelligent test runner. 
 
@@ -30,7 +30,7 @@ sidebar_label: Release notes
 
 *May 07, 2020*
 
-## Changed
+### Changed
 - Trace IDs are now 128 bits. **Note:** all agents involved in a trace must be updated to support 128 bits.
 
 
@@ -38,7 +38,7 @@ sidebar_label: Release notes
 
 *May 05, 2020*
 
-## Fixed
+### Fixed
 - Fix logic in skipping tests with intelligent test runner.
 - Fix minor bugs.
 
@@ -47,11 +47,11 @@ sidebar_label: Release notes
 
 *April 29, 2020*
 
-## Added
+### Added
 - Intelligent Test Runner support: automatically cache tests that are not affected by your commit changes.
 - Automatically retry failed tests.
 
-## Changed
+### Changed
 - HTTP connections are kept alive.
 - Add option to set global tracer for opentracing.
 
@@ -61,7 +61,7 @@ sidebar_label: Release notes
 
 *April 23, 2020*
 
-## Fixed
+### Fixed
 - `~` is properly expanded in source root.
 
 
@@ -71,7 +71,7 @@ sidebar_label: Release notes
 
 *April 23, 2020*
 
-## Fixed
+### Fixed
 - `~` is properly expanded in source root.
 
 
@@ -81,10 +81,10 @@ sidebar_label: Release notes
 
 *April 15, 2020*
 
-## Added
+### Added
 - **Code Path**: You may now run your tests with per test code coverage.
 
-## Changed
+### Changed
 - Remove dependency on `jest-jasmine2` and `jest-runner`.
 - Change `jest` configuration: now using `globalSetup` and not using `runner` anymore.
 
@@ -94,7 +94,7 @@ sidebar_label: Release notes
 
 *April 02, 2020*
 
-## Fixed
+### Fixed
 - Fixed travis URL in builds.
 - Fix bug in fetch instrumentation.
 - Fix retry logic in ingest. 
@@ -105,10 +105,10 @@ sidebar_label: Release notes
 
 *March 25, 2020*
 
-## Changed
+### Changed
 - cypress instrumentation has been improved with more robust ingests.
 
-## Fixed
+### Fixed
 - Fixed bug where the agent would crash with older node versions. 
 
 
@@ -117,7 +117,7 @@ sidebar_label: Release notes
 
 *March 23, 2020*
 
-## Added
+### Added
 - [`pg`](https://node-postgres.com/features/queries) test and runtime instrumentation support. 
 - [`node-redis`](https://github.com/NodeRedis/node-redis) test and runtime instrumentation support.
 - A message is logged when `SCOPE_DSN` is not set and tests run just like they would without Scope. 
@@ -125,11 +125,11 @@ sidebar_label: Release notes
 - Support for `keydown` events in `jsdom`. 
 
 
-## Changed
+### Changed
 - Improve connection with the ingest backend.
 - Limit number of events per span. 
 
-## Fixed
+### Fixed
 - Traces are flushed when the process is shut down in runtime instrumentation. 
 - Minor bugs and inconsistencies fixed.
 - Fix http instrumentation bugs.
@@ -139,7 +139,7 @@ sidebar_label: Release notes
 
 *February 26, 2020*
 
-## Fixed
+### Fixed
 - Fix release tag
 
 
@@ -150,7 +150,7 @@ sidebar_label: Release notes
 
 *February 26, 2020*
 
-## Fixed
+### Fixed
 - Fix minor bugs
 
 
@@ -161,7 +161,7 @@ sidebar_label: Release notes
 
 *February 17, 2020*
 
-## Fixed
+### Fixed
 - Fix 4xx and 5xx http responses not being shown as errors yet.
 
 
@@ -172,12 +172,12 @@ sidebar_label: Release notes
 
 *February 07, 2020*
 
-## Added
+### Added
 - Add support for BuildKite.
 - Richer agent metadata like node versions, cypress version and more.
 - Now a link to the results is shown after jest tests are run.
 
-## Changed
+### Changed
 - `fetch` instrumentation in jest is now richer.
 - 4xx and 5xx http responses are shown as error spans.
 
@@ -189,7 +189,7 @@ sidebar_label: Release notes
 
 *January 27, 2020*
 
-## Changed
+### Changed
 - Testing mode can now be controlled via `SCOPE_TESTING_MODE` env variable, to distinguish between runtime and testing instrumentation.  
 
 
@@ -197,7 +197,7 @@ sidebar_label: Release notes
 
 *December 19, 2019*
 
-### Changed
+#### Changed
 - Auto instrumentation is enabled by default.
 
 
@@ -205,7 +205,7 @@ sidebar_label: Release notes
 
 *December 12, 2019*
 
-### Changed
+#### Changed
 - User agent is now sent as http header in ingest
 
 
@@ -214,17 +214,17 @@ sidebar_label: Release notes
 
 *December 03, 2019*
 
-### Added
+#### Added
 - Added support for CI: Travis, Jenkins, Gitlab, AppVeyor, Azure Pipelines, Bitbucket pipelines, GitHub and TeamCity. 
 - Support for DSN.
 - Send dependencies as agent metadata. 
 
-### Changed
+#### Changed
 - The agent is now resilient to missing configuration. 
 - Update test suite and test name.
 - Improve the distribution of the package. 
 
-### Fixed
+#### Fixed
 - All jest test status are now supported.
 - Missing spans in cypress due to race conditions should now appear.
 
@@ -234,7 +234,7 @@ sidebar_label: Release notes
 
 *November 28, 2019*
 
-### Changed
+#### Changed
 - Improve Node.js automatic instrumentation.
 
 
@@ -242,16 +242,16 @@ sidebar_label: Release notes
 
 *November 27, 2019*
 
-### Added
+#### Added
 - Add support for global exceptions in jest.
 - Add support for global click events.
 
-### Changed
+#### Changed
 - Better ingest management.
 - Better automatic instrumentation.
 - Remove `testing-library/react` and `node-fetch` specific instrumentations.
 
-### Fixed
+#### Fixed
 - Errored spans are now sending `error=true` as span tag.
 
 
@@ -259,16 +259,16 @@ sidebar_label: Release notes
 
 *November 26, 2019*
 
-### Added
+#### Added
 - Add support for node js libraries: `express` and  `node-fetch`.
 - Add support for `console`: console logs now appear as span events.
 - Add support for `fetch` in ui tests: they now appear as new spans.
 
-### Fixed
+#### Fixed
 - Timing is now correctly calculated for tests shorter than 1ms.
 - Better calculation and higher resolution in time calculations for start times and durations.
 
-### Changed
+#### Changed
 - The automatic instrumentation is now done through a jest `runner` and `testRunner` instead of a `reporter`.
 
 
@@ -277,7 +277,7 @@ sidebar_label: Release notes
 
 *November 20, 2019*
 
-### Added
+#### Added
 - Support for `@testing-library/react`.
 - Improve time resolution in test duration.
 
@@ -286,7 +286,7 @@ sidebar_label: Release notes
 
 *October 31, 2019*
 
-### Added
+#### Added
 - Add request type for http requests.
 - Control http aborts.
 - Send incomplete http spans as `incomplete` for easier debugging.
@@ -296,12 +296,12 @@ sidebar_label: Release notes
 
 *October 16, 2019*
 
-### Fixed
+#### Fixed
 - Redacted http headers are now case insensitive.
 - No unnecessary json stringify on strings.
 - `fetch` instrumentation in cypress is more robust.
 
-### Changed
+#### Changed
 - Better Formatting Of HTTP Payloads.
 
 
@@ -309,7 +309,7 @@ sidebar_label: Release notes
 
 *September 16, 2019*
 
-#### Added
+##### Added
 - Add support for Jest.
 - Add support for Cypress. 
 
