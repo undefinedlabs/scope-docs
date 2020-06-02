@@ -8,9 +8,7 @@ The **Intelligent Test Runner** is a Scope agent feature that allows them to ski
 that have not been affected by source code changes since the last time they were run.
 This can lead to significant time and cost savings.
 
-This is done by comparing each test code path information (the affected code) with git file change information.
-If the source code files a passing test covered have not been changed in a later commit, that test is skipped
-when that commit is tested.
+This is done by comparing the Code Path of your tests with the git file change information of your commit. Any test potentially impacted by code changes will be selected to run.
 
 We recommend activating the Intelligent Test Runner only in feature and bug fix branches where feedback speed is preferred over correctness (although still with a high degree of confidence), and keeping it disabled in `master` and/or other branches where correctness is more critical than speed.
 
