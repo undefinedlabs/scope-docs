@@ -9,10 +9,10 @@ sidebar_label: Release notes
 
 *June 02, 2020*
 
-### Added
+#### Added
 - Requests done via `cy.request` are now instrumented
 
-### Fixed
+#### Fixed
 - Cypress support file no longer attempts to import files from the file system under some circumstances. 
 - `cy.spy` and `cy.stub` can now be safely used for `window.fetch` and `console` functions. 
 
@@ -21,7 +21,7 @@ sidebar_label: Release notes
 
 *May 27, 2020*
 
-### Fixed
+#### Fixed
 - Fix a bug where test code would not appear in Cypress under some circumstances. 
 - Fix a bug where failed snapshot tests were not retried with the intelligent test runner. 
 
@@ -30,7 +30,7 @@ sidebar_label: Release notes
 
 *May 07, 2020*
 
-### Changed
+#### Changed
 - Trace IDs are now 128 bits. **Note:** all agents involved in a trace must be updated to support 128 bits.
 
 
@@ -38,7 +38,7 @@ sidebar_label: Release notes
 
 *May 05, 2020*
 
-### Fixed
+#### Fixed
 - Fix logic in skipping tests with intelligent test runner.
 - Fix minor bugs.
 
@@ -47,11 +47,11 @@ sidebar_label: Release notes
 
 *April 29, 2020*
 
-### Added
+#### Added
 - Intelligent Test Runner support: automatically cache tests that are not affected by your commit changes.
 - Automatically retry failed tests.
 
-### Changed
+#### Changed
 - HTTP connections are kept alive.
 - Add option to set global tracer for opentracing.
 
@@ -61,7 +61,7 @@ sidebar_label: Release notes
 
 *April 23, 2020*
 
-### Fixed
+#### Fixed
 - `~` is properly expanded in source root.
 
 
@@ -71,7 +71,7 @@ sidebar_label: Release notes
 
 *April 23, 2020*
 
-### Fixed
+#### Fixed
 - `~` is properly expanded in source root.
 
 
@@ -81,10 +81,10 @@ sidebar_label: Release notes
 
 *April 15, 2020*
 
-### Added
+#### Added
 - **Code Path**: You may now run your tests with per test code coverage.
 
-### Changed
+#### Changed
 - Remove dependency on `jest-jasmine2` and `jest-runner`.
 - Change `jest` configuration: now using `globalSetup` and not using `runner` anymore.
 
@@ -94,7 +94,7 @@ sidebar_label: Release notes
 
 *April 02, 2020*
 
-### Fixed
+#### Fixed
 - Fixed travis URL in builds.
 - Fix bug in fetch instrumentation.
 - Fix retry logic in ingest. 
@@ -105,10 +105,10 @@ sidebar_label: Release notes
 
 *March 25, 2020*
 
-### Changed
+#### Changed
 - cypress instrumentation has been improved with more robust ingests.
 
-### Fixed
+#### Fixed
 - Fixed bug where the agent would crash with older node versions. 
 
 
@@ -117,7 +117,7 @@ sidebar_label: Release notes
 
 *March 23, 2020*
 
-### Added
+#### Added
 - [`pg`](https://node-postgres.com/features/queries) test and runtime instrumentation support. 
 - [`node-redis`](https://github.com/NodeRedis/node-redis) test and runtime instrumentation support.
 - A message is logged when `SCOPE_DSN` is not set and tests run just like they would without Scope. 
@@ -125,11 +125,11 @@ sidebar_label: Release notes
 - Support for `keydown` events in `jsdom`. 
 
 
-### Changed
+#### Changed
 - Improve connection with the ingest backend.
 - Limit number of events per span. 
 
-### Fixed
+#### Fixed
 - Traces are flushed when the process is shut down in runtime instrumentation. 
 - Minor bugs and inconsistencies fixed.
 - Fix http instrumentation bugs.
@@ -139,7 +139,7 @@ sidebar_label: Release notes
 
 *February 26, 2020*
 
-### Fixed
+#### Fixed
 - Fix release tag
 
 
@@ -150,7 +150,7 @@ sidebar_label: Release notes
 
 *February 26, 2020*
 
-### Fixed
+#### Fixed
 - Fix minor bugs
 
 
@@ -161,7 +161,7 @@ sidebar_label: Release notes
 
 *February 17, 2020*
 
-### Fixed
+#### Fixed
 - Fix 4xx and 5xx http responses not being shown as errors yet.
 
 
@@ -172,12 +172,12 @@ sidebar_label: Release notes
 
 *February 07, 2020*
 
-### Added
+#### Added
 - Add support for BuildKite.
 - Richer agent metadata like node versions, cypress version and more.
 - Now a link to the results is shown after jest tests are run.
 
-### Changed
+#### Changed
 - `fetch` instrumentation in jest is now richer.
 - 4xx and 5xx http responses are shown as error spans.
 
@@ -189,7 +189,7 @@ sidebar_label: Release notes
 
 *January 27, 2020*
 
-### Changed
+#### Changed
 - Testing mode can now be controlled via `SCOPE_TESTING_MODE` env variable, to distinguish between runtime and testing instrumentation.  
 
 
@@ -309,7 +309,7 @@ sidebar_label: Release notes
 
 *September 16, 2019*
 
-##### Added
+#### Added
 - Add support for Jest.
 - Add support for Cypress. 
 

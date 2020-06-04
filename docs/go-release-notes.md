@@ -5,6 +5,22 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.4.0" target="_blank">Scope Go Agent v0.4.0</a>
+
+*June 02, 2020*
+
+**Added:**
+- `go-checks` tests and benchmarks instrumentation (#240, #242)
+- `SCOPE_INSTRUMENTATION_TESTING_LOGGER` env-var to enable/disable the testing logger auto instrumentation (#247)
+
+**Changed:**
+- Panic patcher simplification (#239)
+- Testing logger instrumentation algorithm changes (#241)
+
+**Fixed:**
+- Removes the SetRand seed to uuid (#246)
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.3.1" target="_blank">Scope Go Agent v0.3.1</a>
 
 *May 12, 2020*

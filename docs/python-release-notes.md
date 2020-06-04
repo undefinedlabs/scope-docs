@@ -9,7 +9,7 @@ sidebar_label: Release notes
 
 *May 07, 2020*
 
-## Changed
+#### Changed
 - Trace IDs are now 128 bits. **Note:** all agents involved in a trace must be updated to support 128 bits
 
 
@@ -18,7 +18,7 @@ sidebar_label: Release notes
 
 *April 02, 2020*
 
-### Fixed
+#### Fixed
 * GitHub Actions build number and build id are now correctly shown.
 * Fix logic in ingest when there is an error response.
 * Fix Travis build URL.
@@ -28,7 +28,7 @@ sidebar_label: Release notes
 
 *February 27, 2020*
 
-### Fixed
+#### Fixed
 * Test code should now be displayed correctly for `pytest`
 
 
@@ -36,7 +36,7 @@ sidebar_label: Release notes
 
 *February 26, 2020*
 
-### Changed
+#### Changed
 * Add maximum size of ingest payloads.
 * Adapt `scope.yml` configuration.
 
@@ -49,12 +49,12 @@ sidebar_label: Release notes
 
 *February 19, 2020*
 
-### Fixed
+#### Fixed
 * Fix logic in Database statement values configuration.
 * Fix logic in HTTP headers to show configuration.
 * Ingest now times out to avoid deadlocks.
 
-### Added
+#### Added
 * Global tracer can be configured through `scope.yml`.
 
 
@@ -65,10 +65,10 @@ sidebar_label: Release notes
 
 *February 06, 2020*
 
-### Added
+#### Added
 * Support for BuildKite
 
-### Fixed
+#### Fixed
 * GitHub build links are now correctly shown.
 
 
@@ -79,7 +79,7 @@ sidebar_label: Release notes
 
 *January 31, 2020*
 
-### Fixed
+#### Fixed
 * The link to the test results is not incorrectly shown when no tests have been found.
 
 
@@ -88,12 +88,12 @@ sidebar_label: Release notes
 
 *January 28, 2020*
 
-### Added
+#### Added
 * A link to the test results is shown in the console after your tests are run.
 * It is now possible to configure whether to show DB statements in the span metadata.
 * It is now possible to add custom headers in your HTTP instrumentation. 
 
-### Changed
+#### Changed
 * `psycopg2` instrumentation has been updated with more metadata. 
 
 
@@ -102,7 +102,7 @@ sidebar_label: Release notes
 
 *January 20, 2020*
 
-### Fixed
+#### Fixed
 * Fix wrong repository url for GitHub Actions. 
 * Fix wrong initialisation of agent for runtime instrumentation. 
 
@@ -111,7 +111,7 @@ sidebar_label: Release notes
 
 *January 17, 2020*
 
-### Added
+#### Added
 * Add support for [pytest-benchmark](https://pypi.org/project/pytest-benchmark/)
 * Instrumentation of HTTP headers and payloads.
 * Add `testing` metadata to distinguish runtime and testing implementation.
@@ -124,7 +124,7 @@ sidebar_label: Release notes
 
 *December 19, 2019*
 
-### Fixed
+#### Fixed
 * Autoinstrumentation is now active by default 
 
 
