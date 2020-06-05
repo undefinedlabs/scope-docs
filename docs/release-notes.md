@@ -5,6 +5,14 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.11.3
+
+*June 04, 2020*
+
+#### Fixed
+* Fixed bug in test ingest where unregistered repositories could exhaust the rate limit for GitHub affecting other repositories
+
+
 ## Scope v1.11.2
 
 *May 25, 2020*

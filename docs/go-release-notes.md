@@ -5,19 +5,27 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.4.1" target="_blank">Scope Go Agent v0.4.1</a>
+
+*June 04, 2020*
+
+#### Fixed:
+- Http client timeout (#248)
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.4.0" target="_blank">Scope Go Agent v0.4.0</a>
 
 *June 02, 2020*
 
-**Added:**
+#### Added:
 - `go-checks` tests and benchmarks instrumentation (#240, #242)
 - `SCOPE_INSTRUMENTATION_TESTING_LOGGER` env-var to enable/disable the testing logger auto instrumentation (#247)
 
-**Changed:**
+#### Changed:
 - Panic patcher simplification (#239)
 - Testing logger instrumentation algorithm changes (#241)
 
-**Fixed:**
+#### Fixed:
 - Removes the SetRand seed to uuid (#246)
 
 
@@ -25,12 +33,12 @@ sidebar_label: Release notes
 
 *May 12, 2020*
 
-**Changed:**
+#### Changed:
 - Local cache struct, NTP cache and improvements in cached tests (#236)
 - Bump dependencies versions (#238)
 - Remove unused defaultAgent var (#237)
 
-**Fixed:**
+#### Fixed:
 - Dependency map algorithm fix (#235)
 
 
@@ -39,11 +47,11 @@ sidebar_label: Release notes
 
 *May 07, 2020*
 
-**Added:**
+#### Added:
 - Logrus instrumentation hook (#224) 
 - Cached tests support - Intelligent Test Runner (#178)
 
-**Changed:**
+#### Changed:
 - Update dependencies (#226, #227, #228, #230)
 - Show initialization error messages only if `SCOPE_DEBUG` is set (#229)
 - Send metadata until at least one payload is successfully delivered (#182)
@@ -51,7 +59,7 @@ sidebar_label: Release notes
 - Rand algorithm changes (#233)
 - Trace IDs are now 128 bits. (#234)
 
-**Fixed:**
+#### Fixed:
 - Metadata serialization data race (#231)
 
 **NOTE:** all agents involved in a trace must be updated to support 128 bits.
@@ -61,10 +69,10 @@ sidebar_label: Release notes
 
 *April 16, 2020*
 
-**Changed**
+#### Changed
 - Use `crypto/rand` to generate random seed (#223)
 
-**Fixed**
+#### Fixed
 - Avoid setting test source code if span is `nil` (#221)
 
 
@@ -72,13 +80,13 @@ sidebar_label: Release notes
 
 *April 13, 2020*
 
-**Added**
+#### Added
 - Added capability to set the function where the test source code is kept manually (#214)
 
-**Changed**
+#### Changed
 - Calculation of the test suite and test name for subtests (#214)
 
-**Fixed**
+#### Fixed
 - Fixed Travis Build URL (#212)
 - Fixed test start time when a test is marked as `t.Parallel()` (#214)
 - Fixed bug in `t.Log` monkey patching methods, due a problem in Golang `reflect.makefunc` (#214)
@@ -90,7 +98,7 @@ sidebar_label: Release notes
 
 *March 26, 2020*
 
-**Fixed**
+#### Fixed
 - Set Global Panic handler as agent option only on test autoinstrumentation (#208)
 
 
@@ -98,7 +106,7 @@ sidebar_label: Release notes
 
 *March 24, 2020*
 
-**Fixed**
+#### Fixed
 - Fixed wrong `file:line` on `testing.Test` error messages in terminal. (#206)
 
 
@@ -106,7 +114,7 @@ sidebar_label: Release notes
 
 *March 18, 2020*
 
-**Added:**
+#### Added:
 - Adds BuildId and Build Number for GH Actions (#186) 
 - Parallel flag detector for CodePath (#180) 
 - Goroutines global panic handler (#188)
@@ -116,14 +124,14 @@ sidebar_label: Release notes
 - Support for projects without go.mod (#153) 
 -  Adds panic stacktraces inside the logs (#202) 
 
-**Changed:**
+#### Changed:
 - Coverage detection (#168) 
 - Recorder buffer refactor (#177) 
 - Remove test.code empty (#192) 
 - Forbid empty sourceroot and go.mod path finder (#194) 
 - Ci branch and improved container detector (#201) 
 
-**Fixed:**
+#### Fixed:
 - Fix support for import autoinstrument and TestMain scopeagent.Run (#145)
 - Ensure the correct folder permissions when creating log folders (#183) 
 - Try to extract request body payload when the `GetBody` func is nil (#189)
@@ -136,19 +144,19 @@ sidebar_label: Release notes
 
 *February 19, 2020*
 
-**Added:**
+#### Added:
 - Codepath implementation (#103)
 - Expand '~' in source root (#159)
 - Support to split a big payload in multiples payloads (#158)
 - Http server instrumentation, panic support (#156)
 
-**Changed:**
+#### Changed:
 - Environment variables handler and missing keys (#154)
 - Statement values instrumentation option rename (#161)
 - SetTestingMode refactor (#163)
 - Removes the ScopeDisableMonkeyPatching env var (#164)
 
-**Fixes:**
+#### Fixes:
 - Fix go vet ./... in the agent (#155)
 - Fixes retries response status code 400 (#157)
 - Fixes panic handling of the agent runner (#160) 
@@ -159,11 +167,11 @@ sidebar_label: Release notes
 
 *February 11, 2020*
 
-**Fixes:**
+#### Fixes:
 - Scope log root path fix (#151)
 - Recorder retry support for multiple error cases (#148)
 
-**Changes:**
+#### Changes:
 - Bump google.golang.org/grpc from 1.27.0 to 1.27.1 (#152)
 
 
@@ -171,11 +179,11 @@ sidebar_label: Release notes
 
 *February 11, 2020*
 
-**Fixes:**
+#### Fixes:
 - Scope log root path fix (#151)
 - Recorder retry support for multiple error cases (#148)
 
-**Changes:**
+#### Changes:
 - Bump google.golang.org/grpc from 1.27.0 to 1.27.1 (#152)
 
 
@@ -183,7 +191,7 @@ sidebar_label: Release notes
 
 *February 07, 2020*
 
-**Fixes:**
+#### Fixes:
 - Lock in r.span reader to avoid race condition (#144)
 - Avoid panic and agent failure in case of not DSN or ApiKey (#147)
 
@@ -193,16 +201,16 @@ sidebar_label: Release notes
 
 *February 06, 2020*
 
-**Added:**
+#### Added:
 - Support Buildkite CI provider (#133)
 - Auto Instrument without TestMain (#137)
 - Runner configuration by env vars (#138)
 
-**Changes:**
+#### Changes:
 - Reflection refactor (#130)
 - Remove http client events on normal requests, write if an error occurs (#140)
 
-**Fixes:**
+#### Fixes:
 - Fix nil in Current User (#134)
 - Checks if GetBody() is nil before call (#139)
 
@@ -211,7 +219,7 @@ sidebar_label: Release notes
 
 *January 31, 2020*
 
-**Added:**
+#### Added:
 - Test retry support on fail.
 - Go 1.11 support
 
@@ -220,13 +228,13 @@ sidebar_label: Release notes
 
 *January 30, 2020*
 
-**Added:**
+#### Added:
 - Configuration metadata and configuration keys support.
 
-**Changed:**
+#### Changed:
 - Improvements in the grpc instrumentation (#126)
 
-**Fixed:**
+#### Fixed:
 - Test results Url fix (#120)
 - Fix http 401 response handler (#125)
 
@@ -235,7 +243,7 @@ sidebar_label: Release notes
 
 *January 23, 2020*
 
-**Added:**
+#### Added:
 - Windows path support (#83)
 - Benchmarks support (#84)
 - SCOPE_DSN support (#87)
@@ -253,7 +261,7 @@ sidebar_label: Release notes
 - Benchmark auto instrumentation (#117) 
 - Monkey patching on testing.T.common logging methods (#118) 
 
-**Changed:**
+#### Changed:
 - Do not finish parent span on HTTP client requests (#75)
 - Calculate NTP offset in the recorder lazily
 - Cmd OperationName (#82) 
