@@ -27,3 +27,49 @@ You can find further information in [Scope Javascript Agent - Running tests insi
 If you are using certain libraries or version libraries that are not officially supported by the Scope Javascript agent, you might have not see data in Scope after executing the test phase.
 
 You can find further information in [Scope Javascript Agent - Compatibility](javascript-compatibility.md) section.
+
+## I can't see the Test Code in the Test Code Tab
+
+This is most likely caused by a problem with [`SCOPE_SOURCE_ROOT`](javascript-installation.md#environment-variables). While we try to autodetect the root of your repository, it is not always possible. For example, if your folder structure looks like this:
+
+```bash
+|-- source
+    |-- root
+        |-- src
+            |-- admin-ui
+            |   |-- cypress.json
+            |   |-- cypress
+            |       |-- smoke
+            |           |-- smoke.spec.js
+            |-- ui
+                |-- cypress.json
+                |-- cypress
+                    |-- integration
+                        |-- integration.spec.js
+```
+
+where there are multiple `cypress` roots that are run independently, the Scope Javascript Agent will currently autodetect two different source roots:
+
+```bash
+/source/root/src/ui
+```
+
+and
+
+```bash
+/source/root/src/admin-ui
+```
+
+This is _incorrect_ and will lead to the Test Code not working properly.
+
+### How to fix it
+
+Manually set `SCOPE_SOURCE_ROOT` env var to the root of your repository when you run your cypress commands, e.g.:
+
+```bash
+SCOPE_SOURCE_ROOT=/source/root yarn cypress:run-ui
+```
+
+```bash
+SCOPE_SOURCE_ROOT=/source/root yarn cypress:run-admin
+```

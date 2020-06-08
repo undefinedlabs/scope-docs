@@ -27,3 +27,47 @@ You can find further information in [Scope Node.js Agent - Running tests inside 
 If you are using certain libraries or version libraries that are not officially supported by the Scope Node.js agent, you might have not see data in Scope after executing the test phase.
 
 You can find further information in [Scope Node.js Agent - Compatibility](nodejs-compatibility.md) section.
+
+## I can't see the Test Code in the Test Code Tab
+
+This is most likely caused by a problem with [`SCOPE_SOURCE_ROOT`](nodejs-installation.md#environment-variables). While we try to autodetect the root of your repository, it is not always possible. For example, if your folder structure looks like this:
+
+```bash
+|-- source
+    |-- root
+        |-- src
+            |-- service-1
+            |   |-- package.json
+            |   |-- tests
+            |       |-- integration.spec.js
+            |-- service-2
+                |-- package.json
+                |-- tests
+                    |-- smoke.spec.js
+```
+
+where there are multiple services whose tests are run independently, the Scope Javascript Agent will currently autodetect two different source roots:
+
+```bash
+/source/root/src/service-1
+```
+
+and
+
+```bash
+/source/root/src/service-2
+```
+
+This is _incorrect_ and will lead to the Test Code not working properly.
+
+### How to fix it
+
+Manually set `SCOPE_SOURCE_ROOT` env var to the root of your repository when you run your test commands, e.g.:
+
+```bash
+SCOPE_SOURCE_ROOT=/source/root yarn test-service-1
+```
+
+```bash
+SCOPE_SOURCE_ROOT=/source/root yarn test-service-2
+```
