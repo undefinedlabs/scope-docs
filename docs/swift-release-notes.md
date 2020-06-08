@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Swift Agent v0.7.0
+
+*June 08, 2020*
+
+#### Changed
+* **Agent now uses OpenTelemetry as tracing technology**, but is compatible with other Scope agents that still use OpenTracing. Manual instrumentation should be added using OpenTelemetry.
+
+* Agent is now built using GitHub Actions
+
+#### Fixed
+* Fix current branch was not properly read in some CI's, and could make Intelligent test runner exclude/include branches fail
+
+
 ## Scope Swift Agent v0.6.2
 
 *May 07, 2020*
