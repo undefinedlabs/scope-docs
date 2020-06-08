@@ -1,10 +1,6 @@
 {
   "docs": {
-    "Scope": [
-      "index",
-      "intelligent-test-runner",
-      "release-notes"
-    ],
+    "Scope": ["index", "intelligent-test-runner", "release-notes"],
     ".NET Agent": [
       "dotnet-installation",
       "dotnet-compatibility",
@@ -35,6 +31,7 @@
       "python-compatibility",
       "python-configuration",
       "python-runtime",
+      "python-troubleshooting",
       "python-release-notes"
     ],
     "Go Agent": [
