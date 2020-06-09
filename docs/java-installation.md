@@ -56,11 +56,11 @@ Start using Scope with the [Getting Started Java Project with Gradle + GitHub Ac
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Maven-->
 
-Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.6.2` with the latest version of the agent:
+Add the Scope agent dependency and version property to your `pom.xml` file, replacing `0.14.0` with the latest version of the agent:
 
 ```xml
 <properties>
-  <scope.agent.version>0.6.2</scope.agent.version>
+  <scope.agent.version>0.14.0</scope.agent.version>
 </properties>
 ```
 
@@ -103,11 +103,41 @@ Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-
 </plugin>
 ```
 
+### Resolving source code filepaths
+
+Only necessary if your project has modules that have classes with the same name and package.
+
+Configure the `Metadata Maven Plugin` to attach the absolute source code filepath to every compiled class using an external file.
+
+```xml
+<plugin>
+  <groupId>com.undefinedlabs</groupId>
+  <artifactId>metadata-maven-plugin</artifactId>
+  <version>0.1.0</version>
+  <executions>
+    <execution>
+      <id>metadata-classes</id>
+      <phase>process-classes</phase>
+      <goals>
+        <goal>attach-metadata</goal>
+      </goals>
+    </execution>
+    <execution>
+      <id>metadata-test-classes</id>
+      <phase>process-test-classes</phase>
+      <goals>
+        <goal>attach-metadata</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
 After this, you can run your tests as you normally do, for example using the `mvn clean verify` command.
 
 <!--Gradle-->
 
-Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.3.2` with the latest version of the agent.
+Add the `testAgent` entry to the `configurations` task block and add the Scope agent dependency, replacing `0.14.0` with the latest version of the agent.
 
 ```groovy
 configurations {
@@ -115,7 +145,7 @@ configurations {
 }
 
 dependencies {
-    testAgent "com.undefinedlabs.scope:scope-agent:0.6.2"
+    testAgent "com.undefinedlabs.scope:scope-agent:0.14.0"
 }
 ```
 
@@ -129,6 +159,37 @@ test {
 }
 ```
 
+### Resolving source code filepaths
+
+Only necessary if your project has modules that have classes with the same name and package.
+
+Configure the [`Metadata Gradle Plugin`](https://plugins.gradle.org/plugin/com.undefinedlabs.attach-classes-metadata) to attach the absolute source code filepath to every compiled class using an external file.
+
+Using the plugins DSL:
+
+```groovy
+plugins {
+  id "com.undefinedlabs.attach-classes-metadata" version "0.1.0"
+}
+```
+
+Using legacy plugin application:
+
+```groovy
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.com.undefinedlabs:metedata-gradle-plugin:0.1.0"
+  }
+}
+
+apply plugin: "com.undefinedlabs.attach-classes-metadata"
+```
+
 After this, you can run your tests as you normally do, for example using the `gradle cleanTest test --rerun-tasks` command.
 
 <!--sbt-->
@@ -139,14 +200,14 @@ Add the `sbt-javaagent` entry to the `project/plugins.sbt` file.
 addSbtPlugin("com.lightbend.sbt" % "sbt-javaagent" % "0.1.5")
 ```
 
-Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.3.2` with the latest version of the agent.
+Enable the `JavaAgent` plugin in your `build.sbt` configuring the Scope agent dependency, replacing `0.14.0` with the latest version of the agent.
 
 ```scala
 lazy val root = project
   .in(file("."))
   .enablePlugins(JavaAgent)
   .settings(
-    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.6.2" % "test"
+    javaAgents += "com.undefinedlabs.scope" % "scope-agent" % "0.14.0" % "test"
   )
 ```
 

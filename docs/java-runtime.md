@@ -11,7 +11,7 @@ This service might run, for example, in a container on CI, or in a QA/staging en
 
 ## Using `javaagent` VM param
 
-Download the Scope Java Agent, replacing `0.3.2` with the latest version.
+Download the Scope Java Agent, replacing `0.14.0` with the latest version.
 
 ```bash
 cd /path/to/scope/agent
