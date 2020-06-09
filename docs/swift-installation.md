@@ -51,8 +51,6 @@ Then, run `carthage update` to install the agent in your project.
 
 In your test target(s), add `ScopeAgent.framework` located in `Carthage/Build/<platform>` to the `Link Binaries With Libraries` build phase.
 
-> Currently, the official OpenTracing library only supports installation using Cocoapods. If you are interested in adding custom traces with OpenTracing to your app using Carthage, please use [https://github.com/undefinedlabs/opentracing-objc](https://github.com/undefinedlabs/opentracing-objc)
-
 
 ### Instrumenting your tests
 
