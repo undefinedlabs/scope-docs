@@ -5,6 +5,19 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.3.0
+
+*June 15, 2020*
+
+#### Added:
+- Intelligent test runner cached tests.
+        
+#### Changed:
+- Performance improvements in Dispatcher and Transports.
+- Removes dependencies to instrumented libraries.
+
+
+
 ## Scope .NET Agent v0.2.0
 
 *May 14, 2020*
