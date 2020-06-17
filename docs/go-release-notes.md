@@ -5,6 +5,20 @@ sidebar_label: Release notes
 ---
 
 
+## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.4.2" target="_blank">Scope Go Agent v0.4.2</a>
+
+*June 17, 2020*
+
+#### Changed:
+- Avoid complex objects on Span tags (#249) 
+- Bump github.com/undefinedlabs/go-mpatch from 1.0.3 to 1.0.6 (#257)
+
+#### Fixed:
+- Fix test span counter (#250)
+- Fix branch name for jenkins (#253)
+- Adds locking over the tag map on error reporting and map copy in the reporter (#256)
+
+
 ## <a href="https://github.com/undefinedlabs/scope-go-agent/releases/tag/0.4.1" target="_blank">Scope Go Agent v0.4.1</a>
 
 *June 04, 2020*
