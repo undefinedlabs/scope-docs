@@ -5,6 +5,24 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.3.1
+
+*June 19, 2020*
+
+#### Added:
+- Support for stacktraces in HTTP and DB Spans (#424)
+- Ingest control entity. `ingest.error` and `process.end` support. (#429)
+        
+#### Changed:
+- Sends the metadata only in the first payload (#425)
+- Extend support for InContainer flag to more platforms (#427)
+- Expand tilde in source root (#428)
+- Instrumentation for MongoDb and Redis uses the ducktyping version.
+        
+#### Fixed:
+- Travis build url (#426)
+
+
 ## Scope .NET Agent v0.3.0
 
 *June 15, 2020*
