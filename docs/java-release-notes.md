@@ -5,6 +5,31 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Java Agent v0.15.0
+
+*June 22, 2020*
+
+#### Added
+- Support test parameters on `JUnit4` parameterized tests. (#555)
+- Support for JUnit4 `Parameterized` tests on ITR. (#556, #560)
+- Support test parameters on `JUnit5` parameterized tests. (#559)
+- Support for JUnit5 `Parameterized` tests on ITR. (#558, #561)
+- Send `test_skip` reason for `@Ignore` tests in JUnit4. (#565)
+- Send `test_skip` reason for `@Disabled` tests in JUnit5. (#566)
+- Include `Groovy` files as supported source code files. (#568)
+- Fallback to file path as `TEST_CODE` if  test method cannot be detected in `JUnit4`. (#570)
+- Fallback to file path as `TEST_CODE` if  test method cannot be detected in `JUnit5`. (#569)
+- Support parameterized tests on `Spock Framework 2`. (#571, #586)
+- Support parameterized tests on `Spock Framework 1`. (#582, #584)
+- Support to cache parameterized tests on `Spock Framework 1`. (#590, #592, #596)
+- Support to cache parameterized tests on `Spock Framework 2`. (#589, #591, #596)
+
+#### Fixed
+- Fail fast on `SSLException` during agent initialization. (#557)
+- Avoid invoking `ITR` config endpoint if `ITR` is not enabled for the current branch. (#567)
+- Avoid invoking `ITR` config endpoint if the agent cannot resolve repository or commit. (#567)
+
+
 ## Scope Java Agent v0.14.0
 
 *June 01, 2020*
