@@ -192,3 +192,110 @@ instrumentation:
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+## Code Path
+
+You can add Code Path information that will show the executed lines in a certain test at a certain commit.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_CODE_PATH_ENABLED=true
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+code_path:
+  enabled: true
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+## Scope Intelligent Test Runner
+
+Scope's Intelligent Test Runner will selectively run only the subset of tests affected by code changes. For more information go to [Scope Intelligent Test Runner](intelligent-test-runner).
+
+### Enable or disable
+
+Through this configuration parameter you can enable or disable Scope Intelligent Test Runner. The rest of `runner` configuration parameters will have no effect if `enabled` is false.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_RUNNER_ENABLED=true
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+runner:
+  enabled: true
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Fail retries
+
+This parameter determines the number of times a test will be retried if it fails.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_RUNNER_FAIL_RETRIES=4
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+runner:
+  fail_retries: 4
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Included and excluded branches
+
+There are two parameters to control the branches in which you want to run the Scope Intelligent Test Runner: `runner.include_branches` and `runner.exclude_branches`. The way they work is the following:
+
+- If `runner.include_branches` is configured, only configured branches are included.
+- If `runner.exclude_branches` is configured, all branches except configured branches are included.
+- If both `runner.include_branches` and `runner.exclude_branches` are configured, the runner will only take into account `runner.include_branches`. If the same branch is configured, a warning message will be shown.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_RUNNER_INCLUDE_BRANCHES=feature-branch-1,feature-branch-2
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+runner:
+  include_branches:
+    - feature-branch-1
+    - feature-branch-2
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Environment Variable-->
+
+```sh
+SCOPE_RUNNER_EXCLUDE_BRANCHES=master
+```
+
+<!--YAML Configuration File-->
+
+```yaml
+runner:
+  exclude_branches:
+    - master
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
