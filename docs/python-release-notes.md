@@ -5,6 +5,27 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Python Agent v0.5.0
+
+*June 24, 2020*
+
+#### Added
+- **Intelligent Test Runner**: automatically cache tests that are not affected by your commit changes.
+- **Code Path**: per test code coverage.
+- `~` is expanded in source root.
+- Unfinished spans are now sent with an `unfinished` tag.
+- Database and HTTP spans can include stack traces if configured.
+
+#### Changed
+- Only send metadata in the first ingest.
+
+#### Fixed
+- Fix crash while getting the test code. 
+
+
+
+
+
 ## Scope Python Agent v0.4.0
 
 *May 07, 2020*

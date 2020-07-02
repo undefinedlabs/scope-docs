@@ -5,6 +5,15 @@ sidebar_label: Release notes
 ---
 
 
+## Scope .NET Agent v0.3.2
+
+*June 24, 2020*
+
+#### Changed:
+- Instrumentation for NLog changed to Duck typing and removing the dependency to NLog assembly.
+- Moved to duck typing library 0.4.0 with performance improvements.
+
+
 ## Scope .NET Agent v0.3.1
 
 *June 19, 2020*

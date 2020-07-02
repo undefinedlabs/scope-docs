@@ -5,6 +5,32 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.12.1
+
+*June 23, 2020*
+
+#### Fixed
+* Downtime issues caused by DB locking when upgrading to 1.12
+
+
+## Scope v1.12.0
+
+*June 18, 2020*
+
+#### Added
+* **New: Flaky test management**: when tests are flagged as flaky within a commit, the flaky tag is now automatically carried over to the following commits. A new screen shows the list of flaky tests of a given service, where they can be manually marked as "fixed" (no longer flaky) with an optional description to be attached to the test.
+
+#### Fixed
+* Performance of the Intelligent Test Runner when booting has been improved.
+* Performance when showing user branches has been improved.
+* Fixed an issue where anonymous users could not follow links to test reports.
+* Fixed a crash when saving certain binary characters in event messages.
+* Fixed an issue where crashes on ingest could result on hanging requests.
+* Performance when processing GitHub check runs has been improved.
+* Performance when processing feature flags from agents has been improved.
+* Improved several resilience issues on internal background processing tasks.
+
+
 ## Scope v1.11.3
 
 *June 04, 2020*

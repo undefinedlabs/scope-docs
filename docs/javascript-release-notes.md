@@ -5,6 +5,18 @@ sidebar_label: Release notes
 ---
 
 
+## Scope Javascript Agent v0.7.3
+
+*June 24, 2020*
+
+#### Fixed
+- Fix compatibility issues with development in Windows.
+- Fix minor bugs. 
+- Fallback to NTP offset when connectivity to NTP servers is not possible. 
+
+
+
+
 ## Scope Javascript Agent v0.7.2
 
 *June 02, 2020*
