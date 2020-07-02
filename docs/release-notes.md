@@ -5,6 +5,30 @@ sidebar_label: Release notes
 ---
 
 
+## Scope v1.12.4
+
+*June 26, 2020*
+
+#### Fixed
+* Fixed minor stability issues when backfilling data on the upgrade to 1.12
+
+
+## Scope v1.12.3
+
+*June 26, 2020*
+
+#### Fixed
+* Fixed a new locking issue that could cause a downtime during upgrade to 1.12
+
+
+## Scope v1.12.2
+
+*June 24, 2020*
+
+#### Fixed
+* Speed up migrations that take too long when upgrading to 1.12
+
+
 ## Scope v1.12.1
 
 *June 23, 2020*
