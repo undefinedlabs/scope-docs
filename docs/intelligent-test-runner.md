@@ -12,7 +12,7 @@ This is done by comparing the Code Path of your tests with the git file change i
 
 We recommend activating the Intelligent Test Runner only in feature and bug fix branches where feedback speed is preferred over correctness (although still with a high degree of confidence), and keeping it disabled in `master` and/or other branches where correctness is more critical than speed.
 
-> Note that the Intelligent Test Runner feature is in beta and not yet supported on all platforms
+> Note that the Intelligent Test Runner feature is in beta
 
 ## Configuration
 
